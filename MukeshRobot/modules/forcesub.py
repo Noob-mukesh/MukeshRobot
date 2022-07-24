@@ -36,8 +36,6 @@ def _onUnMuteRequest(client, cb):
                     client.get_chat_member(channel, user_id)
                     client.unban_chat_member(chat_id, user_id)
                     cb.message.delete()
-                    # if cb.message.reply_to_message.from_user.id == user_id:
-                    # cb.message.delete()
                 except UserNotParticipant:
                     client.answer_callback_query(
                         cb.id,
@@ -85,7 +83,7 @@ def _check_member(client, message):
             except UserNotParticipant:
                 try:
                     sent_message = message.reply_text(
-                        "ʜᴇʏ {} ✨\n **ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴᴇᴅ @{} ᴄʜᴀɴɴᴇʟ ʏᴇᴛ** \n \nᴩʟᴇᴀsᴇ ᴊᴏɪɴ [ᴛʜɪs ᴄʜᴀɴɴᴇʟ](https://t.me/{}) ᴀɴᴅ ᴛʜᴇɴ ᴩʀᴇss ᴛʜᴇ **ᴜɴᴍᴜᴛᴇ ᴍᴇ** ʙᴜᴛᴛᴏɴ. \n \n ".format(
+                        "ʜᴇʏ {} 💔 \n **ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴᴇᴅ @{} ᴄʜᴀɴɴᴇʟ ʏᴇᴛ**🧐 \n \nᴩʟᴇᴀsᴇ ᴊᴏɪɴ [ᴛʜɪs ᴄʜᴀɴɴᴇʟ](https://t.me/{}) ᴀɴᴅ ᴛʜᴇɴ ᴩʀᴇss ᴛʜᴇ **ᴜɴᴍᴜᴛᴇ ᴍᴇ** ʙᴜᴛᴛᴏɴ. \n \n ".format(
                             message.from_user.mention, channel, channel
                         ),
                         disable_web_page_preview=True,
@@ -181,24 +179,25 @@ def config(client, message):
 
 
 __help__ = """
-  *Force Subscribe:*
-
-  MNO Robot can mute members who are not subscribed your channel until they subscribe When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
-
+  **Force Subscribe:**
+  MNO  Robot can mute members who are not subscribed your channel until they subscribe When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
   *Setup* *:* *Only for chat owner*
+  
   ❍ Add me in your group as admin
+  
   ❍ Add me in your channel as admin 
     
   *Commmands*
   ❍ /fsub {channel username} *:* To turn on and setup the channel.
-
-    💡Do this first...
-
+  
+  💡Do this first...
+    
   ❍ /fsub *:* To get the current settings.
+  
   ❍ /fsub disable *:* To turn of ForceSubscribe..
-
-    💡If you disable fsub, you need to set again for working.. /fsub {channel username} 
-
+  
+  💡If you disable fsub, you need to set again for working.. /fsub {channel username} 
+    
   ❍ /fsub clear *:* To unmute all members who are muted by me for not joining the channel.
 """
 __mod_name__ = "Fᴏʀᴄᴇ-Sᴜʙ"
