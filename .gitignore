@@ -1,15 +1,15 @@
 # Config files, logs and stuff
-FallenRobot/modules/helper_funcs/temp.txt
-FallenRobot/elevated_users.json
-FallenRobot/config.py
-FallenRobot/config.ini
+MukeshRobot/modules/helper_funcs/temp.txt
+MukeshRobot/elevated_users.json
+MukeshRobot/config.py
+MukeshRobot/config.ini
 log.txt
 kangsticker.png
 updates.txt
 
 # Session files
-FallenRobot/*.session
-FallenRobot/*.session-journal
+MukeshRobot/*.session
+MukeshRobot/*.session-journal
 Fallen.session-journal
 *.session
 
