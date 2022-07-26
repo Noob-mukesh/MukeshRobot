@@ -58,3 +58,5 @@ python-arq
 telegram
 gpytranslate
 yt_dlp
+cloudscraper
+
