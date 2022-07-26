@@ -8,9 +8,9 @@ from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
 
-Noob-Mukesh = "Mukesh"
+Mukesh = "Mukesh"
 telegraph = Telegraph()
-r = telegraph.create_account(short_name=Noob-Mukesh)
+r = telegraph.create_account(short_name=Mukesh)
 auth_url = r["auth_url"]
 
 
