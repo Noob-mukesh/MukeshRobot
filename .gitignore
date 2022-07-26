@@ -10,7 +10,7 @@ updates.txt
 # Session files
 MukeshRobot/*.session
 MukeshRobot/*.session-journal
-Fallen.session-journal
+Mukesh.session-journal
 *.session
 
 # Byte-compiled / optimized / DLL files
