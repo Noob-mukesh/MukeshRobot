@@ -19,9 +19,9 @@ from MukeshRobot.helper_extra.dbfun import (
 from MukeshRobot import arq
 
 regex_upvote = (
-    r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|thankyou|love|pro|🖤|❣️|💝|💖|💕|❤|💘|cool|good|👍)$"
+    r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|thankyou|love|pro|🖤|❣️|💝|nice|crt|❤|💘|cool|good|👍|mukesh|)$"
 )
-regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak)$"
+regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|lol|bad|wrong|right|)$"
 
 
 karma_positive_group = 3
