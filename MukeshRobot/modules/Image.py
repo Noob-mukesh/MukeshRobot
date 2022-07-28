@@ -55,7 +55,7 @@ from MukeshRobot.utils.resources.Image.edit_5 import (  # pylint:disable=import-
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from MukeshRobot import pgram
+from MukeshRobot import pbot
 
 lel = 00000000
 # pylint:disable=import-error
