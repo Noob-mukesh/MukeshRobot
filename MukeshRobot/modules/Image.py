@@ -9,7 +9,7 @@ from pyrogram.types import (
 from MukeshRobot import BOT_USERNAME
 
 # By @itz_mst_boi
-from MukeshRobot.utils.resources.ImageEditor.edit_1 import (  # pylint:disable=import-error
+from MukeshRobot.utils.resources.Image.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
     bright,
@@ -17,7 +17,7 @@ from MukeshRobot.utils.resources.ImageEditor.edit_1 import (  # pylint:disable=i
     mix,
     normal_blur,
 )
-from MukeshRobot.utils.resources.ImageEditor.edit_2 import (  # pylint:disable=import-error
+from MukeshRobot.utils.resources.Image.edit_2 import (  # pylint:disable=import-error
     cartoon,
     circle_with_bg,
     circle_without_bg,
@@ -27,13 +27,13 @@ from MukeshRobot.utils.resources.ImageEditor.edit_2 import (  # pylint:disable=i
     sepia_mode,
     sticker,
 )
-from MukeshRobot.utils.resources.ImageEditor.edit_3 import (  # pylint:disable=import-error
+from MukeshRobot.utils.resources.Image.edit_3 import (  # pylint:disable=import-error
     black_border,
     blue_border,
     green_border,
     red_border,
 )
-from MukeshRobot.utils.resources.ImageEditor.edit_4 import (  # pylint:disable=import-error
+from MukeshRobot.utils.resources.Image.edit_4 import (  # pylint:disable=import-error
     inverted,
     removebg_plain,
     removebg_sticker,
@@ -43,7 +43,7 @@ from MukeshRobot.utils.resources.ImageEditor.edit_4 import (  # pylint:disable=i
     rotate_270,
     round_sticker,
 )
-from MukeshRobot.utils.resources.ImageEditor.edit_5 import (  # pylint:disable=import-error
+from MukeshRobot.utils.resources.Image.edit_5 import (  # pylint:disable=import-error
     normalglitch_1,
     normalglitch_2,
     normalglitch_3,
