@@ -24,8 +24,8 @@ async def arq_stats(_, message):
 **ʀᴇǫᴜᴇsᴛs sɪɴᴄᴇ ᴜᴘᴛɪᴍᴇ:** `{requests}`
 **ᴄᴘᴜ:** `{cpu}`
 **ᴍᴇᴍᴏʀʏ:**
-    **ᴛᴏᴛᴀʟ sᴇʀᴠᴇ:** `{server_mem}`
-    **ᴀᴘɪ:** `{api_mem}`
+**ᴛᴏᴛᴀʟ sᴇʀᴠᴇ:** `{server_mem}`
+**ᴀᴘɪ:** `{api_mem}`
 **ᴅɪsᴋ:** `{disk}`
 **ᴘʟᴀᴛғᴏʀᴍ:** `{platform}`
 **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{python_version}`
@@ -33,7 +33,7 @@ async def arq_stats(_, message):
 **ᴀʀǫ sᴛᴀᴛɪsᴛɪᴄs:**
 **ᴜsᴇʀs:** `{users}`
 
-**{BOT_USERNAME} sᴏᴍᴇ ᴍᴏᴅᴜʟᴇs ʀᴜɴɴɪɴɢ ᴀʀǫ**
+**@{BOT_USERNAME} sᴏᴍᴇ ᴍᴏᴅᴜʟᴇs ʀᴜɴɴɪɴɢ ᴀʀǫ**
 """
     await message.reply_text(
         statistics, disable_web_page_preview=True
