@@ -783,7 +783,7 @@ def main():
 ━━━━━━━━━━━━━
 
 ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ ʙʏ [ᴍᴜᴋᴇsʜ](https://t.me/{OWNER_USERNAME})
-Wᴏʀʟᴅᴡɪᴅᴇ ғʀɪᴇɴᴅ ᴢᴏɴᴇ[sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https:/t.me/{SUPPORT_CHAT})""",
+[sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https:/t.me/{SUPPORT_CHAT})""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
