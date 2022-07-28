@@ -22,3 +22,13 @@ async def lel(bot, message):
     await bot.send_chat_action(message.chat.id, "typing")
     await asyncio.sleep(1.5)
     return await message.reply_text(text=ran)
+
+__mod_name__ = "sʜᴀʏᴀʀɪ"
+
+__help__ = """
+
+ᴍᴀᴋᴇs ᴀ sʜᴀʏᴀʀɪ ғᴏʀ ᴜʀ ɢɪʀʟғʀɪᴇɴᴅ ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ.
+
+❍ /romantic *:* ᴡʀɪᴛᴇ sʜᴀʏᴀʀɪ 
+
+ """
