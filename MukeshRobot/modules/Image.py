@@ -6,7 +6,7 @@ from pyrogram.types import (
     Message,
 )
 
-from MukeshRobot import BOT_NAME
+from MukeshRobot import BOT_USERNAME
 
 # By @itz_mst_boi
 from MukeshRobot.utils.resources.ImageEditor.edit_1 import (  # pylint:disable=import-error
