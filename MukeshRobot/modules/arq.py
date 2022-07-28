@@ -33,7 +33,7 @@ async def arq_stats(_, message):
 **ᴀʀǫ sᴛᴀᴛɪsᴛɪᴄs:**
 **ᴜsᴇʀs:** `{users}`
 
-**@{BOT_USERNAME} sᴏᴍᴇ ᴍᴏᴅᴜʟᴇs ʀᴜɴɴɪɴɢ ᴀʀǫ**
+**{BOT_USERNAME} sᴏᴍᴇ ᴍᴏᴅᴜʟᴇs ʀᴜɴɴɪɴɢ ᴀʀǫ**
 """
     await message.reply_text(
         statistics, disable_web_page_preview=True
