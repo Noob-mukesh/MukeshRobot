@@ -3,7 +3,7 @@ from pyrogram import filters
 from MukeshRobot import pbot, arq, BOT_USERNAME
 
 
-@pgram.on_message(filters.command("arq"))
+@pbot.on_message(filters.command("arq"))
 async def arq_stats(_, message):
     data = await arq.stats()
     if not data.ok:
