@@ -75,40 +75,40 @@ async def photo(client: pbot, message: Message):
     try:
         await client.send_message(
             chat_id=message.chat.id,
-            text="Select your required mode from below!ㅤㅤ",
+            text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ʀᴇǫᴜɪʀᴇᴅ ᴍᴏᴅᴇ ғʀᴏᴍ ʙᴇʟᴏᴡ!ㅤㅤ",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="💡 BRIGHT", callback_data="bright"),
-                        InlineKeyboardButton(text="🖼 MIXED", callback_data="mix"),
-                        InlineKeyboardButton(text="🔳 B&W", callback_data="b|w"),
+                        InlineKeyboardButton(text="💡ʙʀɪɢʜᴛ", callback_data="bright"),
+                        InlineKeyboardButton(text="🖼ᴍɪxᴇᴅ", callback_data="mix"),
+                        InlineKeyboardButton(text="🔳 ʙ&ᴡ", callback_data="b|w"),
                     ],
                     [
-                        InlineKeyboardButton(text="🟡 CIRCLE", callback_data="circle"),
-                        InlineKeyboardButton(text="🩸 BLUR", callback_data="blur"),
-                        InlineKeyboardButton(text="🌌 BORDER", callback_data="border"),
+                        InlineKeyboardButton(text="🟡ᴄɪʀᴄʟᴇ", callback_data="circle"),
+                        InlineKeyboardButton(text="🩸ʙʟᴜʀ", callback_data="blur"),
+                        InlineKeyboardButton(text="🌌ʙᴏʀᴅᴇʀ", callback_data="border"),
                     ],
                     [
-                        InlineKeyboardButton(text="🎉 STICKER", callback_data="stick"),
-                        InlineKeyboardButton(text="↩️ ROTATE", callback_data="rotate"),
+                        InlineKeyboardButton(text="🎉sᴛɪᴄᴋᴇʀ", callback_data="stick"),
+                        InlineKeyboardButton(text="↩️ʀᴏᴛᴀᴛᴇ", callback_data="rotate"),
                         InlineKeyboardButton(
                             text="🔦 CONTRAST", callback_data="contrast"
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="🌇 SEPIA", callback_data="sepia"),
-                        InlineKeyboardButton(text="✏️ PENCIL", callback_data="pencil"),
-                        InlineKeyboardButton(text="🐶 CARTOON", callback_data="cartoon"),
+                        InlineKeyboardButton(text="🌇sᴇᴘɪᴀ", callback_data="sepia"),
+                        InlineKeyboardButton(text="✏️ᴘᴇɴᴄɪʟ", callback_data="pencil"),
+                        InlineKeyboardButton(text="🐶ᴄᴀʀᴛᴏᴏɴ", callback_data="cartoon"),
                     ],
                     [
-                        InlineKeyboardButton(text="🔄 INVERT", callback_data="inverted"),
-                        InlineKeyboardButton(text="🔮 GLITCH", callback_data="glitch"),
+                        InlineKeyboardButton(text="🔄ɪɴᴠᴇʀᴛ", callback_data="inverted"),
+                        InlineKeyboardButton(text="🔮ɢʟɪᴛᴄʜ", callback_data="glitch"),
                         InlineKeyboardButton(
-                            text="✂️ REMOVE BG", callback_data="removebg"
+                            text="✂️ʀᴇᴍᴏᴠᴇ ʙɢ", callback_data="removebg"
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="❌ CLOSE", callback_data="close_e"),
+                        InlineKeyboardButton(text="⌫", callback_data="close_e"),
                     ],
                 ]
             ),
@@ -130,20 +130,20 @@ async def cb_handler(client: pbot, query: CallbackQuery):
     if lel == user_id:
         if query.data == "removebg":
             await query.message.edit_text(
-                "**Select required mode**ㅤㅤㅤㅤ",
+                "**sᴇʟᴇᴄᴛ ʀᴇǫᴜɪʀᴇᴅ ᴍᴏᴅᴇ**ㅤㅤㅤㅤ",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="WITH WHITE BG", callback_data="rmbgwhite"
+                                text="ᴡɪᴛʜ ᴡʜɪᴛᴇ ʙɢ", callback_data="rmbgwhite"
                             ),
                             InlineKeyboardButton(
-                                text="WITHOUT BG", callback_data="rmbgplain"
+                                text="ᴡɪᴛʜᴏᴜᴛ ʙɢ", callback_data="rmbgplain"
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="STICKER", callback_data="rmbgsticker"
+                                text="sᴛɪᴄᴋᴇʀ", callback_data="rmbgsticker"
                             )
                         ],
                     ]
@@ -151,18 +151,18 @@ async def cb_handler(client: pbot, query: CallbackQuery):
             )
         elif query.data == "stick":
             await query.message.edit(
-                "**Select a Type**",
+                "**sᴇʟᴇᴄᴛ ᴀ ᴛʏᴘᴇ**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text="Normal", callback_data="stkr"),
+                            InlineKeyboardButton(text="ɴᴏʀᴍᴀʟ", callback_data="stkr"),
                             InlineKeyboardButton(
-                                text="Edge Curved", callback_data="cur_ved"
+                                text="ᴇᴅɢᴇ ᴄᴜʀᴠᴇᴅ", callback_data="cur_ved"
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="Circle", callback_data="circle_sticker"
+                                text="ᴄɪʀᴄʟᴇ", callback_data="circle_sticker"
                             )
                         ],
                     ]
@@ -170,7 +170,7 @@ async def cb_handler(client: pbot, query: CallbackQuery):
             )
         elif query.data == "rotate":
             await query.message.edit_text(
-                "**Select the Degree**",
+                "**sᴇʟᴇᴄʀ ᴛʜᴇ ᴅᴇɢʀᴇᴇ**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -184,15 +184,15 @@ async def cb_handler(client: pbot, query: CallbackQuery):
 
         elif query.data == "glitch":
             await query.message.edit_text(
-                "**Select required mode**ㅤㅤㅤㅤ",
+                "**sᴇʟᴇᴄᴛ ʀᴇǫᴜɪʀᴇᴅ ᴍᴏᴅᴇ**ㅤㅤㅤㅤ",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="NORMAL", callback_data="normalglitch"
+                                text="ɴᴏʀᴍᴀʟ", callback_data="normalglitch"
                             ),
                             InlineKeyboardButton(
-                                text="SCAN LINES", callback_data="scanlineglitch"
+                                text="sᴄᴀɴ ʟɪɴᴇs", callback_data="scanlineglitch"
                             ),
                         ]
                     ]
@@ -200,7 +200,7 @@ async def cb_handler(client: pbot, query: CallbackQuery):
             )
         elif query.data == "normalglitch":
             await query.message.edit_text(
-                "**Select Glitch power level**",
+                "**sᴇʟᴇᴄᴛ ɢʟɪᴛᴄʜ ᴘᴏᴡᴇʀ ʟᴇᴠᴇʟ**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -227,7 +227,7 @@ async def cb_handler(client: pbot, query: CallbackQuery):
             )
         elif query.data == "scanlineglitch":
             await query.message.edit_text(
-                "**Select Glitch power level**",
+                "**sᴇʟᴇᴄᴛ ɢʟɪᴛᴄʜ ᴘᴏᴡᴇʀ ʟᴇᴠᴇʟ**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -254,28 +254,28 @@ async def cb_handler(client: pbot, query: CallbackQuery):
             )
         elif query.data == "blur":
             await query.message.edit(
-                "**Select a Type**",
+                "**sᴇʟᴇᴄᴛ ᴀ ᴛʏᴘᴇ**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text="box", callback_data="box"),
-                            InlineKeyboardButton(text="normal", callback_data="normal"),
+                            InlineKeyboardButton(text="ʙᴏx", callback_data="box"),
+                            InlineKeyboardButton(text="ɴᴏʀᴍᴀʟ", callback_data="normal"),
                         ],
-                        [InlineKeyboardButton(text="Gaussian", callback_data="gas")],
+                        [InlineKeyboardButton(text="ɢᴜᴀssɪᴀɴ", callback_data="gas")],
                     ]
                 ),
             )
         elif query.data == "circle":
             await query.message.edit_text(
-                "**Select required mode**",
+                "**sᴇʟᴇᴄᴛ ʀᴇǫᴜɪʀᴇᴅ ᴍᴏᴅᴇ**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="WITH BG", callback_data="circlewithbg"
+                                text="ᴡɪᴛʜ ʙɢ", callback_data="circlewithbg"
                             ),
                             InlineKeyboardButton(
-                                text="WITHOUT BG", callback_data="circlewithoutbg"
+                                text="ᴡɪᴛʜᴏᴜᴛ ʙɢ", callback_data="circlewithoutbg"
                             ),
                         ]
                     ]
@@ -283,20 +283,20 @@ async def cb_handler(client: pbot, query: CallbackQuery):
             )
         elif query.data == "border":
             await query.message.edit(
-                "**Select Border**",
+                "**sᴇʟᴇᴄᴛ ʙᴏʀᴅᴇʀ**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text="🔴 RED 🔴", callback_data="red"),
+                            InlineKeyboardButton(text="🔴ʀᴇᴅ 🔴", callback_data="red"),
                             InlineKeyboardButton(
-                                text="🟢 Green 🟢", callback_data="green"
+                                text="🟢 ɢʀᴇᴇɴ 🟢", callback_data="green"
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="⚫ Black ⚫", callback_data="black"
+                                text="⚫ʙʟᴀᴄᴋ ⚫", callback_data="black"
                             ),
-                            InlineKeyboardButton(text="🔵 Blue 🔵", callback_data="blue"),
+                            InlineKeyboardButton(text="🔵 ʙʟᴜᴇ 🔵", callback_data="blue"),
                         ],
                     ]
                 ),
