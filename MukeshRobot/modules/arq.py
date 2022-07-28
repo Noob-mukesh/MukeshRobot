@@ -39,4 +39,4 @@ async def arq_stats(_, message):
         statistics, disable_web_page_preview=True
     )
 __mod_name__ = "ᴀʀǫ"
-__help__ = f""" ᴛᴏ ᴄʜᴇᴀᴋ ᴀʀǫ ʟᴇᴠᴇʟ ᴏғ ᴛʜᴇ ʙᴏᴛ"""
+__help__ = f""" /arq ᴛᴏ ᴄʜᴇᴀᴋ ᴀʀǫ ʟᴇᴠᴇʟ ᴏғ ᴛʜᴇ ʙᴏᴛ"""
