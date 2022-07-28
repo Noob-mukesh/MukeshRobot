@@ -19,7 +19,6 @@ from MukeshRobot import (
     SUPPORT_CHAT,
     dispatcher,
     StartTime,
-    pgram,
     START_IMG,
     telethn,
     pbot,
