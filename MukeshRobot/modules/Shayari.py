@@ -5,15 +5,6 @@ from MukeshRobot import pbot as MukeshRobot
 
 
 
-"""
-    |----╒════════════╕----|
-          |  Kang with credits |
-          |----- Coded by: ----|
-          |       @CoderX      |
-          |----(2142595466)----|
-          |      on telegram   |
-    |----╘════════════╛----|
-"""
 
 ROMANTIC_STRINGS = [
                      'Meri chahat dekhni hai? \nTo mere dil par apna dil rakhkar dekh\nteri dhadkan naa bhadjaye to meri mohabbat thukra dena...',
@@ -24,15 +15,6 @@ ROMANTIC_STRINGS = [
                      'Lga ke phool haathon se usne kaha chupke se\nagar yaha koi nahi hota to phool ki jagah tum hote...',
                    ]
 
-"""
-    Hello kangers, 
-    How are you all??
-    So if you want to add more shyari add it between '', example 'Yes I'm kanging your codes', 
-    I hope it's clear to you!
-
-    So if you're really kanging this atleast don't remove this line it takes a lot of time to code things.
-    Coded by : @CoderX on telegram...
-"""
 
 @MukeshRobot.on_message(filters.command("romantic"))
 async def lel(bot, message):
