@@ -7,7 +7,7 @@ import numpy as np
 import requests
 from PIL import Image, ImageDraw, ImageOps
 
-from scenario import REM_BG_API_KEY
+from MukeshRobot import REM_BG_API_KEY
 
 async def rotate_90(client, message):
     try:
