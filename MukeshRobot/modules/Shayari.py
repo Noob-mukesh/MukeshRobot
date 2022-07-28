@@ -1,7 +1,7 @@
 import random
 import asyncio
 from pyrogram import filters
-from MukeshRobot import pgram as MukeshRobot
+from MukeshRobot import pbot as MukeshRobot
 
 
 
