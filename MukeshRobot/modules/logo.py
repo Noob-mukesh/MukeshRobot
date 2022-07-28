@@ -288,7 +288,7 @@ async def lego(event):
         fname = "fallen.png"
         img.save(fname, "png")
         await telethn.send_file(
-            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ᴀᴅᴠᴇɴᴛᴜʀᴇ ✘ ʀᴏʙᴏᴛ \n 𖨆 ᴅᴇᴠᴇʟᴏᴘᴇʀ (OWNER_ID)"
+            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [ᴀᴅᴠᴇɴᴛᴜʀᴇ ✘ ʀᴏʙᴏᴛ](t.me/groupcontrollertgbot)\n 𖨆 [ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/harmi_Mukesh)\n [ᴜᴘᴅᴀᴛᴇ](t.me/mukeshbotzone)"
         )
         await pesan.delete()
         if os.path.exists(fname):
@@ -300,7 +300,7 @@ async def lego(event):
 __mod_name__ = "Lᴏɢᴏ​"
 
 __help__ = """
-MNO Robot can create some beautiful and attractive logo for your profile pics.
+Advencture Robot can create some beautiful and attractive logo for your profile pics.
 
 ❍ /logo (Text) *:* Create a logo of your given text with random view.
 """
