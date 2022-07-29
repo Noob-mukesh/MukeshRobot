@@ -71,3 +71,7 @@ async def _(event):
     else:
         await event.reply("`You Should Be Admin To Do This!`")
         return
+__mod_name_="ғʙ-ɪɴᴘᴜᴛ"
+__help__ = """ ❍ /fbdl <link> - to download Facebook video 
+Note:- It's not for big videos.
+╚═════════ ❀•°❀°•❀ ════════╝"""
