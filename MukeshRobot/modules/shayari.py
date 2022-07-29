@@ -37,10 +37,10 @@ ROMANTIC_STRINGS = [
                    ]
 
 
-@MukeshRobot.on_message(filters.command("romantic","love","khushi"))
+@MukeshRobot.on_message(filters.command("romantic"))
 async def lel(bot, message):
     ran = random.choice(ROMANTIC_STRINGS)
-    await bot.send_chat_action(message.chat.id, "Mukesh is typing")
+    await bot.send_chat_action(message.chat.id, "typing")
     await asyncio.sleep(1.5)
     return await message.reply_text(text=ran)
 
@@ -50,6 +50,6 @@ __help__ = """
 
 ᴍᴀᴋᴇs ᴀ sʜᴀʏᴀʀɪ ғᴏʀ ᴜʀ ɢɪʀʟғʀɪᴇɴᴅ ᴀɴᴅ sᴇɴᴅ ɪᴛ ᴛᴏ ʏᴏᴜ.
 
-❍ /romantic or /love *:* ᴡʀɪᴛᴇ sʜᴀʏᴀʀɪ 
+❍ /romantic *:* ᴡʀɪᴛᴇ sʜᴀʏᴀʀɪ 
 
  """
