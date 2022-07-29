@@ -13,6 +13,16 @@ ROMANTIC_STRINGS = [
                      'Tumne dekha kabhi chand se pani girte hue\nmaine dekha ye manzar tu me chehra dhote hue...',
                      'Tera pata nahi par mera dil kabhi taiyar nahi hoga\nmujhe tere alawa kabi kisi aur se pyaar nhi hoga...',
                      'Lga ke phool haathon se usne kaha chupke se\nagar yaha koi nahi hota to phool ki jagah tum hote...',
+                     'Jab Dhadkano Ko Tham Leta Hai Koi\nJab Khayalo Mein Naam Hamara Leta Hai koi,\nYaade Tab aur Yaadgar Ban Jaati Hai,\nJab Hume Humse Behtar Jaan Leta Hai Koi.',
+                     'Love is not what the mind thinks, but what the heart feels',
+                     'You Smile When You Happy I Smile When I See You Happy.',
+                     'Never Forget About The Ones That Love You Back \n @Mukhushi\_official',
+                     'Loving The Right Person Will Make You The Strongest And The Most Confident Person.\n @Mukhushi\_official ',
+                     'Come live in my heart and pay no rent \n @Mukhushi\_official',
+                     'What You Say And What You Do Both Matters When You Are In Love.\n @Mukhushi\_official',
+                     'Falling In Love Is Easy But Keeping A Relationship Together Isn’t Easy.\n @Mukhushi\_official',
+                     'Start Spreading Love Instead Of Searching For It.\n @Mukhushi\_official',
+                     'Love Is In The Purest Form When There Are No Conditions In It.\n @Mukhushi\_official',         
                    ]
 
 
