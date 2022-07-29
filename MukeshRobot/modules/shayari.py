@@ -33,10 +33,11 @@ ROMANTIC_STRINGS = [
                      'You are the first and last thing on my mind each and every day\n 💓 @Mukhushi_official',
                      'There is a peace when there is a love, Let’s love to create a peace\n 💓 @Mukhushi_official',
                      'I don’t want to be your number one, I want to be your only one.\n 💓 @Mukhushi_official',
+                 
                    ]
 
 
-@MukeshRobot.on_message(filters.command("romantic", "love", "khushi"))
+@MukeshRobot.on_message(filters.command("romantic","love","khushi"))
 async def lel(bot, message):
     ran = random.choice(ROMANTIC_STRINGS)
     await bot.send_chat_action(message.chat.id, "Mukesh is typing")
