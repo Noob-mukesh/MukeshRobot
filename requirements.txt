@@ -1,6 +1,7 @@
 future
 emoji
 lxml
+envparse
 wget
 beautifulsoup4
 requests
