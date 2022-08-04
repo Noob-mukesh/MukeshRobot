@@ -140,7 +140,7 @@ dispatcher.add_handler(QUOTE_CHANGE)
 dispatcher.add_handler(ANIMEQUOTES_HANDLER)
 dispatcher.add_handler(QUOTES_HANDLER)
 
-__mod_name = "ᴀɴɪᴍᴇ"
+__mod_name__ = "ᴀɴɪᴍᴇ-ǫ"
 __help__ = """
  ♲︎︎︎ 
 /quote :- ᴡʀɪᴛᴇ ǫᴜᴏᴛᴇs
