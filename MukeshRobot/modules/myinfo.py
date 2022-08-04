@@ -71,16 +71,18 @@ async def callback_query_handler(event):
     try:
         boy = event.sender_id
         PRO = await bot.get_entity(boy)
-        LILIE = "POWERED BY 𝐌𝐚𝐬𝐭𝐞𝐫𝐦𝐢𝐧𝐝 𝐍𝐞𝐭𝐰𝐨𝐫𝐤\n\n"
-        LILIE += f"FIRST NAME : {PRO.first_name} \n"
-        LILIE += f"LAST NAME : {PRO.last_name}\n"
-        LILIE += f"YOU BOT : {PRO.bot} \n"
-        LILIE += f"RESTRICTED : {PRO.restricted} \n"
-        LILIE += f"USER ID : {boy}\n"
-        LILIE += f"USERNAME : {PRO.username}\n"
+        LILIE = "ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝐌𝐚𝐬𝐭𝐞𝐫𝐦𝐢𝐧𝐝 𝐍𝐞𝐭𝐰𝐨𝐫𝐤\n\n"
+        LILIE += f"ғɪʀsᴛ ɴᴀᴍᴇ: {PRO.first_name} \n"
+        LILIE += f"ʟᴀsᴛ ɴᴀᴍᴇ: {PRO.last_name}\n"
+        LILIE += f"ʏᴏᴜ ʙᴏᴛ : {PRO.bot} \n"
+        LILIE += f"ʀᴇsᴛʀɪᴄᴛᴇᴅ : {PRO.restricted} \n"
+        LILIE += f"ᴜsᴇʀ ɪᴅ: {boy}\n"
+        LILIE += f"ᴜsᴇʀɴᴀᴍᴇ : {PRO.username}\n"
         await event.answer(LILIE, alert=True)
     except Exception as e:
         await event.reply(f"{e}")
 
 
 __command_list__ = ["myinfo"]
+__mod_name__ = "ᴍʏɪɴғᴏ"
+__help__ = /myinfo to get your info 
