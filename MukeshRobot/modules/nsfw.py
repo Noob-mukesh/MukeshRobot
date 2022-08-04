@@ -770,8 +770,8 @@ __handlers__ = [
     DVA_HANDLER,
 ]
 __mod_name__ = "ɴsғᴡ"
-"""
-__help__ = 
+
+__help__ = """
 *NSFW:*
 ❂ /addnsfw : Enable NSFW mode
 ❂ /rmnsfw : Disable NSFW mode
