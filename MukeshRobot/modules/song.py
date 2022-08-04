@@ -82,4 +82,4 @@ def song(client, message):
 
 __mod_name__ = "Sᴏɴɢ"
 __help__ = """ /song to download  any song
-         ☻︎  or /music to download song
+         ☻︎  or /music to download song """
