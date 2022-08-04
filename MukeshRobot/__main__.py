@@ -783,15 +783,6 @@ def main():
 ━━━━━━━━━━━━━
 
 ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ ʙʏ [ᴍᴜᴋᴇsʜ](https://t.me/{OWNER_USERNAME})
-buttons = [
-    [
-        InlineKeyboardButton(
-            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-            url=f"https://t.me/{dispatcher.bot.username}?startgroup=true",
-        ),
-    ],
-]
-    
  """,
                 parse_mode=ParseMode.MARKDOWN,
             )
