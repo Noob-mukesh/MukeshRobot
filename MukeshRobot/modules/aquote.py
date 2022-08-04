@@ -142,6 +142,7 @@ dispatcher.add_handler(QUOTES_HANDLER)
 
 __mod_name = "ᴀ-ǫᴜᴏᴛᴇ"
 __help__ = """
+ ♲︎︎︎ 
 /quote :- ᴡʀɪᴛᴇ ǫᴜᴏᴛᴇs
 /animequotes :- ᴡʀɪᴛᴇ ᴀɴɪᴍᴇǫᴜᴏᴛᴇs """
 
