@@ -140,7 +140,11 @@ dispatcher.add_handler(QUOTE_CHANGE)
 dispatcher.add_handler(ANIMEQUOTES_HANDLER)
 dispatcher.add_handler(QUOTES_HANDLER)
 
-__mod_name = "Anime"
+__mod_name = "ǫᴜᴏᴛᴇ"
+__help__ = """
+/quote :- ᴡʀɪᴛᴇ ǫᴜᴏᴛᴇs
+/animequotes :- ᴡʀɪᴛᴇ ᴀɴɪᴍᴇǫᴜᴏᴛᴇs
+
 __command_list__ = [
     "animequotes",
     "quote",
