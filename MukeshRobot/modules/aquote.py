@@ -144,7 +144,8 @@ __mod_name = "ᴀ-ǫᴜᴏᴛᴇ"
 __help__ = """
  ♲︎︎︎ 
 /quote :- ᴡʀɪᴛᴇ ǫᴜᴏᴛᴇs
-/animequotes :- ᴡʀɪᴛᴇ ᴀɴɪᴍᴇǫᴜᴏᴛᴇs """
+/animequotes :- ᴡʀɪᴛᴇ ᴀɴɪᴍᴇǫᴜᴏᴛᴇs
+ """
 
 __command_list__ = [
     "animequotes",
