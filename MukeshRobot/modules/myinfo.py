@@ -85,4 +85,4 @@ async def callback_query_handler(event):
 
 __command_list__ = ["myinfo"]
 __mod_name__ = "ᴍʏɪɴғᴏ"
-__help__ = /myinfo to get your info 
+__help__ =""" /myinfo to get your info """ 
