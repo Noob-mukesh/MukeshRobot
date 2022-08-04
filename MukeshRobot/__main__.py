@@ -122,7 +122,7 @@ HELP_STRINGS = f"""
 DONATE_STRING = """ʜᴇʏ ʙᴀʙʏ,
   ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ.
 
-ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ [ᴅᴇᴠᴇʟᴏᴩᴇʀ](https://t.me/{OWNER_USERNAME}) ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ [sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ](https://t.me/worldwide_friend_zone) ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
+ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ [ᴅᴇᴠᴇʟᴏᴩᴇʀ](https://t.me/itz_mst_boi) ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ [sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ](https://t.me/worldwide_friend_zone) ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -405,7 +405,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"https://t.me/{OWNER_USERNAME}"
+                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"https://t.me/itz_mst_boi"
                         ),
                         InlineKeyboardButton(
                             text="sᴏᴜʀᴄᴇ",
@@ -421,7 +421,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
     elif query.data == "mukesh_support":
         query.message.edit_text(
             text="*๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍᴇ.*"
-            f"\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ {dispatcher.bot.first_name} ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ {dispatcher.bot.first_name}, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
+            f"\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ ᴀᴅᴠᴇɴᴛᴜʀᴇ ✔︎ ʀᴏʙᴏᴛ ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ {dispatcher.bot.first_name}, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -435,7 +435,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url="https://t.me/{OWNER_USERNAME}"
+                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url="https://t.me/itz_mst_boi"
                         ),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ", url="https://github.com/noob-mukesh"
@@ -465,7 +465,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text="""*ʜᴇʏ,*\n\n*ᴛʜɪs ɪs   {dispatcher.bot.first_name} ✘ *\n\n*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/noob-mukesh/MukeshRobot)\n\n*ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs ɪɴ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ ᴀɴᴅ ɴᴏᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ʏᴇᴛ*\n*sᴏ ɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ʀᴇǫᴜᴇsᴛ ᴀɴʏ ғᴇᴀᴛᴜʀᴇ, ᴩʟᴇᴀsᴇ ʟᴇᴛ ᴜs ᴋɴᴏᴡ ᴀᴛ* [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/{SUPPORT_CHAT}) *ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴩᴇʀ :* [𝗠𝘂𝗸𝗲𝘀𝗵](https://t.me/{OWNER_USERNAME})""",
+            text="""*ʜᴇʏ,*\n\n*ᴛʜɪs ɪs   ᴀᴅᴠᴇɴᴛᴜʀᴇ ✘ ʀᴏʙᴏᴛ *\n\n*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/noob-mukesh/MukeshRobot)\n\n*ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs ɪɴ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ ᴀɴᴅ ɴᴏᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ʏᴇᴛ*\n*sᴏ ɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ʀᴇǫᴜᴇsᴛ ᴀɴʏ ғᴇᴀᴛᴜʀᴇ, ᴩʟᴇᴀsᴇ ʟᴇᴛ ᴜs ᴋɴᴏᴡ ᴀᴛ* [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/worldwide_friend_zone) *ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴩᴇʀ :* [𝗠𝘂𝗸𝗲𝘀𝗵](https://t.me/itz_mst_boi)""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -516,7 +516,7 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="ᴏᴩᴇɴ ɪɴ ᴩʀɪᴠᴀᴛᴇ",
+                            text="ᴏᴩᴇɴ ɪɴ ᴩʀɪᴠᴀᴛᴇ☻︎",
                             url="https://t.me/{}?start=help".format(
                                 context.bot.username
                             ),
@@ -784,7 +784,7 @@ def main():
 
 ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ ʙʏ [ᴍᴜᴋᴇsʜ](https://t.me/{OWNER_USERNAME})
 
-[sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https:/t.me/{SUPPORT_CHAT})""",
+[sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https:/t.me/worldwide_friend_zone)""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
