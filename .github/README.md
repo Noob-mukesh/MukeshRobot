@@ -13,12 +13,12 @@
   <img src="https://github.com/Noob-Mukesh/MukeshRobot/blob/main/MukeshRobot/resources/mukesh.jpg">
 </p>
 
-## ㅤㅤㅤᴍᴜᴋᴇsʜ ʀᴏʙᴏᴛ
-ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [💞ᴍᴜᴋʜᴜsʜɪ ʀᴏʙᴏᴛ​💞](https://t.me/groupcontrollertgbot)
+## ㅤㅤ ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴏʙᴏᴛ
+ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [💞ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴏʙᴏᴛ​💞](https://t.me/groupcontrollertgbot)
 ᴛʜɪs ɪs ᴀ ᴅᴇᴍᴏ ʙᴏᴛ <br> ɪ ᴅᴏɴ'ᴛ ᴋɴᴏᴡ нσω ʟᴏɴɢᴇʀ ɪ'ʟʟ вε ʜᴏsᴛɪɴɢ ɪᴛ​...
 ━━━━━━━━━━━━━━━━━━━━━━
 ## ㅤㅤㅤᴅᴇᴘʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ​ 🚀
-ㅤㅤㅤᴛʜᴇ ᴇᴀsɪᴇsᴛ ᴡᴀʏ ᴛᴏ ᴅᴇᴘʟᴏʏ ᴍᴜᴋᴇsʜ ʀᴏʙᴏᴛ​
+ㅤㅤㅤᴛʜᴇ ᴇᴀsɪᴇsᴛ ᴡᴀʏ ᴛᴏ ᴅᴇᴘʟᴏʏ ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴏʙᴏᴛ​
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Itz-mst-boy/MukeshRobot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
  ━━━━━━━━━━━━━━━━━━━━━━
 
