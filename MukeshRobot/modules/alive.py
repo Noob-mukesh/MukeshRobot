@@ -27,9 +27,7 @@ async def awake(event):
         [
             Button.url("ʜᴇʟᴘ​", f"https://t.me/{dispatcher.bot.username}?start=help"),
             Button.url("sᴜᴘᴘᴏʀᴛ​", f"https://t.me/{SUPPORT_CHAT}"),
-        ]
-        [
-            Button.url("➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕", f"https://t.me/Groupcontrollertgbot?startgroup=true"),
+            Button.url("➕sᴜᴍᴍᴏɴ ᴍᴇ➕", f"https://t.me/Groupcontrollertgbot?startgroup=true"),
         ]
     ]
     ran = random.choice(PHOTO)
