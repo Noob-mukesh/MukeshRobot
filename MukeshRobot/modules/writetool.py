@@ -69,7 +69,7 @@ sᴜᴄᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
         await m.delete()
 
 
-__mod_name__ = "WʀɪᴛᴇTᴏᴏʟ 🖍️"
+__mod_name__ = "Wʀɪᴛᴇ 🖍️"
 
 __help__ = """
 
