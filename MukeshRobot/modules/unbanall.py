@@ -192,4 +192,10 @@ async def get_users(show):
 
 
 
-__mod_name__ = "ᴜɴʙᴀɴᴀʟʟ"
+__mod_name__ = "ᴀᴅᴠᴀɴᴄᴇ"
+__help__ = """ ➥ /unbanall : ᴜɴʙᴀɴ ᴀʟʟ ᴍᴀᴍʙᴇʀ 
+
+➥ /unmuteall : ᴜɴᴍᴜᴛᴇ ᴀʟʟ ᴍᴀᴍʙᴇʀ
+
+➥ /users : ɢᴇᴛ ɢʀᴏᴜᴘ ᴜsᴇʀs ʟɪsᴛ
+"""
