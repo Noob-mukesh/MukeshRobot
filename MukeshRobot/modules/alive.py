@@ -29,7 +29,7 @@ async def awake(event):
             Button.url("sᴜᴘᴘᴏʀᴛ​", f"https://t.me/{SUPPORT_CHAT}"),
         ]
         [
-            Button.url("➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕", f"https://t.me/{dispatcher.bot.username}?startgroup=true")
+            Button.url("➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕", f"https://t.me/{dispatcher.bot.username}?startgroup=true"),
         ]
     ]
     ran = random.choice(PHOTO)
