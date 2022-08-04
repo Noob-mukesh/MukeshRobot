@@ -61,3 +61,4 @@ gpytranslate
 yt_dlp
 cloudscraper
 nekos.py
+gtts
