@@ -22,7 +22,7 @@ async def repo(client, message):
 **» ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{s}` 
 **» ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{z}`
 
-**ᴍᴜᴋᴇsʜ ✘ ʀᴏʙᴏᴛ sᴏᴜʀᴄᴇ ɪs ɴᴏᴡ ᴩᴜʙʟɪᴄ ᴀɴᴅ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ.**
+**ᴀᴅᴠᴇɴᴛᴜʀᴇ ✘ ʀᴏʙᴏᴛ sᴏᴜʀᴄᴇ ɪs ɴᴏᴡ ᴩᴜʙʟɪᴄ ᴀɴᴅ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ.**
 """,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -31,8 +31,8 @@ async def repo(client, message):
                         "• ᴏᴡɴᴇʀ •", url=f"https://t.me/{OWNER_USERNAME}"
                     ),
                     InlineKeyboardButton(
-                        "• ɴᴇᴛᴡᴏʀᴋ •",
-                        url="https://t.me/mastermind_network_Official",
+                        "• ʀᴇᴘᴏ •",
+                        url="https://github.com/Noob-mukesh/MukeshRobot",
                     ),
                 ]
             ]
@@ -41,3 +41,6 @@ async def repo(client, message):
 
 
 __mod_name__ = "Rᴇᴩᴏ"
+_help__ = """ /repo to get repo 
+             /Source to get repo
+"""
