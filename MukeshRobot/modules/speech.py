@@ -10,6 +10,7 @@ from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.alternate  import typing_action, send_action
 
+
 @send_action(ChatAction.RECORD_AUDIO)
 def gtts(update, context):
     msg = update.effective_message
@@ -25,13 +26,13 @@ def gtts(update, context):
             reply = reply.replace(x, "")
     try:
         tts = gTTS(reply, lang='en', tld='co.in')
-        tts.save("Mukesh.mp3")
+        tts.save("mukesh.mp3")
         with open("mukesh.mp3", "rb") as speech:
             msg.reply_audio(speech)
     finally:
-        if os.path.isfile("Mukesh.mp3"):
-            os.remove("Mukesh.mp3")
-
+        if os.path.isfile("mukesh.mp3"):
+            os.remove("mukesh.mp3")
+#copyright claim by @Itz_mst_boi
 
 # Open API key
 API_KEY = "6ae0c3a0-afdc-4532-a810-82ded0054236"
@@ -72,7 +73,7 @@ dispatcher.add_handler(DisableAbleCommandHandler("splcheck", spellcheck))
 __help__ = """
  ‣ `/audio`: Convert Text in Bot Audio 
  *Usage*: reply to text or write message with command. Example `/audio hello`
- ‣ `/slpcheck`: Check the right spelling of text
+ ‣ `/slpcheck` : Check the right spelling of text
 """
-__mod_name__ = "s-ᴛᴇxᴛ"
-__command_list__ = ["tts" ,"audio"]
+__mod_name__ = "sᴘᴇᴇᴄʜ-ᴛᴇxᴛ"
+__command_list__ = ["audio"]
