@@ -68,6 +68,6 @@ dispatcher.add_handler(DEBUG_HANDLER)
 
 __mod_name__ = "ᴅᴇʙᴜɢ❣︎"
 __help__ = """ /logs  to get heruko logs
-              /debug to on / off debug 
+              /debug to on / off debug """
 __command_list__ = ["debug"]
 __handlers__ = [DEBUG_HANDLER]
