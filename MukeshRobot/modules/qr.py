@@ -161,8 +161,8 @@ __mod_name__ = "GᴇɴQʀ"
 GETQR_HANDLER = CommandHandler("getqr", parseqr)
 MAKEQR_HANDLER = CommandHandler("makeqr", makeqr)
 
-dispatcher.add_handler(GETQR_HANDLER)
-dispatcher.add_handler(MAKEQR_HANDLER)
+add_handler(GETQR_HANDLER)
+add_handler(MAKEQR_HANDLER)
 
 __command_list__ = ["getqr"]
 __command_list__ = ["makeqr"]
