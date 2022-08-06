@@ -15,7 +15,7 @@ from pymongo import MongoClient
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
-db = client["Mukesh"]
+db = client["Amanda"]
 approved_users = db.approve
 
 
@@ -33,15 +33,15 @@ async def is_register_admin(chat, user):
 
         return isinstance(
             (
-                await tbot(functions.channels.GetParticipantRequest(chat, user))
+                await pbot(functions.channels.GetParticipantRequest(chat, user))
             ).participant,
             (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
         )
     if isinstance(chat, types.InputPeerChat):
 
-        ui = await tbot.get_peer_id(user)
+        ui = await pbot.get_peer_id(user)
         ps = (
-            await tbot(functions.messages.GetFullChatRequest(chat.chat_id))
+            await pbot(functions.messages.GetFullChatRequest(chat.chat_id))
         ).full_chat.participants.participants
         return isinstance(
             next((p for p in ps if p.user_id == ui), None),
@@ -70,7 +70,7 @@ async def parseqr(qr_e):
             return
 
     start = datetime.now()
-    downloaded_file_name = await tbot.download_media(
+    downloaded_file_name = await pbot.download_media(
         await qr_e.get_reply_message(), progress_callback=progress
     )
     url = "https://api.qrserver.com/v1/read-qr-code/?outputformat=json"
@@ -115,7 +115,7 @@ async def makeqr(qrcode):
         previous_message = await qrcode.get_reply_message()
         reply_msg_id = previous_message.id
         if previous_message.media:
-            downloaded_file_name = await tbot.download_media(
+            downloaded_file_name = await pbot.download_media(
                 previous_message, progress_callback=progress
             )
             m_list = None
@@ -138,7 +138,7 @@ size=200x200&charset-source=UTF-8&charset-target=UTF-8\
     with open(required_file_name, "w+b") as file:
         for chunk in resp.iter_content(chunk_size=128):
             file.write(chunk)
-    await tbot.send_file(
+    await pbot.send_file(
         qrcode.chat_id,
         required_file_name,
         reply_to=reply_msg_id,
