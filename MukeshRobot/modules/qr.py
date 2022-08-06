@@ -1,5 +1,4 @@
 import os
-from MukeshRobot import dispatcher
 from MukeshRobot import telethn
 from asyncio import sleep
 from datetime import datetime
