@@ -7,7 +7,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update , InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
@@ -22,6 +22,7 @@ from MukeshRobot import (
     WOLVES,
     INFOPIC,
     dispatcher,
+    SUPPORT_CHAT
 )
 from MukeshRobot.__main__ import STATS, TOKEN, USER_INFO
 import MukeshRobot.modules.sql.userinfo_sql as sql
@@ -294,7 +295,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' \n[<a href="https://t.me/DevilsHeavenMF/96962">ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴋɴᴏᴡ ᴡʜᴀᴛ ɪs ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟs.</a>]'.format(
+        text += ' \n[<a href="https://t.me/mukeshbotzone/26">ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴋɴᴏᴡ ᴡʜᴀᴛ ɪs ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟs.</a>]'.format(
             bot.username
         )
 
@@ -328,20 +329,52 @@ def info(update: Update, context: CallbackContext):
             message.reply_document(
                 document=open(f"{user.id}.png", "rb"),
                 caption=(text),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"),
+                            InlineKeyboardButton(
+                                "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26")
+                        ],
+                        [   
+                            InlineKeyboardButton(
+                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                            url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                          ),
+                        ]
+                    ]
+                ),
                 parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True,
             )
-
+            
             os.remove(f"{user.id}.png")
         # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
-                text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
+                text, 
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"),
+                            InlineKeyboardButton(
+                                "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26")
+                        ],
+                        [   
+                            InlineKeyboardButton(
+                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                            url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                          ),
+                        ]
+                    ]
+                ),
+                parse_mode=ParseMode.HTML,
+                disable_web_page_preview=True
             )
-
     else:
         message.reply_text(
-            text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
+            text, parse_mode=ParseMode.HTML, 
         )
 
     rep.delete()
@@ -548,7 +581,7 @@ dispatcher.add_handler(GET_BIO_HANDLER)
 dispatcher.add_handler(SET_ABOUT_HANDLER)
 dispatcher.add_handler(GET_ABOUT_HANDLER)
 
-__mod_name__ = "Iɴꜰᴏs 😧"
+__mod_name__ = "Iɴꜰᴏs🔻"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]
 __handlers__ = [
     ID_HANDLER,
@@ -560,3 +593,4 @@ __handlers__ = [
     GET_ABOUT_HANDLER,
     STATS_HANDLER,
 ]
+ 
