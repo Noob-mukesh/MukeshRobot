@@ -38,7 +38,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} is now away!{}".format(fname, notice))
+        update.effective_message.reply_text("{} ɪs ɴᴏᴡ ᴀᴡᴀʏ» ᴅᴏɴ'ᴛ ᴛᴀɢ ᴀɢᴀɪɴ ʙʙ🔺{}".format(fname, notice))
     except BadRequest:
         pass
 
@@ -58,14 +58,14 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                "{} is here!",
-                "{} is back!",
-                "{} is now in the chat!",
-                "{} is awake!",
-                "{} is back online!",
-                "{} is finally here!",
-                "Welcome back! {}",
-                "Where is {}?\nIn the chat!",
+                "{} ɪs ʜᴇʀᴇ!",
+                "{} ɪs ʙᴀᴄᴋ!",
+                "{} ɪs ɴᴏᴡ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ!",
+                "{} ɪs ᴀᴡᴀᴋᴇ!",
+                "{} ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ!",
+                "{} ɪs ғɪɴᴀʟʟʏ ʜᴇʀᴇ!",
+                "Wᴇʟᴄᴏᴍᴇ ʙᴀᴄᴋ! {}",
+                "Wʜᴇʀᴇ ɪs {}?\nɪɴ ᴛʜᴇ ᴄʜᴀᴛ?",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -132,17 +132,21 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             res = "{} is afk".format(fst_name)
             update.effective_message.reply_text(res)
         else:
-            res = "{} is afk.\nReason: <code>{}</code>".format(
+            res = "{} ɪs ᴀғᴋ ʙᴀʙʏ.\nʀᴇᴀsᴏɴ➪ <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason)
             )
             update.effective_message.reply_text(res, parse_mode="html")
 
 
 __help__ = """
-*Away from group*
+ ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
+
+*ᴀᴡᴀʏ ғʀᴏᴍ ɢʀᴏᴜᴘ*
  ❍ /afk <reason>*:* mark yourself as AFK(away from keyboard).
  ❍ bye <reason>*:* same as the afk command - but not a command.
 When marked as AFK, any mentions will be replied to with a message to say you're not available!
+ 
+©️ Pᴏᴡᴇʀᴇᴅ ʙʏ @Mukeshbotzone
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
