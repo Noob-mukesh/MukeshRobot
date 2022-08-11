@@ -75,7 +75,8 @@ your groups to stop anonymous channels sending messages into your chats.
         - text
         
 **Admin Commands:**
- ♦️[ᴍᴀᴅᴇ ʙʏ](t.me/itz_mst_boi)
+ ♦️[ᴍᴀᴅᴇ ʙʏ ᴍᴜᴋᴇsʜ](t.me/itz_mst_boi)
+
  - /antichannel [on / off] - Anti- channel  function 
 **Note** : If linked channel  send any containing characters in this type when on  function no del   
  🚩ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴍᴜᴋᴇsʜ ʙᴏᴛ ᴢᴏɴᴇ](t.me/mukeshbotzone)
