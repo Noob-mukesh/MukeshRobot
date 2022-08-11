@@ -998,8 +998,62 @@ __help__ = """
 » /setgpic*:* reply to an image to set as group photo
 » /setdesc*:* Set group description
 » /setsticker*:* Set group sticker
+"""
 
- ©️  ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi) = [
+SET_DESC_HANDLER = CommandHandler("setdesc", set_desc)
+SET_STICKER_HANDLER = CommandHandler("setsticker", set_sticker)
+SETCHATPIC_HANDLER = CommandHandler("setgpic", setchatpic)
+RMCHATPIC_HANDLER = CommandHandler("delgpic", rmchatpic)
+SETCHAT_TITLE_HANDLER = CommandHandler("setgtitle", setchat_title)
+
+ADMINLIST_HANDLER = DisableAbleCommandHandler(["admins", "staff"], adminlist)
+
+PIN_HANDLER = CommandHandler("pin", pin)
+UNPIN_HANDLER = CommandHandler("unpin", unpin)
+PINNED_HANDLER = CommandHandler("pinned", pinned)
+
+INVITE_HANDLER = DisableAbleCommandHandler("invitelink", invite)
+
+PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote)
+FULLPROMOTE_HANDLER = DisableAbleCommandHandler("fullpromote", fullpromote)
+LOW_PROMOTE_HANDLER = DisableAbleCommandHandler("lowpromote", lowpromote)
+DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote)
+
+SET_TITLE_HANDLER = CommandHandler("title", set_title)
+ADMIN_REFRESH_HANDLER = CommandHandler(
+    ["admincache", "reload", "refresh"],
+    refresh_admin,
+)
+
+dispatcher.add_handler(SET_DESC_HANDLER)
+dispatcher.add_handler(SET_STICKER_HANDLER)
+dispatcher.add_handler(SETCHATPIC_HANDLER)
+dispatcher.add_handler(RMCHATPIC_HANDLER)
+dispatcher.add_handler(SETCHAT_TITLE_HANDLER)
+dispatcher.add_handler(ADMINLIST_HANDLER)
+dispatcher.add_handler(PIN_HANDLER)
+dispatcher.add_handler(UNPIN_HANDLER)
+dispatcher.add_handler(PINNED_HANDLER)
+dispatcher.add_handler(INVITE_HANDLER)
+dispatcher.add_handler(PROMOTE_HANDLER)
+dispatcher.add_handler(FULLPROMOTE_HANDLER)
+dispatcher.add_handler(LOW_PROMOTE_HANDLER)
+dispatcher.add_handler(DEMOTE_HANDLER)
+dispatcher.add_handler(SET_TITLE_HANDLER)
+dispatcher.add_handler(ADMIN_REFRESH_HANDLER)
+
+__mod_name__ = "Aᴅᴍɪɴs🛡️"
+__command_list__ = [
+    "setdesc" "setsticker" "setgpic" "delgpic" "setgtitle" "adminlist",
+    "admins",
+    "invitelink",
+    "promote",
+    "fullpromote",
+    "lowpromote",
+    "demote",
+    "admincache",
+]
+__handlers__ = [
     SET_DESC_HANDLER,
     SET_STICKER_HANDLER,
     SETCHATPIC_HANDLER,
