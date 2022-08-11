@@ -909,9 +909,9 @@ def main():
         try:
             dispatcher.bot.sendAnimation(
                 f"@{SUPPORT_CHAT}",
-                animation="https://telegra.ph/file/c2af68ddc0e697fbda643.jpg",
+                animation="https://telegra.ph/file/c4c12b4726c27965e3e76.mp4",
                 caption=f"""
-ㅤㅤ🥀 {dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
+ㅤㅤ🥀 {dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.❤️..
 
 ━━━━━━━━━━━━━
 ㅤ๏ **ᴘʏᴛʜᴏɴ :** `{y()}`
