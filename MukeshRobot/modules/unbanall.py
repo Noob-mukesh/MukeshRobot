@@ -193,9 +193,14 @@ async def get_users(show):
 
 
 __mod_name__ = "ᴀᴅᴠᴀɴᴄᴇ"
-__help__ = """ ➥ /unbanall : ᴜɴʙᴀɴ ᴀʟʟ ᴍᴀᴍʙᴇʀ 
+__help__ = """ 
+ ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
+
+➥ /unbanall : ᴜɴʙᴀɴ ᴀʟʟ ᴍᴀᴍʙᴇʀ 
 
 ➥ /unmuteall : ᴜɴᴍᴜᴛᴇ ᴀʟʟ ᴍᴀᴍʙᴇʀ
 
 ➥ /users : ɢᴇᴛ ɢʀᴏᴜᴘ ᴜsᴇʀs ʟɪsᴛ
+
+©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @Mukeshbotzone
 """
