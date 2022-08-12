@@ -23,10 +23,11 @@
  ━━━━━━━━━━━━━━━━━━━━━━
 
 ### ㅤㅤㅤㅤᴄʀᴇᴅɪᴛs 
+ ᴍᴜᴋᴇsʜ [ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/itz_mst_boi)
 
  [ᴀɴᴏɴʏᴍᴏᴜs](https://telegram.me/anonymous_was_bot)  
 
-   [ᴍᴜᴋᴇsʜ](https://t.me/itz_mst_boi)
+
 
  ###  SUPPORT 
 
