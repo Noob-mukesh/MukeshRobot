@@ -133,4 +133,14 @@ dispatcher.add_handler(EVAL_HANDLER)
 dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 
-__mod_name__ = "Eval Module"
+__mod_name__ = "ᴇᴠᴀʟ ᴍᴏᴅ"
+__help__="""
+★ᴏᴡɴᴇʀ ᴄᴍᴅ ★
+
+©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
+
+★ /eval :- to evaluate simple code
+★ /ex :-  to execute code
+★ /clear :- to run clear cmd
+"""
+ 
