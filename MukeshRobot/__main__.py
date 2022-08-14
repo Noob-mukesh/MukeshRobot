@@ -81,7 +81,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-*ʜᴇʏ* {},[ 🥀](https://telegra.ph/file/c2af68ddc0e697fbda643.jpg)
+*ʜᴇʏ* {},[ 🥀](https://telegra.ph/file/7773ebd713f9ba9ae71df.jpg)
 
 *๏ ᴛʜɪs ɪs* {} !
 ➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ  ➕ ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴏᴍᴇ ᴀᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
@@ -98,7 +98,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="🚦 ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs 🚦", callback_data="help_back"),
+        InlineKeyboardButton(text="🚦  ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs  🚦", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(text="★ ᴀʙᴏᴜᴛ ★", callback_data="mukesh_"),
@@ -916,7 +916,7 @@ def main():
         try:
             dispatcher.bot.sendAnimation(
                 f"@{SUPPORT_CHAT}",
-                animation="https://telegra.ph/file/c4c12b4726c27965e3e76.mp4",
+                animation="https://telegra.ph/file/e2b12aa3a88333ed74cfb.mp4",
                 caption=f"""
 ㅤㅤ🥀 {dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.❤️..
 
