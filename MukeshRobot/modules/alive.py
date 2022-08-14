@@ -8,11 +8,11 @@ from platform import python_version as pyver
 from MukeshRobot import BOT_USERNAME, OWNER_USERNAME, SUPPORT_CHAT, pbot
 
 PHOTO = [
-    "https://telegra.ph/file/4c832ec2867d2d56ec151.jpg",
-    "https://telegra.ph/file/39147aab50d218ab8019b.jpg",
-    "https://telegra.ph/file/c84ac64e321018a5d4aa4.jpg",
-    "https://telegra.ph/file/a0a79755bc3336f47a30b.jpg",
-    "https://telegra.ph/file/c6b6a247d0140e19e5d99.jpg",
+    "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",
+    "https://telegra.ph/file/ddf30888de58d77911ee1.jpg",
+    "https://telegra.ph/file/268d66cad42dc92ec65ca.jpg",
+    "https://telegra.ph/file/13a0cbbff8f429e2c59ee.jpg",
+    "https://telegra.ph/file/bdfd86195221e979e6b20.jpg",
 ]
 
 Mukesh = [
@@ -28,14 +28,14 @@ Mukesh = [
     ],
 ]
 
-lol = "https://telegra.ph/file/4c832ec2867d2d56ec151.jpg"
+lol = "https://telegra.ph/file/7773ebd713f9ba9ae71df.jpg"
 
 
 @pbot.on_message(filters.command("alive"))
 async def restart(client, m: Message):
     await m.delete()
     accha = await m.reply("⚡")
-    await asyncio.sleep(2)
+    await asyncio.sleep(0.5)
     await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
     await asyncio.sleep(0.5)
     await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ......")
@@ -52,7 +52,7 @@ async def restart(client, m: Message):
     await asyncio.sleep(2)
     await m.reply_photo(
         lol,
-        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴏʙᴏᴛ](t.me/groupcontrollertgbot)』**
+        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ](t.me/groupcontrollertgbot)』**
    ━━━━━━━━━━━━━━━━━━━
   » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴍᴜᴋᴇsʜ](https://t.me/{OWNER_USERNAME})
   
