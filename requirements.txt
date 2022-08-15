@@ -1,4 +1,5 @@
 future
+Faker
 emoji
 lxml
 envparse
