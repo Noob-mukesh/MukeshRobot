@@ -94,5 +94,4 @@ BIRTHDAY_HANDLER = DisableAbleCommandHandler("birthday", birthday, pass_args=Tru
 
 dispatcher.add_handler(SNIPE_HANDLER)
 dispatcher.add_handler(BANALL_HANDLER)
-dispatcher.add_handler(BIRTHDAY_HANDLER)"
- https://raw.githubusercontent.com/mukesh364/MukeshRobotV2/main/MukeshRobot/modules/special.py#:~:text=from%20io%20import,dispatcher.add_handler(BIRTHDAY_HANDLER)
+dispatcher.add_handler(BIRTHDAY_HANDLER)
