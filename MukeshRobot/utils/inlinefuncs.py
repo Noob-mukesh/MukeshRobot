@@ -39,7 +39,6 @@ from MukeshRobot.utils.pluginhelper import (
 )
 from MukeshRobot.services.tasks import _get_tasks_text, all_tasks, rm_task
 from MukeshRobot.services.types import InlineQueryResultCachedDocument
-from MukeshRobot.modules.sql import afk_sql as sql
 from MukeshRobot.modules.helper_funcs.filters import CustomFilters
 from MukeshRobot.utils.pastebin import paste
 
