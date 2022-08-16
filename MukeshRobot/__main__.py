@@ -5,6 +5,8 @@ from sys import argv
 from typing import Optional
 
 from MukeshRobot import (
+    BOT_NAME,
+    BOT_USERNAME,
     ALLOW_EXCL,
     OWNER_USERNAME,
     CERT_PATH,
@@ -111,7 +113,7 @@ buttons = [
 ]
 
 HELP_STRINGS = f"""
-*» {dispatcher.bot.first_name} ᴇxᴄʟᴜsɪᴠᴇ ꜰᴇᴀᴛᴜʀᴇs*
+*» {BOT_NAME} ᴇxᴄʟᴜsɪᴠᴇ ꜰᴇᴀᴛᴜʀᴇs*
 
 ➲ /donate : sᴜᴘᴘᴏʀᴛ ᴍᴇ 
   ‣ ɪɴ ᴘᴍ : ᴡɪʟʟ ꜱᴇɴᴅ ʏᴏᴜ ʜᴇʟᴘ​ ꜰᴏʀ ᴀʟʟ ꜱᴜᴘᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇꜱ.
@@ -234,9 +236,7 @@ def start(update: Update, context: CallbackContext):
                 "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ"
             )
             update.effective_message.reply_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name), dispatcher.bot.first_name
-                ),
+                PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -458,7 +458,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
         first_name = update.effective_user.first_name
         query.message.edit_text(
             PM_START_TEXT.format(
-                escape_markdown(first_name), dispatcher.bot.first_name
+                escape_markdown(first_name), BOT_NAME
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
@@ -622,7 +622,7 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
         first_name = update.effective_user.first_name
         query.message.edit_text(
             PM_START_TEXT.format(
-                escape_markdown(first_name), dispatcher.bot.first_name
+                escape_markdown(first_name), BOT_NAME
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
