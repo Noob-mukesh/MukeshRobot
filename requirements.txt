@@ -1,3 +1,4 @@
+fuzzysearch
 future
 faker
 emoji
