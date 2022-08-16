@@ -1,6 +1,3 @@
-# 🙈 Give me ⭐️ before kanging code
-# © @AnonymousBoy1025 🌚
-
 import requests
 
 url = "https://iamai.p.rapidapi.com/ask"
@@ -25,7 +22,7 @@ async def hmm(event):
     headers = {
         "content-type": "application/json",
         "x-forwarded-for": "<user's ip>",
-        "x-rapidapi-key": "33b8b1a671msh1c579ad878d8881p173811jsn6e5d3337e4fc",
+        "x-rapidapi-key": "f852df3a66msh3e4262943a708abp1a5c61jsn3765e8e9510c",
         "x-rapidapi-host": "iamai.p.rapidapi.com",
     }
 
@@ -33,7 +30,7 @@ async def hmm(event):
     lodu = response.json()
     result = lodu["message"]["text"]
     if "no no" in result:
-        pro = "I am fairly found and I was made by @itz_mst_Boi."
+        pro = "I am fairly found and I was made by @itz_mst_boi."
         try:
             async with telethn.action(event.chat_id, "typing"):
                 await asyncio.sleep(2)
