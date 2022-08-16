@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/MukeshRobot
-RUN git clone -b shiken https://github.com/AnonymousBoy1025/MukeshRobot /root/MukeshRobot
+RUN git clone https://github.com/Noob-Mukesh/MukeshRobot /root/MukeshRobot
 WORKDIR /root/MukeshRobot
 
 #Copy config file to /root/MukeshRobot/MukeshRobot
