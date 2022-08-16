@@ -1,5 +1,5 @@
 {
-      "name": "Adventure Robot",
+      "name": "Group Controller",
       "description": "Telegram Group Management Bot.",
       "logo": "https://telegra.ph/file/3117ae688980a7163ab5e.jpg",
       "keywords": [
@@ -7,7 +7,7 @@
          "sexy",
          "group",
          "manager",
-         "Adventure"
+         "Group Controller"
       ],   
    "repository": "https://github.com/noob-mukesh/MukeshRobot",
    "addons": [
@@ -146,7 +146,7 @@
       "DONATION_LINK": {
          "description": "Link where you would like to receive donations. If you are a noob, better leave it linking to Mukesh",
          "required": false,
-         "value": "https://t.me/mnocontactbot"
+         "value": "https://t.me/itz_mst_boi"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
