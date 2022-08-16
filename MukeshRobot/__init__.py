@@ -196,6 +196,12 @@ telethn = TelegramClient("Mukesh", API_ID, API_HASH)
 pbot = Client("MukeshRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 aiohttpsession = ClientSession()
+# Bot info
+print("[INFO]: Getting Bot Info...")
+BOT_ID = dispatcher.bot.id
+BOT_NAME = dispatcher.bot.first_name
+BOT_USERNAME = dispatcher.bot.username
+
 
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT...")
