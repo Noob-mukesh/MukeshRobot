@@ -3,73 +3,60 @@ from requests import get
 from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-from MukeshRobot import pbot as mukesh, dispatcher, SUPPORT_CHAT
+from MukeshRobot import pbot as mukesh, BOT_NAME, BOT_USERNAME
 
 
 @mukesh.on_message(filters.command("write"))
 async def handwrite(_, message: Message):
     if not message.reply_to_message:
-        name = (
-            message.text.split(None, 1)[1]
-            if len(message.command) < 3
-            else message.text.split(None, 1)[1].replace(" ", "%20")
-        )
+        text = message.text.split(None, 1)[1]
         m = await mukesh.send_message(
-            message.chat.id, "**ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...**\n\nʟᴇᴍᴍᴇ ᴡʀɪᴛᴇ ɪᴛ ᴏɴ ᴍʏ ᴄᴏᴩʏ..."
+            message.chat.id, "`Please wait...,\n\nWriting your text...`"
         )
-        photo = "https://apis.xditya.me/write?text=" + name
+        API = f"https://api.sdbots.tk/write?text={text}"
+        req = requests.get(API).url
         caption = f"""
-sᴜᴄᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
+sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
 
-✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{dispatcher.bot.first_name}](https://t.me/{dispatcher.bot.username})
+✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
 🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
+❄ **ʟɪɴᴋ :** `{req}`
 """
+        await m.delete()
         await mukesh.send_photo(
             message.chat.id,
-            photo=photo,
+            photo=req,
             caption=caption,
             reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_CHAT}"
-                        )
-                    ]
-                ]
+                [[InlineKeyboardButton("• ᴛᴇʟᴇɢʀᴀᴩʜ •", url=f"{req}")]]
             ),
         )
-        await m.delete()
     else:
         lol = message.reply_to_message.text
-        name = lol.split(None, 0)[0].replace(" ", "%20")
         m = await mukesh.send_message(
-            message.chat.id, "**ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...**\n\nʟᴇᴍᴍᴇ ᴡʀɪᴛᴇ ɪᴛ ᴏɴ ᴍʏ ᴄᴏᴩʏ..."
+            message.chat.id, "`Please wait...,\n\nWriting your text...`"
         )
-        photo = "https://apis.xditya.me/write?text=" + name
+        API = f"https://api.sdbots.tk/write?text={lol}"
+        req = requests.get(API).url
         caption = f"""
-sᴜᴄᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
+sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
 
-✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{dispatcher.bot.first_name}](https://t.me/{dispatcher.bot.username})
+✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
 🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
+❄ **ʟɪɴᴋ :** `{req}`
 """
+        await m.delete()
         await mukesh.send_photo(
             message.chat.id,
-            photo=photo,
+            photo=req,
             caption=caption,
             reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "• sᴜᴩᴩᴏʀᴛ •", url=f"https://t.me/{SUPPORT_CHAT}"
-                        )
-                    ]
-                ]
+                [[InlineKeyboardButton("• ᴛᴇʟᴇɢʀᴀᴩʜ •", url=f"{req}")]]
             ),
         )
-        await m.delete()
 
 
-__mod_name__ = "Wʀɪᴛᴇ 🖍️"
+__mod_name__ = "WʀɪᴛᴇTᴏᴏʟ"
 
 __help__ = """
 
