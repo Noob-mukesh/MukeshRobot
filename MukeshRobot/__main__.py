@@ -83,7 +83,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-*ʜᴇʏ* {}, 🥀 {START_IMG}
+*ʜᴇʏ* {}, [🥀 ](https://telegra.ph/file/7773ebd713f9ba9ae71df.jpg)
 
 *๏ ᴛʜɪs ɪs* {} !
 ➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ  ➕ ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴏᴍᴇ ᴀᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
@@ -100,14 +100,14 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="🚦  ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs  🚦", callback_data="help_back"),
+        InlineKeyboardButton(text="⚡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ⚡", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="★ ᴀʙᴏᴜᴛ ★", callback_data="mukesh_"),
-        InlineKeyboardButton(text="📍 sᴜᴩᴩᴏʀᴛ 📍", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="🔥ᴀʙᴏᴜᴛ ᴍᴇ🔥", callback_data="mukesh_"),
+        InlineKeyboardButton(text="📍sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ📍", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
-        InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ🥀", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🥀ᴅᴇᴠᴇʟᴏᴩᴇʀ🥀", url=f"tg://user?id={OWNER_ID}"),
         InlineKeyboardButton(text="🎧 ᴍᴜsɪᴄ 🎧", callback_data="Music_"),
     ],
 ]
@@ -244,7 +244,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             START_IMG,
-            caption="ɪ ᴀᴍ ᴀʟɪᴠᴇ  !\n<b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ​:</b> <code>{}</code>".format(
+            caption="ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ  !\n<b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ​:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
