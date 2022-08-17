@@ -1,11 +1,14 @@
+import flag
+import html, os
+
+from countryinfo import CountryInfo
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-import flag
-import html, os
-from countryinfo import CountryInfo
+
 from MukeshRobot import telethn as borg
+from MukeshRobot import pbot as mukesh , BOT_USERNAME
 from MukeshRobot.events import register
 
 
@@ -79,35 +82,36 @@ async def msg(event):
 
     wiki = a.get("wiki")
 
-    caption = f"""<b><u>Information Gathered Successfully</b></u>
-<b>
-Country Name:- {name}
-Alternative Spellings:- {hu}
-Country Area:- {area} square kilometers
-Borders:- {borders}
-Calling Codes:- {call}
-Country's Capital:- {capital}
-Country's currency:- {currencies}
-Country's Flag:- {okie}
-Demonym:- {HmM}
-Country Type:- {EsCoBaR}
-ISO Names:- {iso}
-Languages:- {lMAO}
-Native Name:- {nonive}
-population:- {waste}
-Region:- {reg}
-Sub Region:- {sub}
-Time Zones:- {tom}
-Top Level Domain:- {lanester}
-wikipedia:- {wiki}</b>
+    caption = f"""<b><u>ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɢᴀᴛʜᴇʀᴇᴅ sᴜᴄᴇssғᴜʟʟʏ </b></u>
 
-Gathered By [ᴍᴜᴋᴇsʜ](t.me/itz_mst_boi)</b>
+<b>ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ :</b> {name}
+<b>ᴀʟᴛᴇʀɴᴀᴛɪᴠᴇ sᴘᴇʟʟɪɴɢs :</b> {hu}
+<b>ᴄᴏᴜɴᴛʀʏ ᴀʀᴇᴀ :</b> {area} square kilometers
+<b>ʙᴏʀᴅᴇʀs :</b> {borders}
+<b>ᴄᴀʟʟɪɴɢ ᴄᴏᴅᴇs  :</b> {call}
+<b>ᴄᴏᴜɴᴛʀʏ's ᴄᴀᴘɪᴛᴀʟ :</b> {capital}
+<b>ᴄᴏᴜɴᴛʀʏ's ᴄᴜʀʀᴇɴᴄʏ :</b> {currencies}
+<b>ᴄᴏᴜɴᴛʀʏ's ғʟᴀɢ :</b> {okie}
+<b>ᴅᴇᴍᴏʏᴍ:</b> {HmM}
+<b>ᴄᴏᴜɴᴛʀʏ ᴛʏᴘᴇ :</b> {EsCoBaR}
+<b>ɪsᴏ ɴᴀᴍᴇs :</b> {iso}
+<b>ʟᴀɴɢᴜᴀɢᴇs :</b> {lMAO}
+<b>ɴᴀᴛɪᴠᴇ ɴᴀᴍᴇs :</b> {nonive}
+<b>ᴘᴏᴘᴜʟᴀᴛɪᴏɴs :</b> {waste}
+<b>ʀᴇɢɪᴏɴ :</b> {reg}
+<b>sᴜʙ ʀᴇɢɪᴏɴ :</b> {sub}
+<b>ᴛɪᴍᴇ ᴢᴏɴᴇs :</b> {tom}
+<b>ᴛᴏᴛᴀʟ ʟᴇᴠᴇʟ ᴅᴏᴍᴀɪɴ :</b> {lanester}
+<b>ᴡɪᴋɪᴘᴇᴅɪᴀ:</b> {wiki}
+
+<u>ɪɴғᴏʀᴍᴀᴛɪᴏɴ ɢᴀᴛʜᴇʀᴇᴅ ʙʏ {BOT_USERNAME}</u>
 """
 
     await borg.send_message(
         event.chat_id,
         caption,
         parse_mode="HTML",
+        link_preview=None,
     )
 
 
@@ -117,4 +121,4 @@ I will give information about a country
  ❍ /country <country name>*:* Gathering info about given country
 """
 
-__mod_name__ = "Cᴏᴜɴᴛʀʏ🌍"
+__mod_name__ = "Cᴏᴜɴᴛʀʏ"
