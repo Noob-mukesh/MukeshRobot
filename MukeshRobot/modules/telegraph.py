@@ -1,20 +1,21 @@
-from MukeshRobot.events import register
-from MukeshRobot import telethn as tbot
-
-TMP_DOWNLOAD_DIRECTORY = "./"
-from telethon import events
 import os
 from PIL import Image
 from datetime import datetime
+
+from telethon import events
+from MukeshRobot.events import register
+from MukeshRobot import telethn as tbot
 from telegraph import Telegraph, upload_file, exceptions
 
-Mukesh = "Mukesh"
+
+Mukesh = "Controller"
+TMP_DOWNLOAD_DIRECTORY = "./"
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Mukesh)
 auth_url = r["auth_url"]
 
 
-@register(pattern="^/t(m|t) ?(.*)")
+@register(pattern="^/tg(m|t) ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -45,7 +46,7 @@ async def _(event):
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
                 await h.edit(
-                    "Uploaded to https://telegra.ph{})".format(media_urls[0]),
+                    "Uploaded to https://te.legra.ph{})".format(media_urls[0]),
                     link_preview=True,
                 )
         elif input_str == "t":
@@ -88,8 +89,9 @@ def resize_image(image):
 
 __help__ = """
 I can upload files to Telegraph
- ❍ /tm :Get Telegraph Link Of Replied Media
- ❍ /tt :Get Telegraph Link of Replied Text
+ ❍ /tgm :Get Telegraph Link Of Replied Media
+ ❍ /tgt :Get Telegraph Link of Replied Text
+ ❍ /tgt [custom name]: Get telegraph link of replied text with custom name.
 """
 
-__mod_name__ = "T-Gʀᴀᴘʜ 🖨️"
+__mod_name__ = "T-Gʀᴀᴘʜ"
