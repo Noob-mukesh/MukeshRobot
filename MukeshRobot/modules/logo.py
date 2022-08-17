@@ -11,7 +11,7 @@ from io import BytesIO
 from requests import get
 from telethon.tl.types import InputMessagesFilterPhotos
 
-from MukeshRobot import OWNER_ID
+from MukeshRobot import OWNER_ID, SUPPORT_CHAT, BOT_USERNAME
 from MukeshRobot.events import register
 from MukeshRobot import telethn
 from PIL import Image, ImageDraw, ImageFont
@@ -288,7 +288,7 @@ async def lego(event):
         fname = "fallen.png"
         img.save(fname, "png")
         await telethn.send_file(
-            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ [ᴀᴅᴠᴇɴᴛᴜʀᴇ ✘ ʀᴏʙᴏᴛ](t.me/groupcontrollertgbot)\n ♥︎ ᴍᴜᴋᴇsʜ ★[ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/harmi_Mukesh)\n  ᴍᴜᴋᴇsʜ ʙᴏᴛ ᴢᴏɴᴇ★[ᴜᴘᴅᴀᴛᴇ](t.me/mukeshbotzone)"
+            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ {BOT_USERNAME}\n ♥︎ ᴍᴜᴋᴇsʜ ★[ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/harmi_Mukesh)\n  ᴍᴜᴋᴇsʜ ʙᴏᴛ ᴢᴏɴᴇ★[ᴜᴘᴅᴀᴛᴇ](t.me/mukeshbotzone)"
         )
         await pesan.delete()
         if os.path.exists(fname):
