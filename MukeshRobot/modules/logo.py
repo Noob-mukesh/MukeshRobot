@@ -288,19 +288,19 @@ async def lego(event):
         fname = "fallen.png"
         img.save(fname, "png")
         await telethn.send_file(
-            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ {BOT_USERNAME}\n ♥︎ ᴍᴜᴋᴇsʜ ★[ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/harmi_Mukesh)\n  ᴍᴜᴋᴇsʜ ʙᴏᴛ ᴢᴏɴᴇ★[ᴜᴘᴅᴀᴛᴇ](t.me/mukeshbotzone)"
+            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}\n ♥︎ ᴍᴜᴋᴇsʜ ★[ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/harmi_Mukesh)\n  ᴍᴜᴋᴇsʜ ʙᴏᴛ ᴢᴏɴᴇ★[ᴜᴘᴅᴀᴛᴇ](t.me/mukeshbotzone)"
         )
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
     except Exception as e:
-        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @worldwide_friend_Zone")
+        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
 
 
 __mod_name__ = "Lᴏɢᴏ♧︎︎​"
 
 __help__ = """
-Adventure Robot can create some beautiful and attractive logo for your profile pics.
+@{BOT_USERNAME} can create some beautiful and attractive logo for your profile pics.
  𝗣𝗼𝘄𝗲𝗿𝗱𝗲𝗱 𝗯𝘆 ♥︎  @Mukeshbotzone
 
 ❍ /logo (Text) *:* Create a logo of your given text with random view.
