@@ -31,7 +31,7 @@
 
  ###  SUPPORT 
 
-[sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/worldwide_friend_zone)
+[sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/the_support_chat)
 
 [sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ](https://t.me/mukeshbotzone)
  
