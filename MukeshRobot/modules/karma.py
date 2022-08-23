@@ -19,7 +19,7 @@ from MukeshRobot.helper_extra.dbfun import (
 from MukeshRobot import arq
 
 regex_upvote = (
-    r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|thankyou|love|pro|🖤|❣️|💝|nice|crt|❤|💘|cool|good|👍|mukesh|)$"
+    r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|thankyou|love|pro|gud|correct|💝|nice|crt|❤|💘|cool|good|👍|mukesh|)$"
 )
 regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|lol|bad|wrong|right|)$"
 
@@ -45,6 +45,11 @@ async def upvote(_, message):
     if not message.reply_to_message.from_user:
         return
     if not message.from_user:
+        return
+    if message.reply_to_message.from_user.id == OWNER_ID:
+        await  message.reply.text(
+            "ᴛʜᴀᴛs ɢᴜᴅ , ʙᴜᴛ ᴅᴏ ᴜ ᴋɴᴏᴡ @itz_mst_boi  ɪs ᴛʜᴇ ᴏᴡɴᴇʀ ᴏғ ʙᴏᴛ .ʜᴇ ᴋɴᴏᴡ ᴇᴠᴇʀʏᴛʜɪɴɢ."
+        )
         return
     if message.reply_to_message.from_user.id == message.from_user.id:
         return
@@ -84,6 +89,10 @@ async def upvote(_, message):
         return
     if message.reply_to_message.from_user.id == message.from_user.id:
         return
+    if message.reply_to_message.from_user.id == OWNER_ID:
+        await message.reply_text(
+            "ᴡᴛғ !, ʏᴏᴜ ᴅᴏɴ'ᴛ ᴀɢʀᴇᴇ ᴡɪᴛʜ ᴍʏ ᴏᴡɴᴇʀ. ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀɴ ɢᴏᴏᴅ ᴩᴇʀsᴏɴ."
+        )
     chat_id = message.chat.id
     user_id = message.reply_to_message.from_user.id
     user_mention = message.reply_to_message.from_user.mention
