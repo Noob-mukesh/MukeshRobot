@@ -3,7 +3,7 @@ from pyrogram import filters
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 
-from MukeshRobot import pbot as app
+from MukeshRobot import pbot as app, OWNER_ID
 from MukeshRobot.utils.errors import capture_err
 from MukeshRobot.utils.permissions import adminsOnly
 from MukeshRobot.helper_extra.dbfun import (
@@ -18,10 +18,8 @@ from MukeshRobot.helper_extra.dbfun import (
 )
 from MukeshRobot import arq
 
-regex_upvote = (
-    r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|thankyou|love|pro|gud|correct|💝|nice|crt|❤|💘|cool|good|👍|mukesh|)$"
-)
-regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|lol|bad|wrong|right|)$"
+regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|🖤|❣️|💝|💖|💕|❤|💘|cool|good|👍|baby|mukesh|thank you|gud|thankyou|love|pro)$"
+regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|fuck off|nub|gey|mf)$"
 
 
 karma_positive_group = 3
@@ -47,52 +45,12 @@ async def upvote(_, message):
     if not message.from_user:
         return
     if message.reply_to_message.from_user.id == OWNER_ID:
-        await  message.reply.text(
-            "ᴛʜᴀᴛs ɢᴜᴅ , ʙᴜᴛ ᴅᴏ ᴜ ᴋɴᴏᴡ @itz_mst_boi  ɪs ᴛʜᴇ ᴏᴡɴᴇʀ ᴏғ ʙᴏᴛ .ʜᴇ ᴋɴᴏᴡ ᴇᴠᴇʀʏᴛʜɪɴɢ."
-        )
-        return
-    if message.reply_to_message.from_user.id == message.from_user.id:
-        return
-    chat_id = message.chat.id
-    user_id = message.reply_to_message.from_user.id
-    user_mention = message.reply_to_message.from_user.mention
-    current_karma = await get_karma(chat_id, await int_to_alpha(user_id))
-    if current_karma:
-        current_karma = current_karma["karma"]
-        karma = current_karma + 1
-    else:
-        karma = 1
-    new_karma = {"karma": karma}
-    await update_karma(chat_id, await int_to_alpha(user_id), new_karma)
-    await message.reply_text(
-        f"ɪɴᴄʀᴇᴍᴇɴᴛᴇᴅ ᴋᴀʀᴍᴀ ✪ ᴏғ {user_mention} ʙʏ 1 \nᴛᴏᴛᴀʟ ᴘᴏɪɴᴛs☞︎︎︎ {karma}"
-    )
-
-
-@app.on_message(
-    filters.text
-    & filters.group
-    & filters.incoming
-    & filters.reply
-    & filters.regex(regex_upvote)
-    & ~filters.via_bot
-    & ~filters.bot,
-    group=karma_positive_group,
-)
-@capture_err
-async def upvote(_, message):
-    if not is_karma_on(message.chat.id):
-        return
-    if not message.reply_to_message.from_user:
-        return
-    if not message.from_user:
-        return
-    if message.reply_to_message.from_user.id == message.from_user.id:
-        return
-    if message.reply_to_message.from_user.id == OWNER_ID:
         await message.reply_text(
-            "ᴡᴛғ !, ʏᴏᴜ ᴅᴏɴ'ᴛ ᴀɢʀᴇᴇ ᴡɪᴛʜ ᴍʏ ᴏᴡɴᴇʀ. ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀɴ ɢᴏᴏᴅ ᴩᴇʀsᴏɴ."
+            "ᴛʜᴀᴛ's ɢᴏᴏᴅ ʙᴜᴛ ʏᴏᴜ ᴋɴᴏᴡ ᴡʜᴀᴛ, ᴛʜᴀᴛ ᴩᴇʀsᴏɴ ɪs ᴍʏ ᴏᴡɴᴇʀ ᴀɴᴅ ᴇᴠᴇʀʏᴏɴᴇ ᴋɴᴏᴡs ᴛʜᴀᴛ ʜᴇ ɪs ᴀ ɢᴏᴏᴅ ᴍᴀɴ."
         )
+        return
+    if message.reply_to_message.from_user.id == message.from_user.id:
+        return
     chat_id = message.chat.id
     user_id = message.reply_to_message.from_user.id
     user_mention = message.reply_to_message.from_user.mention
@@ -105,7 +63,7 @@ async def upvote(_, message):
     new_karma = {"karma": karma}
     await update_karma(chat_id, await int_to_alpha(user_id), new_karma)
     await message.reply_text(
-        f"ɪɴᴄʀᴇᴍᴇɴᴛᴇᴅ ᴋᴀʀᴍᴀ ✪ ᴏғ {user_mention} ʙʏ 1 \nᴛᴏᴛᴀʟ ᴘᴏɪɴᴛs☞︎︎︎ {karma}"
+        f"ɪɴᴄʀᴇᴍᴇɴᴛᴇᴅ ᴋᴀʀᴍᴀ ᴏғ {user_mention} ʙʏ 1.\n**ᴛᴏᴛᴀʟ ᴩᴏɪɴᴛs :** {karma}"
     )
 
 
@@ -127,9 +85,13 @@ async def downvote(_, message):
         return
     if not message.from_user:
         return
+    if message.reply_to_message.from_user.id == OWNER_ID:
+        await message.reply_text(
+            "ᴡᴛғ !, ʏᴏᴜ ᴅᴏɴ'ᴛ ᴀɢʀᴇᴇ ᴡɪᴛʜ ᴍʏ ᴏᴡɴᴇʀ. ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀɴ ɢᴏᴏᴅ ᴩᴇʀsᴏɴ."
+        )
+        return
     if message.reply_to_message.from_user.id == message.from_user.id:
         return
-
     chat_id = message.chat.id
     user_id = message.reply_to_message.from_user.id
     user_mention = message.reply_to_message.from_user.mention
@@ -142,7 +104,7 @@ async def downvote(_, message):
     new_karma = {"karma": karma}
     await update_karma(chat_id, await int_to_alpha(user_id), new_karma)
     await message.reply_text(
-        f"ᴅᴇᴄʀᴇᴍᴇɴᴛᴇᴅ ᴋᴀʀᴍᴀ ✪ ᴏғ {user_mention} ʙʏ 1 \nᴛᴏᴛᴀʟ ᴘᴏɪɴᴛ☞︎︎︎ {karma}"
+        f"ᴅᴇᴄʀᴇᴍᴇɴᴛᴇᴅ ᴋᴀʀᴍᴀ ᴏғ {user_mention} ʙʏ 1.\n**ᴛᴏᴛᴀʟ ᴩᴏɪɴᴛs :** {karma}"
     )
 
 
@@ -151,12 +113,12 @@ async def downvote(_, message):
 async def karma(_, message):
     chat_id = message.chat.id
     if not message.reply_to_message:
-        m = await message.reply_text("ᴀɴᴀʟʏᴢɪɴɢ ᴋᴀʀᴍᴀ...ᴡɪʟʟ ᴛᴀᴋᴇ 10 sᴇᴄᴏɴᴅ")
+        m = await message.reply_text("Analyzing Karma...Will Take 10 Seconds")
         karma = await get_karmas(chat_id)
         if not karma:
-            await m.edit("ɴᴏ ᴋᴀʀᴍᴀ ɪɴ ᴅʙ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ.")
+            await m.edit("No karma in DB for this chat.")
             return
-        msg = f"**ᴋᴀʀᴍᴀ ʟɪsᴛ ᴏғ {message.chat.title}:- **\n"
+        msg = f"**Karma list of {message.chat.title}:- **\n"
         limit = 0
         karma_dicc = {}
         for i in karma:
@@ -167,7 +129,7 @@ async def karma(_, message):
                 sorted(karma_dicc.items(), key=lambda item: item[1], reverse=True)
             )
         if not karma_dicc:
-            await m.edit("ɴᴏ ᴋᴀʀᴍᴀ ɪɴ ᴅʙ ғᴏʀ  ᴛʜɪs ᴄʜᴀᴛ ☹︎.")
+            await m.edit("No karma in DB for this chat.")
             return
         for user_idd, karma_count in karma_arranged.items():
             if limit > 9:
@@ -188,7 +150,7 @@ async def karma(_, message):
         user_id = message.reply_to_message.from_user.id
         karma = await get_karma(chat_id, await int_to_alpha(user_id))
         karma = karma["karma"] if karma else 0
-        await message.reply_text(f"**ᴛᴏᴛᴀʟ ᴘᴏɪɴᴛs**: __{karma}__")
+        await message.reply_text(f"**ᴛᴏᴛᴀʟ ᴩᴏɪɴᴛs :** {karma}")
 
 
 @app.on_message(filters.command("karma") & ~filters.private)
@@ -205,6 +167,6 @@ async def captcha_state(_, message):
         await message.reply_text("ᴇɴᴀʙʟᴇᴅ ᴋᴀʀᴍᴀ sʏsᴛᴇᴍ.")
     elif state == "off":
         karma_off(chat_id)
-        await message.reply_text("ᴅɪsᴀʙʟᴇᴅ ᴋᴀʀᴍᴀ sʏsᴛᴇᴍ.")
+        await message.reply_text("ᴅɪsᴀʙʟᴇ ᴋᴀʀᴍᴀ sʏsᴛᴇᴍ.")
     else:
         await message.reply_text(usage)
