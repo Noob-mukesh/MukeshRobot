@@ -448,7 +448,7 @@ async def cb_handler(client: pbot, query: CallbackQuery):
             await removebg_sticker(client, query.message)
 
 
-__mod_name__ = "ᴇᴅɪᴛᴏʀ"
+__mod_name__ = "ɪᴍᴀɢᴇ🖌️"
 __help__ = f"""
 I have some advanced image editing tools inbuilt
 Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
