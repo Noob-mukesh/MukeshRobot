@@ -70,7 +70,7 @@ def loveraid(update, context):
     if args:
         username = str(",".join(args))
     context.bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send messages
-    for i in range(5):
+    for i in range(30):
         lovemessage = random.choice(LOVEOP)
         update.effective_message.reply_text(lovemessage + username)
 
