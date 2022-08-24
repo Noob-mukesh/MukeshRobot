@@ -73,7 +73,7 @@ def loveraid(update, context):
     for i in range(30):
         lovemessage = random.choice(LOVEOP)
         update.effective_message.reply_text(lovemessage + username)
-
+        sleep(0.2)
 __help__ = """
 *Admin only:*
 - /loveraid *@username*: Spam user with loveraid wishes.
