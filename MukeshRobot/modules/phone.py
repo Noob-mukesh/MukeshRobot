@@ -1,45 +1,25 @@
 import json
+
 import requests
+from telegram.ext import CommandHandler, run_async
 
-from telethon import types
-from telethon.tl import functions
+from MukeshRobot import dispatcher
+from MukeshRobot.modules.helper_funcs.alternate import send_message
+from MukeshRobot.modules.helper_funcs.chat_status import user_admin
 
-from MukeshRobot.events import register,telethn
+__mod_name__ = "𝙿ʜᴏɴᴇ 🤙🏻"
+__help__ = """
+» /phone ꜰɪʟʟ ᴀɴʏ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴄʜᴇᴄᴋ ɪɴꜰᴏ.
+"""
 
+@run_async
+@user_admin
+def phone(update, context):
 
-async def is_register_admin(chat, user):
-    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
-
-        return isinstance(
-            (
-                await telethn(functions.channels.GetParticipantRequest(chat, user))
-            ).participant,
-            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
-        )
-    if isinstance(chat, types.InputPeerChat):
-
-        ui = await telethn.get_peer_id(user)
-        ps = (
-            await telethn(functions.messages.GetFullChatRequest(chat.chat_id))
-        ).full_chat.participants.participants
-        return isinstance(
-            next((p for p in ps if p.user_id == ui), None),
-            (types.ChatParticipantAdmin, types.ChatParticipantCreator),
-        )
-    return None
-
-
-@register(pattern=r"^/phone (.*)")
-async def phone(event):
-    if (
-        event.is_group
-        and not await is_register_admin(event.input_chat, event.message.sender_id)
-    ):
-        await event.reply("☎️ You are not admin 🚶‍♀️")
-        return
-    information = event.pattern_match.group(1)
+    args = update.effective_message.text.split(None, 1)
+    information = args[1]
     number = information
-    key = "fe65b94e78fc2e3234c1c6ed1b771abd"
+    key = "f66950368a61ebad3cba9b5924b4532d"
     api = (
         "http://apilayer.net/api/validate?access_key="
         + key
@@ -64,4 +44,13 @@ async def phone(event):
     e = "Carrier: " + str(carrier)
     f = "Device: " + str(line_type)
     g = f"{aa}\n{a}\n{b}\n{c}\n{d}\n{e}\n{f}"
-    await event.reply(g)
+    send_message(update.effective_message, g)
+
+
+PHONE_HANDLER = CommandHandler("phone", phone)
+
+dispatcher.add_handler(PHONE_HANDLER)
+
+
+__command_list__ = ["phone"]
+__handlers__ = [PHONE_HANDLER]
