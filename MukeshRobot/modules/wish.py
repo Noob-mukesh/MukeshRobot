@@ -101,7 +101,7 @@ async def lel(bot, message):
     return await message.reply_text(text=ran)
 
 
-__mod_name__ = "ᴡɪsʜ"
+__mod_name__ = "ᴡɪsʜ✳️"
 
 __help__ = """
 
