@@ -44,7 +44,7 @@ async def wall(client, message):
             .url
         )
         img = Image.open(io.BytesIO(requests.get(randc).content))
-        fname = "fallenrobot.png"
+        fname = "mukeshrobot.png"
         img.save(fname, "png")
         caption = f"""
 💘 ᴡᴀʟʟᴩᴀᴩᴇʀ ɢᴇɴᴇʀᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ 
