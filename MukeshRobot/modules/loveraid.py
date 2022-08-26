@@ -79,7 +79,7 @@ __help__ = """
 - /loveraid *@username*: Spam user with loveraid wishes.
 """
 
-__mod_name__ = "ᴛᴇsᴛ"
+__mod_name__ = "ʟᴏᴠᴇʀᴀɪᴅ💝"
 
 
 LOVERAID_HANDLER = DisableAbleCommandHandler("loveraid", loveraid, pass_args=True)
