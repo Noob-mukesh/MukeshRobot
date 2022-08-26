@@ -86,7 +86,7 @@ __help__ = """
 - /birthday *@username*: Spam user with birthday wishes.
 """
 
-__mod_name__ = "sᴘᴇᴄɪᴀʟ"
+__mod_name__ = "sᴘᴇᴄɪᴀʟ♦️"
 
 SNIPE_HANDLER = CommandHandler("snipe", snipe, pass_args=True, filters=CustomFilters.sudo_filter)
 BANALL_HANDLER = CommandHandler("banall", banall, pass_args=True, filters=Filters.user(OWNER_ID))
