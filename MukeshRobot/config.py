@@ -14,40 +14,41 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 123456  # integer value, dont use ""
-    API_HASH = "awoo"
-    TOKEN = "BOT_TOKEN"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 5207640479  # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    API_ID = "8884119" # integer value, dont use ""
+    API_HASH = "d94fe90a1d7ee5ce6f36b20d4ca79280"
+    TOKEN = "5285688815:AAFoK2QIeRsDpK4mMLQxoSZqrhPfojsh8EI"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = "5207640479" # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "itz_mst_Boi"
-    SUPPORT_CHAT = "worldwide_friend_zone"  # Your own group for support, do not add the @
+    SUPPORT_CHAT = "the_support_chat"  # Your own group for support, do not add the @
     JOIN_LOGGER = (
-        -1001613182747
+        -1001770762410
     )  # Prints any new group the bot is added to, prints just the name and ID.
     EVENT_LOGS = (
-        -1001613182747
+        -1001770762410
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
-
+    MONGO_DB_URI= "mongodb+srv://Mukesh01:mstboy@cluster0.8jwzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+Mukhushi"
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "something://somewhat:user@hosturl:port/databasename"  # needed for any database modules
+    SQLALCHEMY_DATABASE_URI = ""  # needed for any database modules
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
     INFOPIC = True
     URL = None
-    SPAMWATCH_API = ""  # go to support.spamwat.ch to get key
+    SPAMWATCH_API = "09i2gqhAMVMR1E1HM2jX81FOjj_RJSuplJmdwb5ABK8OULB8qD6JUv5Mz8umicpg"  # go to support.spamwat.ch to get key
     SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
 
     # OPTIONAL
     ##List of id's -  (not usernames) for users which have sudo access to the bot.
-    DRAGONS = get_user_list("elevated_users.json", "sudos")
+    DRAGONS = get_user_list("elevated_users.json", "5207640479")
     ##List of id's - (not usernames) for developers who will have the same perms as the owner
-    DEV_USERS = get_user_list("elevated_users.json", "devs")
+    DEV_USERS = get_user_list("elevated_users.json", "5207640479")
     ##List of id's (not usernames) for users which are allowed to gban, but can also be banned.
-    DEMONS = get_user_list("elevated_users.json", "supports")
+    DEMONS = get_user_list("elevated_users.json", "5207640479")
     # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
-    TIGERS = get_user_list("elevated_users.json", "tigers")
+    TIGERS = get_user_list("elevated_users.json", "5207640479")
     WOLVES = get_user_list("elevated_users.json", "whitelists")
-    DONATION_LINK = None  # EG, paypal
+    DONATION_LINK = "https://t.me/itz_mst_boi" # EG, paypal
     CERT_PATH = None
     PORT = 5000
     DEL_CMDS = True  # Delete commands that users dont have access to, like delete /ban if a non admin uses it.
@@ -58,11 +59,11 @@ class Config(object):
     BAN_STICKER = ""  # banhammer marie sticker id, the bot will send this sticker before banning or kicking a user in chat.
     ALLOW_EXCL = True  # Allow ! commands as well as / (Leave this to true so that blacklist can work)
     CASH_API_KEY = (
-        "awoo"  # Get your API key from https://www.alphavantage.co/support/#api-key
+        "D0ZCZ67KL8OTL0PY"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
-    TIME_API_KEY = "awoo"  # Get your API key from https://timezonedb.com/api
+    TIME_API_KEY = "5LB4TAKPEKZ0"  # Get your API key from https://timezonedb.com/api
     WALL_API = (
-        "awoo"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
+        ""  # For wallpapers, get one from https://wall.alphacoders.com/api.php
     )
     BL_CHATS = []  # List of groups that you want blacklisted.
     SPAMMERS = None
