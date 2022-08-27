@@ -7,7 +7,13 @@ import jikanpy
 import requests
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update, Message
+from telegram import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    ParseMode,
+    Update,
+    Message,
+)
 from telegram.ext import CallbackContext, run_async
 
 info_btn = "More Information"
@@ -159,6 +165,7 @@ query ($id: Int,$search: String) {
 
 url = "https://graphql.anilist.co"
 
+
 def extract_arg(message: Message):
     split = message.text.split(" ", 1)
     if len(split) > 1:
@@ -167,6 +174,7 @@ def extract_arg(message: Message):
     if reply is not None:
         return reply.text
     return None
+
 
 @run_async
 def airing(update: Update, context: CallbackContext):

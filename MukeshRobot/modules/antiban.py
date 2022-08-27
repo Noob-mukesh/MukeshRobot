@@ -3,7 +3,6 @@ from pyrogram.raw.base import Update
 from pyrogram.raw import types, functions
 
 
-
 @Client.on_raw_update()
 async def channel_handler(client: Client, update: Update, _, chats: dict):
     while True:
@@ -20,14 +19,11 @@ async def channel_handler(client: Client, update: Update, _, chats: dict):
             # Check enable or not
             # Check for linked or free channel
             if (
-                (
-                    message.fwd_from
-                    and message.fwd_from.saved_from_peer
-                    == message.fwd_from.from_id
-                    == message.from_id
-                )
-                or channel_id == chat_id
-            ):
+                message.fwd_from
+                and message.fwd_from.saved_from_peer
+                == message.fwd_from.from_id
+                == message.from_id
+            ) or channel_id == chat_id:
                 return
             # Delete the message sent by channel and ban it
             await client.send(

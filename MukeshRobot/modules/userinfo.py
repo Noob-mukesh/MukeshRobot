@@ -7,7 +7,13 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update , InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import (
+    MAX_MESSAGE_LENGTH,
+    ParseMode,
+    Update,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+)
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
@@ -22,7 +28,7 @@ from MukeshRobot import (
     WOLVES,
     INFOPIC,
     dispatcher,
-    SUPPORT_CHAT
+    SUPPORT_CHAT,
 )
 from MukeshRobot.__main__ import STATS, TOKEN, USER_INFO
 import MukeshRobot.modules.sql.userinfo_sql as sql
@@ -333,48 +339,53 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"),
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"
+                            ),
                             InlineKeyboardButton(
-                                "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26")
+                                "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
+                            ),
                         ],
-                        [   
+                        [
                             InlineKeyboardButton(
-                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                            url=f"https://t.me/groupcontrollertgbot?startgroup=true",
-                          ),
-                        ]
+                                text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                            ),
+                        ],
                     ]
                 ),
                 parse_mode=ParseMode.HTML,
             )
-            
+
             os.remove(f"{user.id}.png")
         # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
-                text, 
+                text,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"),
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"
+                            ),
                             InlineKeyboardButton(
-                                "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26")
+                                "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
+                            ),
                         ],
-                        [   
+                        [
                             InlineKeyboardButton(
-                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                            url=f"https://t.me/groupcontrollertgbot?startgroup=true",
-                          ),
-                        ]
+                                text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                            ),
+                        ],
                     ]
                 ),
                 parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True
+                disable_web_page_preview=True,
             )
     else:
         message.reply_text(
-            text, parse_mode=ParseMode.HTML, 
+            text,
+            parse_mode=ParseMode.HTML,
         )
 
     rep.delete()
@@ -443,7 +454,9 @@ def set_about_me(update: Update, context: CallbackContext):
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ:</b>\n" + "\n".join(
+        [mod.__stats__() for mod in STATS]
+    )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
 
@@ -593,4 +606,3 @@ __handlers__ = [
     GET_ABOUT_HANDLER,
     STATS_HANDLER,
 ]
- 

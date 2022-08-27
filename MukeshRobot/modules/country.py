@@ -8,7 +8,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from MukeshRobot import telethn as borg
-from MukeshRobot import pbot as mukesh , BOT_USERNAME
+from MukeshRobot import pbot as mukesh, BOT_USERNAME
 from MukeshRobot.events import register
 
 
