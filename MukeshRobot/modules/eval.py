@@ -134,7 +134,7 @@ dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 
 __mod_name__ = "ᴇᴠᴀʟ🍸"
-__help__="""
+__help__ = """
 ★ᴏᴡɴᴇʀ ᴄᴍᴅ ★
 
 ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
@@ -143,4 +143,3 @@ __help__="""
 ★ /ex :-  to execute code
 ★ /clear :- to run clear cmd
 """
- 

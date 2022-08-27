@@ -2444,18 +2444,14 @@ FED_USERBAN_HANDLER = CommandHandler("fbanlist", fed_ban_list)
 FED_NOTIF_HANDLER = CommandHandler("fednotif", fed_notif)
 FED_CHATLIST_HANDLER = CommandHandler("fedchats", fed_chats)
 FED_IMPORTBAN_HANDLER = CommandHandler("importfbans", fed_import_bans)
-FEDSTAT_USER = DisableAbleCommandHandler(
-    ["fedstat", "fbanstat"], fed_stat_user
-)
+FEDSTAT_USER = DisableAbleCommandHandler(["fedstat", "fbanstat"], fed_stat_user)
 SET_FED_LOG = CommandHandler("setfedlog", set_fed_log)
 UNSET_FED_LOG = CommandHandler("unsetfedlog", unset_fed_log)
 SUBS_FED = CommandHandler("subfed", subs_feds)
 UNSUBS_FED = CommandHandler("unsubfed", unsubs_feds)
 MY_SUB_FED = CommandHandler("fedsubs", get_myfedsubs)
 MY_FEDS_LIST = CommandHandler("myfeds", get_myfeds_list)
-DELETEBTN_FED_HANDLER = CallbackQueryHandler(
-    del_fed_button, pattern=r"rmfed_"
-)
+DELETEBTN_FED_HANDLER = CallbackQueryHandler(del_fed_button, pattern=r"rmfed_")
 FED_OWNER_HELP_HANDLER = CommandHandler("fedownerhelp", fed_owner_help)
 FED_ADMIN_HELP_HANDLER = CommandHandler("fedadminhelp", fed_admin_help)
 FED_USER_HELP_HANDLER = CommandHandler("feduserhelp", fed_user_help)

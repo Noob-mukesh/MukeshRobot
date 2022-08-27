@@ -8,7 +8,7 @@ from telegram import ChatAction
 
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
-from MukeshRobot.modules.helper_funcs.alternate  import typing_action, send_action
+from MukeshRobot.modules.helper_funcs.alternate import typing_action, send_action
 
 
 @send_action(ChatAction.RECORD_AUDIO)
@@ -25,14 +25,16 @@ def gtts(update, context):
         for x in "\n":
             reply = reply.replace(x, "")
     try:
-        tts = gTTS(reply, lang='en', tld='co.in')
+        tts = gTTS(reply, lang="en", tld="co.in")
         tts.save("mukesh.mp3")
         with open("mukesh.mp3", "rb") as speech:
             msg.reply_audio(speech)
     finally:
         if os.path.isfile("mukesh.mp3"):
             os.remove("mukesh.mp3")
-#copyright claim by @Itz_mst_boi
+
+
+# copyright claim by @Itz_mst_boi
 
 # Open API key
 API_KEY = "6ae0c3a0-afdc-4532-a810-82ded0054236"
@@ -66,6 +68,7 @@ def spellcheck(update, context):
         update.effective_message.reply_text(
             "Reply to some message to get grammar corrected text!"
         )
+
 
 dispatcher.add_handler(DisableAbleCommandHandler("audio", gtts, pass_args=True))
 dispatcher.add_handler(DisableAbleCommandHandler("splcheck", spellcheck))

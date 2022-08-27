@@ -8,7 +8,6 @@ from MukeshRobot.utils.permissions import adminsOnly
 from MukeshRobot.helper_extra.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
 
 
-
 async def get_file_id_from_message(message):
     file_id = None
     if message.document:
@@ -158,6 +157,7 @@ async def nsfw_enable_disable(_, message):
         await message.reply_text("Disabled AntiNSFW System.")
     else:
         await message.reply_text("Unknown Suffix, Use /antinsfw [on/off]")
+
 
 __mod_name__ = "ᴀɴᴛɪ-ɴsғᴡ"
 __help_ = """ Use `/antinsfw [on/off]

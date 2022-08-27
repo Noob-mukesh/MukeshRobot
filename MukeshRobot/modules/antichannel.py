@@ -7,6 +7,7 @@ from MukeshRobot.utils.errors import capture_err
 
 active_channel = []
 
+
 async def channel_toggle(db, message: Message):
     status = message.text.split(None, 1)[1].lower()
     chat_id = message.chat.id
@@ -20,9 +21,14 @@ async def channel_toggle(db, message: Message):
         if chat_id in db:
             db.remove(chat_id)
             return await eor(message, text="ᴀɴᴛɪᴄʜᴀɴɴᴇʟ ᴅɪsᴀʙʟᴇᴅ ʙᴀʙʏ🔻")
-        await eor(message, text=f"**ᴀɴᴛɪ ᴄʜᴀɴɴᴇʟ ᴍᴏᴅᴇ sᴜᴄᴇssғᴜʟʟʏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ** {message.chat.id} ❌")
+        await eor(
+            message,
+            text=f"**ᴀɴᴛɪ ᴄʜᴀɴɴᴇʟ ᴍᴏᴅᴇ sᴜᴄᴇssғᴜʟʟʏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ** {message.chat.id} ❌",
+        )
     else:
-        await eor(message, text="ɪ ᴜɴᴅᴇʀsᴛᴀɴᴅ  `/antichannel on` and `/antichannel off` ᴏɴʟʏ")
+        await eor(
+            message, text="ɪ ᴜɴᴅᴇʀsᴛᴀɴᴅ  `/antichannel on` and `/antichannel off` ᴏɴʟʏ"
+        )
 
 
 # Enabled | Disable antichannel
@@ -32,9 +38,10 @@ async def channel_toggle(db, message: Message):
 @capture_err
 async def antichannel_status(_, message: Message):
     if len(message.command) != 2:
-        return await eor(message, text="ɪ ᴜɴᴅᴇʀsᴛᴀɴᴅ `/antichannel on` and `/antichannel off` ᴏɴʟʏ")
+        return await eor(
+            message, text="ɪ ᴜɴᴅᴇʀsᴛᴀɴᴅ `/antichannel on` and `/antichannel off` ᴏɴʟʏ"
+        )
     await channel_toggle(active_channel, message)
-
 
 
 @app.on_message(
@@ -50,18 +57,21 @@ async def antichannel_status(_, message: Message):
     group=41,
 )
 async def anitchnl(_, message):
-  chat_id = message.chat.id
-  if message.sender_chat:
-    sender = message.sender_chat.id 
-    if message.chat.id not in active_channel:
-        return
-    if chat_id == sender:
-        return
-    else:
-        await message.delete()
-        ti = await message.reply_text("**A anti-channel message detected. I deleted it..!**")
-        await asyncio.sleep(7)
-        await ti.delete()        
+    chat_id = message.chat.id
+    if message.sender_chat:
+        sender = message.sender_chat.id
+        if message.chat.id not in active_channel:
+            return
+        if chat_id == sender:
+            return
+        else:
+            await message.delete()
+            ti = await message.reply_text(
+                "**A anti-channel message detected. I deleted it..!**"
+            )
+            await asyncio.sleep(7)
+            await ti.delete()
+
 
 __mod_name__ = "ᴀ-Cʜᴀɴɴᴇʟ♦️"
 __help__ = """

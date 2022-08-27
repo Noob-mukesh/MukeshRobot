@@ -4,7 +4,7 @@ from faker import Faker
 from faker.providers import internet
 from telethon import events
 
-from  MukeshRobot import telethn as tbot
+from MukeshRobot import telethn as tbot
 
 
 @tbot.on(events.NewMessage(pattern="/fakegen$"))
