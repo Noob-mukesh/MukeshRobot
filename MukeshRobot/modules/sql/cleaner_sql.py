@@ -1,6 +1,7 @@
 import threading
 
 from sqlalchemy import Boolean, Column, UnicodeText
+
 from MukeshRobot.modules.sql import BASE, SESSION
 
 

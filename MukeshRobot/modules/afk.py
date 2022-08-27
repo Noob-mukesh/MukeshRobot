@@ -1,4 +1,9 @@
-import random, html
+import html
+import random
+
+from telegram import MessageEntity, Update
+from telegram.error import BadRequest
+from telegram.ext import CallbackContext, Filters, MessageHandler, run_async
 
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import (
@@ -7,9 +12,6 @@ from MukeshRobot.modules.disable import (
 )
 from MukeshRobot.modules.sql import afk_sql as sql
 from MukeshRobot.modules.users import get_user_id
-from telegram import MessageEntity, Update
-from telegram.error import BadRequest
-from telegram.ext import CallbackContext, Filters, MessageHandler, run_async
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
@@ -38,7 +40,9 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} ɪs ɴᴏᴡ ᴀᴡᴀʏ» ᴅᴏɴ'ᴛ ᴛᴀɢ ᴀɢᴀɪɴ ʙʙ🔺{}".format(fname, notice))
+        update.effective_message.reply_text(
+            "{} ɪs ɴᴏᴡ ᴀᴡᴀʏ» ᴅᴏɴ'ᴛ ᴛᴀɢ ᴀɢᴀɪɴ ʙʙ🔺{}".format(fname, notice)
+        )
     except BadRequest:
         pass
 

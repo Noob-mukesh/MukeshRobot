@@ -1,7 +1,8 @@
 import threading
 
-from MukeshRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Column, String, UnicodeText
+
+from MukeshRobot.modules.sql import BASE, SESSION
 
 
 class BlacklistUsers(BASE):

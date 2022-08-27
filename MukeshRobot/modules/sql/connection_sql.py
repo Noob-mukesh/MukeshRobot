@@ -2,9 +2,9 @@ import threading
 import time
 from typing import Union
 
-from sqlalchemy import Column, String, Boolean, UnicodeText, BigInteger
+from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
 
-from MukeshRobot.modules.sql import SESSION, BASE
+from MukeshRobot.modules.sql import BASE, SESSION
 
 
 class ChatAccessConnectionSettings(BASE):

@@ -14,7 +14,6 @@ from MukeshRobot import DRAGONS as SUDO_USERS
 from MukeshRobot import pbot
 from MukeshRobot.modules.sql import forceSubscribe_sql as sql
 
-
 logging.basicConfig(level=logging.INFO)
 
 static_data_filter = filters.create(

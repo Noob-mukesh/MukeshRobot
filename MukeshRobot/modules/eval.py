@@ -6,10 +6,11 @@ import textwrap
 import traceback
 from contextlib import redirect_stdout
 
-from MukeshRobot import LOGGER, dispatcher
-from MukeshRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
+
+from MukeshRobot import LOGGER, dispatcher
+from MukeshRobot.modules.helper_funcs.chat_status import dev_plus
 
 namespaces = {}
 
@@ -94,7 +95,7 @@ def do(func, bot, update):
     try:
         with redirect_stdout(stdout):
             func_return = func()
-    except Exception as e:
+    except Exception:
         value = stdout.getvalue()
         return f"{value}{traceback.format_exc()}"
     else:
@@ -134,7 +135,7 @@ dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 
 __mod_name__ = "ᴇᴠᴀʟ🍸"
-__help__="""
+__help__ = """
 ★ᴏᴡɴᴇʀ ᴄᴍᴅ ★
 
 ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
@@ -143,4 +144,3 @@ __help__="""
 ★ /ex :-  to execute code
 ★ /clear :- to run clear cmd
 """
- 

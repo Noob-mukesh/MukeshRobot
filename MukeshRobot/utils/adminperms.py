@@ -1,6 +1,3 @@
-import asyncio
-from pyrogram import filters
-from pyrogram.types import ChatPermissions, Message
 from MukeshRobot import pbot as app
 
 

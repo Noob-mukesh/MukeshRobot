@@ -1,18 +1,8 @@
 import html
-from typing import Optional, List
 import re
+from typing import Optional
 
-from telegram import Message, Chat, Update, User, ChatPermissions
-
-from MukeshRobot import TIGERS, WOLVES, dispatcher
-from MukeshRobot.modules.helper_funcs.chat_status import (
-    bot_admin,
-    is_user_admin,
-    user_admin,
-    user_admin_no_reply,
-)
-from MukeshRobot.modules.log_channel import loggable
-from MukeshRobot.modules.sql import antiflood_sql as sql
+from telegram import Chat, ChatPermissions, Message, Update, User
 from telegram.error import BadRequest
 from telegram.ext import (
     CallbackContext,
@@ -22,10 +12,20 @@ from telegram.ext import (
     MessageHandler,
     run_async,
 )
-from telegram.utils.helpers import mention_html, escape_markdown
-from MukeshRobot.modules.helper_funcs.string_handling import extract_time
+from telegram.utils.helpers import mention_html
+
+from MukeshRobot import TIGERS, WOLVES, dispatcher
 from MukeshRobot.modules.connection import connected
 from MukeshRobot.modules.helper_funcs.alternate import send_message
+from MukeshRobot.modules.helper_funcs.chat_status import (
+    bot_admin,
+    is_user_admin,
+    user_admin,
+    user_admin_no_reply,
+)
+from MukeshRobot.modules.helper_funcs.string_handling import extract_time
+from MukeshRobot.modules.log_channel import loggable
+from MukeshRobot.modules.sql import antiflood_sql as sql
 from MukeshRobot.modules.sql.approve_sql import is_approved
 
 FLOOD_GROUP = 3

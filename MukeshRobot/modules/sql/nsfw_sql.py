@@ -1,12 +1,17 @@
 import threading
+
 from sqlalchemy import Column, String
+
 from MukeshRobot.modules.sql import BASE, SESSION
+
+
 class NSFWChats(BASE):
     __tablename__ = "nsfw_chats"
     chat_id = Column(String(14), primary_key=True)
 
     def __init__(self, chat_id):
         self.chat_id = chat_id
+
 
 NSFWChats.__table__.create(checkfirst=True)
 INSERTION_LOCK = threading.RLock()
@@ -22,6 +27,7 @@ def is_nsfw(chat_id):
     finally:
         SESSION.close()
 
+
 def set_nsfw(chat_id):
     with INSERTION_LOCK:
         nsfwchat = SESSION.query(NSFWChats).get(str(chat_id))
@@ -29,6 +35,7 @@ def set_nsfw(chat_id):
             nsfwchat = NSFWChats(str(chat_id))
         SESSION.add(nsfwchat)
         SESSION.commit()
+
 
 def rem_nsfw(chat_id):
     with INSERTION_LOCK:

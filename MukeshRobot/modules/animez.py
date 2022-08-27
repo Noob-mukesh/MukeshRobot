@@ -5,10 +5,17 @@ import textwrap
 import bs4
 import jikanpy
 import requests
+from telegram import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+    ParseMode,
+    Update,
+)
+from telegram.ext import CallbackContext, run_async
+
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update, Message
-from telegram.ext import CallbackContext, run_async
 
 info_btn = "More Information"
 kaizoku_btn = "Kaizoku ☠️"
@@ -159,6 +166,7 @@ query ($id: Int,$search: String) {
 
 url = "https://graphql.anilist.co"
 
+
 def extract_arg(message: Message):
     split = message.text.split(" ", 1)
     if len(split) > 1:
@@ -167,6 +175,7 @@ def extract_arg(message: Message):
     if reply is not None:
         return reply.text
     return None
+
 
 @run_async
 def airing(update: Update, context: CallbackContext):
@@ -217,7 +226,7 @@ def anime(update: Update, context: CallbackContext):
         msg = msg[:-2] + "`\n"
         info = json.get("siteUrl")
         trailer = json.get("trailer", None)
-        anime_id = json["id"]
+        json["id"]
         if trailer:
             trailer_id = trailer.get("id", None)
             site = trailer.get("site", None)

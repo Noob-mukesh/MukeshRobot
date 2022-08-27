@@ -1,34 +1,30 @@
+import os
+from time import sleep
+
+from telethon import *
+from telethon.errors import *
+from telethon.errors import FloodWaitError, UserNotParticipantError
+from telethon.tl import *
+from telethon.tl import functions, types
+from telethon.tl.functions.channels import GetParticipantRequest
+from telethon.tl.types import *
+from telethon.tl.types import (
+    ChannelParticipantAdmin,
+    ChannelParticipantCreator,
+    ChatBannedRights,
+)
+
 from MukeshRobot import *
 from MukeshRobot import LOGGER
 from MukeshRobot.events import register
-from telethon.tl.types import ChannelParticipantAdmin
-from telethon.tl.types import ChannelParticipantCreator
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.errors import UserNotParticipantError
-from telethon.tl.types import (
-    ChatBannedRights,
-    )
-
-from telethon import *
-from telethon.tl import *
-from telethon.errors import *
-
-import os
-from time import sleep
-from telethon.errors import FloodWaitError
-from telethon.tl import functions
-from telethon.tl import types
-from telethon.tl.types import *
 
 sudo = 5207640479
 BOT_ID = 5559518126
-CMD_HELP = '/ !'
-
-
-
+CMD_HELP = "/ !"
 
 
 # ================================================
+
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
@@ -42,36 +38,32 @@ async def is_register_admin(chat, user):
         return True
 
 
-
 @register(pattern="^/unbanall$")
 async def _(event):
     chat = await event.get_chat()
     admin = chat.admin_rights.ban_users
     creator = chat.creator
     if event.is_private:
-      return await event.respond("__This command can be use in groups and channels!__")
+        return await event.respond(
+            "__This command can be use in groups and channels!__"
+        )
 
     is_admin = False
     try:
-      cutiepii = await telethn(GetParticipantRequest(
-        event.chat_id,
-        event.sender_id
-      ))
+        cutiepii = await telethn(GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
-      is_admin = False
+        is_admin = False
     else:
-      if (
-        isinstance(
-          cutiepii.participant,
-          (
-            ChannelParticipantAdmin,
-            ChannelParticipantCreator,
-          )
-        )
-      ):
-        is_admin = True
+        if isinstance(
+            cutiepii.participant,
+            (
+                ChannelParticipantAdmin,
+                ChannelParticipantCreator,
+            ),
+        ):
+            is_admin = True
     if not is_admin:
-      return await event.respond("__Only admins can Unmuteall!__")
+        return await event.respond("__Only admins can Unmuteall!__")
 
     if not admin and not creator:
         await event.reply("`I don't have enough permissions!`")
@@ -84,7 +76,9 @@ async def _(event):
     ):
         rights = ChatBannedRights(until_date=0, view_messages=False)
         try:
-            await telethn(functions.channels.EditBannedRequest(event.chat_id, i, rights))
+            await telethn(
+                functions.channels.EditBannedRequest(event.chat_id, i, rights)
+            )
         except FloodWaitError as ex:
             LOGGER.warn(f"sleeping for {ex.seconds} seconds")
             sleep(ex.seconds)
@@ -103,29 +97,26 @@ async def _(event):
 @register(pattern="^/unmuteall$")
 async def _(event):
     if event.is_private:
-      return await event.respond("__This command can be use in groups and channels!__")
+        return await event.respond(
+            "__This command can be use in groups and channels!__"
+        )
 
     is_admin = False
     try:
-      cutiepii = await telethn(GetParticipantRequest(
-        event.chat_id,
-        event.sender_id
-      ))
+        cutiepii = await telethn(GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
-      is_admin = False
+        is_admin = False
     else:
-      if (
-        isinstance(
-          cutiepii.participant,
-          (
-            ChannelParticipantAdmin,
-            ChannelParticipantCreator,
-          )
-        )
-      ):
-        is_admin = True
+        if isinstance(
+            cutiepii.participant,
+            (
+                ChannelParticipantAdmin,
+                ChannelParticipantCreator,
+            ),
+        ):
+            is_admin = True
     if not is_admin:
-      return await event.respond("__Only admins can Unmuteall!__")
+        return await event.respond("__Only admins can Unmuteall!__")
     chat = await event.get_chat()
     admin = chat.admin_rights.ban_users
     creator = chat.creator
@@ -145,7 +136,9 @@ async def _(event):
             send_messages=False,
         )
         try:
-            await telethn(functions.channels.EditBannedRequest(event.chat_id, i, rights))
+            await telethn(
+                functions.channels.EditBannedRequest(event.chat_id, i, rights)
+            )
         except FloodWaitError as ex:
             LOGGER.warn(f"sleeping for {ex.seconds} seconds")
             sleep(ex.seconds)
@@ -159,8 +152,6 @@ async def _(event):
         return
     required_string = "Successfully unmuted **{}** users"
     await event.reply(required_string.format(p))
-
-
 
 
 @register(pattern="^/users$")
@@ -189,7 +180,6 @@ async def get_users(show):
     )
 
     os.remove("userslist.txt")
-
 
 
 __mod_name__ = "ᴀᴅᴠᴀɴᴄᴇ🥂"

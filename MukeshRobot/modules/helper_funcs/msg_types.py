@@ -1,7 +1,8 @@
 from enum import IntEnum, unique
 
-from MukeshRobot.modules.helper_funcs.string_handling import button_markdown_parser
 from telegram import Message
+
+from MukeshRobot.modules.helper_funcs.string_handling import button_markdown_parser
 
 
 @unique
@@ -221,4 +222,3 @@ def get_filter_type(msg: Message):
         content = None
 
     return text, data_type, content
-

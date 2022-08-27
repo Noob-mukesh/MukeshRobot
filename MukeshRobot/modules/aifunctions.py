@@ -1,12 +1,10 @@
 import requests
 
 url = "https://iamai.p.rapidapi.com/ask"
-from MukeshRobot import telethn, OWNER_ID
+import asyncio
+
+from MukeshRobot import telethn
 from MukeshRobot.events import register
-from telethon import events
-from telethon import types
-from telethon.tl import functions
-import asyncio, os
 
 
 @register(pattern="Mukesh (.*)")

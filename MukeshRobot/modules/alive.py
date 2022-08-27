@@ -1,11 +1,13 @@
-import random
 import asyncio
-from pyrogram import filters, __version__ as pver
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from telethon import __version__ as tver
-from telegram import __version__ as lver
 from platform import python_version as pyver
-from MukeshRobot import BOT_USERNAME, OWNER_USERNAME, SUPPORT_CHAT, pbot
+
+from pyrogram import __version__ as pver
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from telegram import __version__ as lver
+from telethon import __version__ as tver
+
+from MukeshRobot import OWNER_USERNAME, SUPPORT_CHAT, pbot
 
 PHOTO = [
     "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",

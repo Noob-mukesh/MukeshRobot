@@ -1,6 +1,4 @@
-from MukeshRobot import telethn as tbot
 import requests
-import time
 
 
 async def is_nsfw(event):

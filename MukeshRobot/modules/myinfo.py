@@ -1,19 +1,13 @@
-from telethon import events, Button, custom, version
-from telethon.tl.types import ChannelParticipantsAdmins
 import asyncio
-import os, re
-import requests
 import datetime
-import time
+import re
 from datetime import datetime
-import random
-from PIL import Image
-from io import BytesIO
+
+from telethon import custom, events
+
 from MukeshRobot import telethn as bot
 from MukeshRobot import telethn as tgbot
 from MukeshRobot.events import register
-from MukeshRobot import dispatcher
-
 
 edit_time = 5
 """ =======================𝐌𝐮𝐤𝐞𝐬𝐡 𝐑𝐨𝐛𝐨𝐭====================== """
@@ -27,8 +21,8 @@ file5 = "https://telegra.ph/file/701028ce085ecfa961a36.jpg"
 
 @register(pattern="/myinfo")
 async def proboyx(event):
-    chat = await event.get_chat()
-    current_time = datetime.utcnow()
+    await event.get_chat()
+    datetime.utcnow()
     firstname = event.sender.first_name
     button = [[custom.Button.inline("information", data="informations")]]
     on = await bot.send_file(
@@ -85,4 +79,4 @@ async def callback_query_handler(event):
 
 __command_list__ = ["myinfo"]
 __mod_name__ = "ɪɴғᴏ❖"
-__help__ =""" /myinfo to get your info """ 
+__help__ = """ /myinfo to get your info """

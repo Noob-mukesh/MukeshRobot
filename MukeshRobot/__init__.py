@@ -2,14 +2,14 @@ import logging
 import os
 import sys
 import time
+from inspect import getfullargspec
 
 import telegram.ext as tg
 from aiohttp import ClientSession
-from Python_ARQ import ARQ
-from pyrogram.types import Message
 from pyrogram import Client, errors
+from pyrogram.types import Message
+from Python_ARQ import ARQ
 from telethon import TelegramClient
-from inspect import getfullargspec
 
 StartTime = time.time()
 
@@ -28,14 +28,17 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
         "You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
     )
     quit(1)
+
+
 async def eor(msg: Message, **kwargs):
     func = (
         (msg.edit_text if msg.from_user.is_self else msg.reply)
         if msg.from_user
         else msg.reply
-   )
+    )
     spec = getfullargspec(func.__wrapped__).args
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
+
 
 ENV = bool(os.environ.get("ENV", False))
 
@@ -99,7 +102,9 @@ if ENV:
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
-    REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None) # From:- https://www.remove.bg/
+    REM_BG_API_KEY = os.environ.get(
+        "REM_BG_API_KEY", None
+    )  # From:- https://www.remove.bg/
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.in")
     ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "LJMETG-DPHBCX-DGHJCD-TMFIGB-ARQ")

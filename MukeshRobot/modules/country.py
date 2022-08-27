@@ -1,14 +1,8 @@
 import flag
-import html, os
-
 from countryinfo import CountryInfo
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
 
+from MukeshRobot import BOT_USERNAME
 from MukeshRobot import telethn as borg
-from MukeshRobot import pbot as mukesh , BOT_USERNAME
 from MukeshRobot.events import register
 
 

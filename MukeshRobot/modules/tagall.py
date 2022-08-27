@@ -1,13 +1,11 @@
-import os
 import asyncio
-from telethon import Button
-from telethon import TelegramClient, events
-from telethon.tl.types import ChannelParticipantAdmin
-from telethon.tl.types import ChannelParticipantCreator
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.errors import UserNotParticipantError
-from MukeshRobot import telethn as client
 
+from telethon import events
+from telethon.errors import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
+
+from MukeshRobot import telethn as client
 
 spam_chats = []
 

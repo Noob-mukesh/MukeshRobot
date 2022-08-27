@@ -1,11 +1,9 @@
 import asyncio
-from pyrogram import filters
-from aiohttp import ClientSession
-from Python_ARQ import ARQ
 
-from MukeshRobot import pbot as app, OWNER_ID
-from MukeshRobot.utils.errors import capture_err
-from MukeshRobot.utils.permissions import adminsOnly
+from pyrogram import filters
+
+from MukeshRobot import OWNER_ID
+from MukeshRobot import pbot as app
 from MukeshRobot.helper_extra.dbfun import (
     alpha_to_int,
     get_karma,
@@ -16,7 +14,8 @@ from MukeshRobot.helper_extra.dbfun import (
     karma_on,
     update_karma,
 )
-from MukeshRobot import arq
+from MukeshRobot.utils.errors import capture_err
+from MukeshRobot.utils.permissions import adminsOnly
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|🖤|❣️|💝|💖|💕|❤|💘|cool|good|👍|baby|mukesh|thank you|gud|thankyou|love|pro)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|fuck off|nub|gey|mf)$"

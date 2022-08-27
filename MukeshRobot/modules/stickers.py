@@ -1,15 +1,18 @@
-import os
-import re
 import math
-import requests
-import cloudscraper
+import os
 import urllib.request as urllib
-from PIL import Image
 from html import escape
-from bs4 import BeautifulSoup as bs
 
-from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram import TelegramError, Update
+import cloudscraper
+from bs4 import BeautifulSoup as bs
+from PIL import Image
+from telegram import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    ParseMode,
+    TelegramError,
+    Update,
+)
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
@@ -158,7 +161,7 @@ def kang(update, context):
                         packnum,
                         png_sticker=open("kangsticker.png", "rb"),
                     )
-                    
+
                 elif e.message == "Sticker_png_dimensions":
                     im.save(kangsticker, "PNG")
                     context.bot.add_sticker_to_set(
@@ -260,7 +263,7 @@ def kang(update, context):
                         packnum,
                         tgs_sticker=open("kangsticker.tgs", "rb"),
                     )
-                    
+
                 elif e.message == "Invalid sticker emojis":
                     msg.reply_text("Invalid emoji(s).")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
@@ -347,7 +350,7 @@ def kang(update, context):
                     packnum,
                     png_sticker=open("kangsticker.png", "rb"),
                 )
-                
+
             elif e.message == "Sticker_png_dimensions":
                 im.save(kangsticker, "PNG")
                 context.bot.add_sticker_to_set(
@@ -573,6 +576,7 @@ def delsticker(update, context):
         update.effective_message.reply_text(
             "Please reply to sticker message to del sticker"
         )
+
 
 __mod_name__ = "Sᴛɪᴄᴋᴇʀꜱ🎨"
 

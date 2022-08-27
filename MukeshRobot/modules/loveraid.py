@@ -1,29 +1,18 @@
-from io import BytesIO
-from time import sleep
-from typing import Optional, List
-from telegram import TelegramError, Chat, Message
-from telegram import Update, Bot, User
-from telegram import ParseMode
-from telegram.error import BadRequest
-from telegram.ext import MessageHandler, Filters, CommandHandler
-from telegram.ext.dispatcher import run_async
-from telegram.utils.helpers import escape_markdown
-from MukeshRobot.modules.helper_funcs.chat_status import is_user_ban_protected, user_admin
-
 import random
-import telegram
-import MukeshRobot.modules.sql.users_sql as sql
-from MukeshRobot import dispatcher, OWNER_ID, DRAGONS, JOIN_LOGGER
-from MukeshRobot.modules.helper_funcs.filters import CustomFilters
+from time import sleep
+
+from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
+from MukeshRobot.modules.helper_funcs.chat_status import user_admin
+
 USERS_GROUP = 4
 
 LOVEOP = (
     "JAANU I LOVE U NA🥺",
     "TU HI HAIN MERI JAAN KISI AUKAT NAI HAIN JO HUMARE BICH ME AAYE🥺😏",
-   "SKY IS BLUE I GOT FLU I LOVE TOO🥺",
-   "TU HI MERI JAAN HAIN JANUDI🥺",
-   "KYU TUMHARE ANKHEN ITNI SUNDAR HAIN🥺",
+    "SKY IS BLUE I GOT FLU I LOVE TOO🥺",
+    "TU HI MERI JAAN HAIN JANUDI🥺",
+    "KYU TUMHARE ANKHEN ITNI SUNDAR HAIN🥺",
     "MISS U BABY LOVE BABY I TRUST U BABY🥺",
     "BHAGWAN NE TUMHE MERE LIYE BANAYA HAIN SACHI 🥺",
     "BABY ANKHEN BAND KARO AUR DEKHO KYA DIKH RAHA JO DIKH RAHA HAIN VO MY LIFE WITHOUT 🥺",
@@ -64,16 +53,21 @@ LOVEOP = (
     "MERI MUMMY TUMHARA GHARPE INTZAAR KAR RAHI HAIN PLEASE AAJAO❤️🥺",
 )
 
+
 @user_admin
 def loveraid(update, context):
     args = context.args
     if args:
         username = str(",".join(args))
-    context.bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send messages
+    context.bot.sendChatAction(
+        update.effective_chat.id, "typing"
+    )  # Bot typing before send messages
     for i in range(30):
         lovemessage = random.choice(LOVEOP)
         update.effective_message.reply_text(lovemessage + username)
         sleep(0.2)
+
+
 __help__ = """
 *Admin only:*
 - /loveraid *@username*: Spam user with loveraid wishes.

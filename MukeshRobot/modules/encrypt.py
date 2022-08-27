@@ -1,7 +1,6 @@
-from MukeshRobot import telethn as tbot
-import os
-from MukeshRobot.events import register
 import secureme
+
+from MukeshRobot.events import register
 
 
 @register(pattern="^/encrypt ?(.*)")

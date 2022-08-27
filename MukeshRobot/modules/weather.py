@@ -1,16 +1,9 @@
-from MukeshRobot import telethn as tbot
 import io
-import os
-import time
 
 import aiohttp
-from telethon import *
-from telethon.tl import functions
-from telethon.tl import types
-from telethon.tl.types import *
+from telethon.tl import functions, types
 
-from MukeshRobot import *
-
+from MukeshRobot import telethn as tbot
 from MukeshRobot.events import register
 
 

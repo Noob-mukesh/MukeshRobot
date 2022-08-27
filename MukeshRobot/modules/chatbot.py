@@ -1,38 +1,33 @@
+import html
 import json
 import re
-import os
-import html
-import requests
-import MukeshRobot.modules.sql.chatbot_sql as sql
-
 from time import sleep
-from telegram import ParseMode
+
+import requests
 from telegram import (
     CallbackQuery,
     Chat,
-    MessageEntity,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
-    Message,
+    ParseMode,
     Update,
-    Bot,
     User,
 )
+from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import (
     CallbackContext,
     CallbackQueryHandler,
     CommandHandler,
-    DispatcherHandlerStop,
     Filters,
     MessageHandler,
     run_async,
 )
-from telegram.error import BadRequest, RetryAfter, Unauthorized
-from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
+from telegram.utils.helpers import mention_html
 
-from MukeshRobot.modules.helper_funcs.filters import CustomFilters
+import MukeshRobot.modules.sql.chatbot_sql as sql
+from MukeshRobot import dispatcher
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from MukeshRobot import dispatcher, updater, SUPPORT_CHAT
+from MukeshRobot.modules.helper_funcs.filters import CustomFilters
 from MukeshRobot.modules.log_channel import gloggable
 
 
@@ -98,7 +93,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
 @user_admin
 @gloggable
 def kuki(update: Update, context: CallbackContext):
-    user = update.effective_user
+    update.effective_user
     message = update.effective_message
     msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
     keyboard = InlineKeyboardMarkup(

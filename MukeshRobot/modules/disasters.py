@@ -3,16 +3,11 @@ import json
 import os
 from typing import Optional
 
-from MukeshRobot import (
-    DEV_USERS,
-    OWNER_ID,
-    DRAGONS,
-    SUPPORT_CHAT,
-    DEMONS,
-    TIGERS,
-    WOLVES,
-    dispatcher,
-)
+from telegram import ParseMode, TelegramError, Update
+from telegram.ext import CallbackContext, CommandHandler, run_async
+from telegram.utils.helpers import mention_html
+
+from MukeshRobot import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
 from MukeshRobot.modules.helper_funcs.chat_status import (
     dev_plus,
     sudo_plus,
@@ -20,9 +15,6 @@ from MukeshRobot.modules.helper_funcs.chat_status import (
 )
 from MukeshRobot.modules.helper_funcs.extraction import extract_user
 from MukeshRobot.modules.log_channel import gloggable
-from telegram import ParseMode, TelegramError, Update
-from telegram.ext import CallbackContext, CommandHandler, run_async
-from telegram.utils.helpers import mention_html
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "MukeshRobot/elevated_users.json")
 

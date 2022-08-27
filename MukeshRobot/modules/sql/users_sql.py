@@ -1,16 +1,17 @@
 import threading
 
-from MukeshRobot import dispatcher
-from MukeshRobot.modules.sql import BASE, SESSION
 from sqlalchemy import (
+    BigInteger,
     Column,
     ForeignKey,
-    BigInteger,
     String,
     UnicodeText,
     UniqueConstraint,
     func,
 )
+
+from MukeshRobot import dispatcher
+from MukeshRobot.modules.sql import BASE, SESSION
 
 
 class Users(BASE):

@@ -1,8 +1,8 @@
 import threading
 
-from sqlalchemy import func, distinct, Column, String, UnicodeText, BigInteger
+from sqlalchemy import BigInteger, Column, String, UnicodeText, distinct, func
 
-from MukeshRobot.modules.sql import SESSION, BASE
+from MukeshRobot.modules.sql import BASE, SESSION
 
 
 class BlackListFilters(BASE):

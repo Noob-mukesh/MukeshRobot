@@ -1,38 +1,42 @@
 import html
-import re
 import os
+import re
+
 import requests
-
-from telethon.tl.functions.channels import GetFullChannelRequest
-from telethon.tl.types import ChannelParticipantsAdmins
-from telethon import events
-
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update , InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import (
+    MAX_MESSAGE_LENGTH,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    ParseMode,
+    Update,
+)
+from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
-from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
+from telethon import events
+from telethon.tl.functions.channels import GetFullChannelRequest
+from telethon.tl.types import ChannelParticipantsAdmins
 
+import MukeshRobot.modules.sql.userinfo_sql as sql
 from MukeshRobot import (
-    DEV_USERS,
-    OWNER_ID,
-    DRAGONS,
     DEMONS,
+    DEV_USERS,
+    DRAGONS,
+    INFOPIC,
+    OWNER_ID,
     TIGERS,
     WOLVES,
-    INFOPIC,
     dispatcher,
-    SUPPORT_CHAT
 )
+from MukeshRobot import telethn as MukeshTelethonClient
 from MukeshRobot.__main__ import STATS, TOKEN, USER_INFO
-import MukeshRobot.modules.sql.userinfo_sql as sql
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
-from MukeshRobot.modules.sql.global_bans_sql import is_user_gbanned
-from MukeshRobot.modules.sql.afk_sql import is_afk, check_afk_status
-from MukeshRobot.modules.sql.users_sql import get_user_num_chats
 from MukeshRobot.modules.helper_funcs.chat_status import sudo_plus
 from MukeshRobot.modules.helper_funcs.extraction import extract_user
-from MukeshRobot import telethn as MukeshTelethonClient, TIGERS, DRAGONS, DEMONS
+from MukeshRobot.modules.sql.afk_sql import check_afk_status, is_afk
+from MukeshRobot.modules.sql.global_bans_sql import is_user_gbanned
+from MukeshRobot.modules.sql.users_sql import get_user_num_chats
 
 
 def no_by_per(totalhp, percentage):
@@ -333,48 +337,53 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"),
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"
+                            ),
                             InlineKeyboardButton(
-                                "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26")
+                                "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
+                            ),
                         ],
-                        [   
+                        [
                             InlineKeyboardButton(
-                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                            url=f"https://t.me/groupcontrollertgbot?startgroup=true",
-                          ),
-                        ]
+                                text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                            ),
+                        ],
                     ]
                 ),
                 parse_mode=ParseMode.HTML,
             )
-            
+
             os.remove(f"{user.id}.png")
         # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
-                text, 
+                text,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"),
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"
+                            ),
                             InlineKeyboardButton(
-                                "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26")
+                                "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
+                            ),
                         ],
-                        [   
+                        [
                             InlineKeyboardButton(
-                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                            url=f"https://t.me/groupcontrollertgbot?startgroup=true",
-                          ),
-                        ]
+                                text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                            ),
+                        ],
                     ]
                 ),
                 parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True
+                disable_web_page_preview=True,
             )
     else:
         message.reply_text(
-            text, parse_mode=ParseMode.HTML, 
+            text,
+            parse_mode=ParseMode.HTML,
         )
 
     rep.delete()
@@ -443,7 +452,9 @@ def set_about_me(update: Update, context: CallbackContext):
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ:</b>\n" + "\n".join(
+        [mod.__stats__() for mod in STATS]
+    )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
 
@@ -593,4 +604,3 @@ __handlers__ = [
     GET_ABOUT_HANDLER,
     STATS_HANDLER,
 ]
- 

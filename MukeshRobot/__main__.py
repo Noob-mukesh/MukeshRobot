@@ -1,39 +1,13 @@
 import importlib
-import time
 import re
+import time
+from platform import python_version as y
 from sys import argv
 from typing import Optional
 
-from MukeshRobot import (
-    BOT_NAME,
-    BOT_USERNAME,
-    ALLOW_EXCL,
-    OWNER_USERNAME,
-    CERT_PATH,
-    DONATION_LINK,
-    LOGGER,
-    OWNER_ID,
-    PORT,
-    SUPPORT_CHAT,
-    TOKEN,
-    URL,
-    WEBHOOK,
-    SUPPORT_CHAT,
-    dispatcher,
-    StartTime,
-    START_IMG,
-    telethn,
-    pbot,
-    updater,
-)
-
-# needed to dynamically load modules
-# NOTE: Module order is not guaranteed, specify that in the config file!
-from MukeshRobot.modules import ALL_MODULES
-import MukeshRobot.modules.sql.users_sql as sql
-from MukeshRobot.modules.helper_funcs.chat_status import is_user_admin
-from MukeshRobot.modules.helper_funcs.misc import paginate_modules
+from pyrogram import __version__ as pyrover
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
+from telegram import __version__ as telever
 from telegram.error import (
     BadRequest,
     ChatMigrated,
@@ -50,11 +24,35 @@ from telegram.ext import (
     MessageHandler,
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
-from telegram import __version__ as telever
-from telethon import __version__ as tlhver
-from pyrogram import __version__ as pyrover
-from platform import python_version as y
 from telegram.utils.helpers import escape_markdown
+from telethon import __version__ as tlhver
+
+import MukeshRobot.modules.sql.users_sql as sql
+from MukeshRobot import (
+    BOT_NAME,
+    CERT_PATH,
+    DONATION_LINK,
+    LOGGER,
+    OWNER_ID,
+    OWNER_USERNAME,
+    PORT,
+    START_IMG,
+    SUPPORT_CHAT,
+    TOKEN,
+    URL,
+    WEBHOOK,
+    StartTime,
+    dispatcher,
+    pbot,
+    telethn,
+    updater,
+)
+
+# needed to dynamically load modules
+# NOTE: Module order is not guaranteed, specify that in the config file!
+from MukeshRobot.modules import ALL_MODULES
+from MukeshRobot.modules.helper_funcs.chat_status import is_user_admin
+from MukeshRobot.modules.helper_funcs.misc import paginate_modules
 
 
 def get_readable_time(seconds: int) -> str:
@@ -457,9 +455,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
     elif query.data == "mukesh_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
-            PM_START_TEXT.format(
-                escape_markdown(first_name), BOT_NAME
-            ),
+            PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
@@ -488,9 +484,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
                         ),
                     ],
                     [
-                        InlineKeyboardButton(
-                            text="🍸 ʙᴏᴛ 🍸", callback_data="Music_bot"
-                        ),
+                        InlineKeyboardButton(text="🍸 ʙᴏᴛ 🍸", callback_data="Music_bot"),
                         InlineKeyboardButton(
                             text="🍷 ᴇxᴛʀᴀ 🍷",
                             callback_data="Music_extra",
@@ -520,16 +514,13 @@ def Music_about_callback(update: Update, context: CallbackContext):
 
 /queue : sʜᴏᴡs ᴛʜᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs ʟɪsᴛ.
 """,
-            
-            
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
+                    ]
                 ]
             ),
         )
@@ -550,16 +541,13 @@ def Music_about_callback(update: Update, context: CallbackContext):
 /deleteplaylist - ᴅᴇʟᴇᴛᴇ ᴀɴʏ ꜱᴀᴠᴇᴅ ᴍᴜꜱɪᴄ ɪɴ ʏᴏᴜʀ ᴘʟᴀʏʟɪꜱᴛ
 /play  - ꜱᴛᴀʀᴛ ᴘʟᴀʏɪɴɢ ʏᴏᴜʀ ꜱᴀᴠᴇᴅ ᴘʟᴀʏʟɪꜱᴛ ғʀᴏᴍ ꜱᴇʀᴠᴇʀꜱ.
 """,
-            
-            
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
+                    ]
                 ]
             ),
         )
@@ -581,16 +569,13 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
 
 /queue ᴏʀ /cqueue- ᴄʜᴇᴄᴋ Qᴜᴇᴜᴇ ʟɪꜱᴛ ᴏꜰ ᴍᴜꜱɪᴄ.
 """,
-            
-            
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
+                    ]
                 ]
             ),
         )
@@ -605,30 +590,26 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
 *🍻 ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ:*
 /settings - ɢᴇᴛ a ᴄᴏᴍᴘʟᴇᴛᴇ ɢʀᴏᴜᴘ'ꜱ ꜱᴇᴛᴛɪɴɢꜱ ᴡɪᴛʜ ɪɴʟɪɴᴇ ʙᴜᴛᴛᴏɴꜱ
 """,
-            
-            
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),
+                    ]
                 ]
             ),
         )
     elif query.data == "Music_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
-            PM_START_TEXT.format(
-                escape_markdown(first_name), BOT_NAME
-            ),
+            PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
             disable_web_page_preview=False,
         )
+
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
@@ -937,7 +918,7 @@ def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
 
-    test_handler = CommandHandler("test", test)
+    CommandHandler("test", test)
     start_handler = CommandHandler("start", start)
 
     help_handler = CommandHandler("help", get_help)

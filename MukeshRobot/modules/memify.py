@@ -1,16 +1,10 @@
-from PIL import Image, ImageFont, ImageDraw
-
+import os
 import textwrap
 
-import os
-
-from MukeshRobot.events import register
-
-from MukeshRobot import LOGGER, TEMP_DOWNLOAD_DIRECTORY
-
+from PIL import Image, ImageDraw, ImageFont
 
 from MukeshRobot import telethn as bot
-
+from MukeshRobot.events import register
 
 Credit = "Mukesh"
 
@@ -66,8 +60,6 @@ async def drawText(image_path, text):
     img = Image.open(image_path)
 
     os.remove(image_path)
-
-    shadowcolor = "black"
 
     i_width, i_height = img.size
 

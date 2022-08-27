@@ -1,12 +1,11 @@
 import os
-from PIL import Image
 from datetime import datetime
 
-from telethon import events
-from MukeshRobot.events import register
-from MukeshRobot import telethn as tbot
-from telegraph import Telegraph, upload_file, exceptions
+from PIL import Image
+from telegraph import Telegraph, exceptions, upload_file
 
+from MukeshRobot import telethn as tbot
+from MukeshRobot.events import register
 
 Mukesh = "Controller"
 TMP_DOWNLOAD_DIRECTORY = "./"
@@ -43,7 +42,7 @@ async def _(event):
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
-                ms_two = (end - start).seconds
+                (end - start).seconds
                 os.remove(downloaded_file_name)
                 await h.edit(
                     "Uploaded to https://te.legra.ph{})".format(media_urls[0]),

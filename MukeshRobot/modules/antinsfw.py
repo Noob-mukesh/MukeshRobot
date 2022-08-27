@@ -2,11 +2,11 @@ from os import remove
 
 from pyrogram import filters
 
-from MukeshRobot import pbot, arq, BOT_USERNAME as bn
+from MukeshRobot import BOT_USERNAME as bn
+from MukeshRobot import arq, pbot
+from MukeshRobot.helper_extra.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
 from MukeshRobot.utils.errors import capture_err
 from MukeshRobot.utils.permissions import adminsOnly
-from MukeshRobot.helper_extra.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
-
 
 
 async def get_file_id_from_message(message):
@@ -158,6 +158,7 @@ async def nsfw_enable_disable(_, message):
         await message.reply_text("Disabled AntiNSFW System.")
     else:
         await message.reply_text("Unknown Suffix, Use /antinsfw [on/off]")
+
 
 __mod_name__ = "ᴀɴᴛɪ-ɴsғᴡ"
 __help_ = """ Use `/antinsfw [on/off]

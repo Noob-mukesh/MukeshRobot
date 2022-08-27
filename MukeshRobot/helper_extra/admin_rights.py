@@ -1,6 +1,4 @@
-import asyncio
-
-from telegram import User, Chat
+from telegram import Chat, User
 
 
 def user_can_promote(chat: Chat, user: User, bot_id: int) -> bool:

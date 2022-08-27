@@ -1,28 +1,18 @@
-from bs4 import BeautifulSoup
-import urllib
-from MukeshRobot import telethn as tbot
 import glob
 import io
 import os
 import re
-import aiohttp
+import urllib
 import urllib.request
-from urllib.parse import urlencode
+
+import bs4
 import requests
+from bing_image_downloader import downloader
 from bs4 import BeautifulSoup
 from PIL import Image
 from search_engine_parser import GoogleSearch
 
-import bs4
-import html2text
-from bing_image_downloader import downloader
-from telethon import *
-from telethon.tl import functions
-from telethon.tl import types
-from telethon.tl.types import *
-
-from MukeshRobot import *
-
+from MukeshRobot import telethn as tbot
 from MukeshRobot.events import register
 
 opener = urllib.request.build_opener()
@@ -217,7 +207,7 @@ async def apk(e):
         page = requests.get(
             "https://play.google.com/store/search?q=" + final_name + "&c=apps"
         )
-        lnk = str(page.status_code)
+        str(page.status_code)
         soup = bs4.BeautifulSoup(page.content, "lxml", from_encoding="utf-8")
         results = soup.findAll("div", "ZmHEEd")
         app_name = (

@@ -1,13 +1,12 @@
-import os
 import io
+import os
+
 import requests
-from requests import get
-from pyrogram.types import Message
-from MukeshRobot import pbot, dispatcher, SUPPORT_CHAT
-from bs4 import *
-from pyrogram import filters
 from PIL import Image
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+
+from MukeshRobot import SUPPORT_CHAT, dispatcher, pbot
 
 
 def get_text(message: Message) -> [None, str]:

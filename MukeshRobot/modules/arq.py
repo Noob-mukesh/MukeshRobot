@@ -1,6 +1,6 @@
 from pyrogram import filters
 
-from MukeshRobot import pbot, arq, BOT_USERNAME
+from MukeshRobot import BOT_USERNAME, arq, pbot
 
 
 @pbot.on_message(filters.command("arq"))
@@ -35,8 +35,8 @@ async def arq_stats(_, message):
 
 **@{BOT_USERNAME} sᴏᴍᴇ ᴍᴏᴅᴜʟᴇs ʀᴜɴɴɪɴɢ ᴀʀǫ**
 """
-    await message.reply_text(
-        statistics, disable_web_page_preview=True
-    )
+    await message.reply_text(statistics, disable_web_page_preview=True)
+
+
 __mod_name__ = "ᴀʀǫ📍"
 __help__ = f""" /arq ᴛᴏ ᴄʜᴇᴀᴋ ᴀʀǫ ʟᴇᴠᴇʟ ᴏғ ᴛʜᴇ ʙᴏᴛ"""

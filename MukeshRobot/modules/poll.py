@@ -2,10 +2,9 @@ from pymongo import MongoClient
 from telethon import *
 from telethon.tl import *
 
-from MukeshRobot import BOT_USERNAME
+from MukeshRobot import telethn as tbot
 from MukeshRobot.confing import get_str_key
 from MukeshRobot.events import register
-from MukeshRobot import telethn as tbot
 
 MONGO_DB_URI = get_str_key("MONGO_DB_URI", required=True)
 client = MongoClient()

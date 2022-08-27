@@ -6,7 +6,7 @@ from pyrogram.types import (
     Message,
 )
 
-from MukeshRobot import BOT_USERNAME
+from MukeshRobot import pbot
 
 # By @itz_mst_boi
 from MukeshRobot.utils.resources.Image.edit_1 import (  # pylint:disable=import-error
@@ -55,7 +55,6 @@ from MukeshRobot.utils.resources.Image.edit_5 import (  # pylint:disable=import-
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from MukeshRobot import pbot
 
 lel = 00000000
 # pylint:disable=import-error

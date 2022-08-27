@@ -1,9 +1,5 @@
 from typing import Optional
 
-import MukeshRobot.modules.sql.rules_sql as sql
-from MukeshRobot import dispatcher
-from MukeshRobot.modules.helper_funcs.chat_status import user_admin, connection_status
-from MukeshRobot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -15,6 +11,11 @@ from telegram import (
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import escape_markdown
+
+import MukeshRobot.modules.sql.rules_sql as sql
+from MukeshRobot import dispatcher
+from MukeshRobot.modules.helper_funcs.chat_status import connection_status, user_admin
+from MukeshRobot.modules.helper_funcs.string_handling import markdown_parser
 
 
 @connection_status
@@ -111,7 +112,6 @@ def set_rules(update: Update, context: CallbackContext):
         entities = msg.parse_entities()
     elif msg.reply_to_message:
         txt = msg.reply_to_message.text
-        raw_txt = txt
         entities = msg.reply_to_message.parse_entities()
     if txt:
         offset = len(txt) - len(raw_text)  # set correct offset relative to command

@@ -1,19 +1,12 @@
 from datetime import datetime
 
 from pyrogram import filters
-from pyrogram.types import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    CallbackQuery,
-    Message,
-)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
+from MukeshRobot import OWNER_ID as owner_id
+from MukeshRobot import OWNER_USERNAME as owner_usn
+from MukeshRobot import SUPPORT_CHAT as log
 from MukeshRobot import pbot as Client
-from MukeshRobot import (
-    OWNER_ID as owner_id,
-    OWNER_USERNAME as owner_usn,
-    SUPPORT_CHAT as log,
-)
 from MukeshRobot.utils.errors import capture_err
 
 

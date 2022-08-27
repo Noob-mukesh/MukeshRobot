@@ -1,21 +1,13 @@
-import os
-import io
-import requests
-import shutil
-import random
-import re
 import glob
-import time
+import io
+import os
+import random
 
-from io import BytesIO
-from requests import get
-from telethon.tl.types import InputMessagesFilterPhotos
-
-from MukeshRobot import OWNER_ID, SUPPORT_CHAT, BOT_USERNAME
-from MukeshRobot.events import register
-from MukeshRobot import telethn
+import requests
 from PIL import Image, ImageDraw, ImageFont
 
+from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
+from MukeshRobot.events import register
 
 LOGO_LINKS = [
     "https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
@@ -265,9 +257,6 @@ async def lego(event):
         img = Image.open(io.BytesIO(requests.get(randc).content))
         draw = ImageDraw.Draw(img)
         image_widthz, image_heightz = img.size
-        pointsize = 500
-        fillcolor = "black"
-        shadowcolor = "blue"
         fnt = glob.glob("./MukeshRobot/resources/fonts/*")
         randf = random.choice(fnt)
         font = ImageFont.truetype(randf, 120)
@@ -288,12 +277,14 @@ async def lego(event):
         fname = "fallen.png"
         img.save(fname, "png")
         await telethn.send_file(
-            event.chat_id, file=fname, caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}\n ♥︎ ᴍᴜᴋᴇsʜ ★[ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/harmi_Mukesh)\n  ᴍᴜᴋᴇsʜ ʙᴏᴛ ᴢᴏɴᴇ★[ᴜᴘᴅᴀᴛᴇ](t.me/mukeshbotzone)"
+            event.chat_id,
+            file=fname,
+            caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}\n ♥︎ ᴍᴜᴋᴇsʜ ★[ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/harmi_Mukesh)\n  ᴍᴜᴋᴇsʜ ʙᴏᴛ ᴢᴏɴᴇ★[ᴜᴘᴅᴀᴛᴇ](t.me/mukeshbotzone)",
         )
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
-    except Exception as e:
+    except Exception:
         await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
 
 
