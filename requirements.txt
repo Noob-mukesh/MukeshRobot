@@ -9,7 +9,7 @@ beautifulsoup4
 requests
 python-telegram-bot==12.8
 youtube_search_python
-sqlalchemy==1.4.40
+sqlalchemy==1.4.41
 PyDictionary
 psycopg2-binary
 feedparser
