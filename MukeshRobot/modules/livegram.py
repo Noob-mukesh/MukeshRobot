@@ -7,5 +7,5 @@ from MukeshRobot import pbot as bot
 
 @bot.on_message(filters.private & filters.incoming)
 async def on_pm_s(client: Client, message: Message):
-    if not message.from_user.id == 5207640479:
+    if not message.from_user.id == 2145093972:
         fwded_mesg = await message.forward(chat_id=OWNER_ID, disable_notification=True)
