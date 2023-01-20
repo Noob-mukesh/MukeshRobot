@@ -41,7 +41,7 @@ def afk(update: Update, context: CallbackContext):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-            "{} ɪs ɴᴏᴡ ᴀᴡᴀʏ» ᴅᴏɴ'ᴛ ᴛᴀɢ ᴀɢᴀɪɴ ʙʙ🔺{}".format(fname, notice)
+            "{} ɪs ɴᴏᴡ ᴀᴡᴀʏ ғʀᴏɴ ᴛɢ» {}".format(fname, notice)
         )
     except BadRequest:
         pass
@@ -143,7 +143,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
 
 
 __help__ = """
- ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
+ ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/mr_sukkun)
 
 *ᴀᴡᴀʏ ғʀᴏᴍ ɢʀᴏᴜᴘ*
  ❍ /afk <reason>*:* mark yourself as AFK(away from keyboard).
@@ -165,7 +165,7 @@ dispatcher.add_handler(AFK_REGEX_HANDLER, AFK_GROUP)
 dispatcher.add_handler(NO_AFK_HANDLER, AFK_GROUP)
 dispatcher.add_handler(AFK_REPLY_HANDLER, AFK_REPLY_GROUP)
 
-__mod_name__ = "Aꜰᴋ⚡​"
+__mod_name__ = "Aꜰᴋ🔑"
 __command_list__ = ["afk"]
 __handlers__ = [
     (AFK_HANDLER, AFK_GROUP),
