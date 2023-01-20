@@ -7,7 +7,16 @@ from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-from MukeshRobot import DEMONS, DEV_USERS, DRAGONS, OWNER_ID, TIGERS, WOLVES, dispatcher
+from MukeshRobot import (
+    DEMONS,
+    DEV_USERS,
+    DRAGONS,
+    OWNER_ID,
+    SUPPORT_CHAT,
+    TIGERS,
+    WOLVES,
+    dispatcher,
+)
 from MukeshRobot.modules.helper_funcs.chat_status import (
     dev_plus,
     sudo_plus,
@@ -30,18 +39,6 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
     else:
         reply = None
     return reply
-
-
-# This can serve as a deeplink example.
-# disasters =
-# """ Text here """
-
-# do not async, not a handler
-# def send_disasters(update):
-#    update.effective_message.reply_text(
-#        disasters, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
-
-### Deep link example ends
 
 
 @run_async
@@ -531,7 +528,7 @@ def devlist(update: Update, context: CallbackContext):
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>Hero Association Members ⚡️:</b>\n"
+    reply = "✨ <b>Dev users list :</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
@@ -548,12 +545,12 @@ Commands listed here only work for users with special access are mainly used for
 Group admins/group owners do not need these commands. 
 
 *List all special users:*
- ❍ /dragons*:* Lists all Dragon disasters
- ❍ /demons*:* Lists all Demon disasters
+ ❍ /sudolist*:* Lists all Dragon disasters
+ ❍ /supportlist*:* Lists all Demon disasters
  ❍ /tigers*:* Lists all Tigers disasters
  ❍ /wolves*:* Lists all Wolf disasters
- ❍ /heroes*:* Lists all Hero Association members
- ❍ /adddragon*:* Adds a user to Dragon
+ ❍ /devlist*:* Lists all Hero Association members
+ ❍ /addsudo*:* Adds a user to Dragon
  ❍ /adddemon*:* Adds a user to Demon
  ❍ /addtiger*:* Adds a user to Tiger
  ❍ /addwolf*:* Adds a user to Wolf
@@ -561,7 +558,6 @@ Group admins/group owners do not need these commands.
 
 *Ping:*
  ❍ /ping*:* gets ping time of bot to telegram server
- ❍ /pingall*:* gets all listed ping times
 
 *Broadcast: (Bot owner only)*
 *Note:* This supports basic markdown
@@ -588,7 +584,7 @@ Group admins/group owners do not need these commands.
 *Module loading:*
  ❍ /listmodules*:* Lists names of all modules
  ❍ /load modulename*:* Loads the said module to memory without restarting.
- ❍ /unload modulename*:* Loads the said module frommemory without restarting memory without restarting the bot 
+ ❍ /unload modulename*:* Loads the said module from memory without restarting memory without restarting the bot 
 
 *Remote commands:*
  ❍ /rban*:* user group*:* Remote ban
@@ -623,11 +619,6 @@ Group admins/group owners do not need these commands.
  ❍ /gignoreblue*:* <word>*:* Globally ignore bluetext cleaning of saved word across Anonymous Robot.
  ❍ /ungignoreblue*:* <word>*:* Remove said command from global cleaning list
 
-*Masha Core*
-*Owner only*
- ❍ /send*:* <module name>*:* Send module
- ❍ /install*:* <reply to a .py>*:* Install module 
-
 *Heroku Settings*
 *Owner only*
  ❍ /usage*:* Check your heroku dyno hours remaining.
@@ -637,23 +628,23 @@ Group admins/group owners do not need these commands.
  ❍ /logs Get heroku dyno logs.
 
 `⚠️ Read from top`
-Visit @worldwide\_Friend\_zone for more information.
+Visit @{SUPPORT_CHAT} for more information.
 """
 
-SUDO_HANDLER = CommandHandler(("addsudo", "adddragon"), addsudo)
+SUDO_HANDLER = CommandHandler("addsudo", addsudo)
 SUPPORT_HANDLER = CommandHandler(("addsupport", "adddemon"), addsupport)
 TIGER_HANDLER = CommandHandler(("addtiger"), addtiger)
 WHITELIST_HANDLER = CommandHandler(("addwhitelist", "addwolf"), addwhitelist)
-UNSUDO_HANDLER = CommandHandler(("removesudo", "removedragon"), removesudo)
+UNSUDO_HANDLER = CommandHandler(("removesudo", "rmsudo"), removesudo)
 UNSUPPORT_HANDLER = CommandHandler(("removesupport", "removedemon"), removesupport)
 UNTIGER_HANDLER = CommandHandler(("removetiger"), removetiger)
 UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "removewolf"), removewhitelist)
 
 WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "wolves"], whitelistlist)
 TIGERLIST_HANDLER = CommandHandler(["tigers"], tigerlist)
-SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "demons"], supportlist)
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "dragons"], sudolist)
-DEVLIST_HANDLER = CommandHandler(["devlist", "heroes"], devlist)
+SUPPORTLIST_HANDLER = CommandHandler("supportlist", supportlist)
+SUDOLIST_HANDLER = CommandHandler("sudolist", sudolist)
+DEVLIST_HANDLER = CommandHandler("devlist", devlist)
 
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(SUPPORT_HANDLER)
@@ -670,7 +661,7 @@ dispatcher.add_handler(SUPPORTLIST_HANDLER)
 dispatcher.add_handler(SUDOLIST_HANDLER)
 dispatcher.add_handler(DEVLIST_HANDLER)
 
-__mod_name__ = "ᴅᴇᴠs🔺​"
+__mod_name__ = "Devs"
 __handlers__ = [
     SUDO_HANDLER,
     SUPPORT_HANDLER,
