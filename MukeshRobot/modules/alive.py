@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from telegram import __version__ as lver
 from telethon import __version__ as tver
 
-from MukeshRobot import OWNER_USERNAME, SUPPORT_CHAT, pbot
+from MukeshRobot import OWNER_USERNAME, SUPPORT_CHAT, pbot,BOT_USERNAME
 
 PHOTO = [
     "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",
@@ -19,13 +19,13 @@ PHOTO = [
 
 Mukesh = [
     [
-        InlineKeyboardButton(text="ɴᴏᴏʙ", url=f"https://t.me/itz_mst_boi"),
+        InlineKeyboardButton(text="ɴᴏᴏʙ", url=f"https://t.me/{OWNER_USERNAME}"),
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
         InlineKeyboardButton(
             text="➕ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-            url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
 ]
@@ -54,9 +54,9 @@ async def restart(client, m: Message):
     await asyncio.sleep(2)
     await m.reply_photo(
         lol,
-        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ](t.me/groupcontrollertgbot)』**
+        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
-  » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴍᴜᴋᴇsʜ](https://t.me/{OWNER_USERNAME})
+  » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴍᴜᴋᴇsʜ](f"https://t.me/{OWNER_USERNAME}")
   
   » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
   
