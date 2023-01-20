@@ -42,7 +42,7 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "5207640479"
+         "value": "2145093972"
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
@@ -54,7 +54,7 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "Itz_mst_boi"
+         "value": "Itz_legend_coder"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to Fallen Support than consider you made an enemy.",
@@ -150,7 +150,7 @@
       "START_IMG": {
       "description": "Telegraph link of the image which will be shown at start command.",
          "required": true,
-         "value": ""
+         "value": "https://te.legra.ph/file/7689dd87ad16198cf49f7.jpg"
    }
    }
 }
