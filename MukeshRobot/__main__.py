@@ -118,14 +118,12 @@ HELP_STRINGS = f"""
   ‣ ɪɴ ɢʀᴏᴜᴘ : ᴡɪʟʟ ʀᴇᴅɪʀᴇᴄᴛ ʏᴏᴜ ᴛᴏ ᴘᴍ, ᴡɪᴛʜ ᴀʟʟ ᴛʜᴀᴛ ʜᴇʟᴘ​ ᴍᴏᴅᴜʟᴇꜱ.
 ➲  /mstart  ᴛᴏ sᴛᴀʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ.
 ➲  /mhelp  ᴛᴏ ɢᴇᴛ  ᴀʟʟ ᴍᴜsɪᴄ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.
-➲  /malive  ᴛᴏ ᴄʜᴇᴀᴋ  ᴍᴜsɪᴄ ʙᴏᴛ ᴀʟɪᴠᴇ ᴏʀ  ғᴜᴍᴋᴇᴅ.
-➲  ᴍᴜsɪᴄ ᴀssɪsᴛᴀɴᴛ ᴜsᴇʀɴᴀᴍᴇ 
-  ➪ @Itzlengendmukesh . """
+➲  /malive  ᴛᴏ ᴄʜᴇᴀᴋ  ᴍᴜsɪᴄ ʙᴏᴛ ᴀʟɪᴠᴇ ᴏʀ  ғᴜᴍᴋᴇᴅ . """
 
 DONATE_STRING = """ʜᴇʏ ʙᴀʙʏ,
   ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ.
 
-ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ [ᴅᴇᴠᴇʟᴏᴩᴇʀ](https://t.me/itz_mst_Boi) ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ [sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ](https://t.me/worldwide_friend_zone) ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
+ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ [ᴅᴇᴠᴇʟᴏᴩᴇʀ](f"https://t.me/{OWNER_USERNAME}") ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ [sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ](f"https://t.me/{SUPPORT_CHAT}") ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -394,7 +392,6 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             "\n➲  /mstart  ᴛᴏ sᴛᴀʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ."
             "\n➲  /mhelp  ᴛᴏ ɢᴇᴛ  ᴀʟʟ ᴍᴜsɪᴄ ʜᴇʟᴘ  ʙᴜᴛᴛᴏɴ."
             "\n➲  /malive  ᴛᴏ ᴄʜᴇᴀᴋ  ᴍᴜsɪᴄ ʙᴏᴛ ᴀʟɪᴠᴇ ᴏʀ  ғᴜᴍᴋᴇᴅ."
-            "\n➲  ᴍᴜsɪᴄ ᴀssɪsᴛᴀɴᴛ ᴜsᴇʀɴᴀᴍᴇ ➪ @Itzlengendmukesh ."
             f"\n\n➻ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ғᴏʀ ɢᴇᴛᴛɪɴɢ ʙᴀsɪᴄ ʜᴇʟᴩ ᴀɴᴅ ɪɴғᴏ ᴀʙᴏᴜᴛ {dispatcher.bot.first_name}.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -440,7 +437,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url="https://t.me/itz_mst_boi"
+                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"https://t.me/{OWNER_USERNAME}"
                         ),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ", url="https://github.com/noob-mukesh"
