@@ -190,20 +190,20 @@ def new_member(update: Update, context: CallbackContext):
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Owner just joined the group"
+                    f"ʙᴏᴛ ᴏᴡɴᴇʀ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
                 )
                 continue
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Be cool! A member of the Heroes Association just joined.",
+                    "ʙᴇ ᴄᴏᴏʟ! ᴀ ᴍᴇᴍʙᴇʀ ᴏғ ᴛʜᴇ ʜᴇʀᴏᴇs ᴀssᴏᴄɪᴀᴛɪᴏɴ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ.",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Dev just joined the group"
+                    f"ʙᴏᴛ ᴅᴇᴠ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
                 )
                 continue
 
@@ -216,7 +216,7 @@ def new_member(update: Update, context: CallbackContext):
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Sudo just joined the group"
+                    f"ʙᴏᴛ sᴜᴅᴏ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
                 )
                 continue
 
@@ -229,19 +229,19 @@ def new_member(update: Update, context: CallbackContext):
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Support just joined the group"
+                    f"ʙᴏᴛ sᴜᴘᴘᴏʀᴛ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
                 )
                 continue
 
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "Roar! A Tiger disaster just joined!", reply_to_message_id=reply
+                    "ʀᴏᴀʀ! ᴀ ᴛɪɢᴇʀ ᴅɪsᴀsᴛᴇʀ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ!", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"A whitelisted user joined the chat"
+                    f"ᴀ ᴡʜɪᴛᴇʟɪsᴛᴇᴅ ᴜsᴇʀ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ᴄʜᴀᴛ"
                 )
                 continue
 
@@ -418,7 +418,7 @@ def new_member(update: Update, context: CallbackContext):
                             [
                                 {
                                     InlineKeyboardButton(
-                                        text="Yes, I'm human.",
+                                        text="ʏᴇs , ɪ'ᴍ ʜᴜᴍᴀɴ .",
                                         callback_data=f"user_join_({new_mem.id})",
                                     )
                                 }
@@ -475,8 +475,8 @@ def new_member(update: Update, context: CallbackContext):
         return (
             f"{html.escape(chat.title)}\n"
             f"#USER_JOINED\n"
-            f"<b>User</b>: {mention_html(user.id, user.first_name)}\n"
-            f"<b>ID</b>: <code>{user.id}</code>"
+            f"<b>ᴜsᴇʀ</b>: {mention_html(user.id, user.first_name)}\n"
+            f"<b>ɪᴅ</b>: <code>{user.id}</code>"
         )
 
     return ""
