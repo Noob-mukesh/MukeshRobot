@@ -33,15 +33,15 @@ def LastOnline(user: User):
     if user.is_bot:
         return ""
     elif user.status == "recently":
-        return "Recently"
+        return "ʀᴇᴄᴇɴᴛʟʏ"
     elif user.status == "within_week":
-        return "Within the last week"
+        return "ᴡɪᴛʜɪɴ ᴛʜᴇ ʟᴀsᴛ ᴡᴇᴇᴋ"
     elif user.status == "within_month":
-        return "Within the last month"
+        return "ᴡɪᴛʜɪɴ ᴛʜᴇ ʟᴀsᴛ ᴍᴏɴᴛʜ"
     elif user.status == "long_time_ago":
-        return "A long time ago :("
+        return "ᴀ ʟᴏɴɢ ᴛɪᴍᴇ ᴀɢᴏ :("
     elif user.status == "online":
-        return "Currently Online"
+        return "ᴄᴜʀʀᴇɴᴛʟʏ ᴏɴʟɪɴᴇ"
     elif user.status == "offline":
         return datetime.fromtimestamp(user.status.date).strftime(
             "%a, %d %b %Y, %H:%M:%S"
