@@ -17,7 +17,7 @@ import MukeshRobot.modules.sql.notes_sql as sql
 
 # from MukeshRobot.modules.rules import get_rules
 import MukeshRobot.modules.sql.rules_sql as rulessql
-from MukeshRobot import EVENT_LOGS, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
+from MukeshRobot import EVENT_LOGS,OWNER_ID, SUPPORT_CHAT, dispatcher
 from MukeshRobot.__main__ import DATA_IMPORT
 from MukeshRobot.modules.connection import connected
 from MukeshRobot.modules.helper_funcs.alternate import typing_action
@@ -102,7 +102,7 @@ def import_data(update, context):
                 f"An error occurred while recovering your data. The process failed. If you experience a problem with this, please take it to @{SUPPORT_CHAT}"
             )
 
-            LOGGER.exception(
+            EVENT_LOGS.exception(
                 "Imprt for the chat %s with the name %s failed.",
                 str(chat.id),
                 str(chat.title),
