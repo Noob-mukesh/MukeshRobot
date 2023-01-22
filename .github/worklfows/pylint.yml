@@ -11,13 +11,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.9
+          python-version: 3.10.9
       - name: Install Python lint libraries
         run: |
           pip install autoflake isort black
       - name: Remove unused imports and variables
         run: |
-          autoflake --in-place --recursive --remove-all-unused-imports --remove-unused-variables --ignore-init-module-imports .
+          autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports .
       - name: lint with isort
         run: |
           isort .
@@ -27,9 +27,9 @@ jobs:
       # commit changes
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Auto-fixes'
+          commit_message: 'Auto Fixes' 
           commit_options: '--no-verify'
-          repository: MukeshRobot
+          repository: .
           commit_user_name: Noob-Mukesh
-          commit_user_email: 102808014+Noob-Mukesh@users.noreply.github.com
-          commit_author: Noob-Mukesh <102808014+Noob-Mukesh@users.noreply.github.com>
+          commit_user_email: mukhushiofficial@gmail.com
+          commit_author: Noob-Mukesh <mukhushiofficial@gmail.com>
