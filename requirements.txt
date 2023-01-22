@@ -43,3 +43,5 @@ telegraph==2.2.0
 telethon==1.26.1
 tgcrypto==1.2.5
 wikipedia==1.4.0
+# update modules extra modules then kanged
+gtts
