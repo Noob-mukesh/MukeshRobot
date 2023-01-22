@@ -50,3 +50,4 @@ alphabet_detector
 wget
 nekos.py
 yt_dlp
+youtube_search
