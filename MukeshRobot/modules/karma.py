@@ -2,9 +2,10 @@ import asyncio
 
 from pyrogram import filters
 
-from MukeshRobot import OWNER_ID
-from MukeshRobot import pbot as app
-from MukeshRobot.helper_extra.dbfun import (
+from MukeshRobot import OWNER_ID, pbot
+from MukeshRobot.utils.admins import can_change_info
+from MukeshRobot.utils.errors import capture_err
+from MukeshRobot.utils.mongo import (
     alpha_to_int,
     get_karma,
     get_karmas,
