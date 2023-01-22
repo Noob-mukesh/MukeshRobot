@@ -1,25 +1,54 @@
-from MukeshRobot import pbot as app
+from typing import Callable
+
+from pyrogram.enums import ChatMemberStatus
+from pyrogram.types import Message
+
+from MukeshRobot import DEV_USERS, DRAGONS, pbot
 
 
-async def member_permissions(chat_id: int, user_id: int):
-    perms = []
-    member = await app.get_chat_member(chat_id, user_id)
-    if member.can_post_messages:
-        perms.append("can_post_messages")
-    if member.can_edit_messages:
-        perms.append("can_edit_messages")
-    if member.can_delete_messages:
-        perms.append("can_delete_messages")
-    if member.can_restrict_members:
-        perms.append("can_restrict_members")
-    if member.can_promote_members:
-        perms.append("can_promote_members")
-    if member.can_change_info:
-        perms.append("can_change_info")
-    if member.can_invite_users:
-        perms.append("can_invite_users")
-    if member.can_pin_messages:
-        perms.append("can_pin_messages")
-    if member.can_manage_voice_chats:
-        perms.append("can_manage_voice_chats")
-    return perms
+def can_change_info(func: Callable) -> Callable:
+    async def non_admin(_, message: Message):
+        if message.from_user.id in DRAGONS:
+            return await func(_, message)
+
+        check = await pbot.get_chat_member(message.chat.id, message.from_user.id)
+        if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+            return await message.reply_text(
+                "» ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ʙᴀʙʏ, ᴘʟᴇᴀsᴇ sᴛᴀʏ ɪɴ ʏᴏᴜʀ ʟɪᴍɪᴛs."
+            )
+
+        admin = (
+            await pbot.get_chat_member(message.chat.id, message.from_user.id)
+        ).privileges
+        if admin.can_change_info:
+            return await func(_, message)
+        else:
+            return await message.reply_text(
+                "`You don't have permissions to change group info."
+            )
+
+    return non_admin
+
+
+def can_restrict(func: Callable) -> Callable:
+    async def non_admin(_, message: Message):
+        if message.from_user.id in DEV_USERS:
+            return await func(_, message)
+
+        check = await pbot.get_chat_member(message.chat.id, message.from_user.id)
+        if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+            return await message.reply_text(
+                "» ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ʙᴀʙʏ, ᴘʟᴇᴀsᴇ sᴛᴀʏ ɪɴ ʏᴏᴜʀ ʟɪᴍɪᴛs."
+            )
+
+        admin = (
+            await pbot.get_chat_member(message.chat.id, message.from_user.id)
+        ).privileges
+        if admin.can_restrict_members:
+            return await func(_, message)
+        else:
+            return await message.reply_text(
+                "`You don't have permissions to restrict users in this chat."
+            )
+
+    return non_admin
