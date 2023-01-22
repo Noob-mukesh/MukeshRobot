@@ -46,3 +46,4 @@ wikipedia==1.4.0
 # update modules extra modules then kanged
 gtts
 heroku3
+alphabet_detector
