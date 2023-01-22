@@ -316,7 +316,7 @@ def kang(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
             )
         except OSError as e:
-            msg.reply_text("ɪ ᴄᴀɴ ᴏɴʟʏ ᴋᴀɴɢ ɪᴍᴀɢᴇs ᴍ8.)
+            msg.reply_text("ɪ ᴄᴀɴ ᴏɴʟʏ ᴋᴀɴɢ ɪᴍᴀɢᴇs ᴍ8.")
             print(e)
             return
         except TelegramError as e:
