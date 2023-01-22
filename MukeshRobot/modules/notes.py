@@ -23,7 +23,7 @@ from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown, mention_markdown
 
 import MukeshRobot.modules.sql.notes_sql as sql
-from MukeshRobot import DRAGONS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, dispatcher
+from MukeshRobot import DRAGONS, EVENT_LOGS, EVENT_LOGS, SUPPORT_CHAT, dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.chat_status import connection_status, user_admin
 from MukeshRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
@@ -70,10 +70,10 @@ def get(update, context, notename, show_none=True, no_format=False):
             reply_id = message.message_id
 
         if note.is_reply:
-            if JOIN_LOGGER:
+            if EVENT_LOGS:
                 try:
                     bot.forward_message(
-                        chat_id=chat_id, from_chat_id=JOIN_LOGGER, message_id=note.value
+                        chat_id=chat_id, from_chat_id=EVENT_LOGS, message_id=note.value
                     )
                 except BadRequest as excp:
                     if excp.message == "Message to forward not found":
@@ -195,10 +195,10 @@ def get(update, context, notename, show_none=True, no_format=False):
                         "This note could not be sent, as it is incorrectly formatted. Ask in "
                         f"@{SUPPORT_CHAT} if you can't figure out why!"
                     )
-                    LOGGER.exception(
+                    EVENT_LOGS.exception(
                         "Could not parse message #%s in chat %s", notename, str(chat_id)
                     )
-                    LOGGER.warning("Message was: %s", str(note.value))
+                    EVENT_LOGS.warning("Message was: %s", str(note.value))
         return
     elif show_none:
         message.reply_text("This note doesn't exist")
@@ -300,7 +300,7 @@ def clearall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
     member = chat.get_member(user.id)
-    if member.status != "creator" and user.id not in DRAGONS:
+    if member.status != "creator" :
         update.effective_message.reply_text(
             "Only the chat owner can clear all notes at once."
         )
