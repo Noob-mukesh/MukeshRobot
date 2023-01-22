@@ -49,3 +49,4 @@ heroku3
 alphabet_detector
 wget
 nekos.py
+yt_dlp
