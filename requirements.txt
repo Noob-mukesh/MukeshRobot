@@ -47,4 +47,5 @@ wikipedia==1.4.0
 gtts
 heroku3
 alphabet_detector
+wget
 nekos.py
