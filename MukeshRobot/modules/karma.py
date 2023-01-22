@@ -24,7 +24,7 @@ karma_positive_group = 3
 karma_negative_group = 4
 
 
-@app.on_message(
+@pbot.on_message(
     filters.text
     & filters.group
     & filters.incoming
@@ -65,7 +65,7 @@ async def upvote(_, message):
     )
 
 
-@app.on_message(
+@pbot.on_message(
     filters.text
     & filters.group
     & filters.incoming
@@ -106,7 +106,7 @@ async def downvote(_, message):
     )
 
 
-@app.on_message(filters.command("karmastat") & filters.group)
+@pbot.on_message(filters.command("karmastat") & filters.group)
 @capture_err
 async def karma(_, message):
     chat_id = message.chat.id
@@ -151,7 +151,7 @@ async def karma(_, message):
         await message.reply_text(f"**ᴛᴏᴛᴀʟ ᴩᴏɪɴᴛs :** {karma}")
 
 
-@app.on_message(filters.command("karma") & ~filters.private)
+@pbot.on_message(filters.command("karma") & ~filters.private)
 @can_change_info
 async def captcha_state(_, message):
     usage = "**Usage:**\n/karma [ON|OFF]"
