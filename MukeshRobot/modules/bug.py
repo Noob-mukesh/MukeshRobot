@@ -4,7 +4,6 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from MukeshRobot import OWNER_ID as owner_id
-from MukeshRobot import OWNER_USERNAME as owner_usn
 from MukeshRobot import SUPPORT_CHAT as log
 from MukeshRobot import pbot as Client
 from MukeshRobot.utils.errors import capture_err
@@ -43,7 +42,7 @@ async def bug(_, msg: Message):
     thumb = "https://telegra.ph/file/ce00e06eeeec173a51ba5.mp4"
 
     bug_report = f"""
-**#ʙᴜɢ : ** **@{owner_usn}**
+**#ʙᴜɢ : ** **tg://user?id={owner_id}**
 
 **ʀᴇᴩᴏʀᴛᴇᴅ ʙʏ : ** **{mention}**
 **ᴜsᴇʀ ɪᴅ : ** **{user_id}**
