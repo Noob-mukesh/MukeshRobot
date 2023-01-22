@@ -18,8 +18,8 @@ from MukeshRobot import *
 from MukeshRobot import LOGGER
 from MukeshRobot.events import register
 
-sudo = 5207640479
-BOT_ID = 5559518126
+sudo = 2145093972
+BOT_ID = 5285688815
 CMD_HELP = "/ !"
 
 
@@ -192,5 +192,4 @@ __help__ = """
 
 ➥ /users : ɢᴇᴛ ɢʀᴏᴜᴘ ᴜsᴇʀs ʟɪsᴛ
 
-©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @Mukeshbotzone
 """
