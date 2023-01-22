@@ -3,7 +3,7 @@ import os
 import time
 from io import BytesIO
 
-from telegram import Message, ParseMode
+from telegram import ParseMode
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
@@ -17,7 +17,7 @@ import MukeshRobot.modules.sql.notes_sql as sql
 
 # from MukeshRobot.modules.rules import get_rules
 import MukeshRobot.modules.sql.rules_sql as rulessql
-from MukeshRobot import JOIN_LOGGER, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
+from MukeshRobot import EVENT_LOGS, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
 from MukeshRobot.__main__ import DATA_IMPORT
 from MukeshRobot.modules.connection import connected
 from MukeshRobot.modules.helper_funcs.alternate import typing_action
@@ -332,7 +332,7 @@ def export_data(update, context):
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
     try:
         context.bot.sendMessage(
-            JOIN_LOGGER,
+            EVENT_LOGS,
             "*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`".format(
                 chat.title, chat_id, tgl
             ),
@@ -368,7 +368,7 @@ def get_chat(chat_id, chat_data):
         return {"status": False, "value": False}
 
 
-__mod_name__ = "Bᴀᴄᴋᴜᴘ♲︎︎︎"
+__mod_name__ = "Bᴀᴄᴋᴜᴘ💮"
 
 __help__ = """
 *Only for group owner:*
