@@ -51,3 +51,4 @@ wget
 nekos.py
 yt_dlp
 youtube_search
+youtube_search_python
