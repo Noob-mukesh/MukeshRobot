@@ -15,8 +15,6 @@ from MukeshRobot.utils.mongo import (
     karma_on,
     update_karma,
 )
-from MukeshRobot.utils.errors import capture_err
-from MukeshRobot.utils.permissions import adminsOnly
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|🖤|❣️|💝|💖|💕|❤|💘|cool|good|👍|baby|mukesh|thank you|gud|thankyou|love|pro)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|fuck off|nub|gey|mf)$"
@@ -154,19 +152,18 @@ async def karma(_, message):
 
 
 @app.on_message(filters.command("karma") & ~filters.private)
-@adminsOnly("can_change_info")
+@can_change_info
 async def captcha_state(_, message):
-    usage = "**ᴜsᴀɢᴇ:**\n/karma [ON|OFF]"
+    usage = "**Usage:**\n/karma [ON|OFF]"
     if len(message.command) != 2:
         return await message.reply_text(usage)
-    chat_id = message.chat.id
     state = message.text.split(None, 1)[1].strip()
     state = state.lower()
     if state == "on":
-        await karma_on(chat_id)
-        await message.reply_text("ᴇɴᴀʙʟᴇᴅ ᴋᴀʀᴍᴀ sʏsᴛᴇᴍ.")
+        await karma_on(message.chat.id)
+        await message.reply_text("Enabled karma system.")
     elif state == "off":
-        karma_off(chat_id)
-        await message.reply_text("ᴅɪsᴀʙʟᴇ ᴋᴀʀᴍᴀ sʏsᴛᴇᴍ.")
+        await karma_off(message.chat.id)
+        await message.reply_text("Disabled karma system.")
     else:
         await message.reply_text(usage)
