@@ -1,9 +1,8 @@
-import importlib
+mport importlib
 import re
 import time
 from platform import python_version as y
 from sys import argv
-from typing import Optional
 
 from pyrogram import __version__ as pyrover
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
@@ -30,26 +29,18 @@ from telethon import __version__ as tlhver
 import MukeshRobot.modules.sql.users_sql as sql
 from MukeshRobot import (
     BOT_NAME,
-    CERT_PATH,
-    DONATION_LINK,
+    BOT_USERNAME,
     LOGGER,
     OWNER_ID,
-    OWNER_USERNAME,
-    PORT,
     START_IMG,
     SUPPORT_CHAT,
     TOKEN,
-    URL,
-    WEBHOOK,
     StartTime,
     dispatcher,
     pbot,
     telethn,
     updater,
 )
-
-# needed to dynamically load modules
-# NOTE: Module order is not guaranteed, specify that in the config file!
 from MukeshRobot.modules import ALL_MODULES
 from MukeshRobot.modules.helper_funcs.chat_status import is_user_admin
 from MukeshRobot.modules.helper_funcs.misc import paginate_modules
@@ -450,7 +441,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "mukesh_back":
-        first_name = update.effective_user.first_name
+        first_name = update.effective_user.first_name 
         query.message.edit_text(
             PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -905,7 +896,7 @@ def main():
 ㅤ๏ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
 ━━━━━━━━━━━━━
 
-ᴍᴀᴅᴇ ᴡɪᴛʜ 💓 ʙʏ [Mukesh](https://t.me/{OWNER_USERNAME})""",
+ᴍᴀᴅᴇ ᴡɪᴛʜ 💓 ʙʏ [ᴍᴜᴋᴇsʜ](f"https://t.me/{OWNER_USERNAME}")""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
