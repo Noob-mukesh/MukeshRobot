@@ -29,7 +29,7 @@ from MukeshRobot import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
-    JOIN_LOGGER,
+    EVENT_LOGS,
     LOGGER,
     OWNER_ID,
     TIGERS,
@@ -190,20 +190,20 @@ def new_member(update: Update, context: CallbackContext):
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"ʙᴏᴛ ᴏᴡɴᴇʀ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
+                    f"Bot Owner just joined the group"
                 )
                 continue
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "ʙᴇ ᴄᴏᴏʟ! ᴀ ᴍᴇᴍʙᴇʀ ᴏғ ᴛʜᴇ ʜᴇʀᴏᴇs ᴀssᴏᴄɪᴀᴛɪᴏɴ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ.",
+                    "Be cool! A member of the Heroes Association just joined.",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"ʙᴏᴛ ᴅᴇᴠ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
+                    f"Bot Dev just joined the group"
                 )
                 continue
 
@@ -216,7 +216,7 @@ def new_member(update: Update, context: CallbackContext):
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"ʙᴏᴛ sᴜᴅᴏ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
+                    f"Bot Sudo just joined the group"
                 )
                 continue
 
@@ -229,19 +229,19 @@ def new_member(update: Update, context: CallbackContext):
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"ʙᴏᴛ sᴜᴘᴘᴏʀᴛ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ɢʀᴏᴜᴘ"
+                    f"Bot Support just joined the group"
                 )
                 continue
 
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "ʀᴏᴀʀ! ᴀ ᴛɪɢᴇʀ ᴅɪsᴀsᴛᴇʀ ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ!", reply_to_message_id=reply
+                    "Roar! A Tiger disaster just joined!", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"ᴀ ᴡʜɪᴛᴇʟɪsᴛᴇᴅ ᴜsᴇʀ ᴊᴏɪɴᴇᴅ ᴛʜᴇ ᴄʜᴀᴛ"
+                    f"A whitelisted user joined the chat"
                 )
                 continue
 
@@ -259,7 +259,6 @@ def new_member(update: Update, context: CallbackContext):
 
             # Welcome yourself
             elif new_mem.id == bot.id:
-                creator = None
                 if not MukeshRobot.ALLOW_CHATS:
                     with suppress(BadRequest):
                         update.effective_message.reply_text(
@@ -267,28 +266,16 @@ def new_member(update: Update, context: CallbackContext):
                         )
                     bot.leave_chat(update.effective_chat.id)
                     return
-                for x in bot.bot.get_chat_administrators(update.effective_chat.id):
-                    if x.status == "creator":
-                        creator = x.user
-                        break
-                if creator:
-                    bot.send_message(
-                        JOIN_LOGGER,
-                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>\n<b>Creator:</b> <code>{}</code>".format(
-                            html.escape(chat.title), chat.id, html.escape(creator)
-                        ),
-                        parse_mode=ParseMode.HTML,
-                    )
-                else:
-                    bot.send_message(
-                        JOIN_LOGGER,
-                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
-                            html.escape(chat.title), chat.id
-                        ),
-                        parse_mode=ParseMode.HTML,
-                    )
+                bot.send_message(
+                    EVENT_LOGS,
+                    "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+                        html.escape(chat.title),
+                        chat.id,
+                    ),
+                    parse_mode=ParseMode.HTML,
+                )
                 update.effective_message.reply_text(
-                    "Watashi ga kita!", reply_to_message_id=reply
+                    "Watashi ga kita !", reply_to_message_id=reply
                 )
                 continue
 
@@ -418,7 +405,7 @@ def new_member(update: Update, context: CallbackContext):
                             [
                                 {
                                     InlineKeyboardButton(
-                                        text="ʏᴇs , ɪ'ᴍ ʜᴜᴍᴀɴ .",
+                                        text="Yes, I'm human.",
                                         callback_data=f"user_join_({new_mem.id})",
                                     )
                                 }
@@ -475,8 +462,8 @@ def new_member(update: Update, context: CallbackContext):
         return (
             f"{html.escape(chat.title)}\n"
             f"#USER_JOINED\n"
-            f"<b>ᴜsᴇʀ</b>: {mention_html(user.id, user.first_name)}\n"
-            f"<b>ɪᴅ</b>: <code>{user.id}</code>"
+            f"<b>User</b>: {mention_html(user.id, user.first_name)}\n"
+            f"<b>ID</b>: <code>{user.id}</code>"
         )
 
     return ""
@@ -532,21 +519,6 @@ def left_member(update: Update, context: CallbackContext):
 
             # Ignore bot being kicked
             if left_mem.id == bot.id:
-                return
-
-            # Give the owner a special goodbye
-            if left_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "Oi! Genos! He left..", reply_to_message_id=reply
-                )
-                return
-
-            # Give the devs a special goodbye
-            elif left_mem.id in DEV_USERS:
-                update.effective_message.reply_text(
-                    "See you later at the Hero's Association!",
-                    reply_to_message_id=reply,
-                )
                 return
 
             # if media goodbye, use appropriate function for it
@@ -1135,7 +1107,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "Wᴇʟᴄᴏᴍᴇ➳"
+__mod_name__ = "Wᴇʟᴄᴏᴍᴇ⭐"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
