@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-*ʜᴇʏ* {}, [🥀 ](https://telegra.ph/file/7773ebd713f9ba9ae71df.jpg)
+*ʜᴇʏ* {}, 🥀 
 
 *๏ ᴛʜɪs ɪs* {} !
 ➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ  ➕ ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴏᴍᴇ ᴀᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
@@ -84,15 +84,15 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+            text="❣ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ❣",
             url=f"https://t.me/{dispatcher.bot.username}?startgroup=true",
         ),
     ],
     [
-        InlineKeyboardButton(text="⚡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ⚡", callback_data="help_back"),
+        InlineKeyboardButton(text="🛩️ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs🛩️", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="🔥ᴀʙᴏᴜᴛ ᴍᴇ🔥", callback_data="mukesh_"),
+        InlineKeyboardButton(text="🏡ᴀʙᴏᴜᴛ🏡 ", callback_data="mukesh_"),
         InlineKeyboardButton(text="📍sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ📍", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
