@@ -222,3 +222,6 @@ def get_filter_type(msg: Message):
         content = None
 
     return text, data_type, content
+
+
+##
