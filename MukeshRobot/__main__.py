@@ -71,7 +71,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-Pm="ᴡᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ  ᴅᴇᴀʀ ɪ ᴀᴍ  ғᴀʟʟɪɴɢ ɪɴ ʟᴏᴠᴇ ғᴏʀ ʏᴏᴜ💞"
+
 PM_START_TEXT = """
 *ʜᴇʏ* {} , [🥀](https://te.legra.ph/file/95fdccc84da9756ac863d.jpg)
 *๏ ᴛʜɪs ɪs* {} !
@@ -108,8 +108,6 @@ HELP_STRINGS = f"""
   ‣ ɪɴ ᴘᴍ : ᴡɪʟʟ ꜱᴇɴᴅ ʏᴏᴜ ʜᴇʟᴘ​ ꜰᴏʀ ᴀʟʟ ꜱᴜᴘᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇꜱ.
   ‣ ɪɴ ɢʀᴏᴜᴘ : ᴡɪʟʟ ʀᴇᴅɪʀᴇᴄᴛ ʏᴏᴜ ᴛᴏ ᴘᴍ, ᴡɪᴛʜ ᴀʟʟ ᴛʜᴀᴛ ʜᴇʟᴘ​ ᴍᴏᴅᴜʟᴇꜱ.
 ➲  /mstart  ᴛᴏ sᴛᴀʀᴛ ᴍᴜsɪᴄ ʙᴏᴛ.
-➲  /mhelp  ᴛᴏ ɢᴇᴛ  ᴀʟʟ ᴍᴜsɪᴄ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs.
-➲  /malive  ᴛᴏ ᴄʜᴇᴀᴋ  ᴍᴜsɪᴄ ʙᴏᴛ ᴀʟɪᴠᴇ ᴏʀ  ғᴜᴍᴋᴇᴅ . """
 
 DONATE_STRING = """ʜᴇʏ ʙᴀʙʏ,
   ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ.
@@ -219,18 +217,6 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            #first_name = update.effective_user.first_name
-            lol = await update.effective_message.reply_text(
-                Pm.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
-            )
-            await asyncio.sleep(0.5)
-            await lol.edit_text("🦋")
-            await asyncio.sleep(0.4)
-            await lol.edit_text("⚡")
-            await asyncio.sleep(0.3)
-            await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
-            await asyncio.sleep(0.2)
-            await lol.delete()
             update.effective_message.reply_sticker(
                 "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ"
             )
