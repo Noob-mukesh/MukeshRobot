@@ -71,7 +71,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-
+Pm=" ᴛʜᴀɴᴋs ғᴏʀ sᴛᴀʀᴛɪɴɢ ᴍᴇ ᴡᴀɪᴛ ᴀ ᴡʜɪʟᴇ  ᴍʏ ʟᴏᴠᴇ❤"
 PM_START_TEXT = """
 *ʜᴇʏ* {} , [🥀](https://te.legra.ph/file/95fdccc84da9756ac863d.jpg)
 *๏ ᴛʜɪs ɪs* {} !
@@ -217,6 +217,17 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
+            first_name = update.effective_user.first_name
+            lol = await update.effective_message.reply_text(
+                Pm)
+            await asyncio.sleep(0.4)
+            await lol.edit_text("🦋")
+            await asyncio.sleep(0.5)
+            await lol.edit_text("⚡")
+            await asyncio.sleep(0.3)
+            await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
+            await asyncio.sleep(0.4)
+            await lol.delete()
             update.effective_message.reply_sticker(
                 "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ"
             )
