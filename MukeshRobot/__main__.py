@@ -885,7 +885,7 @@ def main():
                 f"@{SUPPORT_CHAT}",
                 animation="https://telegra.ph/file/e2b12aa3a88333ed74cfb.mp4",
                 caption=f"""
-ㅤㅤ🥀 {dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.❤️..
+ㅤ{dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
 
 ━━━━━━━━━━━━━
 ㅤ๏ **ᴘʏᴛʜᴏɴ :** `{y()}`
@@ -894,7 +894,7 @@ def main():
 ㅤ๏ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
 ━━━━━━━━━━━━━
 
-ᴍᴀᴅᴇ ᴡɪᴛʜ 💓 ʙʏ [ᴍᴜᴋᴇsʜ]("t.me/mr_sukkun")""",
+ᴍᴀᴅᴇ ᴡɪᴛʜ  ʙʏ [ᴍᴜᴋᴇsʜ]("t.me/mr_sukkun")""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
