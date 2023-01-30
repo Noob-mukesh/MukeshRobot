@@ -887,12 +887,12 @@ def main():
                 caption=f"""
 ㅤ{dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
 
-━━━━━━━━━━━━━
+
 ㅤ๏ **ᴘʏᴛʜᴏɴ :** `{y()}`
 ㅤ๏ **ʟɪʙʀᴀʀʏ :** `{telever}`
 ㅤ๏ **ᴛᴇʟᴇᴛʜᴏɴ :** `{tlhver}`
 ㅤ๏ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
-━━━━━━━━━━━━━
+
 
 ᴍᴀᴅᴇ ᴡɪᴛʜ  ʙʏ [ᴍᴜᴋᴇsʜ]("t.me/mr_sukkun")""",
                 parse_mode=ParseMode.MARKDOWN,
