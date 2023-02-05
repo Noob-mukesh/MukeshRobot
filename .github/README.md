@@ -10,7 +10,7 @@
 </p>
 ━━━━━━━━━━━━━━━━━━━━━━
 <p align="center">
-  <img src="https://github.com/Noob-Mukesh/MukeshRobot/blob/main/MukeshRobot/resources/mukesh.jpg">
+  <img src="https://telegra.ph/file/796b8badbe8d21254f694.jpg">
 </p>
 
 ## ㅤㅤ ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ ʀᴏʙᴏᴛ
