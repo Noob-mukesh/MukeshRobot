@@ -24,31 +24,31 @@ Mukesh = [
     ],
     [
         InlineKeyboardButton(
-            text="➕ᴀᴅᴅ ᴍᴇ ᴇʟsᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+            text="😎𝚄𝙽𝙳𝙰𝙽𝙶 𝙶𝚄𝙰 𝙽𝙶𝙰𝙱😎",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
 ]
 
-lol = "https://telegra.ph/file/7773ebd713f9ba9ae71df.jpg"
+lol = "https://telegra.ph/file/c9af9661c261fd424659f.jpg"
 
 
 @pbot.on_message(filters.command("alive"))
 async def restart(client, m: Message):
     await m.delete()
-    accha = await m.reply("⚡")
+    accha = await m.reply("🌠")
     await asyncio.sleep(0.5)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
+    await accha.edit("𝙲𝙸𝙻𝚄𝙺 𝙱𝙰𝙷 🤙 𝚆𝙰𝙷..")
     await asyncio.sleep(0.5)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ......")
+    await accha.edit("𝙲𝙸𝙻𝚄𝙺 𝙱𝙰𝙷 🤙 𝚆𝙰𝙷......")
     await asyncio.sleep(0.5)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
+    await accha.edit("𝙲𝙸𝙻𝚄𝙺 𝙱𝙰𝙷 🤙 𝚆𝙰𝙷..")
     await asyncio.sleep(0.5)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ......")
+    await accha.edit("𝙲𝙸𝙻𝚄𝙺 𝙱𝙰𝙷 🤙 𝚆𝙰𝙷......")
     await accha.delete()
     await asyncio.sleep(0.5)
     umm = await m.reply_sticker(
-        "CAACAgUAAxkDAAJHbmLuy2NEfrfh6lZSohacEGrVjd5wAAIOBAACl42QVKnra4sdzC_uKQQ"
+        ""
     )
     await umm.delete()
     await asyncio.sleep(2)
@@ -56,7 +56,7 @@ async def restart(client, m: Message):
         lol,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
-  » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴍᴜᴋᴇsʜ](tg://user?id={OWNER_ID}))
+  » **ᴍʏ ᴏᴡɴᴇʀ :** [𝙼𝙰𝙽𝙳𝙾𝚁](tg://user?id={OWNER_ID}))
   
   » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
   
