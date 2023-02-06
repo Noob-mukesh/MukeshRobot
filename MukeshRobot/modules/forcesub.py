@@ -12,7 +12,7 @@ from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboard
 
 from MukeshRobot import BOT_USERNAME as asau
 from MukeshRobot import DRAGONS as SUDO_USERS
-from MukeshRobot import pgram as pbot
+from MukeshRobot import pbot
 from MukeshRobot.modules.sql import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
