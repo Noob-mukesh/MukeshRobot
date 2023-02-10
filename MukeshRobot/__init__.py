@@ -164,7 +164,7 @@ BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
 
-DRAGONS = list(DRAGONS) + list(DEV_USERS) + list(OWNER_USERS)
+DRAGONS = list(DRAGONS) + list(DEV_USERS) + OWNER_USERS
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)
