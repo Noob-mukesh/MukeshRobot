@@ -5,7 +5,7 @@ from MukeshRobot import  pbot as bot
 
 
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @bot.on_message(filters.command('chatgpt'))
