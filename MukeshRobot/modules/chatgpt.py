@@ -1,7 +1,7 @@
 
 from pyrogram import Client, filters
 from MukeshRobot import  pbot as bot
-from Config import *
+
 
 
 import openai
@@ -17,3 +17,9 @@ async def chat(bot, message):
         await message.reply_text(resp.choices[0].text)
     except Exception as e:
         await message.reply_text(f"Error {e}")
+__mod_name__ = "ᴄʜᴀᴛɢᴘᴛ🛡️"
+__help__ = """
+ ©️ ʙʏ ᯾ [ Mᴜᴋᴇsʜ] (t.me/itz_legend_coder)
+*ᴜsᴇʀ ᴄᴏᴍᴍᴀɴᴅs*:
+» /chatgpt*:* ask any question
+"""
