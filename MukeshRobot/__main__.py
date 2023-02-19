@@ -231,16 +231,7 @@ def start(update: Update, context: CallbackContext):
             lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
             time.sleep(0.4)
             lol.delete()
-            update.effective_message.reply_text(
-                text=gs(chat.id, "pm_start_text").format(
-                    escape_markdown(first_name),
-                    escape_markdown(context.bot.first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats(),
-                    OWNER_ID,
-                ),
-            )
+            
             update.effective_message.reply_text(
                 PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
                 reply_markup=InlineKeyboardMarkup(buttons),
