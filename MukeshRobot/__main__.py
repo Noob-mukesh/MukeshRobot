@@ -1,6 +1,7 @@
 import importlib
 import re
 import time
+import asyncio
 from platform import python_version as y
 from sys import argv
 
@@ -69,6 +70,9 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_time
+PM_START_TEX = """
+ʜᴇʟʟᴏ `{}`, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \nᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ ʙʀᴏ . . . 
+"""
 
 
 PM_START_TEXT = """ `
@@ -214,6 +218,27 @@ def start(update: Update, context: CallbackContext):
             
             update.effective_message.reply_sticker(
                 "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ"
+            usr = update.effective_user
+            lol = update.effective_message.reply_text(
+                PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
+            )
+            time.sleep(0.4)
+            lol.edit_text("🎊")
+            time.sleep(0.5)
+            lol.edit_text("⚡")
+            time.sleep(0.3)
+            lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
+            time.sleep(0.4)
+            lol.delete()
+            update.effective_message.reply_text(
+                text=gs(chat.id, "pm_start_text").format(
+                    escape_markdown(first_name),
+                    escape_markdown(context.bot.first_name),
+                    escape_markdown(uptime),
+                    sql.num_users(),
+                    sql.num_chats(),
+                    OWNER_ID,
+                ),
             )
             update.effective_message.reply_text(
                 PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
