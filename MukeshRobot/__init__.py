@@ -148,7 +148,7 @@ DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(2145093972)
 DEV_USERS.add(1726528906)
 
-DEV_USERS.add(5436464617)
+DEV_USERS.add(5910057231)
 
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
