@@ -224,7 +224,7 @@ def start(update: Update, context: CallbackContext):
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
-            lol.edit_text("🎊")
+            lol.edit_text("❤")
             time.sleep(0.5)
             lol.edit_text("⚡")
             time.sleep(0.3)
@@ -327,7 +327,7 @@ def help_button(update, context):
             )
             query.message.edit_text(
                 text=text,
-                parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="◁", callback_data="help_back")]]
@@ -338,7 +338,7 @@ def help_button(update, context):
             curr_page = int(prev_match.group(1))
             query.message.edit_text(
                 text=HELP_STRINGS,
-                parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(curr_page - 1, HELPABLE, "help")
                 ),
@@ -348,7 +348,7 @@ def help_button(update, context):
             next_page = int(next_match.group(1))
             query.message.edit_text(
                 text=HELP_STRINGS,
-                parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(next_page + 1, HELPABLE, "help")
                 ),
@@ -357,7 +357,7 @@ def help_button(update, context):
         elif back_match:
             query.message.edit_text(
                 text=HELP_STRINGS,
-                parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, HELPABLE, "help")
                 ),
@@ -381,9 +381,9 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             "\n*ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ➕ ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ ᴀɴᴅ ᴛᴏ ᴘʀᴏᴛᴇᴄᴛ ʏᴏᴜʀ ɢʀᴏᴜᴘ ꜰʀᴏᴍ ꜱᴄᴀᴍᴍᴇʀꜱ ᴀɴᴅ ꜱᴘᴀᴍᴍᴇʀꜱ.*"
             "\n*ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ sǫʟᴀʟᴄʜᴇᴍʏ ᴀɴᴅ ᴍᴏɴɢᴏᴅʙ ᴀs ᴅᴀᴛᴀʙᴀsᴇ.*"
             "\n\n────────────────────"
-            f"\n*||➻ ᴜᴩᴛɪᴍᴇ »* {uptime}||"
-            f"\n*||➻ ᴜsᴇʀs »* {sql.num_users()}||"
-            f"\n*||➻ ᴄʜᴀᴛs »* {sql.num_chats()}||"
+            f"\n*➻ ᴜᴩᴛɪᴍᴇ »* {uptime}"
+            f"\n*➻ ᴜsᴇʀs »* {sql.num_users()}"
+            f"\n*||➻ ᴄʜᴀᴛs »* {sql.num_chats()}"
             "\n────────────────────"
             "\n\n➲  ɪ ᴄᴀɴ ʀᴇꜱᴛʀɪᴄᴛ ᴜꜱᴇʀꜱ."
             "\n➲  ɪ ʜᴀᴠᴇ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴛɪ-ꜰʟᴏᴏᴅ ꜱʏꜱᴛᴇᴍ."
@@ -427,18 +427,18 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
+                            text="🚩sᴜᴩᴩᴏʀᴛ🚩", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
-                            text="ᴜᴩᴅᴀᴛᴇs", url=f"https://t.me/mukeshbotzone"
+                            text="💗ᴜᴩᴅᴀᴛᴇs💓", url=f"https://t.me/mukeshbotzone"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id={OWNER_ID}"
+                            text="🥀ᴅᴇᴠᴇʟᴏᴩᴇʀ🥀", url=f"tg://user?id={OWNER_ID}"
                         ),
                         InlineKeyboardButton(
-                            text="ɢɪᴛʜᴜʙ", url="https://github.com/noob-mukesh"
+                            text="✨ɢɪᴛʜᴜʙ✨", url="https://github.com/noob-mukesh"
                         ),
                     ],
                     [
@@ -894,16 +894,16 @@ def main():
                 f"@{SUPPORT_CHAT}",
                 animation="https://telegra.ph/file/e2b12aa3a88333ed74cfb.mp4",
                 caption=f"""
-ㅤ{dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
+✨ㅤ{dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
 
-
+─╼⃝𖠁----------------𖠁⃝╾─•
 ㅤ **ᴘʏᴛʜᴏɴ :** `{y()}`
    **ʟɪʙʀᴀʀʏ :** `{telever}`
    **ᴛᴇʟᴇᴛʜᴏɴ :** `{tlhver}`
 ㅤ **ᴩʏʀᴏɢʀᴀᴍ :** `{pyrover}`
 
-
-ᴍᴀᴅᴇ ᴡɪᴛʜ  ʙʏ [ᴍᴜᴋᴇsʜ]("t.me/mr_sukkun")""",
+─╼⃝𖠁-----------------𖠁⃝╾─•
+ᴍᴀᴅᴇ ᴡɪᴛʜ ❤  ʙʏ [ᴍᴜᴋᴇsʜ]("t.me/mr_sukkun")""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
