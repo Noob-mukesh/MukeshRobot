@@ -4,8 +4,8 @@ from pyrogram.enums import ChatType
 from pyrogram.types import Message
 
 from MukeshRobot import ENV as config
-from MukeshRobot import BOT_NAME, app
-
+from MukeshRobot import BOT_NAME
+from MukeshRobot import pbot as app
 
 @app.on_message(
     filters.command(["con", "var"]) & filters.user(config.OWNER_ID)
