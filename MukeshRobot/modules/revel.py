@@ -24,7 +24,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import Message
 
-import config
+from MukeshRobot import config
 from MukeshRobot import BOT_NAME, app
 
 
