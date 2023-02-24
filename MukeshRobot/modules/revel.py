@@ -24,7 +24,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import Message
 
-from MukeshRobot import config
+from MukeshRobot import ENV
 from MukeshRobot import BOT_NAME, app
 
 
@@ -40,10 +40,10 @@ async def get_vars(_, message: Message):
 **ᴀᴘɪ_ɪᴅ :** `{config.API_ID}`
 **ᴀᴘɪ_ʜᴀsʜ :** `{config.API_HASH}`
 
-**ʙᴏᴛ_ᴛᴏᴋᴇɴ :** `{config.BOT_TOKEN}`
+**ʙᴏᴛ_ᴛᴏᴋᴇɴ :** `{config.TOKEN}`
 
 **ᴏᴡɴᴇʀ_ɪᴅ :** `{config.OWNER_ID}`
-**sᴜᴅᴏ_ᴜsᴇʀs :** `{config.SUDO_USERS}`
+**sᴜᴅᴏ_ᴜsᴇʀs :** `{config.DEV_USERS}`
 
 
 **sᴛᴀʀᴛ_ɪᴍɢ :** `{config.START_IMG}`
