@@ -1,6 +1,19 @@
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import Message
+from MukeshRobot import (
+    BOT_NAME,
+    BOT_USERNAME,
+    LOGGER,
+    OWNER_ID,
+    START_IMG,
+    SUPPORT_CHAT,
+    TOKEN,
+    StartTime,
+    dispatcher,
+    pbot,
+    telethn,
+    updater,
 from MukeshRobot.config import Development as Config
 API_ID = Config.API_ID
 API_HASH = Config.API_HASH
@@ -70,17 +83,10 @@ async def get_vars(_, message: Message):
             chat_id=int(config.OWNER_ID),
             text=f"""<u>**{BOT_NAME} ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs :**</u>
 
-**ᴀᴘɪ_ɪᴅ :** `{config.API_ID}`
-**ᴀᴘɪ_ʜᴀsʜ :** `{config.API_HASH}`
-
-**ʙᴏᴛ_ᴛᴏᴋᴇɴ :** `{config.TOKEN}`
-
-**ᴏᴡɴᴇʀ_ɪᴅ :** `{config.OWNER_ID}`
-**sᴜᴅᴏ_ᴜsᴇʀs :** `{config.DEV_USERS}`
+**ʙᴏᴛ_ᴛᴏᴋᴇɴ :** `{TOKEN}`
 
 
-**sᴛᴀʀᴛ_ɪᴍɢ :** `{config.START_IMG}`
-**sᴜᴘᴘᴏʀᴛ_ᴄʜᴀᴛ :** `{config.SUPPORT_CHAT}`
+
 
 """)
     except:
