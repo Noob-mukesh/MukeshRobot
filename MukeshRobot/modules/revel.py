@@ -3,7 +3,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import Message
 
-from MukeshRobot import ENV as config
+from MukeshRobot.config import Development as Config
 from MukeshRobot import BOT_NAME
 from MukeshRobot import pbot as app
 
