@@ -49,7 +49,7 @@ async def get_vars(_, message: Message):
 **sᴛᴀʀᴛ_ɪᴍɢ :** `{config.START_IMG}`
 **sᴜᴘᴘᴏʀᴛ_ᴄʜᴀᴛ :** `{config.SUPPORT_CHAT}`
 
-""":
+""":)
         return await message.reply_text("» ғᴀɪʟᴇᴅ ᴛᴏ sᴇɴᴅ ᴛʜᴇ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs.")
     if message.chat.type != ChatType.PRIVATE:
         await message.reply_text(
