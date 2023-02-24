@@ -13,7 +13,7 @@ from MukeshRobot import (
     dispatcher,
     pbot,
     telethn,
-    updater,
+    updater)
 from MukeshRobot.config import Development as Config
 API_ID = Config.API_ID
 API_HASH = Config.API_HASH
