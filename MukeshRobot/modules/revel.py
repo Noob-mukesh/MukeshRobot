@@ -41,19 +41,15 @@ async def get_vars(_, message: Message):
 **ᴀᴘɪ_ʜᴀsʜ :** `{config.API_HASH}`
 
 **ʙᴏᴛ_ᴛᴏᴋᴇɴ :** `{config.BOT_TOKEN}`
-**ᴅᴜʀᴀᴛɪᴏɴ_ʟɪᴍɪᴛ :** `{config.DURATION_LIMIT}`
 
 **ᴏᴡɴᴇʀ_ɪᴅ :** `{config.OWNER_ID}`
 **sᴜᴅᴏ_ᴜsᴇʀs :** `{config.SUDO_USERS}`
 
-**ᴘɪɴɢ_ɪᴍɢ :** `{config.PING_IMG}`
+
 **sᴛᴀʀᴛ_ɪᴍɢ :** `{config.START_IMG}`
 **sᴜᴘᴘᴏʀᴛ_ᴄʜᴀᴛ :** `{config.SUPPORT_CHAT}`
 
-**sᴇssɪᴏɴ :** `{config.SESSION}`""",
-            disable_web_page_preview=True,
-        )
-    except:
+""":
         return await message.reply_text("» ғᴀɪʟᴇᴅ ᴛᴏ sᴇɴᴅ ᴛʜᴇ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs.")
     if message.chat.type != ChatType.PRIVATE:
         await message.reply_text(
