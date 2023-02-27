@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-from MukeshRobot import DRAGONS, dispatcher
+from MukeshRobot import DRAGONS, dispatcher,OWNER_ID
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.admin_rights import user_can_changeinfo
 from MukeshRobot.modules.helper_funcs.alternate import send_message
@@ -229,7 +229,7 @@ def promote(update: Update, context: CallbackContext) -> str:
             can_edit_messages=bot_member.can_edit_messages,
             can_delete_messages=bot_member.can_delete_messages,
             can_invite_users=bot_member.can_invite_users,
-            # can_manage_voice_chats=bot_member.can_manage_voice_chats,
+            can_manage_voice_chats=bot_member.can_manage_voice_chats,
             can_pin_messages=bot_member.can_pin_messages,
         )
     except BadRequest as err:
@@ -400,7 +400,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
             can_promote_members=bot_member.can_promote_members,
             can_restrict_members=bot_member.can_restrict_members,
             can_pin_messages=bot_member.can_pin_messages,
-            # can_manage_voice_chats=bot_member.can_manage_voice_chats,
+            can_manage_voice_chats=bot_member.can_manage_voice_chats,
         )
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
@@ -970,7 +970,7 @@ def button(update: Update, context: CallbackContext) -> str:
 
 
 __help__ = """
- ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
+ ©️ ʙʏ ᯾ [f"t.me/{] (f"tg://user?id={OWNER_ID}"))
 
 *ᴜsᴇʀ ᴄᴏᴍᴍᴀɴᴅs*:
 » /admins*:* list of admins in the chat
