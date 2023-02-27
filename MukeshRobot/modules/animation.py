@@ -316,6 +316,9 @@ dispatcher.add_handler(CLOCKANIMATION_HANDLER)
 dispatcher.add_handler(BRAINANIMATION_HANDLER)
 
 __help__ = """
+
+ ©️ [ᴍᴜᴋᴇsʜ] (ғ"ᴛɢ://ᴜsᴇʀ?ɪᴅ={ᴏᴡɴᴇʀ_ɪᴅ}"))
+
 *ғᴀᴋᴇ ᴀɴɪᴍᴀᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅ ʙʏ ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴏʙᴏᴛ*
  ❍ /love - ᴜsᴇ ɪᴛ ɪғ ᴜ ʜᴀᴠᴇ ɢɪʀʟғʀɪᴇɴᴅ
  ❍ /hack -  ᴛᴏ ʜᴀᴄᴋ ᴀɴʏ ᴜsᴇʀ ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ
@@ -325,4 +328,4 @@ __help__ = """
  ❍ /police - ᴛᴏ ᴄᴀʟʟ ᴍᴀsᴛᴇʀᴍɪɴᴅ ᴘᴏʟɪᴄᴇ
  ❍ ʙʏ ᴍᴜᴋᴇsʜ @Mukeshbotzone
 """
-__mod_name__ = "ᴀɴɪᴍᴀᴛɪᴏɴ🛸"
+__mod_name__ = "⍟ ɢᴀᴍᴇ ⍟"
