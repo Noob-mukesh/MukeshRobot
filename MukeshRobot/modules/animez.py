@@ -14,7 +14,7 @@ from telegram import (
 )
 from telegram.ext import CallbackContext, run_async
 
-from MukeshRobot import dispatcher
+from MukeshRobot import dispatcher,OWNER_ID
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
 info_btn = "More Information"
@@ -243,8 +243,8 @@ def anime(update: Update, context: CallbackContext):
         if trailer:
             buttons = [
                 [
-                    InlineKeyboardButton("More Info", url=info),
-                    InlineKeyboardButton("Trailer 🎬", url=trailer),
+                    InlineKeyboardButton("⍟ ᴍᴏʀᴇ ɪɴғᴏ ⍟", url=info),
+                    InlineKeyboardButton("⍟ ᴛʀᴀɪʟᴇʀ ⍟", url=trailer),
                 ]
             ]
         else:
@@ -424,18 +424,18 @@ def user(update: Update, context: CallbackContext):
 
     caption += textwrap.dedent(
         f"""
-    *Username*: [{us['username']}]({us['url']})
+    *ᴜsᴇʀɴᴀᴍᴇ*: [{us['username']}]({us['url']})
 
-    *Gender*: `{us['gender']}`
-    *Birthday*: `{user_birthday_formatted}`
-    *Joined*: `{user_joined_date_formatted}`
-    *Days wasted watching anime*: `{us['anime_stats']['days_watched']}`
-    *Days wasted reading manga*: `{us['manga_stats']['days_read']}`
+    *ɢᴇɴᴅᴇʀ*: `{us['gender']}`
+    *ʙɪʀᴛʜᴅᴀʏ*: `{user_birthday_formatted}`
+    *ᴊᴏɪɴᴇᴅ*: `{user_joined_date_formatted}`
+    *ᴅᴀʏs ᴡᴀsᴛᴇᴅ ᴡᴀᴛᴄʜɪɴɢ ᴀɴɪᴍᴇ*: `{us['anime_stats']['days_watched']}`
+    *ᴅᴀʏs ᴡᴀsᴛᴇᴅ ʀᴇᴀᴅɪɴɢ ᴍᴀɴɢᴀ*: `{us['manga_stats']['days_read']}`
 
     """
     )
 
-    caption += f"*About*: {about_string}"
+    caption += f"*ᴀʙᴏᴜᴛ*: {about_string}"
 
     buttons = [
         [InlineKeyboardButton(info_btn, url=us["url"])],
@@ -541,18 +541,18 @@ def kayo(update: Update, context: CallbackContext):
 
 
 __help__ = """
-Get information about anime, manga or characters from [AniList](anilist.co).
+ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀɴɪᴍᴇ, ᴍᴀɴɢᴀ ᴏʀ ᴄʜᴀʀᴀᴄᴛᴇʀs ғʀᴏᴍ [ᴀɴɪʟɪsᴛ](ᴀɴɪʟɪsᴛ.ᴄᴏ).
 
-*Available commands:*
+*ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:*
 
- ❍ /anime <anime>*:* returns information about the anime.
- ❍ /character <character>*:* returns information about the character.
- ❍ /manga <manga>*:* returns information about the manga.
- ❍ /user <user>*:* returns information about a MyAnimeList user.
- ❍ /upcoming*:* returns a list of new anime in the upcoming seasons.
- ❍ /kaizoku <anime>*:* search an anime on animekaizoku.com
- ❍ /kayo <anime>*:* search an anime on animekayo.com
- ❍ /airing <anime>*:* returns anime airing info.
+ ❍ /anime <anime>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴀɴɪᴍᴇ.
+ ❍ /character <ᴄʜᴀʀᴀᴄᴛᴇʀ>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ.
+ ❍ /manga <ᴍᴀɴɢᴀ>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴍᴀɴɢᴀ.
+ ❍ /user  <ᴜsᴇʀ>*:* ʀᴇᴛᴜʀɴs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴍʏᴀɴɪᴍᴇʟɪsᴛ ᴜsᴇʀ.
+ ❍ /upcoming *:* ʀᴇᴛᴜʀɴs ᴀ ʟɪsᴛ ᴏғ ɴᴇᴡ ᴀɴɪᴍᴇ ɪɴ ᴛʜᴇ ᴜᴘᴄᴏᴍɪɴɢ sᴇᴀsᴏɴs.
+ ❍ /kaizoku <ᴀɴɪᴍᴇ>*:* sᴇᴀʀᴄʜ ᴀɴ ᴀɴɪᴍᴇ ᴏɴ ᴀɴɪᴍᴇᴋᴀɪᴢᴏᴋᴜ.ᴄᴏᴍ
+ ❍ /kayo <ᴀɴɪᴍᴇ>*:* sᴇᴀʀᴄʜ ᴀɴ ᴀɴɪᴍᴇ ᴏɴ ᴀɴɪᴍᴇᴋᴀʏᴏ.ᴄᴏᴍ
+ ❍ /airing <ᴀɴɪᴍᴇ>*:* ʀᴇᴛᴜʀɴs ᴀɴɪᴍᴇ ᴀɪʀɪɴɢ ɪɴғᴏ.
 
 """
 
@@ -574,7 +574,7 @@ dispatcher.add_handler(KAIZOKU_SEARCH_HANDLER)
 dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(UPCOMING_HANDLER)
 
-__mod_name__ = "Aɴɪᴍᴇ✨"
+__mod_name__ = "⍟ Aɴɪᴍᴇ ⍟"
 __command_list__ = [
     "anime",
     "manga",
