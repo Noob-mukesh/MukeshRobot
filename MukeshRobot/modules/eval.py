@@ -9,7 +9,7 @@ from contextlib import redirect_stdout
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
-from MukeshRobot import LOGGER, dispatcher
+from MukeshRobot import LOGGER, dispatcher,OWNER_ID
 from MukeshRobot.modules.helper_funcs.chat_status import dev_plus
 
 namespaces = {}
@@ -134,11 +134,11 @@ dispatcher.add_handler(EVAL_HANDLER)
 dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 
-__mod_name__ = "ᴇᴠᴀʟ🍸"
+__mod_name__ = "⍟ ᴇᴠᴀʟ ⍟"
 __help__ = """
 ★ᴏᴡɴᴇʀ ᴄᴍᴅ ★
 
-©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
+©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ](f"tg://user?id={OWNER_ID}"))
 
 ★ /eval :- to evaluate simple code
 ★ /ex :-  to execute code
