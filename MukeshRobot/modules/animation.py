@@ -3,7 +3,7 @@ import time
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
-from MukeshRobot import dispatcher
+from MukeshRobot import dispatcher,OWNER_ID
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin
 
@@ -317,9 +317,9 @@ dispatcher.add_handler(BRAINANIMATION_HANDLER)
 
 __help__ = """
 
- ©️ [ᴍᴜᴋᴇsʜ] (ғ"ᴛɢ://ᴜsᴇʀ?ɪᴅ={ᴏᴡɴᴇʀ_ɪᴅ}"))
+ ©️ [ᴍᴜᴋᴇsʜ] (f"tg://user?id={OWNER_ID}"))
 
-*ғᴀᴋᴇ ᴀɴɪᴍᴀᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅ ʙʏ ᴀᴅᴠᴇɴᴛᴜʀᴇ ʀᴏʙᴏᴛ*
+*ғᴀᴋᴇ ᴀɴɪᴍᴀᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅ*
  ❍ /love - ᴜsᴇ ɪᴛ ɪғ ᴜ ʜᴀᴠᴇ ɢɪʀʟғʀɪᴇɴᴅ
  ❍ /hack -  ᴛᴏ ʜᴀᴄᴋ ᴀɴʏ ᴜsᴇʀ ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ
  ❍ /moon    - ᴛᴏ ᴡɪsʜ ɢɴ ᴛᴏ ᴜʀ ʟᴏᴠᴇ
