@@ -5,7 +5,7 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, CallbackQueryHandler
 
-from MukeshRobot import dispatcher
+from MukeshRobot import dispatcher,OWNER_ID
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
 
@@ -139,9 +139,9 @@ dispatcher.add_handler(QUOTE_CHANGE)
 dispatcher.add_handler(ANIMEQUOTES_HANDLER)
 dispatcher.add_handler(QUOTES_HANDLER)
 
-__mod_name__ = "ᴀɴɪᴍᴇ-ǫ"
+__mod_name__ = "⍟ ǫᴜᴏᴛᴇs ⍟"
 __help__ = """
- ♲︎︎︎ 
+ ©️ [ᴍᴜᴋᴇsʜ] (f"://user_id={OWNER_ID}"))
 /quote :- ᴡʀɪᴛᴇ ǫᴜᴏᴛᴇs
 /animequotes :- ᴡʀɪᴛᴇ ᴀɴɪᴍᴇǫᴜᴏᴛᴇs
  """
