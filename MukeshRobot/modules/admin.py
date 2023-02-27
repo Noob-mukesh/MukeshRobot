@@ -970,29 +970,29 @@ def button(update: Update, context: CallbackContext) -> str:
 
 
 __help__ = """
- ©️ ʙʏ ᯾ [f"t.me/{] (f"tg://user?id={OWNER_ID}"))
+ ©️ [ᴍᴜᴋᴇsʜ] (f"tg://user?id={OWNER_ID}"))
 
 *ᴜsᴇʀ ᴄᴏᴍᴍᴀɴᴅs*:
-» /admins*:* list of admins in the chat
-» /pinned*:* to get the current pinned message.
+» /admins*:* ʟɪsᴛ ᴏғ ᴀᴅᴍɪɴs ɪɴ ᴛʜᴇ ᴄʜᴀᴛ
+» /pinned*:* ᴛᴏ ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ.
 
 * ᴀᴅᴍɪɴs ᴄᴏᴍᴍᴀɴᴅ:* 
-» /pin*:* silently pins the message replied to - add `'loud'` or `'notify'` to give notifs to users
-» /unpin*:* unpins the currently pinned message
-» /invitelink*:* gets invitelink
-» /promote*:* promotes the user replied to
-» /lowpromote*:* promotes the user replied to with half rights
-» /fullpromote*:* promotes the user replied to with full rights
-» /demote*:* demotes the user replied to
-» /title <title here>*:* sets a custom title for an admin that the bot promoted
-» /admincache*:* force refresh the admins list
-» /del*:* deletes the message you replied to
-» /purge*:* deletes all messages between this and the replied to message.
-» /purge <integer X>*:* deletes the replied message, and X messages following it if replied to a message.
-» /setgtitle <text>*:* set group title
-» /setgpic*:* reply to an image to set as group photo
-» /setdesc*:* Set group description
-» /setsticker*:* Set group sticker
+» /pin*:* sɪʟᴇɴᴛʟʏ ᴘɪɴs ᴛʜᴇ ᴍᴇssᴀɢᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ - ᴀᴅᴅ `'ʟᴏᴜᴅ'` ᴏʀ `'ɴᴏᴛɪғʏ'` ᴛᴏ ɢɪᴠᴇ ɴᴏᴛɪғs ᴛᴏ ᴜsᴇʀs
+» /unpin*:* ᴜɴᴘɪɴs ᴛʜᴇ ᴄᴜʀʀᴇɴᴛʟʏ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ
+» /invitelink*:* ɢᴇᴛs ɪɴᴠɪᴛᴇʟɪɴᴋ
+» /promote*:* ᴘʀᴏᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ
+» /lowpromote*:* ᴘʀᴏᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴡɪᴛʜ ʜᴀʟғ ʀɪɢʜᴛs
+» /fullpromote*:* ᴘʀᴏᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴡɪᴛʜ ғᴜʟʟ ʀɪɢʜᴛs
+» /demote*:* ᴅᴇᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ
+» /title <ᴍʀ sᴜᴋᴋᴜɴ>*:* sᴇᴛs ᴀ ᴄᴜsᴛᴏᴍ ᴛɪᴛʟᴇ ғᴏʀ ᴀɴ ᴀᴅᴍɪɴ ᴛʜᴀᴛ ᴛʜᴇ ʙᴏᴛ ᴘʀᴏᴍᴏᴛᴇᴅ
+» /admincache*:* ғᴏʀᴄᴇ ʀᴇғʀᴇsʜ ᴛʜᴇ ᴀᴅᴍɪɴs ʟɪsᴛ
+» /del*:* ᴅᴇʟᴇᴛᴇs ᴛʜᴇ ᴍᴇssᴀɢᴇ ʏᴏᴜ ʀᴇᴘʟɪᴇᴅ ᴛᴏ
+» /purge*:* ᴅᴇʟᴇᴛᴇs ᴀʟʟ ᴍᴇssᴀɢᴇs ʙᴇᴛᴡᴇᴇɴ ᴛʜɪs ᴀɴᴅ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴍᴇssᴀɢᴇ.
+» /purge <integer X>*:* ᴅᴇʟᴇᴛᴇs ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ, ᴀɴᴅ x ᴍᴇssᴀɢᴇs ғᴏʟʟᴏᴡɪɴɢ ɪᴛ ɪғ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ.
+» /setgtitle <ᴛᴇxᴛ>*:* sᴇᴛ ɢʀᴏᴜᴘ ᴛɪᴛʟᴇ
+» /setgpic*:* ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ᴛᴏ sᴇᴛ ᴀs ɢʀᴏᴜᴘ ᴘʜᴏᴛᴏ
+» /setdesc*:* sᴇᴛ ɢʀᴏᴜᴘ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ
+» /setsticker*:* sᴇᴛ ɢʀᴏᴜᴘ sᴛɪᴄᴋᴇʀ
 """
 
 SET_DESC_HANDLER = CommandHandler("setdesc", set_desc)
@@ -1037,7 +1037,7 @@ dispatcher.add_handler(DEMOTE_HANDLER)
 dispatcher.add_handler(SET_TITLE_HANDLER)
 dispatcher.add_handler(ADMIN_REFRESH_HANDLER)
 
-__mod_name__ = "Aᴅᴍɪɴs🛡️"
+__mod_name__ = "⍟ Aᴅᴍɪɴs ⍟"
 __command_list__ = [
     "setdesc" "setsticker" "setgpic" "delgpic" "setgtitle" "adminlist",
     "admins",
