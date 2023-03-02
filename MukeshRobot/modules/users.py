@@ -176,13 +176,13 @@ def __migrate__(old_chat_id, new_chat_id):
 
 @app.on_message(filters.command("bcast") & filters.user(OWNER_ID))
 async def bcast(_, m : Message):
-    allusers = users
+    get_all_users = users
     lel = await m.reply_text("`⚡️ Processing...`")
     success = 0
     failed = 0
     deactivated = 0
     blocked = 0
-    for usrs in allusers.find():
+    for usrs in get_all_users.find():
         try:
             userid = usrs["user_id"]
             #print(int(userid))
@@ -208,13 +208,13 @@ async def bcast(_, m : Message):
 
 @app.on_message(filters.command("fcast") & filters.user(OWNER_ID))
 async def fcast(_, m : Message):
-    allusers = users
+    get_all_users = users
     lel = await m.reply_text("`⚡️ Fcast Processing...`")
     success = 0
     failed = 0
     deactivated = 0
     blocked = 0
-    for usrs in allusers.find():
+    for usrs in get_all_users.find():
         try:
             userid = usrs["user_id"]
             #print(int(userid))
