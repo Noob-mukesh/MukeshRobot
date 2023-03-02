@@ -11,7 +11,8 @@ from telegram.ext import (
     run_async,
 )
 
-import MukeshRobot.modules.sql.users_sql as sql
+import MukeshRobot.modules.sql.users_sql as sql 
+from MukeshRobot import pbot as app
 from MukeshRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
 from MukeshRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from MukeshRobot.modules.sql.users_sql import get_all_users
