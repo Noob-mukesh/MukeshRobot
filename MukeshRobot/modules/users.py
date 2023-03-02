@@ -1,6 +1,6 @@
 from io import BytesIO
 from time import sleep
-
+from pyrogram import filters
 from telegram import TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
