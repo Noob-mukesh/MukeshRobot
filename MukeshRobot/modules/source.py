@@ -42,7 +42,8 @@ async def repo(client, message):
     )
 
 
-__mod_name__ = "Rᴇᴩᴏ✦"
-_help__ = """ /repo to get repo 
-             /Source to get repo
+__mod_name__ = "⍟ Rᴇᴩᴏ ⍟"
+_help__ = """
+ /repo  ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ 
+ /source ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ
 """
