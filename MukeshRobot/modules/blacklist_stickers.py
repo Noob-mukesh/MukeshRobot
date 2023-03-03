@@ -495,19 +495,19 @@ def __stats__():
 
 
 __help__ = """
-Blacklist sticker is used to stop certain stickers. Whenever a sticker is sent, the message will be deleted immediately.
-*NOTE:* Blacklist stickers do not affect the group admin
- ❍ /blsticker*:* See current blacklisted sticker
-*Only admin:*
- ❍ /addblsticker <sticker link>*:* Add the sticker trigger to the black list. Can be added via reply sticker
- ❍ /unblsticker <sticker link>*:* Remove triggers from blacklist. The same newline logic applies here, so you can delete multiple triggers at once
- ❍ /rmblsticker <sticker link>*:* Same as above
- ❍ /blstickermode <ban/tban/mute/tmute>*:* sets up a default action on what to do if users use blacklisted stickers
-Note:
- ❍ <sticker link> can be `https://t.me/addstickers/<sticker>` or just `<sticker>` or reply to the sticker message
+ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀ ɪs ᴜsᴇᴅ ᴛᴏ sᴛᴏᴘ ᴄᴇʀᴛᴀɪɴ sᴛɪᴄᴋᴇʀs. ᴡʜᴇɴᴇᴠᴇʀ ᴀ sᴛɪᴄᴋᴇʀ ɪs sᴇɴᴛ, ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪᴍᴍᴇᴅɪᴀᴛᴇʟʏ.
+*ɴᴏᴛᴇ:* ʙʟᴀᴄᴋʟɪsᴛ sᴛɪᴄᴋᴇʀs ᴅᴏ ɴᴏᴛ ᴀғғᴇᴄᴛ ᴛʜᴇ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴ
+ ❍ /ʙʟsᴛɪᴄᴋᴇʀ*:* sᴇᴇ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ sᴛɪᴄᴋᴇʀ
+*ᴏɴʟʏ ᴀᴅᴍɪɴ:*
+ ❍ /ᴀᴅᴅʙʟsᴛɪᴄᴋᴇʀ <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>*:* ᴀᴅᴅ ᴛʜᴇ sᴛɪᴄᴋᴇʀ ᴛʀɪɢɢᴇʀ ᴛᴏ ᴛʜᴇ ʙʟᴀᴄᴋ ʟɪsᴛ. ᴄᴀɴ ʙᴇ ᴀᴅᴅᴇᴅ ᴠɪᴀ ʀᴇᴘʟʏ sᴛɪᴄᴋᴇʀ
+ ❍ /ᴜɴʙʟsᴛɪᴄᴋᴇʀ <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>*:* ʀᴇᴍᴏᴠᴇ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ʙʟᴀᴄᴋʟɪsᴛ. ᴛʜᴇ sᴀᴍᴇ ɴᴇᴡʟɪɴᴇ ʟᴏɢɪᴄ ᴀᴘᴘʟɪᴇs ʜᴇʀᴇ, sᴏ ʏᴏᴜ ᴄᴀɴ ᴅᴇʟᴇᴛᴇ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs ᴀᴛ ᴏɴᴄᴇ
+ ❍ /ʀᴍʙʟsᴛɪᴄᴋᴇʀ <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ>*:* sᴀᴍᴇ ᴀs ᴀʙᴏᴠᴇ
+ ❍ /ʙʟsᴛɪᴄᴋᴇʀᴍᴏᴅᴇ <ʙᴀɴ/ᴛʙᴀɴ/ᴍᴜᴛᴇ/ᴛᴍᴜᴛᴇ>*:* sᴇᴛs ᴜᴘ ᴀ ᴅᴇғᴀᴜʟᴛ ᴀᴄᴛɪᴏɴ ᴏɴ ᴡʜᴀᴛ ᴛᴏ ᴅᴏ ɪғ ᴜsᴇʀs ᴜsᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ sᴛɪᴄᴋᴇʀs
+ɴᴏᴛᴇ:
+ ❍ <sᴛɪᴄᴋᴇʀ ʟɪɴᴋ> ᴄᴀɴ ʙᴇ `ʜᴛᴛᴘs://ᴛ.ᴍᴇ/ᴀᴅᴅsᴛɪᴄᴋᴇʀs/<sᴛɪᴄᴋᴇʀ>` ᴏʀ ᴊᴜsᴛ `<sᴛɪᴄᴋᴇʀ>` ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴛʜᴇ sᴛɪᴄᴋᴇʀ ᴍᴇssᴀɢᴇ
 """
 
-__mod_name__ = "Bʟ-Sᴛɪᴄᴋ☠︎︎ "
+__mod_name__ = "⍟ sᴛɪᴄᴋᴇʀ ⍟"
 
 BLACKLIST_STICKER_HANDLER = DisableAbleCommandHandler(
     "blsticker", blackliststicker, admin_ok=True
