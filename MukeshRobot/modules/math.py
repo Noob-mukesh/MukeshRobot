@@ -114,30 +114,30 @@ def log(update: Update, context: CallbackContext):
 
 
 __help__ = """
-*MATHS*
-Solves complex math problems using https://newton.now.sh
-❍ /math*:* Math `/math 2^2+2(2)`
-❍ /factor*:* Factor `/factor x^2 + 2x`
-❍ /derive*:* Derive `/derive x^2+2x`
-❍ /integrate*:* Integrate `/integrate x^2+2x`
-❍ /zeroes*:* Find 0's `/zeroes x^2+2x`
-❍ /tangent*:* Find Tangent `/tangent 2lx^3`
-❍ /area*:* Area Under Curve `/area 2:4lx^3`
-❍ /cos*:* Cosine `/cos pi`
-❍ /sin*:* Sine `/sin 0`
-❍ /tan*:* Tangent `/tan 0`
-❍ /arccos*:* Inverse Cosine `/arccos 1`
-❍ /arcsin*:* Inverse Sine `/arcsin 0`
-❍ /arctan*:* Inverse Tangent `/arctan 0`
-❍ /abs*:* Absolute Value `/abs -1`
-❍ /log*:* Logarithm `/log 2l8`
+*ᴍᴀᴛʜs*
+sᴏʟᴠᴇs ᴄᴏᴍᴘʟᴇx ᴍᴀᴛʜ ᴘʀᴏʙʟᴇᴍs ᴜsɪɴɢ ʜᴛᴛᴘs://ɴᴇᴡᴛᴏɴ.ɴᴏᴡ.sʜ
+❍ /math *:* ᴍᴀᴛʜ `/ᴍᴀᴛʜ 2^2+2(2)`
+❍ /factor *:* ғᴀᴄᴛᴏʀ `/ғᴀᴄᴛᴏʀ x^2 + 2x`
+❍ /derive *:* ᴅᴇʀɪᴠᴇ `/ᴅᴇʀɪᴠᴇ x^2+2x`
+❍ /integrate *:* ɪɴᴛᴇɢʀᴀᴛᴇ `/ɪɴᴛᴇɢʀᴀᴛᴇ x^2+2x`
+❍ /zeroes *:* ғɪɴᴅ 0's `/ᴢᴇʀᴏᴇs x^2+2x`
+❍ /tangent *:* ғɪɴᴅ ᴛᴀɴɢᴇɴᴛ `/ᴛᴀɴɢᴇɴᴛ 2ʟx^3`
+❍ /area *:* ᴀʀᴇᴀ ᴜɴᴅᴇʀ ᴄᴜʀᴠᴇ `/ᴀʀᴇᴀ 2:4ʟx^3`
+❍ /cos *:* ᴄᴏsɪɴᴇ `/ᴄᴏs ᴘɪ`
+❍ /sin *:* sɪɴᴇ `/sɪɴ 0`
+❍ /tan *:* ᴛᴀɴɢᴇɴᴛ `/ᴛᴀɴ 0`
+❍ /arccos *:* ɪɴᴠᴇʀsᴇ ᴄᴏsɪɴᴇ `/ᴀʀᴄᴄᴏs 1`
+❍ /arcsin *:* ɪɴᴠᴇʀsᴇ sɪɴᴇ `/ᴀʀᴄsɪɴ 0`
+❍ /arctan *:* ɪɴᴠᴇʀsᴇ ᴛᴀɴɢᴇɴᴛ `/ᴀʀᴄᴛᴀɴ 0`
+❍ /abs *:* ᴀʙsᴏʟᴜᴛᴇ ᴠᴀʟᴜᴇ `/ᴀʙs -1`
+❍ /log *:* ʟᴏɢᴀʀɪᴛʜᴍ `/ʟᴏɢ 2ʟ8`
 
-_Keep in mind_: To find the tangent line of a function at a certain x value, send the request as c|f(x) where c is the given x value and f(x) is the function expression, the separator is a vertical bar '|'. See the table above for an example request.
-To find the area under a function, send the request as c:d|f(x) where c is the starting x value, d is the ending x value, and f(x) is the function under which you want the curve between the two x values.
-To compute fractions, enter expressions as numerator(over)denominator. For example, to process 2/4 you must send in your expression as 2(over)4. The result expression will be in standard math notation (1/2, 3/4).
+_ᴋᴇᴇᴘ ɪɴ ᴍɪɴᴅ_: ᴛᴏ ғɪɴᴅ ᴛʜᴇ ᴛᴀɴɢᴇɴᴛ ʟɪɴᴇ ᴏғ ᴀ ғᴜɴᴄᴛɪᴏɴ ᴀᴛ ᴀ ᴄᴇʀᴛᴀɪɴ x ᴠᴀʟᴜᴇ, sᴇɴᴅ ᴛʜᴇ ʀᴇǫᴜᴇsᴛ ᴀs ᴄ|ғ(x) ᴡʜᴇʀᴇ ᴄ ɪs ᴛʜᴇ ɢɪᴠᴇɴ x ᴠᴀʟᴜᴇ ᴀɴᴅ ғ(x) ɪs ᴛʜᴇ ғᴜɴᴄᴛɪᴏɴ ᴇxᴘʀᴇssɪᴏɴ, ᴛʜᴇ sᴇᴘᴀʀᴀᴛᴏʀ ɪs ᴀ ᴠᴇʀᴛɪᴄᴀʟ ʙᴀʀ '|'. sᴇᴇ ᴛʜᴇ ᴛᴀʙʟᴇ ᴀʙᴏᴠᴇ ғᴏʀ ᴀɴ ᴇxᴀᴍᴘʟᴇ ʀᴇǫᴜᴇsᴛ.
+ᴛᴏ ғɪɴᴅ ᴛʜᴇ ᴀʀᴇᴀ ᴜɴᴅᴇʀ ᴀ ғᴜɴᴄᴛɪᴏɴ, sᴇɴᴅ ᴛʜᴇ ʀᴇǫᴜᴇsᴛ ᴀs ᴄ:ᴅ|ғ(x) ᴡʜᴇʀᴇ ᴄ ɪs ᴛʜᴇ sᴛᴀʀᴛɪɴɢ x ᴠᴀʟᴜᴇ, ᴅ ɪs ᴛʜᴇ ᴇɴᴅɪɴɢ x ᴠᴀʟᴜᴇ, ᴀɴᴅ ғ(x) ɪs ᴛʜᴇ ғᴜɴᴄᴛɪᴏɴ ᴜɴᴅᴇʀ ᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇ ᴄᴜʀᴠᴇ ʙᴇᴛᴡᴇᴇɴ ᴛʜᴇ ᴛᴡᴏ x ᴠᴀʟᴜᴇs.
+ᴛᴏ ᴄᴏᴍᴘᴜᴛᴇ ғʀᴀᴄᴛɪᴏɴs, ᴇɴᴛᴇʀ ᴇxᴘʀᴇssɪᴏɴs ᴀs ɴᴜᴍᴇʀᴀᴛᴏʀ(ᴏᴠᴇʀ)ᴅᴇɴᴏᴍɪɴᴀᴛᴏʀ. ғᴏʀ ᴇxᴀᴍᴘʟᴇ, ᴛᴏ ᴘʀᴏᴄᴇss 2/4 ʏᴏᴜ ᴍᴜsᴛ sᴇɴᴅ ɪɴ ʏᴏᴜʀ ᴇxᴘʀᴇssɪᴏɴ ᴀs 2(ᴏᴠᴇʀ)4. ᴛʜᴇ ʀᴇsᴜʟᴛ ᴇxᴘʀᴇssɪᴏɴ ᴡɪʟʟ ʙᴇ ɪɴ sᴛᴀɴᴅᴀʀᴅ ᴍᴀᴛʜ ɴᴏᴛᴀᴛɪᴏɴ (1/2, 3/4).
 """
 
-__mod_name__ = "Mᴀᴛʜs∆"
+__mod_name__ = "⍟ Mᴀᴛʜs ⍟"
 
 SIMPLIFY_HANDLER = DisableAbleCommandHandler("math", simplify)
 FACTOR_HANDLER = DisableAbleCommandHandler("factor", factor)
