@@ -99,10 +99,10 @@ async def rm_deletedacc(show):
 
 
 __help__ = """
-*Remove Deleted Accounts*
- ❍ /zombies *:* Starts searching for deleted accounts in the group.
- ❍ /zombies clean *:* Removes the deleted accounts from the group.
+*ʀᴇᴍᴏᴠᴇ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs*
+ ❍ /zombies *:* sᴛᴀʀᴛs sᴇᴀʀᴄʜɪɴɢ ғᴏʀ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
+ ❍ /zombies ᴄʟᴇᴀɴ  *:* ʀᴇᴍᴏᴠᴇs ᴛʜᴇ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs ғʀᴏᴍ ᴛʜᴇ ɢʀᴏᴜᴘ.
 """
 
 
-__mod_name__ = "Zᴏᴍʙɪᴇ🧟"
+__mod_name__ = "⍟ Zᴏᴍʙɪᴇ ⍟"
