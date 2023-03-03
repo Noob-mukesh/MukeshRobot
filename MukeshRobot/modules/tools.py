@@ -1,10 +1,10 @@
-# © @AnonymousBoy1025
 
-__mod_name__ = "Tᴏᴏʟs🛠️"
+
+__mod_name__ = "⍟ Tᴏᴏʟs ⍟"
 
 __help__ = """
 
-*Converts*
- ❍ /encrypt*:* Encrypts The Given Text
- ❍ /decrypt*:* Decrypts Previously Ecrypted Text
+*ᴄᴏɴᴠᴇʀᴛs*
+ ❍ /encrypt *:* ᴇɴᴄʀʏᴘᴛs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
+ ❍ /decrypt *:* ᴅᴇᴄʀʏᴘᴛs ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
 """
