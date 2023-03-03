@@ -798,62 +798,62 @@ __handlers__ = [
     BAKA_HANDLER,
     DVA_HANDLER,
 ]
-__mod_name__ = "ɴsғᴡ❥"
+__mod_name__ = "⍟ ɴsғᴡ ⍟"
 
 __help__ = """
-*NSFW:*
-❂ /addnsfw : Enable NSFW mode
-❂ /rmnsfw : Disable NSFW mode
+*ɴsғᴡ:*
+❂ /addnsfw  : ᴇɴᴀʙʟᴇ ɴsғᴡ ᴍᴏᴅᴇ
+❂ /rmnsfw  : ᴅɪsᴀʙʟᴇ ɴsғᴡ ᴍᴏᴅᴇ
  
-*Available commands:*  
-❂ /neko: Sends Random SFW Neko source Images.
-❂ /feet: Sends Random Anime Feet Images.
-❂ /yuri: Sends Random Yuri source Images.
-❂ /trap: Sends Random Trap source Images.
-❂ /futanari: Sends Random Futanari source Images.
-❂ /hololewd: Sends Random Holo Lewds.
-❂ /lewdkemo: Sends Random Kemo Lewds.
-❂ /sologif: Sends Random Solo GIFs.
-❂ /cumgif: Sends Random Cum GIFs.
-❂ /erokemo: Sends Random Ero-Kemo Images.
-❂ /lesbian: Sends Random Les Source Images.
-❂ /lewdk: Sends Random Kitsune Lewds.
-❂ /ngif: Sends Random Neko GIFs.
-❂ /tickle: Sends Random Tickle GIFs.
-❂ /lewd: Sends Random Lewds.
-❂ /feed: Sends Random Feeding GIFs.
-❂ /eroyuri: Sends Random Ero-Yuri source Images.
-❂ /eron: Sends Random Ero-Neko source Images.
-❂ /cum: Sends Random Cum Images.
-❂ /bjgif: Sends Random Blow Job GIFs.
-❂ /bj: Sends Random Blow Job source Images.
-❂ /nekonsfw: Sends Random NSFW Neko source Images.
-❂ /solo: Sends Random NSFW Neko GIFs.
-❂ /kemonomimi: Sends Random KemonoMimi source Images.
-❂ /avatarlewd: Sends Random Avater Lewd Stickers.
-❂ /gasm: Sends Random Orgasm Stickers.
-❂ /poke: Sends Random Poke GIFs.
-❂ /anal: Sends Random Anal GIFs.
-❂ /hentai: Sends Random Hentai source Images.
-❂ /avatar: Sends Random Avatar Stickers.
-❂ /erofeet: Sends Random Ero-Feet source Images.
-❂ /holo: Sends Random Holo source Images.
-❂ /tits: Sends Random Tits source Images.
-❂ /pussygif: Sends Random Pussy GIFs.
-❂ /holoero: Sends Random Ero-Holo source Images.
-❂ /pussy: Sends Random Pussy source Images.
-❂ /hentaigif: Sends Random Hentai GIFs.
-❂ /classic: Sends Random Classic Hentai GIFs.
-❂ /kuni: Sends Random Pussy Lick GIFs.
-❂ /waifu: Sends Random Waifu Stickers.
-❂ /kiss: Sends Random Kissing GIFs.
-❂ /femdom: Sends Random Femdom source Images.
-❂ /cuddle: Sends Random Cuddle GIFs.
-❂ /erok: Sends Random Ero-Kitsune source Images.
-❂ /foxgirl: Sends Random FoxGirl source Images.
-❂ /titsgif: Sends Random Tits GIFs.
-❂ /ero: Sends Random Ero source Images.
-❂ /smug: Sends Random Smug GIFs.
-❂ /baka: Sends Random Baka Shout GIFs.
-❂ /dva: Sends Random D.VA source Images.
+*ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:*  
+❂ /neko : sᴇɴᴅs ʀᴀɴᴅᴏᴍ sғᴡ ɴᴇᴋᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /feet : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴀɴɪᴍᴇ ғᴇᴇᴛ ɪᴍᴀɢᴇs.
+❂ /yuri : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʏᴜʀɪ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /trap : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴛʀᴀᴘ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /futanari : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴜᴛᴀɴᴀʀɪ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /hololewd : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʜᴏʟᴏ ʟᴇᴡᴅs.
+❂ /lewdkemo : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴋᴇᴍᴏ ʟᴇᴡᴅs.
+❂ /sologif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ sᴏʟᴏ ɢɪғs.
+❂ /cumgif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴄᴜᴍ ɢɪғs.
+❂ /erokemo : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ᴋᴇᴍᴏ ɪᴍᴀɢᴇs.
+❂ /lesbian : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʟᴇs sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /lewdk : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴋɪᴛsᴜɴᴇ ʟᴇᴡᴅs.
+❂ /ngif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ɴᴇᴋᴏ ɢɪғs.
+❂ /tickle : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴛɪᴄᴋʟᴇ ɢɪғs.
+❂ /lewd : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʟᴇᴡᴅs.
+❂ /feed : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴇᴇᴅɪɴɢ ɢɪғs.
+❂ /eroyuri : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ʏᴜʀɪ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /eron : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ɴᴇᴋᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /cum : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴄᴜᴍ ɪᴍᴀɢᴇs.
+❂ /bjgif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʙʟᴏᴡ ᴊᴏʙ ɢɪғs.
+❂ /bj : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʙʟᴏᴡ ᴊᴏʙ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /nekonsfw : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ɴsғᴡ ɴᴇᴋᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /solo : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ɴsғᴡ ɴᴇᴋᴏ ɢɪғs.
+❂ /kemonomimi : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴋᴇᴍᴏɴᴏᴍɪᴍɪ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /avatarlewd : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴀᴠᴀᴛᴇʀ ʟᴇᴡᴅ sᴛɪᴄᴋᴇʀs.
+❂ /gasm : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴏʀɢᴀsᴍ sᴛɪᴄᴋᴇʀs.
+❂ /poke : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴘᴏᴋᴇ ɢɪғs.
+❂ /anal : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴀɴᴀʟ ɢɪғs.
+❂ /hentai : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʜᴇɴᴛᴀɪ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /avatar : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴀᴠᴀᴛᴀʀ sᴛɪᴄᴋᴇʀs.
+❂ /erofeet : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ғᴇᴇᴛ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /holo : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʜᴏʟᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /tits : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴛɪᴛs sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /pussygif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴘᴜssʏ ɢɪғs.
+❂ /holoero : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ʜᴏʟᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /pussy : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴘᴜssʏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /hentaigif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʜᴇɴᴛᴀɪ ɢɪғs.
+❂ /classic : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴄʟᴀssɪᴄ ʜᴇɴᴛᴀɪ ɢɪғs.
+❂ /kuni : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴘᴜssʏ ʟɪᴄᴋ ɢɪғs.
+❂ /waifu : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴡᴀɪғᴜ sᴛɪᴄᴋᴇʀs.
+❂ /kiss : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴋɪssɪɴɢ ɢɪғs.
+❂ /femdom : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴇᴍᴅᴏᴍ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /cuddle : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴄᴜᴅᴅʟᴇ ɢɪғs.
+❂ /erok : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ-ᴋɪᴛsᴜɴᴇ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /foxgirl : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ғᴏxɢɪʀʟ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /titsgif : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴛɪᴛs ɢɪғs.
+❂ /ero : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴇʀᴏ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
+❂ /smug : sᴇɴᴅs ʀᴀɴᴅᴏᴍ sᴍᴜɢ ɢɪғs.
+❂ /baka : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ʙᴀᴋᴀ sʜᴏᴜᴛ ɢɪғs.
+❂ /dva : sᴇɴᴅs ʀᴀɴᴅᴏᴍ ᴅ.ᴠᴀ sᴏᴜʀᴄᴇ ɪᴍᴀɢᴇs.
 """
