@@ -27,12 +27,12 @@ def snipe(update: Update, context: CallbackContext):
 
 
 __help__ = """
-*Dev  only:* 
-• /snipe <chatid> <string>
-Make me send a message to a specific chat.
+*ᴅᴇᴠ  ᴏɴʟʏ:* 
+• /snipe <ᴄʜᴀᴛɪᴅ> <sᴛʀɪɴɢ>
+ᴍᴀᴋᴇ ᴍᴇ sᴇɴᴅ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀ sᴘᴇᴄɪғɪᴄ ᴄʜᴀᴛ.
 """
 
-__mod_name__ = "sɴɪᴘᴇ⁂"
+__mod_name__ = "⍟ sɴɪᴘᴇ ⍟"
 
 SNIPE_HANDLER = CommandHandler(
     "snipe", snipe, pass_args=True, filters=CustomFilters.dev_filter
