@@ -7,27 +7,27 @@ from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin
 
 MARKDOWN_HELP = f"""
-Markdown is a very powerful formatting tool supported by telegram. {dispatcher.bot.first_name} has some enhancements, to make sure that \
-saved messages are correctly parsed, and to allow you to create buttons.
+ᴍᴀʀᴋᴅᴏᴡɴ ɪs ᴀ ᴠᴇʀʏ ᴘᴏᴡᴇʀғᴜʟ ғᴏʀᴍᴀᴛᴛɪɴɢ ᴛᴏᴏʟ sᴜᴘᴘᴏʀᴛᴇᴅ ʙʏ ᴛᴇʟᴇɢʀᴀᴍ. {dispatcher.bot.first_name} ʜᴀs sᴏᴍᴇ ᴇɴʜᴀɴᴄᴇᴍᴇɴᴛs, ᴛᴏ ᴍᴀᴋᴇ sᴜʀᴇ ᴛʜᴀᴛ \
+sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴀʀᴇ ᴄᴏʀʀᴇᴄᴛʟʏ ᴘᴀʀsᴇᴅ, ᴀɴᴅ ᴛᴏ ᴀʟʟᴏᴡ ʏᴏᴜ ᴛᴏ ᴄʀᴇᴀᴛᴇ ʙᴜᴛᴛᴏɴs.
 
-• <code>_italic_</code>: wrapping text with '_' will produce italic text
-• <code>*bold*</code>: wrapping text with '*' will produce bold text
-• <code>`code`</code>: wrapping text with '`' will produce monospaced text, also known as 'code'
-• <code>[sometext](someURL)</code>: this will create a link - the message will just show <code>sometext</code>, \
-and tapping on it will open the page at <code>someURL</code>.
-<b>Example:</b><code>[test](example.com)</code>
+• <code>_ɪᴛᴀʟɪᴄ_</code>: ᴡʀᴀᴘᴘɪɴɢ ᴛᴇxᴛ ᴡɪᴛʜ '_' ᴡɪʟʟ ᴘʀᴏᴅᴜᴄᴇ ɪᴛᴀʟɪᴄ ᴛᴇxᴛ
+• <code>*ʙᴏʟᴅ*</code>: ᴡʀᴀᴘᴘɪɴɢ ᴛᴇxᴛ ᴡɪᴛʜ '*' ᴡɪʟʟ ᴘʀᴏᴅᴜᴄᴇ ʙᴏʟᴅ ᴛᴇxᴛ
+• <code>`ᴄᴏᴅᴇ`</code>: ᴡʀᴀᴘᴘɪɴɢ ᴛᴇxᴛ ᴡɪᴛʜ '`' ᴡɪʟʟ ᴘʀᴏᴅᴜᴄᴇ ᴍᴏɴᴏsᴘᴀᴄᴇᴅ ᴛᴇxᴛ, ᴀʟsᴏ ᴋɴᴏᴡɴ ᴀs 'ᴄᴏᴅᴇ'
+• <code>[sᴏᴍᴇᴛᴇxᴛ](sᴏᴍᴇᴜʀʟ)</code>: ᴛʜɪs ᴡɪʟʟ ᴄʀᴇᴀᴛᴇ ᴀ ʟɪɴᴋ - ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ᴊᴜsᴛ sʜᴏᴡ <ᴄᴏᴅᴇ>sᴏᴍᴇᴛᴇxᴛ</ᴄᴏᴅᴇ>, \
+ᴀɴᴅ ᴛᴀᴘᴘɪɴɢ ᴏɴ ɪᴛ ᴡɪʟʟ ᴏᴘᴇɴ ᴛʜᴇ ᴘᴀɢᴇ ᴀᴛ <code>sᴏᴍᴇᴜʀʟ</code>.
+<ʙ>ᴇxᴀᴍᴘʟᴇ:</ʙ><code>[ᴛᴇsᴛ](example.com)</code>
 
-• <code>[buttontext](buttonurl:someURL)</code>: this is a special enhancement to allow users to have telegram \
-buttons in their markdown. <code>buttontext</code> will be what is displayed on the button, and <code>someurl</code> \
-will be the url which is opened.
-<b>Example:</b> <code>[This is a button](buttonurl:example.com)</code>
+• <ᴄᴏᴅᴇ>[ʙᴜᴛᴛᴏɴᴛᴇxᴛ](buttonurl:someurl)</ᴄᴏᴅᴇ>: ᴛʜɪs ɪs ᴀ sᴘᴇᴄɪᴀʟ ᴇɴʜᴀɴᴄᴇᴍᴇɴᴛ ᴛᴏ ᴀʟʟᴏᴡ ᴜsᴇʀs ᴛᴏ ʜᴀᴠᴇ ᴛᴇʟᴇɢʀᴀᴍ \
+ʙᴜᴛᴛᴏɴs ɪɴ ᴛʜᴇɪʀ ᴍᴀʀᴋᴅᴏᴡɴ. <ᴄᴏᴅᴇ>ʙᴜᴛᴛᴏɴᴛᴇxᴛ</code> ᴡɪʟʟ ʙᴇ ᴡʜᴀᴛ ɪs ᴅɪsᴘʟᴀʏᴇᴅ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ, ᴀɴᴅ <ᴄᴏᴅᴇ>sᴏᴍᴇᴜʀʟ</ᴄᴏᴅᴇ> \
+ᴡɪʟʟ ʙᴇ ᴛʜᴇ ᴜʀʟ ᴡʜɪᴄʜ ɪs ᴏᴘᴇɴᴇᴅ.
+<ʙ>ᴇxᴀᴍᴘʟᴇ:</ʙ> <ᴄᴏᴅᴇ>[ᴛʜɪs ɪs ᴀ ʙᴜᴛᴛᴏɴ](buttonurl://google.com)</code>
 
-If you want multiple buttons on the same line, use :same, as such:
-<code>[one](buttonurl://example.com)
-[two](buttonurl://google.com:same)</code>
-This will create two buttons on a single line, instead of one button per line.
+ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴜʟᴛɪᴘʟᴇ ʙᴜᴛᴛᴏɴs ᴏɴ ᴛʜᴇ sᴀᴍᴇ ʟɪɴᴇ, ᴜsᴇ :sᴀᴍᴇ, ᴀs sᴜᴄʜ:
+<ᴄᴏᴅᴇ>[ᴏɴᴇ](buttonurl://google.com)
+[ᴛᴡᴏ](buttonurl://google.com:same )</code>
+ᴛʜɪs ᴡɪʟʟ ᴄʀᴇᴀᴛᴇ ᴛᴡᴏ ʙᴜᴛᴛᴏɴs ᴏɴ ᴀ sɪɴɢʟᴇ ʟɪɴᴇ, ɪɴsᴛᴇᴀᴅ ᴏғ ᴏɴᴇ ʙᴜᴛᴛᴏɴ ᴘᴇʀ ʟɪɴᴇ.
 
-Keep in mind that your message <b>MUST</b> contain some text other than just a button!
+ᴋᴇᴇᴘ ɪɴ ᴍɪɴᴅ ᴛʜᴀᴛ ʏᴏᴜʀ ᴍᴇssᴀɢᴇ <b>ᴍᴜsᴛ</b> ᴄᴏɴᴛᴀɪɴ sᴏᴍᴇ ᴛᴇxᴛ ᴏᴛʜᴇʀ ᴛʜᴀɴ ᴊᴜsᴛ ᴀ ʙᴜᴛᴛᴏɴ!
 """
 
 
@@ -81,24 +81,24 @@ def markdown_help(update: Update, context: CallbackContext):
 
 
 __help__ = """
-*Available commands:*
-*Markdown:*
- ❍ /markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
-*React:*
- ❍ /react*:* Reacts with a random reaction 
-*Urban Dictonary:*
- ❍ /ud <word>*:* Type the word or expression you want to search use
-*Wikipedia:*
- ❍ /wiki <query>*:* wikipedia your query
-*Wallpapers:*
- ❍ /wall <query>*:* get a wallpaper from wall.alphacoders.com
-*Currency converter:* 
- ❍ /cash*:* currency converter
-Example:
- `/cash 1 USD INR`  
-      _OR_
- `/cash 1 usd inr`
-Output: `1.0 USD = 75.505 INR`
+*ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:*
+*ᴍᴀʀᴋᴅᴏᴡɴ:*
+ ❍ /markdownhelp*:* ǫᴜɪᴄᴋ sᴜᴍᴍᴀʀʏ ᴏғ ʜᴏᴡ ᴍᴀʀᴋᴅᴏᴡɴ ᴡᴏʀᴋs ɪɴ ᴛᴇʟᴇɢʀᴀᴍ - ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴄᴀʟʟᴇᴅ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs
+*ʀᴇᴀᴄᴛ:*
+ ❍ /react *:* ʀᴇᴀᴄᴛs ᴡɪᴛʜ ᴀ ʀᴀɴᴅᴏᴍ ʀᴇᴀᴄᴛɪᴏɴ 
+*ᴜʀʙᴀɴ ᴅɪᴄᴛᴏɴᴀʀʏ:*
+ ❍ /ud <ᴡᴏʀᴅ>*:* ᴛʏᴘᴇ ᴛʜᴇ ᴡᴏʀᴅ ᴏʀ ᴇxᴘʀᴇssɪᴏɴ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴇᴀʀᴄʜ ᴜsᴇ
+*ᴡɪᴋɪᴘᴇᴅɪᴀ:*
+ ❍ /wiki  <ǫᴜᴇʀʏ>*:* ᴡɪᴋɪᴘᴇᴅɪᴀ ʏᴏᴜʀ ǫᴜᴇʀʏ
+*ᴡᴀʟʟᴘᴀᴘᴇʀs:*
+ ❍ /wall  <ǫᴜᴇʀʏ>*:* ɢᴇᴛ ᴀ ᴡᴀʟʟᴘᴀᴘᴇʀ ғʀᴏᴍ ᴡᴀʟʟ.ᴀʟᴘʜᴀᴄᴏᴅᴇʀs.ᴄᴏᴍ
+*ᴄᴜʀʀᴇɴᴄʏ ᴄᴏɴᴠᴇʀᴛᴇʀ:* 
+ ❍ /cash *:* ᴄᴜʀʀᴇɴᴄʏ ᴄᴏɴᴠᴇʀᴛᴇʀ
+ᴇxᴀᴍᴘʟᴇ:
+ `/ᴄᴀsʜ 1 ᴜsᴅ ɪɴʀ`  
+      _ᴏʀ_
+ `/ᴄᴀsʜ 1 ᴜsᴅ ɪɴʀ`
+ᴏᴜᴛᴘᴜᴛ: `1.0 ᴜsᴅ = 75.505 ɪɴʀ`
 
 """
 
@@ -108,7 +108,7 @@ MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 
-__mod_name__ = "Exᴛʀᴀs⏎"
+__mod_name__ = "⍟ Exᴛʀᴀs ⍟"
 __command_list__ = ["id", "echo"]
 __handlers__ = [
     ECHO_HANDLER,
