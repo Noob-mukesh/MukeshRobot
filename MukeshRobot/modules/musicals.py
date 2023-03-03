@@ -1,7 +1,7 @@
-__mod_name__ = "Mᴜsɪᴄ☊"
+__mod_name__ = "⍟ Mᴜsɪᴄ ⍟"
 
 __help__ = """
- ❍ /song <song name>*:* Uploads the song in it's best quality available
-  ⎔ /video *:* to download video .
-💡Ex: `/song Faded Alan Walker`
+ ❍ /song  <sᴏɴɢ ɴᴀᴍᴇ>*:* ᴜᴘʟᴏᴀᴅs ᴛʜᴇ sᴏɴɢ ɪɴ ɪᴛ's ʙᴇsᴛ ǫᴜᴀʟɪᴛʏ ᴀᴠᴀɪʟᴀʙʟᴇ
+  ⎔ /video  *:* ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ .
+💡ᴇx: `/song ғᴀᴅᴇᴅ ᴀʟᴀɴ ᴡᴀʟᴋᴇʀ`
 """
