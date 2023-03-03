@@ -5,9 +5,9 @@ from MukeshRobot import pbot as app
 from MukeshRobot.utils.errors import capture_err
 
 __help__ = """
-» /webss *:* Sends the screenshot of the given url.
+» /webss *:* sᴇɴᴅs ᴛʜᴇ sᴄʀᴇᴇɴsʜᴏᴛ ᴏғ ᴛʜᴇ ɢɪᴠᴇɴ ᴜʀʟ.
 """
-__mod_name__ = "Wᴇʙsʜᴏᴛ​​📱"
+__mod_name__ = "⍟ Wᴇʙsʜᴏᴛ​​ ⍟"
 
 
 @app.on_message(filters.command("webss"))
