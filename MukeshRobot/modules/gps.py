@@ -27,7 +27,7 @@ async def _(event):
             ),
         )
         await event.reply(
-            "Open with: [🌏Google Maps]({})".format(gm),
+            "Open with: [🌏ɢᴏᴏɢʟᴇ ᴍᴀᴘs]({})".format(gm),
             link_preview=False,
         )
     except Exception as e:
@@ -36,9 +36,9 @@ async def _(event):
 
 
 __help__ = """
-Sends you the gps location of the given query...
+sᴇɴᴅs ʏᴏᴜ ᴛʜᴇ ɢᴘs ʟᴏᴄᴀᴛɪᴏɴ ᴏғ ᴛʜᴇ ɢɪᴠᴇɴ ǫᴜᴇʀʏ...
 
- ❍ /gps <location>*:* Get gps location.
+ ❍ /ɢᴘs <ʟᴏᴄᴀᴛɪᴏɴ>*:* ɢᴇᴛ ɢᴘs ʟᴏᴄᴀᴛɪᴏɴ.
 """
 
-__mod_name__ = "Gᴘs🌐"
+__mod_name__ = "⍟ Gᴘs ⍟"
