@@ -165,7 +165,7 @@ async def get_users(show):
     mentions = f"Users in {title}: \n"
     async for user in telethn.iter_participants(show.chat_id):
         mentions += (
-            f"\nDeleted Account {user.id}"
+            f"\nDeleted Account  {user.id}"
             if user.deleted
             else f"\n[{user.first_name}](tg://user?id={user.id}) {user.id}"
         )
@@ -182,9 +182,9 @@ async def get_users(show):
     os.remove("userslist.txt")
 
 
-__mod_name__ = "ᴀᴅᴠᴀɴᴄᴇ🥂"
+__mod_name__ = "⍟ ᴀᴅᴠᴀɴᴄᴇ ⍟"
 __help__ = """ 
- ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/itz_mst_boi)
+ ©️ ʙʏ ᯾ [ɴᴏᴏʙ Mᴜᴋᴇsʜ] (t.me/mr_sukkun)
 
 ➥ /unbanall : ᴜɴʙᴀɴ ᴀʟʟ ᴍᴀᴍʙᴇʀ 
 
