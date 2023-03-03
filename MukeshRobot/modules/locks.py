@@ -567,30 +567,30 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-Do stickers annoy you? or want to avoid people sharing links? or pictures? \
-You're in the right place!
-The locks module allows you to lock away some common items in the \
-telegram world; the bot will automatically delete them!
+ᴅᴏ sᴛɪᴄᴋᴇʀs ᴀɴɴᴏʏ ʏᴏᴜ? ᴏʀ ᴡᴀɴᴛ ᴛᴏ ᴀᴠᴏɪᴅ ᴘᴇᴏᴘʟᴇ sʜᴀʀɪɴɢ ʟɪɴᴋs? ᴏʀ ᴘɪᴄᴛᴜʀᴇs? \
+ʏᴏᴜ'ʀᴇ ɪɴ ᴛʜᴇ ʀɪɢʜᴛ ᴘʟᴀᴄᴇ!
+ᴛʜᴇ ʟᴏᴄᴋs ᴍᴏᴅᴜʟᴇ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ ʟᴏᴄᴋ ᴀᴡᴀʏ sᴏᴍᴇ ᴄᴏᴍᴍᴏɴ ɪᴛᴇᴍs ɪɴ ᴛʜᴇ \
+ᴛᴇʟᴇɢʀᴀᴍ ᴡᴏʀʟᴅ; ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇ ᴛʜᴇᴍ!
 
- ❍ /locktypes*:* Lists all possible locktypes
+ ❍ /locktypes *:* ʟɪsᴛs ᴀʟʟ ᴘᴏssɪʙʟᴇ ʟᴏᴄᴋᴛʏᴘᴇs
  
-*Admins only:*
- ❍ /lock <type>*:* Lock items of a certain type (not available in private)
- ❍ /unlock <type>*:* Unlock items of a certain type (not available in private)
- ❍ /locks*:* The current list of locks in this chat.
+*ᴀᴅᴍɪɴs ᴏɴʟʏ:*
+ ❍ /lock  <ᴛʏᴘᴇ>*:* ʟᴏᴄᴋ ɪᴛᴇᴍs ᴏғ ᴀ ᴄᴇʀᴛᴀɪɴ ᴛʏᴘᴇ (ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴘʀɪᴠᴀᴛᴇ)
+ ❍ /unlock  <ᴛʏᴘᴇ>*:* ᴜɴʟᴏᴄᴋ ɪᴛᴇᴍs ᴏғ ᴀ ᴄᴇʀᴛᴀɪɴ ᴛʏᴘᴇ (ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴘʀɪᴠᴀᴛᴇ)
+ ❍ /locks *:* ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ʟɪsᴛ ᴏғ ʟᴏᴄᴋs ɪɴ ᴛʜɪs ᴄʜᴀᴛ.
  
-Locks can be used to restrict a group's users.
-eg:
-Locking urls will auto-delete all messages with urls, locking stickers will restrict all \
-non-admin users from sending stickers, etc.
-Locking bots will stop non-admins from adding bots to the chat.
+ʟᴏᴄᴋs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴛᴏ ʀᴇsᴛʀɪᴄᴛ ᴀ ɢʀᴏᴜᴘ's ᴜsᴇʀs.
+ᴇɢ:
+ʟᴏᴄᴋɪɴɢ ᴜʀʟs ᴡɪʟʟ ᴀᴜᴛᴏ-ᴅᴇʟᴇᴛᴇ ᴀʟʟ ᴍᴇssᴀɢᴇs ᴡɪᴛʜ ᴜʀʟs, ʟᴏᴄᴋɪɴɢ sᴛɪᴄᴋᴇʀs ᴡɪʟʟ ʀᴇsᴛʀɪᴄᴛ ᴀʟʟ \
+ɴᴏɴ-ᴀᴅᴍɪɴ ᴜsᴇʀs ғʀᴏᴍ sᴇɴᴅɪɴɢ sᴛɪᴄᴋᴇʀs, ᴇᴛᴄ.
+ʟᴏᴄᴋɪɴɢ ʙᴏᴛs ᴡɪʟʟ sᴛᴏᴘ ɴᴏɴ-ᴀᴅᴍɪɴs ғʀᴏᴍ ᴀᴅᴅɪɴɢ ʙᴏᴛs ᴛᴏ ᴛʜᴇ ᴄʜᴀᴛ.
 
-*Note:*
- • Unlocking permission *info* will allow members (non-admins) to change the group information, such as the description or the group name
- • Unlocking permission *pin* will allow members (non-admins) to pin a message in a group
+*ɴᴏᴛᴇ:*
+ • ᴜɴʟᴏᴄᴋɪɴɢ ᴘᴇʀᴍɪssɪᴏɴ *ɪɴғᴏ* ᴡɪʟʟ ᴀʟʟᴏᴡ ᴍᴇᴍʙᴇʀs (ɴᴏɴ-ᴀᴅᴍɪɴs) ᴛᴏ ᴄʜᴀɴɢᴇ ᴛʜᴇ ɢʀᴏᴜᴘ ɪɴғᴏʀᴍᴀᴛɪᴏɴ, sᴜᴄʜ ᴀs ᴛʜᴇ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ᴏʀ ᴛʜᴇ ɢʀᴏᴜᴘ ɴᴀᴍᴇ
+ • ᴜɴʟᴏᴄᴋɪɴɢ ᴘᴇʀᴍɪssɪᴏɴ *ᴘɪɴ* ᴡɪʟʟ ᴀʟʟᴏᴡ ᴍᴇᴍʙᴇʀs (ɴᴏɴ-ᴀᴅᴍɪɴs) ᴛᴏ ᴘɪɴ ᴀ ᴍᴇssᴀɢᴇ ɪɴ ᴀ ɢʀᴏᴜᴘ
 """
 
-__mod_name__ = "Lᴏᴄᴋs🔥"
+__mod_name__ = "⍟ Lᴏᴄᴋs ⍟"
 
 LOCKTYPES_HANDLER = DisableAbleCommandHandler("locktypes", locktypes)
 LOCK_HANDLER = CommandHandler("lock", lock, pass_args=True)  # , filters=Filters.group)
