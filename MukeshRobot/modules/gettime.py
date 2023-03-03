@@ -93,17 +93,17 @@ def gettime(update: Update, context: CallbackContext):
 
 
 __help__ = """
- ❍ /time <query>*:* Gives information about a timezone.
-*Available queries:* Country Code/Country Name/Timezone Name
- ❍ ⏰ [Timezones list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+ ❍ /time <ǫᴜᴇʀʏ>*:* ɢɪᴠᴇs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴛɪᴍᴇᴢᴏɴᴇ.
+*ᴀᴠᴀɪʟᴀʙʟᴇ ǫᴜᴇʀɪᴇs:* ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ/ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ/ᴛɪᴍᴇᴢᴏɴᴇ ɴᴀᴍᴇ
+ ❍ ⏰ [ᴛɪᴍᴇᴢᴏɴᴇs ʟɪsᴛ](ʜᴛᴛᴘs://ᴇɴ.ᴡɪᴋɪᴘᴇᴅɪᴀ.ᴏʀɢ/ᴡɪᴋɪ/ʟɪsᴛ_ᴏғ_ᴛᴢ_ᴅᴀᴛᴀʙᴀsᴇ_ᴛɪᴍᴇ_ᴢᴏɴᴇs)
 
-💡 Ex:- /time IN *:* It will shows Indian current time and date..
+💡 ᴇx:- /time ɪɴ *:* ɪᴛ ᴡɪʟʟ sʜᴏᴡs ɪɴᴅɪᴀɴ ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ..
 """
 
 TIME_HANDLER = DisableAbleCommandHandler("time", gettime)
 
 dispatcher.add_handler(TIME_HANDLER)
 
-__mod_name__ = "Tɪᴍᴇ⏱️"
+__mod_name__ = "⍟ Tɪᴍᴇ ⍟"
 __command_list__ = ["time"]
 __handlers__ = [TIME_HANDLER]
