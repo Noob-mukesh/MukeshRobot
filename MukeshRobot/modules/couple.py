@@ -71,14 +71,14 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = 😘
 __New couple of the day may be chosen at 12AM {tomorrow}__"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
-       elif is_selected:
-            X= int(5910057231)
-            Y = int(1726528906)
-            c1_name = (await pbot.get_users(X)).first_name
-            c2_name = (await pbot.get_users(Y)).first_name
-            couple_selection_message = f"""ᴄᴏᴜᴘʟᴇ ғᴏʀ ғᴏʀᴇᴠᴇʀ ❤:
-[{c1_name}](tg://openmessage?user_id={X}) + [{c2_name}](tg://openmessage?user_id={Y}) = 😘
-__ \n ʙᴇsᴛ ᴄᴏᴜᴘʟᴇ ᴇᴠᴇʀ ❤😍 {tomorrow}__"""
+       # elif is_selected:
+          #  X= int(5910057231)
+           # Y = int(1726528906)
+           # c1_name = (await pbot.get_users(X)).first_name
+           # c2_name = (await pbot.get_users(Y)).first_name
+           # couple_selection_message = f"""ᴄᴏᴜᴘʟᴇ ғᴏʀ ғᴏʀᴇᴠᴇʀ ❤:
+#[{c1_name}](tg://openmessage?user_id={X}) + [{c2_name}](tg://openmessage?user_id={Y}) = 😘
+#__ \n ʙᴇsᴛ ᴄᴏᴜᴘʟᴇ ᴇᴠᴇʀ ❤😍 {tomorrow}__"""
     except Exception as e:
         #print(e)
         await message.reply_text(e)
