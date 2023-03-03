@@ -628,7 +628,7 @@ __help__ = f"""
  ❍ /logs ɢᴇᴛ ʜᴇʀᴏᴋᴜ ᴅʏɴᴏ ʟᴏɢs.
 
 `⚠️ ʀᴇᴀᴅ ғʀᴏᴍ ᴛᴏᴘ`
-ᴠɪsɪᴛ @{support_chat} ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
+ᴠɪsɪᴛ @{SUPPORT_CHAT} ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
 """
 
 SUDO_HANDLER = CommandHandler("addsudo", addsudo)
