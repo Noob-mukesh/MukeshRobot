@@ -210,9 +210,9 @@ def get_lst_of_files(input_directory, output_lst):
 
 
 __help__ = """
-Hey I can convert files here..
- ❍ /zip*:* reply to a telegram file to compress it in .zip format
- ❍ /unzip*:* reply to a telegram file to decompress it from the .zip format
+ʜᴇʏ ɪ ᴄᴀɴ ᴄᴏɴᴠᴇʀᴛ ғɪʟᴇs ʜᴇʀᴇ..
+ ❍ /zip *:* ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ ᴛᴏ ᴄᴏᴍᴘʀᴇss ɪᴛ ɪɴ .ᴢɪᴘ ғᴏʀᴍᴀᴛ
+ ❍ /unzip *:* ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ ᴛᴏ ᴅᴇᴄᴏᴍᴘʀᴇss ɪᴛ ғʀᴏᴍ ᴛʜᴇ .ᴢɪᴘ ғᴏʀᴍᴀᴛ
 """
 
-__mod_name__ = "Zɪᴘᴘᴇʀ​📮"
+__mod_name__ = "⍟ Zɪᴘᴘᴇʀ​ ⍟"
