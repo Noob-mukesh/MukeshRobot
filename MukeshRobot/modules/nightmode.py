@@ -1,7 +1,7 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from telethon import functions, types
 from telethon.tl.types import ChatBannedRights
-
+from MukeshRobot import BOT_NAME
 from MukeshRobot import telethn as tbot
 from MukeshRobot.events import register
 from MukeshRobot.modules.sql.night_mode_sql import (
@@ -109,7 +109,7 @@ async def job_close():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By Adventure Robot**",
+                f"12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By {BOT_NAME}**",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
@@ -134,7 +134,7 @@ async def job_open():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                "06:00 Am, Group Is Opening.\n**Powered By Adventure Robot**",
+                f"06:00 Am, Group Is Opening.\n**Powered By {BOT_NAME}**",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
@@ -151,12 +151,12 @@ scheduler.add_job(job_open, trigger="cron", hour=6, minute=1)
 scheduler.start()
 
 __help__ = """
-*Admins Only*
+*ᴀᴅᴍɪɴs ᴏɴʟʏ*
 
- ❍ /nightmode*:* Adds Group to NightMode Chats
- ❍ /rmnight*:* Removes Group From NightMode Chats
+ ❍ /nightmode *:* ᴀᴅᴅs ɢʀᴏᴜᴘ ᴛᴏ ɴɪɢʜᴛᴍᴏᴅᴇ ᴄʜᴀᴛs
+ ❍ /rmnight *:* ʀᴇᴍᴏᴠᴇs ɢʀᴏᴜᴘ ғʀᴏᴍ ɴɪɢʜᴛᴍᴏᴅᴇ ᴄʜᴀᴛs
 
-*Note:* Night Mode chats get Automatically closed at 12 am(IST) and Automatically openned at 6 am(IST) to Prevent Night Spams.
+*ɴᴏᴛᴇ:* ɴɪɢʜᴛ ᴍᴏᴅᴇ ᴄʜᴀᴛs ɢᴇᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄʟᴏsᴇᴅ ᴀᴛ 12 ᴀᴍ(ɪsᴛ) ᴀɴᴅ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴏᴘᴇɴɴᴇᴅ ᴀᴛ 6 ᴀᴍ(ɪsᴛ) ᴛᴏ ᴘʀᴇᴠᴇɴᴛ ɴɪɢʜᴛ sᴘᴀᴍs.
 """
 
-__mod_name__ = "Nɪɢʜᴛ​⛄"
+__mod_name__ = "⍟ Nɪɢʜᴛ​ ⍟"
