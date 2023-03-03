@@ -141,12 +141,12 @@ def chatbot(update: Update, context: CallbackContext):
 
 
 __help__ = f"""
-*{BOT_NAME} has an chatbot whic provides you a seemingless chatting experience :*
+*{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ  ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :*
 
- »  /chatbot *:* Shows chatbot control panel
+ »  /ᴄʜᴀᴛʙᴏᴛ *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
 """
 
-__mod_name__ = "Cʜᴀᴛʙᴏᴛ "
+__mod_name__ = "⍟ Cʜᴀᴛʙᴏᴛ ⍟"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", fallen)
