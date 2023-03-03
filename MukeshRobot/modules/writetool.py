@@ -56,11 +56,11 @@ sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
         )
 
 
-__mod_name__ = "WʀɪᴛᴇTᴏᴏʟ🚏"
+__mod_name__ = "⍟ WʀɪᴛᴇTᴏᴏʟ ⍟"
 
 __help__ = """
 
- Writes the given text on white page with a pen 🖊
+ ᴡʀɪᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴏɴ ᴡʜɪᴛᴇ ᴘᴀɢᴇ ᴡɪᴛʜ ᴀ ᴘᴇɴ 🖊
 
-❍ /write <text> *:* Writes the given text.
+❍ /write <ᴛᴇxᴛ> *:* ᴡʀɪᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ.
  """
