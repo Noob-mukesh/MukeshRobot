@@ -98,7 +98,7 @@ def broadcast(update: Update, context: CallbackContext):
                 except TelegramError:
                     failed_user += 1
         update.effective_message.reply_text(
-            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}."
+            f"ʙʀᴏᴀᴅᴄᴀsᴛ  ᴄᴏᴍᴘʟᴇᴛᴇ.\nɢʀᴏᴜᴘs ғᴀɪʟᴇᴅ : {failed}.\nᴜsᴇʀs ғᴀɪʟᴇᴅ : {failed_user}."
         )
 
 
@@ -234,7 +234,7 @@ async def fcast(_, m : Message):
             print(e)
             failed +=1
 
-    await lel.edit(f"✅Successfull to `{success}` users.\n❌ Faild to `{failed}` users.\n👾 Found `{blocked}` Blocked users \n👻 Found `{deactivated}` Deactivated users.")
+    await lel.edit(f"✅sᴜᴄᴄᴇssғᴜʟʟ ᴛᴏ `{success}` ᴜsᴇʀs .\n❌ ғᴀɪʟᴅ  ᴛᴏ  `{failed}` ᴜsᴇʀs .\n👾 ғᴏᴜɴᴅ `{blocked}` ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs \n👻 ғᴏᴜɴᴅ  `{deactivated}` ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴜsᴇʀs.")
 
 __help__ = ""  # no help string
 
@@ -250,5 +250,5 @@ dispatcher.add_handler(BROADCAST_HANDLER)
 dispatcher.add_handler(CHATLIST_HANDLER)
 dispatcher.add_handler(CHAT_CHECKER_HANDLER, CHAT_GROUP)
 
-__mod_name__ = "Users 🙋"
+__mod_name__ = "⍟ ᴜsᴇʀs ⍟"
 __handlers__ = [(USER_HANDLER, USERS_GROUP), BROADCAST_HANDLER, CHATLIST_HANDLER]
