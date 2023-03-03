@@ -549,27 +549,27 @@ def __user_info__(user_id):
 
 
 __help__ = """
-*ID:*
- ❍ /id*:* get the current group id. If used by replying to a message, gets that user's id.
- ❍ /gifid*:* reply to a gif to me to tell you its file ID.
+*ɪᴅ :*
+ ❍ /id*:* ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ ɪᴅ. ɪғ ᴜsᴇᴅ ʙʏ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ, ɢᴇᴛs ᴛʜᴀᴛ ᴜsᴇʀ's ɪᴅ.
+ ❍ /gifid *:* ʀᴇᴘʟʏ ᴛᴏ ᴀ ɢɪғ ᴛᴏ ᴍᴇ ᴛᴏ ᴛᴇʟʟ ʏᴏᴜ ɪᴛs ғɪʟᴇ ɪᴅ.
 
-*Self added information:* 
- ❍ /setme <text>*:* will set your info
- ❍ /me*:* will get your or another user's info.
-*Examples:* 💡
- ➩ /setme I am a wolf.
- ➩ /me @username(defaults to yours if no user specified)
+*sᴇʟғ ᴀᴅᴅᴇᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ:* 
+ ❍ /setme  <ᴛᴇxᴛ>*:* ᴡɪʟʟ sᴇᴛ ʏᴏᴜʀ ɪɴғᴏ
+ ❍ /me *:* ᴡɪʟʟ ɢᴇᴛ ʏᴏᴜʀ ᴏʀ ᴀɴᴏᴛʜᴇʀ ᴜsᴇʀ's ɪɴғᴏ.
+*ᴇxᴀᴍᴘʟᴇs:* 💡
+ ➩ /setme  ɪ ᴀᴍ ᴀ ᴡᴏʟғ.
+ ➩ /me @ᴜsᴇʀɴᴀᴍᴇ(ᴅᴇғᴀᴜʟᴛs ᴛᴏ ʏᴏᴜʀs ɪғ ɴᴏ ᴜsᴇʀ sᴘᴇᴄɪғɪᴇᴅ)
 
-*Information others add on you:* 
- ❍ /bio*:* will get your or another user's bio. This cannot be set by yourself.
- ❍ /setbio <text>*:* while replying, will save another user's bio 
-*Examples:* 💡
- ➩ /bio @username(defaults to yours if not specified).`
- ➩ /setbio This user is a wolf` (reply to the user)
+*ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏᴛʜᴇʀs ᴀᴅᴅ ᴏɴ ʏᴏᴜ:* 
+ ❍ /bio *:* ᴡɪʟʟ ɢᴇᴛ ʏᴏᴜʀ ᴏʀ ᴀɴᴏᴛʜᴇʀ ᴜsᴇʀ's ʙɪᴏ. ᴛʜɪs ᴄᴀɴɴᴏᴛ ʙᴇ sᴇᴛ ʙʏ ʏᴏᴜʀsᴇʟғ.
+ ❍ /setbio <ᴛᴇxᴛ>*:* ᴡʜɪʟᴇ ʀᴇᴘʟʏɪɴɢ, ᴡɪʟʟ sᴀᴠᴇ ᴀɴᴏᴛʜᴇʀ ᴜsᴇʀ's ʙɪᴏ 
+*ᴇxᴀᴍᴘʟᴇs:* 💡
+ ➩ /bio @ᴜsᴇʀɴᴀᴍᴇ(ᴅᴇғᴀᴜʟᴛs ᴛᴏ ʏᴏᴜʀs ɪғ ɴᴏᴛ sᴘᴇᴄɪғɪᴇᴅ).`
+ ➩ /setbio  ᴛʜɪs ᴜsᴇʀ ɪs ᴀ ᴡᴏʟғ` (ʀᴇᴘʟʏ ᴛᴏ ᴛʜᴇ ᴜsᴇʀ)
 
-*Overall Information about you:*
- ❍ /info*:* get information about a user. 
- ❍ /myinfo*:* Shows info about the user who sent this command.
+*ᴏᴠᴇʀᴀʟʟ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ʏᴏᴜ:*
+ ❍ /info *:* ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜsᴇʀ. 
+ ❍ /myinfo *:* sʜᴏᴡs ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴜsᴇʀ ᴡʜᴏ sᴇɴᴛ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
@@ -592,7 +592,7 @@ dispatcher.add_handler(GET_BIO_HANDLER)
 dispatcher.add_handler(SET_ABOUT_HANDLER)
 dispatcher.add_handler(GET_ABOUT_HANDLER)
 
-__mod_name__ = "Iɴꜰᴏs🔻"
+__mod_name__ = "⍟ Iɴꜰᴏs ⍟"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]
 __handlers__ = [
     ID_HANDLER,
