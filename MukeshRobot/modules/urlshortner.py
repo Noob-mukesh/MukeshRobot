@@ -80,3 +80,8 @@ async def unshort(bot, message):
         await message.reply_text(f"ᴇʀʀᴏʀ:    {e} ")
 # mukesh.add_handler(MessageHandler(short_urls))
 # mukesh.add_handler(MessageHandler(unshort))
+__help__ = """
+ ❍ /short <url>  *:Example /short \n https://t.me/mr_sukkun.
+ *"""
+
+__mod_name__ = "⍟ꜱʜᴏʀᴛ⍟"
