@@ -6,7 +6,7 @@ async def secure(bot, message):
         return await message.reply_text("**Example:**\n\n`/encyrpt Mukesh `")
     m = message.text.split(' ')[1]
     try:
-    	k = secureme.encrypt(m)
+        k = secureme.encrypt(m)
         await message.reply_text(k)
     except Exception as e:
     	await message.reply_text(f"Error {e}")      
