@@ -1,27 +1,14 @@
 import secureme
-
-from MukeshRobot.events import register
-
-
-@register(pattern="^/encrypt ?(.*)")
-async def hmm(event):
-    if event.reply_to_msg_id:
-        lel = await event.get_reply_message()
-        cmd = lel.text
-    else:
-        cmd = event.pattern_match.group(1)
-    Text = cmd
-    k = secureme.encrypt(Text)
-    await event.reply(k)
-
-
-@register(pattern="^/decrypt ?(.*)")
-async def hmm(event):
-    if event.reply_to_msg_id:
-        lel = await event.get_reply_message()
-        ok = lel.text
-    else:
-        ok = event.pattern_match.group(1)
-    Text = ok
-    k = secureme.decrypt(Text)
-    await event.reply(k)
+from MukeshRobot import pbot as mukesh
+@mukesh.on_message(filters.command("encyrpt"))
+async def secure(bot, message):
+    if len(message.command) < 2:
+        return await message.reply_text("**Example:**\n\n`/encyrpt Mukesh `")
+    m = message.text.split(' ')[1]
+    try:
+    	k = secureme.encrypt(m)
+        await message.reply_text(k)
+  except Exception as e:
+    	await message.reply_text(f"Error {e}")      
+    	      
+    	
