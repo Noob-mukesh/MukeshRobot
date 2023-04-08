@@ -8,7 +8,7 @@ async def secure(bot, message):
     try:
     	k = secureme.encrypt(m)
         await message.reply_text(k)
-  except Exception as e:
+    except Exception as e:
     	await message.reply_text(f"Error {e}")      
     	      
     	
