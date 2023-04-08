@@ -1,8 +1,8 @@
-from pyrogram import Client, filters
+from pyrogram import  filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from MukeshRobot.utils.fonts import Fonts
-
+from MukeshRobot import pbot as Client
 
 @Client.on_message(filters.command(["font", "fonts"]))
 async def style_buttons(c, m, cb=False):
