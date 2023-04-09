@@ -219,7 +219,7 @@ def start(update: Update, context: CallbackContext):
                 "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ")
             x.delete()
             usr = update.effective_user
-            lol = \ck\aupdate.effective_message.reply_text(
+            lol = update.effective_message.reply_text(
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
