@@ -3,7 +3,7 @@ from pyrogram import filters
 from MukeshRobot import pbot as mukesh
 
 
-@mukesh.on_message(filters.command("encrypt"))
+@mukesh.on_message(filters.command("encrypt") & filters.private)
 async def encyrpt(bot, message):
     if len(message.command) < 2:
         return await message.reply_text("**Example:**\n\n`/encyrpt India`")
@@ -17,7 +17,7 @@ async def encyrpt(bot, message):
     except Exception as e:
         await message.reply_text(f"Error {e}")
 
-@mukesh.on_message(filters.command("decrypt"))
+@mukesh.on_message(filters.command("decrypt") & filters.private)
 async def decrypt(bot, message):
     if len(message.command) < 2:
         return await message.reply_text("**Example:**\n\n`/decrypt Nsinf`")
