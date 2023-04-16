@@ -876,24 +876,33 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
-
+    x=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ➕",
+                            url="https://t.me/{BOT_USERNAME}?startgroup=true"
+                            )
+                       ]
+                        
+                    ]
+                  )
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}",
                 photo="https://te.legra.ph/file/b99b3bc89e38e6ea61ac3.jpg",
                 caption=f"""
-✨ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...
-
+✨ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
-  **ᴍᴀᴅᴇ ᴡɪᴛʜ ❤ ʙʏ [ᴏᴡɴᴇʀ]("https://t.me/mr_sukkun")**
-ㅤ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{y()}`
-   **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ:** `{telever}`
-   **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{tlhver}`
-ㅤ **ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ:** `{pyrover}`
+**ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ ʙʏ [ᴏᴡɴᴇʀ]("https://t.me/mr_sukkun")**
+**ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{y()}`
+**ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ:** `{telever}`
+**ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{tlhver}`
+**ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ:** `{pyrover}`
 ━━━━━━━━━━━━━
-""",
-                parse_mode=ParseMode.MARKDOWN,
+""",reply_markup=x,
+                parse_mode=ParseMode.HTML,
             )
         except Unauthorized:
             LOGGER.warning(
