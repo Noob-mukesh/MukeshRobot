@@ -416,7 +416,7 @@ def kang(update: Update, context: CallbackContext):
                     + " "
                     + sticker_emoji,
                      reply_markup=keyboard
-                    parse_mode=ParseMode.HTML,
+                    ,parse_mode=ParseMode.HTML,
                 )
             elif e.message == "Invalid sticker emojis":
                 msg.reply_text("Invalid emoji(s).")
