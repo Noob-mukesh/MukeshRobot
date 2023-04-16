@@ -475,6 +475,9 @@ def makepack_internal(
 ):
     name = user.first_name
     name = name[:50]
+    keyboard = InlineKeyboardMarkup(
+        [[InlineKeyboardButton(text="ᴠɪᴇᴡ ᴘᴀᴄᴋ", url=f"t.me/addstickers/{packname}")]]
+    )
     try:
         extra_version = ""
         if packnum > 0:
@@ -517,15 +520,7 @@ def makepack_internal(
                 ),
             )
         elif e.message == "Internal Server Error: created sticker set not found (500)":
-            keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="ᴠɪᴇᴡ ᴘᴀᴄᴋ", url=f"t.me/addstickers/{packname}"
-                                )
-                            ]
-                        ]
-                    )
+            
             msg.reply_text(
                 "sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʀᴇᴀᴛᴇᴅ"
                 % packname,
@@ -535,15 +530,6 @@ def makepack_internal(
         return
 
     if success:
-        keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="ᴠɪᴇᴡ ᴘᴀᴄᴋ", url=f"t.me/addstickers/{packname}"
-                                )
-                            ]
-                        ]
-                    )
         msg.reply_text(
             "sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋ sᴜᴄᴇssғᴜʟʟʏ ᴄʀᴇᴀᴛᴇᴅ "
             % packname,
