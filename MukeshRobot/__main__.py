@@ -876,12 +876,13 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
+    global x
     x=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
                             text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ➕",
-                            url="https://t.me/{BOT_USERNAME}?startgroup=true"
+                            url="https://t.me/{dispatcher.bot.username}?startgroup=true"
                             )
                        ]
                         
@@ -902,7 +903,7 @@ def main():
 **ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ:** `{pyrover}`
 ━━━━━━━━━━━━━
 """,reply_markup=x,
-                parse_mode=ParseMode.HTML,
+                parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
             LOGGER.warning(
