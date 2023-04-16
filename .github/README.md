@@ -13,7 +13,8 @@
     <a href="https://github.com/Noob-Mukesh/MukeshRobot/network/members"> <img src="https://img.shields.io/github/forks/Noob-Mukesh/MukeshRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
-ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ ʀᴏʙᴏᴛ
+##  ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ 
+
 ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [💞ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ ʀᴏʙᴏᴛ​💞](https://t.me/groupcontrollertgbot)
 ᴛʜɪs ɪs ᴀ ᴅᴇᴍᴏ ʙᴏᴛ <br> ɪ ᴅᴏɴ'ᴛ ᴋɴᴏᴡ нσω ʟᴏɴɢᴇʀ ɪ'ʟʟ вε ʜᴏsᴛɪɴɢ ɪᴛ​...
 ━━━━━━━━━━━━━━━━━━━━━━
@@ -23,7 +24,7 @@
  ━━━━━━━━━━━━━━━━━━━━━━
 
 ### ㅤㅤㅤㅤᴄʀᴇᴅɪᴛs 
- ᴍᴜᴋᴇsʜ [ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/itz_mst_boi)
+ [ ᴍᴜᴋᴇsʜ ](https://t.me/itz_legend_coder)
 
  [ᴀɴᴏɴʏᴍᴏᴜs](https://telegram.me/anonymous_was_bot)  
 
