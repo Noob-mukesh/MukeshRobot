@@ -36,7 +36,7 @@
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
          "required": true,
-         "value": ""
+         "value": "D0ZCZ67KL8OTL0PY"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
@@ -50,7 +50,7 @@
       "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": ""
+         "value": "-1001770762410"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
@@ -70,12 +70,12 @@
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit.",
          "required": true,
-         "value": "worldwide_friend_zone"
+         "value": "the_support_chat"
       },
       "TIME_API_KEY": {
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
          "required": true,
-         "value": ""
+         "value": "5LB4TAKPEKZ0"
       },
       "TOKEN": {
          "description": "Get bot token from @BotFather on TG",
