@@ -1,4 +1,4 @@
-<h1>     ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ </h1>
+<h1>ᴍᴜᴋᴇsʜ ʀᴏʙᴏᴛ</h1>
 ━━━━━━━━━━━━━━━━━━━━━━
 <p align="center">
   <img src="https://github.com/Noob-Mukesh/MukeshRobot/blob/main/MukeshRobot/resources/mukesh.jpg">
@@ -13,7 +13,7 @@
     <a href="https://github.com/Noob-Mukesh/MukeshRobot/network/members"> <img src="https://img.shields.io/github/forks/Noob-Mukesh/MukeshRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
-<h1>     ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ </h1>
+<h1>ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ </h1>
 
 <h4>ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs <a href="https://t.me/groupcontrollertgbot">ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ ʀᴏʙᴏᴛ</a>
 ᴛʜɪs ɪs ᴀ ᴅᴇᴍᴏ ʙᴏᴛ <br> ɪ ᴅᴏɴ'ᴛ ᴋɴᴏᴡ нσω ʟᴏɴɢᴇʀ ɪ'ʟʟ вε ʜᴏsᴛɪɴɢ ɪᴛ​...</h4>
