@@ -80,11 +80,10 @@ PM_START_TEXT = """
 *๏ ɪ'ᴍ {} ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘs!
 ʜɪᴛ ʜᴇʟᴘ ᴛᴏ ғɪɴᴅ ᴏᴜᴛ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ɪɴ ᴍʏ ғᴜʟʟ ᴘᴏᴛᴇɴᴛɪᴀʟ!*
 ➻ *ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ  ➕ ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.*
-──────────────────
-   *➻ ᴜᴩᴛɪᴍᴇ »* {}
+─────────────────
    *➻ ᴜsᴇʀs »* {}
    *➻ ᴄʜᴀᴛs »* {}
-──────────────────
+─────────────────
 """
 
 buttons = [
@@ -236,7 +235,7 @@ def start(update: Update, context: CallbackContext):
             time.sleep(0.4)
             lol.delete()
             
-            update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,uptime,sql.num_users(),sql.num_chats()),
+            update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -450,7 +449,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "mukesh_back":
         first_name = update.effective_user.first_name 
-        query.message.edit_text(text= PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,uptime,sql.num_users(),sql.num_chats()),
+        query.message.edit_text(text= PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
