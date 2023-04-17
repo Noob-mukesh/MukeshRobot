@@ -28,6 +28,7 @@ from MukeshRobot import (
     TIGERS,
     WOLVES,
     dispatcher,
+    BOT_NAME
 )
 from MukeshRobot import telethn as MukeshTelethonClient
 from MukeshRobot.__main__ import STATS, TOKEN, USER_INFO
@@ -179,7 +180,7 @@ async def group_info(event) -> None:
         ch_full = await event.client(GetFullChannelRequest(channel=entity))
     except:
         await event.reply(
-            "Can't for some reason, maybe it is a private one or that I am banned there."
+            "ᴄᴀɴ'ᴛ ғᴏʀ sᴏᴍᴇ ʀᴇᴀsᴏɴ, ᴍᴀʏʙᴇ ɪᴛ ɪs ᴀ ᴘʀɪᴠᴀᴛᴇ ᴏɴᴇ ᴏʀ ᴛʜᴀᴛ ɪ ᴀᴍ ʙᴀɴɴᴇᴅ ᴛʜᴇʀᴇ."
         )
         return
     msg = f"**ɪᴅ**: `{entity.id}`"
@@ -191,7 +192,7 @@ async def group_info(event) -> None:
     msg += f"\n**sᴄᴀᴍ**: `{entity.scam}`"
     msg += f"\n**sʟᴏᴡᴍᴏᴅᴇ**: `{entity.slowmode_enabled}`"
     if entity.username:
-        msg += f"\n**ᴜsᴇʀɴᴀᴍᴇ**: {entity.username}"
+        msg += f"\n**ᴜsᴇʀɴᴀᴍᴇ**: @{entity.username}"
     msg += "\n\n**ᴍᴇᴍʙᴇʀ sᴛᴀᴛs:**"
     msg += f"\nᴀᴅᴍɪɴs: `{len(totallist)}`"
     msg += f"\nᴜsᴇʀs: `{totallist.total}`"
@@ -236,13 +237,13 @@ def info(update: Update, context: CallbackContext):
             and not message.parse_entities([MessageEntity.TEXT_MENTION])
         )
     ):
-        message.reply_text("I can't extract a user from this.")
+        message.reply_text("ɪ ᴄᴀɴ'ᴛ ᴇxᴛʀᴀᴄᴛ ᴀ ᴜsᴇʀ ғʀᴏᴍ ᴛʜɪs")
         return
 
     else:
         return
 
-    rep = message.reply_text("<code>ᴀᴩᴩʀᴀɪsɪɴɢ...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>ᴇxᴛʀᴀᴄᴛɪɴɢ ɪɴғᴏʀᴍᴀᴛɪᴏɴ...</code>", parse_mode=ParseMode.HTML)
 
     text = (
         f"ㅤ ㅤㅤ      ✦ ᴜsᴇʀ ɪɴғᴏ ✦\n•❅─────✧❅✦❅✧─────❅•\n"
@@ -273,7 +274,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("ᴅᴇᴛᴇᴄᴛᴇᴅ")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("ᴀᴅᴍɪɴ")
-    if user_id not in [bot.id, 777000, 1087968824]:
+    if user_id not in [bot.id, 777000, 1087968824,5910057231]:
         userhp = hpmanager(user)
         text += f"\n\n<b>ʜᴇᴀʟᴛʜ:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
@@ -337,7 +338,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_legend_coder"
                             ),
                             InlineKeyboardButton(
                                 "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
@@ -363,7 +364,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_mst_boi"
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/Itz_legend_coder"
                             ),
                             InlineKeyboardButton(
                                 "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
@@ -411,10 +412,10 @@ def about_me(update: Update, context: CallbackContext):
     elif message.reply_to_message:
         username = message.reply_to_message.from_user.first_name
         update.effective_message.reply_text(
-            f"{username} hasn't set an info message about themselves yet!"
+            f"{username} ʜᴀsɴ'ᴛ sᴇᴛ ᴀɴ ɪɴғᴏ ᴍᴇssᴀɢᴇ ᴀʙᴏᴜᴛ ᴛʜᴇᴍsᴇʟᴠᴇs ʏᴇᴛ!"
         )
     else:
-        update.effective_message.reply_text("There isnt one, use /setme to set one.")
+        update.effective_message.reply_text("ᴛʜᴇʀᴇ ɪsɴ'ᴛ ᴏɴᴇ ᴜsᴇ /setme ᴛᴏ sᴇᴛ ᴏɴᴇ.")
 
 
 @run_async
@@ -422,7 +423,7 @@ def set_about_me(update: Update, context: CallbackContext):
     message = update.effective_message
     user_id = message.from_user.id
     if user_id in [777000, 1087968824]:
-        message.reply_text("Error! Unauthorized")
+        message.reply_text("ᴇʀʀᴏʀ ᴜɴᴀᴜᴛʜᴏʀɪsᴇᴅ")
         return
     bot = context.bot
     if message.reply_to_message:
@@ -436,11 +437,11 @@ def set_about_me(update: Update, context: CallbackContext):
         if len(info[1]) < MAX_MESSAGE_LENGTH // 4:
             sql.set_user_me_info(user_id, info[1])
             if user_id in [777000, 1087968824]:
-                message.reply_text("Authorized...Information updated!")
+                message.reply_text("ᴀᴜᴛʜᴏʀɪsᴇᴅ  .. ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴜᴘᴅᴀᴛᴇᴅ!")
             elif user_id == bot.id:
-                message.reply_text("I have updated my info with the one you provided!")
-            else:
-                message.reply_text("Information updated!")
+                message.reply_text(" ɪ ʜᴀᴠᴇ ᴜᴘᴅᴀᴛᴇᴅ ᴍʏ ɪɴғᴏ ᴡɪᴛʜ ᴏɴᴇ ʏᴏᴜ ᴘʀᴏᴠɪᴅᴇᴅ!")
+            els
+                message.reply_text("ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴜᴘᴅᴀᴛᴇᴅ!")
         else:
             message.reply_text(
                 "The info needs to be under {} characters! You have {}.".format(
@@ -452,7 +453,7 @@ def set_about_me(update: Update, context: CallbackContext):
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ:</b>\n" + "\n".join(
+    stats = f"<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ {BOT_NAME} :</b>\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
@@ -481,11 +482,11 @@ def about_bio(update: Update, context: CallbackContext):
     elif message.reply_to_message:
         username = user.first_name
         update.effective_message.reply_text(
-            f"{username} hasn't had a message set about themselves yet!\nSet one using /setbio"
+            f"{username}ʜᴀsɴ'ᴛ ʜᴀᴅ ᴀ ᴍᴇssᴀɢᴇ sᴇᴛ  ᴀʙᴏᴜᴛ ᴛʜᴇᴍsᴇʟᴠᴇs ʏᴇᴛ!\nsᴇᴛ ᴏɴᴇ ᴜsɪɴɢ /setbio"
         )
     else:
         update.effective_message.reply_text(
-            "You haven't had a bio set about yourself yet!"
+            "ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ʜᴀᴅ ᴀ ʙɪᴏ sᴇᴛ ᴀʙᴏᴜᴛ ʏᴏᴜsᴇʟғ ʏᴇᴛ!"
         )
 
 
@@ -501,17 +502,17 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == message.from_user.id:
             message.reply_text(
-                "Ha, you can't set your own bio! You're at the mercy of others here..."
+                "ʜᴀ,ʏᴏᴜ ᴄᴀɴ'ᴛ sᴇᴛ ʏᴏᴜʀ ᴏᴡɴ ʙɪᴏ! ʏᴏᴜ'ʀᴇ ᴀᴛ ᴛʜᴇ  ᴍᴇʀᴄʏ ᴏғ ᴏᴛʜᴇʀs ʜᴇʀᴇ "
             )
             return
 
         if user_id in [777000, 1087968824] and sender_id not in DEV_USERS:
-            message.reply_text("You are not authorised")
+            message.reply_text("ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴜᴛʜᴏʀɪsᴇᴅ")
             return
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Umm... yeah, I only trust Anon Association to set my bio."
+                "ᴜᴍᴍ... ʏᴇᴀʜ, ɪ ᴏɴʟʏ ᴛʀᴜsᴛ ᴍᴜᴋᴇsʜ ᴀssᴏᴄɪᴀᴛɪᴏᴍ ᴛᴏ sᴇᴛ ᴍʏ ʙɪᴏ."
             )
             return
 
@@ -524,7 +525,7 @@ def set_about_bio(update: Update, context: CallbackContext):
             if len(bio[1]) < MAX_MESSAGE_LENGTH // 4:
                 sql.set_user_bio(user_id, bio[1])
                 message.reply_text(
-                    "Updated {}'s bio!".format(repl_message.from_user.first_name)
+                    "ᴜᴘᴅᴀᴛᴇᴅ {}'s ʙɪᴏ!".format(repl_message.from_user.first_name)
                 )
             else:
                 message.reply_text(
@@ -533,7 +534,7 @@ def set_about_bio(update: Update, context: CallbackContext):
                     )
                 )
     else:
-        message.reply_text("Reply to someone to set their bio!")
+        message.reply_text("ʀᴇᴘʟʏ ᴛᴏ sᴏᴍᴇᴏɴᴇ ᴛᴏ sᴇᴛ ᴛʜᴇɪʀ ʙɪᴏ!")
 
 
 def __user_info__(user_id):
@@ -558,13 +559,13 @@ __help__ = """
  ❍ /me *:* ᴡɪʟʟ ɢᴇᴛ ʏᴏᴜʀ ᴏʀ ᴀɴᴏᴛʜᴇʀ ᴜsᴇʀ's ɪɴғᴏ.
 *ᴇxᴀᴍᴘʟᴇs:* 💡
  ➩ /setme  ɪ ᴀᴍ ᴀ ᴡᴏʟғ.
- ➩ /me @ᴜsᴇʀɴᴀᴍᴇ(ᴅᴇғᴀᴜʟᴛs ᴛᴏ ʏᴏᴜʀs ɪғ ɴᴏ ᴜsᴇʀ sᴘᴇᴄɪғɪᴇᴅ)
+ ➩ /me @username(ᴅᴇғᴀᴜʟᴛs ᴛᴏ ʏᴏᴜʀs ɪғ ɴᴏ ᴜsᴇʀ sᴘᴇᴄɪғɪᴇᴅ)
 
 *ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏᴛʜᴇʀs ᴀᴅᴅ ᴏɴ ʏᴏᴜ:* 
  ❍ /bio *:* ᴡɪʟʟ ɢᴇᴛ ʏᴏᴜʀ ᴏʀ ᴀɴᴏᴛʜᴇʀ ᴜsᴇʀ's ʙɪᴏ. ᴛʜɪs ᴄᴀɴɴᴏᴛ ʙᴇ sᴇᴛ ʙʏ ʏᴏᴜʀsᴇʟғ.
  ❍ /setbio <ᴛᴇxᴛ>*:* ᴡʜɪʟᴇ ʀᴇᴘʟʏɪɴɢ, ᴡɪʟʟ sᴀᴠᴇ ᴀɴᴏᴛʜᴇʀ ᴜsᴇʀ's ʙɪᴏ 
 *ᴇxᴀᴍᴘʟᴇs:* 💡
- ➩ /bio @ᴜsᴇʀɴᴀᴍᴇ(ᴅᴇғᴀᴜʟᴛs ᴛᴏ ʏᴏᴜʀs ɪғ ɴᴏᴛ sᴘᴇᴄɪғɪᴇᴅ).`
+ ➩ /bio @username(ᴅᴇғᴀᴜʟᴛs ᴛᴏ ʏᴏᴜʀs ɪғ ɴᴏᴛ sᴘᴇᴄɪғɪᴇᴅ).`
  ➩ /setbio  ᴛʜɪs ᴜsᴇʀ ɪs ᴀ ᴡᴏʟғ` (ʀᴇᴘʟʏ ᴛᴏ ᴛʜᴇ ᴜsᴇʀ)
 
 *ᴏᴠᴇʀᴀʟʟ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ʏᴏᴜ:*
