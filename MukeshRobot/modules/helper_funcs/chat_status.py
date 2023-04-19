@@ -100,7 +100,7 @@ def dev_plus(func):
         context.bot
         user = update.effective_user
 
-        if user.id in DEV_USERS and user_id==DRAGONS:
+        if user.id in DEV_USERS and user.id==DRAGONS:
             return func(update, context, *args, **kwargs)
         elif not user:
             pass
