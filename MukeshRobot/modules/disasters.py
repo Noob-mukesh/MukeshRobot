@@ -451,7 +451,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 def whitelistlist(update: Update, context: CallbackContext):
     reply = "<b>Known Wolf Disasters 🐺:</b>\n"
     m = update.effective_message.reply_text(
-        "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
+        "<code>..</code>", parse_mode=ParseMode.HTML
     )
     bot = context.bot
     for each_user in WOLVES:
@@ -468,7 +468,7 @@ def whitelistlist(update: Update, context: CallbackContext):
 @run_async
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Tiger Disasters 🐯:</b>\n"
+    reply = "<b>ᴋɴᴏᴡɴ ᴛɪɢᴇʀ ᴅɪsᴀsᴛᴇʀs 🐯:</b>\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
@@ -490,7 +490,7 @@ def supportlist(update: Update, context: CallbackContext):
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
-    reply = "<b>Known Demon Disasters 👹:</b>\n"
+    reply = "<b> ᴋɴᴏᴡɴ ᴅᴇᴍᴏɴ ᴅɪsᴀsᴛᴇʀs👹:</b>\n"
     for each_user in DEMONS:
         user_id = int(each_user)
         try:
@@ -508,8 +508,8 @@ def sudolist(update: Update, context: CallbackContext):
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
-    true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known Dragon Disasters 🐉:</b>\n"
+    true_sudo = list(set(DRAGONS) 
+    reply = "<b> ᴋɴᴏᴡɴ ᴅʀᴀɢᴏɴ ᴅɪsᴀsᴛᴇʀs🐉:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -525,10 +525,10 @@ def sudolist(update: Update, context: CallbackContext):
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     m = update.effective_message.reply_text(
-        "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
+        "<code>ɢᴀᴛʜᴇʀɪɴɢ..</code>", parse_mode=ParseMode.HTML
     )
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "✨ <b>Dev users list :</b>\n"
+    reply = "✨ <b>ᴅᴇᴠs ᴜsᴇʀ ʟɪsᴛ :</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
@@ -628,7 +628,7 @@ __help__ = f"""
  ❍ /logs ɢᴇᴛ ʜᴇʀᴏᴋᴜ ᴅʏɴᴏ ʟᴏɢs.
 
 `⚠️ ʀᴇᴀᴅ ғʀᴏᴍ ᴛᴏᴘ`
-ᴠɪsɪᴛ @{SUPPORT_CHAT} ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
+ᴠɪsɪᴛ [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](f"https://t.me{SUPPORT_CHAT}") ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
 """
 
 SUDO_HANDLER = CommandHandler("addsudo", addsudo)
