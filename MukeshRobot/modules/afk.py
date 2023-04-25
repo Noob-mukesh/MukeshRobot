@@ -41,7 +41,7 @@ def afk(update: Update, context: CallbackContext):
     fname = update.effective_user.first_name
     try:
         update.effective_message.reply_text(
-            "{} ɪs ɴᴏᴡ ᴀᴡᴀʏ ғʀᴏᴍ ᴛɢ» {}".format(fname, notice)
+            "{} ɪs ɴᴏᴡ ᴀᴡᴀʏ » {}".format(fname, notice)
         )
     except BadRequest:
         pass
@@ -136,21 +136,19 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             res = "{} is afk".format(fst_name)
             update.effective_message.reply_text(res)
         else:
-            res = "{} ɪs ᴀғᴋ ʙᴀʙʏ.\nʀᴇᴀsᴏɴ➪ <code>{}</code>".format(
+            res = "{} ɪs ᴀғᴋ .\nʀᴇᴀsᴏɴ➪ <code>{}</code>".format(
                 html.escape(fst_name), html.escape(user.reason)
             )
             update.effective_message.reply_text(res, parse_mode="html")
 
 
 __help__ = """
-©️ [ᴍᴜᴋᴇsʜ] (f"tg://user?id={OWNER_ID}"))
 
 *ᴀᴡᴀʏ ғʀᴏᴍ ɢʀᴏᴜᴘ*
  ❍ /afk <reason>*:* ᴍᴀʀᴋ ʏᴏᴜʀsᴇʟғ ᴀs ᴀғᴋ(ᴀᴡᴀʏ ғʀᴏᴍ ᴋᴇʏʙᴏᴀʀᴅ).
  ❍ ʙʏᴇ <ʀᴇᴀsᴏɴ>*:* sᴀᴍᴇ ᴀs ᴛʜᴇ ᴀғᴋ ᴄᴏᴍᴍᴀɴᴅ - ʙᴜᴛ ɴᴏᴛ ᴀ ᴄᴏᴍᴍᴀɴᴅ.
 ᴡʜᴇɴ ᴍᴀʀᴋᴇᴅ ᴀs ᴀғᴋ, ᴀɴʏ ᴍᴇɴᴛɪᴏɴs ᴡɪʟʟ ʙᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴡɪᴛʜ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ sᴀʏ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ!
  
-©️ Pᴏᴡᴇʀᴇᴅ ʙʏ @Mukeshbotzone
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
