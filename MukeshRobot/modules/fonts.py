@@ -106,7 +106,7 @@ async def nxt(c, m):
 @Client.on_callback_query(filters.regex("^style"))
 async def style(c, m):
     await m.answer()
-   cmd, style = m.data.split("+")
+    cmd, style = m.data.split("+")
 
     if style == "typewriter":
         cls = Fonts.typewriter
