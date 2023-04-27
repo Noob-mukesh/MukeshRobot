@@ -11,11 +11,11 @@ from pyrogram import filters
 async def gen(bot,msg):
 	fake = Faker()
 	K=fake.profile()
-    bhurr = await msg.reply("ɢᴇɴᴇʀᴀᴛɪɴɢ ɪɴꜰᴏ...")
-    for i , y in K.items():
-	    pass
-	await bhurr.delete()
-	await msg.reply(f"{i} :- {y} ")
+bhurr = await msg.reply("ɢᴇɴᴇʀᴀᴛɪɴɢ ɪɴꜰᴏ...")
+for i , y in K.items():
+    pass
+await bhurr.delete()
+await msg.reply(f"{i} :- {y} ")
 __mod_name__ = "⍟ ғᴀᴋᴇʀ ⍟"
 __help__ = """Rᴀɴᴅᴏᴍ Usᴇʀ Iɴғᴏ Gᴇɴᴇʀᴀᴛᴏʀ
 
