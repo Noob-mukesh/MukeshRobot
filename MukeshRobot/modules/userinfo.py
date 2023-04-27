@@ -28,7 +28,8 @@ from MukeshRobot import (
     TIGERS,
     WOLVES,
     dispatcher,
-    BOT_NAME
+    BOT_NAME,
+    BOT_USERNAME
 )
 from MukeshRobot import telethn as MukeshTelethonClient
 from MukeshRobot.__main__ import STATS, TOKEN, USER_INFO
@@ -274,7 +275,7 @@ def info(update: Update, context: CallbackContext):
                     text += _stext.format("ᴅᴇᴛᴇᴄᴛᴇᴅ")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("ᴀᴅᴍɪɴ")
-    if user_id not in [bot.id, 777000, 1087968824,5910057231]:
+    if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
         text += f"\n\n<b>ʜᴇᴀʟᴛʜ:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
@@ -338,7 +339,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/itz_legend_coder"
+                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"tg://settings"
                             ),
                             InlineKeyboardButton(
                                 "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
@@ -347,7 +348,7 @@ def info(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                                url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                             ),
                         ],
                     ]
@@ -373,7 +374,7 @@ def info(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                                url=f"https://t.me/groupcontrollertgbot?startgroup=true",
+                                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                             ),
                         ],
                     ]
