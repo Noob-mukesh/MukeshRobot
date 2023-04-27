@@ -7,7 +7,7 @@ from faker import Faker
 from datetime import date
 from MukeshRobot import pbot as app 
 from pyrogram import filters
-@app.on_message(filters.command(["faker"]))
+@app.on_message(filters.command("faker"))
 async def gen(bot,msg):
     try:
        fake = Faker()
