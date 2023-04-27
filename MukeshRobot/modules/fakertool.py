@@ -9,7 +9,7 @@ from MukeshRobot import pbot as app
 from pyrogram import filters
 @app.on_message(filters.command(["faker"]))
 async def gen(bot,msg):
- 
+
 	fake = Faker()
 	K=fake.profile()
     bhurr = await msg.reply("ɢᴇɴᴇʀᴀᴛɪɴɢ ɪɴꜰᴏ...")
@@ -21,5 +21,5 @@ __mod_name__ = "⍟ ғᴀᴋᴇʀ ⍟"
 __help__ = """Rᴀɴᴅᴏᴍ Usᴇʀ Iɴғᴏ Gᴇɴᴇʀᴀᴛᴏʀ
 
 ᴜsᴀɢᴇ:
-> /faker | Gᴇɴᴇʀᴀᴛᴇs Fᴀᴋᴇ Rᴀɴᴅᴏᴍ Usᴇʀ Iɴғᴏ (ɪᴍᴀɢᴇ ɪs ɢᴇɴᴇʀᴀᴛᴇᴅ ғʀᴏᴍ [ᴛʜɪsᴘᴇʀsᴏɴᴅᴏᴇsɴᴏᴛᴇxɪsᴛ.ᴄᴏᴍ](https://www.thispersondoesnotexist.com/))
+> /faker | Gᴇɴᴇʀᴀᴛᴇs Fᴀᴋᴇ Rᴀɴᴅᴏᴍ Usᴇʀ Iɴғᴏ (ɪᴍᴀɢᴇ ɪs ɢᴇɴᴇʀᴀᴛᴇᴅ ғʀᴏᴍ [ᴛʜɪsᴘᴇʀsᴏɴᴅᴏᴇsɴᴏᴛᴇxɪsᴛ.ᴄᴏᴍ](https://www.thispersondoesnotexist.com/)) *
 """
