@@ -1,5 +1,4 @@
 from pyrogram import  enums, filters, idle
-from config import *
 from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM
 from requests import get
 import asyncio
@@ -7,7 +6,7 @@ from MukeshRobot import pbot as mukesh
 from pyrogram.handlers import MessageHandler
 from geopy.geocoders import Nominatim
 from geopy.distance import great_circle
-@mukesh.on_message(filters.command(["gps", f"gps@{BOT_USERNAME}"]))
+@mukesh.on_message(filters.command(["gps"]))
 async def gps(bot, message):
 #     await message.delete()
     if len(message.command) < 2:
@@ -48,7 +47,7 @@ async def gps(bot, message):
         await message.reply_venue(latitude, longitude,f"{city}",f"{state} ,{country}",reply_markup=IKM(url))
     except Exception as e:
         await message.reply_text(f"I can't find that \nDue to {e}")
-@mukesh.on_message(filters.command(["distance", f"distance@{BOT_USERNAME}"]))
+@mukesh.on_message(filters.command(["distance"]))
 async def distance(bot, message):
     await message.delete()
     if len(message.command) < 2:
