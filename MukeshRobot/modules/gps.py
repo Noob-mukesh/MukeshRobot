@@ -24,7 +24,7 @@ async def _(event):
             event.chat_id,
             file=types.InputMediaGeoPoint(
                 types.InputGeoPoint(float(latitude), float(longitude))
-            ),
+            ,caption="ᴏᴘᴇɴ ᴡɪᴛʜ: [🌏ɢᴏᴏɢʟᴇ ᴍᴀᴘs]({})".format(gm)),
         )
         await event.reply(
             "Open with: [🌏ɢᴏᴏɢʟᴇ ᴍᴀᴘs]({})".format(gm),
@@ -38,7 +38,7 @@ async def _(event):
 __help__ = """
 sᴇɴᴅs ʏᴏᴜ ᴛʜᴇ ɢᴘs ʟᴏᴄᴀᴛɪᴏɴ ᴏғ ᴛʜᴇ ɢɪᴠᴇɴ ǫᴜᴇʀʏ...
 
- ❍ /ɢᴘs <ʟᴏᴄᴀᴛɪᴏɴ>*:* ɢᴇᴛ ɢᴘs ʟᴏᴄᴀᴛɪᴏɴ.
+ ❍ /gps <ʟᴏᴄᴀᴛɪᴏɴ>*:* ɢᴇᴛ ɢᴘs ʟᴏᴄᴀᴛɪᴏɴ.
 """
 
 __mod_name__ = "⍟ Gᴘs ⍟"
