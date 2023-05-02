@@ -55,3 +55,4 @@ youtube_search_python
 openai
 pyshorteners
 faker
+pyfiglet
