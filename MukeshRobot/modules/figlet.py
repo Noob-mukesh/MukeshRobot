@@ -4,7 +4,7 @@ import pyfiglet
 from random import choice
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from pyrogram.handlers import MessageHandler
-from .. import bot as Client
+from .. import pbot as Client
 def figle(text):
     x = pyfiglet.FigletFont.getFonts()
     font = choice(x)
