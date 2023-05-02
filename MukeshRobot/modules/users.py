@@ -125,7 +125,7 @@ def log_user(update: Update, context: CallbackContext):
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
     all_chats = sql.get_all_chats() or []
-    chatfile = "List of chats.\n0. Chat name | Chat ID | Members count\n"
+    chatfile = "ʟɪsᴛs ᴏғ ᴄʜᴀᴛ.\n0. ᴄʜᴀᴛ ɴᴀᴍᴇ | ᴄʜᴀᴛ ɪᴅ | ᴍᴇᴍʙᴇʀs ᴄᴏᴜɴᴛ\n"
     P = 1
     for chat in all_chats:
         try:
@@ -144,7 +144,7 @@ def chats(update: Update, context: CallbackContext):
         update.effective_message.reply_document(
             document=output,
             filename="groups_list.txt",
-            caption="Here be the list of groups in my database.",
+            caption="ʜᴇʀᴇ ʙᴇ ᴛʜᴇ  ʟɪsᴛ ᴏғ ɢʀᴏᴜᴘs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ",
         )
 
 
@@ -168,73 +168,12 @@ def __user_info__(user_id):
 
 
 def __stats__():
-    return f"• {sql.num_users()} users, across {sql.num_chats()} chats"
+    return f"• {sql.num_users()} ᴜsᴇʀs, ᴀᴄʀᴏss {sql.num_chats()} ᴄʜᴀᴛs"
 
 
 def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
-@app.on_message(filters.command("bcast") & filters.user(OWNER_ID))
-async def bcast(_, m : Message):
-    get_all_users = users
-    lel = await m.reply_text("`⚡️ Processing...`")
-    success = 0
-    failed = 0
-    deactivated = 0
-    blocked = 0
-    for usrs in get_all_users.find():
-        try:
-            userid = usrs["user_id"]
-            #print(int(userid))
-            if m.command[0] == "bcast":
-                await m.reply_to_message.copy(int(userid))
-            success +=1
-        except FloodWait as ex:
-            await asyncio.sleep(ex.value)
-            if m.command[0] == "bcast":
-                await m.reply_to_message.copy(int(userid))
-        except errors.InputUserDeactivated:
-            deactivated +=1
-            remove_user(userid)
-        except errors.UserIsBlocked:
-            blocked +=1
-        except Exception as e:
-            print(e)
-            failed +=1
-
-    await lel.edit(f"✅Successfull to `{success}` users.\n❌ Faild to `{failed}` users.\n👾 Found `{blocked}` Blocked users \n👻 Found `{deactivated}` Deactivated users. \n\n ⚠️ Warning :- Don't Boardcast Everyday ")
-
-#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Broadcast Forward ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-@app.on_message(filters.command("fcast") & filters.user(OWNER_ID))
-async def fcast(_, m : Message):
-    get_all_users = users
-    lel = await m.reply_text("`⚡️ Fcast Processing...`")
-    success = 0
-    failed = 0
-    deactivated = 0
-    blocked = 0
-    for usrs in get_all_users.find():
-        try:
-            userid = usrs["user_id"]
-            #print(int(userid))
-            if m.command[0] == "fcast":
-                await m.reply_to_message.forward(int(userid))
-            success +=1
-        except FloodWait as ex:
-            await asyncio.sleep(ex.value)
-            if m.command[0] == "fcast":
-                await m.reply_to_message.forward(int(userid))
-        except errors.InputUserDeactivated:
-            deactivated +=1
-            remove_user(userid)
-        except errors.UserIsBlocked:
-            blocked +=1
-        except Exception as e:
-            print(e)
-            failed +=1
-
-    await lel.edit(f"✅sᴜᴄᴄᴇssғᴜʟʟ ᴛᴏ `{success}` ᴜsᴇʀs .\n❌ ғᴀɪʟᴅ  ᴛᴏ  `{failed}` ᴜsᴇʀs .\n👾 ғᴏᴜɴᴅ `{blocked}` ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs \n👻 ғᴏᴜɴᴅ  `{deactivated}` ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ ᴜsᴇʀs.")
 
 __help__ = ""  # no help string
 
