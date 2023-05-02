@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from MukeshRobot import OWNER_ID as owner_id
-from MukeshRobot import SUPPORT_CHAT as log,BOT_NAME
+from MukeshRobot import SUPPORT_CHAT as log,BOT_NAME,START_IMG
 from MukeshRobot import pbot as Client
 from MukeshRobot.utils.errors import capture_err
 
@@ -39,7 +39,7 @@ async def bug(_, msg: Message):
     datetimes_fmt = "%d-%m-%Y"
     datetimes = datetime.utcnow().strftime(datetimes_fmt)
 
-    thumb = "https://telegra.ph/file/ce00e06eeeec173a51ba5.mp4"
+    
 
     bug_report = f"""
 **#ʙᴜɢ : ** **tg://user?id={owner_id}**
@@ -75,7 +75,7 @@ async def bug(_, msg: Message):
             )
             await Client.send_photo(
                 log,
-                photo=thumb,
+                photo=START_IMG,
                 caption=f"{bug_report}",
                 reply_markup=InlineKeyboardMarkup(
                     [
