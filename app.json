@@ -1,7 +1,7 @@
 {
       "name": "Mukesh Robot",
       "description": "Telegram Group Management Bot.",
-      "logo": "https://te.legra.ph/file/7689dd87ad16198cf49f7.jpg",
+      "logo": "https://te.legra.ph/file/49c43e6fc856534a09853.jpg",
       "keywords": [
          "telegram",
          "modular",
@@ -65,7 +65,7 @@
       "START_IMG": {
          "description": "Telegraph link of the image which will be shown at start command.",
          "required": true,
-         "value": "https://te.legra.ph/file/7689dd87ad16198cf49f7.jpg"
+         "value": "https://te.legra.ph/file/49c43e6fc856534a09853.jpg"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit.",
