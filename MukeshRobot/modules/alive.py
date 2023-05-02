@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from telegram import __version__ as lver
 from telethon import __version__ as tver
 
-from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME
+from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME,START_IMG
 
 PHOTO = [
     "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",
@@ -30,7 +30,6 @@ Mukesh = [
     ],
 ]
 
-lol = "https://te.legra.ph/file/1a72f3770dcb90ee8b3f7.jpg"
 
 
 @pbot.on_message(filters.command("alive"))
@@ -52,7 +51,7 @@ async def restart(client, m: Message):
     await umm.delete()
     await asyncio.sleep(0.2)
     await m.reply_photo(
-        lol,
+        START_IMG,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
   » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴏᴡɴᴇʀ](tg://user?id={OWNER_ID}))
