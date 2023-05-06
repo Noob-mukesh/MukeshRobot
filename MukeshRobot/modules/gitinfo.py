@@ -29,6 +29,11 @@ async def github(_, message):
                 repositories = result["public_repos"]
                 followers = result["followers"]
                 following = result["following"]
+                global Mukesh
+                Mukesh = [[
+            InlineKeyboardButton(text="ᴘʀᴏғɪʟᴇ ʟɪɴᴋ", url=url),
+            InlineKeyboardButton("Cʟᴏsᴇ",callback_data="close_reply")
+            ]]     
                 caption = f"""**Info Of {name}**
 **ᴜsᴇʀɴᴀᴍᴇ :** `{username}`
 **ʙɪᴏ :** `{bio}`
@@ -39,14 +44,9 @@ async def github(_, message):
 **ʟᴏᴄᴀᴛɪᴏɴ :** `{location}`
 **ғᴏʟʟᴏᴡᴇʀs  :** `{followers}`
 **ғᴏʟʟᴏᴡɪɴɢ :** `{following}`"""
-            except:
-                print(str(e))
-    Mukesh = [
-         [
-        InlineKeyboardButton(text="ᴘʀᴏғɪʟᴇ ʟɪɴᴋ", url=url),
-        InlineKeyboardButton("Cʟᴏsᴇ",callback_data="close_reply)
-       
-    ]]           
+            except Exception as e:
+                await message.reply(f"#ERROR {e}")
+                  
     await message.reply_photo(photo=avatar_url, caption=caption,reply_markup=InlineKeyboardMarkup(Mukesh))
 
 
