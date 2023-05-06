@@ -5,11 +5,11 @@ from MukeshRobot import pbot
 from MukeshRobot.utils.errors import capture_err
 
 
-@pbot.on_message(filters.command("github"))
+@pbot.on_message(filters.command(["github","git"]))
 @capture_err
 async def github(_, message):
     if len(message.command) != 2:
-        return await message.reply_text("/git Noob-Mukesh")
+        return await message.reply_text("/github {username} \n`/github Noob-Mukesh`")
     username = message.text.split(None, 1)[1]
     URL = f"https://api.github.com/users/{username}"
     async with ClientSession() as session:
@@ -34,7 +34,7 @@ async def github(_, message):
             InlineKeyboardButton(text="ᴘʀᴏғɪʟᴇ ʟɪɴᴋ", url=url),
             InlineKeyboardButton("Cʟᴏsᴇ",callback_data="close_reply")
             ]]     
-                caption = f"""**Info Of {name}**
+                caption = f"""**Iɴғᴏ Oғ {name}**
 **ᴜsᴇʀɴᴀᴍᴇ :** `{username}`
 **ʙɪᴏ :** `{bio}`
 **ᴄᴏᴍᴘᴀɴʏ :** `{company}`
