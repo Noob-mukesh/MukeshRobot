@@ -2,7 +2,7 @@ import html
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
+from telegram.ext import CallbackContext, CallbackQueryHandler
 from telegram.utils.helpers import mention_html
 
 import MukeshRobot.modules.sql.approve_sql as sql
@@ -15,7 +15,6 @@ from MukeshRobot.modules.log_channel import loggable
 
 @loggable
 @user_admin
-@run_async
 def approve(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -60,7 +59,6 @@ def approve(update, context):
 
 @loggable
 @user_admin
-@run_async
 def disapprove(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -98,7 +96,6 @@ def disapprove(update, context):
 
 
 @user_admin
-@run_async
 def approved(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -116,7 +113,6 @@ def approved(update, context):
 
 
 @user_admin
-@run_async
 def approval(update, context):
     message = update.effective_message
     chat = update.effective_chat
@@ -138,7 +134,6 @@ def approval(update, context):
         )
 
 
-@run_async
 def unapproveall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
@@ -169,7 +164,6 @@ def unapproveall(update: Update, context: CallbackContext):
         )
 
 
-@run_async
 def unapproveall_btn(update: Update, context: CallbackContext):
     query = update.callback_query
     chat = update.effective_chat
@@ -211,12 +205,14 @@ sᴏᴍᴇᴛɪᴍᴇs, ʏᴏᴜ ᴍɪɢʜᴛ ᴛʀᴜsᴛ ᴀ ᴜsᴇʀ ɴᴏ�
 ❍ /unapproveall *:* ᴜɴᴀᴘᴘʀᴏᴠᴇ *ᴀʟʟ* ᴜsᴇʀs ɪɴ ᴀ ᴄʜᴀᴛ. ᴛʜɪs ᴄᴀɴɴᴏᴛ ʙᴇ ᴜɴᴅᴏɴᴇ.
 """
 
-APPROVE = DisableAbleCommandHandler("approve", approve)
-DISAPPROVE = DisableAbleCommandHandler("unapprove", disapprove)
-APPROVED = DisableAbleCommandHandler("approved", approved)
-APPROVAL = DisableAbleCommandHandler("approval", approval)
-UNAPPROVEALL = DisableAbleCommandHandler("unapproveall", unapproveall)
-UNAPPROVEALL_BTN = CallbackQueryHandler(unapproveall_btn, pattern=r"unapproveall_.*")
+APPROVE = DisableAbleCommandHandler("approve", approve, run_async=True)
+DISAPPROVE = DisableAbleCommandHandler("unapprove", disapprove, run_async=True)
+APPROVED = DisableAbleCommandHandler("approved", approved, run_async=True)
+APPROVAL = DisableAbleCommandHandler("approval", approval, run_async=True)
+UNAPPROVEALL = DisableAbleCommandHandler("unapproveall", unapproveall, run_async=True)
+UNAPPROVEALL_BTN = CallbackQueryHandler(
+    unapproveall_btn, pattern=r"unapproveall_.*", run_async=True
+)
 
 dispatcher.add_handler(APPROVE)
 dispatcher.add_handler(DISAPPROVE)
