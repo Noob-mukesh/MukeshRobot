@@ -603,5 +603,8 @@ dispatcher.add_handler(LOCKTYPES_HANDLER)
 dispatcher.add_handler(LOCKED_HANDLER)
 
 dispatcher.add_handler(
-    MessageHandler(Filters.all & Filters.group, del_lockables), PERM_GROUP
+    MessageHandler(
+        Filters.all & Filters.chat_type.groups, del_lockables, run_async=True
+    ),
+    PERM_GROUP,
 )
