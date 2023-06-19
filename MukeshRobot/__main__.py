@@ -23,7 +23,7 @@ from telegram.ext import (
     Filters,
     MessageHandler,
 )
-from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
+from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
@@ -173,7 +173,6 @@ def send_help(chat_id, text, keyboard=None):
     )
 
 
-@run_async
 def test(update: Update, context: CallbackContext):
     # pprint(eval(str(update)))
     update.effective_message.reply_text(
@@ -183,7 +182,6 @@ def test(update: Update, context: CallbackContext):
     print(update.effective_message)
 
 
-@run_async
 def start(update: Update, context: CallbackContext):
     args = context.args
     global uptime
@@ -308,7 +306,6 @@ def error_callback(update: Update, context: CallbackContext):
         # handle all other telegram related errors
 
 
-@run_async
 def help_button(update, context):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
@@ -373,7 +370,6 @@ def help_button(update, context):
         pass
 
 
-@run_async
 def Mukesh_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "mukesh_":
@@ -457,7 +453,6 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
         )
 
 
-@run_async
 def Music_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Music_":
@@ -599,7 +594,6 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
         )
 
 
-@run_async
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -708,7 +702,6 @@ def send_settings(chat_id, user_id, user=False):
             )
 
 
-@run_async
 def settings_button(update: Update, context: CallbackContext):
     query = update.callback_query
     user = update.effective_user
@@ -792,7 +785,6 @@ def settings_button(update: Update, context: CallbackContext):
             LOGGER.exception("Exception in settings buttons. %s", str(query.data))
 
 
-@run_async
 def get_settings(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -824,7 +816,6 @@ def get_settings(update: Update, context: CallbackContext):
         send_settings(chat.id, user.id, True)
 
 
-@run_async
 def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
@@ -900,7 +891,7 @@ def main():
                 caption=f"""
 ✨ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
-**ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ **
+**ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ ʙʏ 𝐌ᴜᴋᴇsʜ**
 **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{y()}`
 **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ:** `{telever}`
 **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{tlhver}`
@@ -917,16 +908,20 @@ def main():
             LOGGER.warning(e.message)
 
     CommandHandler("test", test)
-    start_handler = CommandHandler("start", start)
+    start_handler = CommandHandler("start", start, run_async=True)
 
-    help_handler = CommandHandler("help", get_help)
-    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*")
+    help_handler = CommandHandler("help", get_help, run_async=True)
+    help_callback_handler = CallbackQueryHandler(
+        help_button, pattern=r"help_.*", run_async=True
+    )
 
-    settings_handler = CommandHandler("settings", get_settings)
-    settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
+    settings_handler = CommandHandler("settings", get_settings, run_async=True)
+    settings_callback_handler = CallbackQueryHandler(
+        settings_button, pattern=r"stngs_", run_async=True
+    )
 
     about_callback_handler = CallbackQueryHandler(
-        Mukesh_about_callback, pattern=r"mukesh_"
+        Mukesh_about_callback, pattern=r"mukesh_", run_async=True
     )
     Music_callback_handler = CallbackQueryHandler(
         Music_about_callback, pattern=r"Music_"
@@ -947,7 +942,7 @@ def main():
     dispatcher.add_error_handler(error_callback)
 
     LOGGER.info("Using long polling.")
-    updater.start_polling(timeout=15, read_latency=4, clean=True)
+    updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
 
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
