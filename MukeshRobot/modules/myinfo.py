@@ -24,7 +24,7 @@ async def proboyx(event):
     await event.get_chat()
     datetime.utcnow()
     firstname = event.sender.first_name
-    button = [[custom.Button.inline("information", data="informations")]]
+    button = [[custom.Button.inline("ɪɴғᴏʀᴍᴀᴛɪᴏɴ", data="informations")]]
     on = await bot.send_file(
         event.chat_id,
         file=file2,
@@ -71,7 +71,7 @@ async def callback_query_handler(event):
         LILIE += f"ʏᴏᴜ ʙᴏᴛ : {PRO.bot} \n"
         LILIE += f"ʀᴇsᴛʀɪᴄᴛᴇᴅ : {PRO.restricted} \n"
         LILIE += f"ᴜsᴇʀ ɪᴅ: {boy}\n"
-        LILIE += f"ᴜsᴇʀɴᴀᴍᴇ : {PRO.username}\n"
+        LILIE += f"ᴜsᴇʀɴᴀᴍᴇ : @{PRO.username}\n"
         await event.answer(LILIE, alert=True)
     except Exception as e:
         await event.reply(f"{e}")
