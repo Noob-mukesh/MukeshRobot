@@ -1,7 +1,7 @@
 import random
 
 from telegram import Update
-from telegram.ext import CallbackContext, run_async
+from telegram.ext import CallbackContext
 
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
@@ -222,7 +222,7 @@ def react(update: Update, context: CallbackContext):
         message.reply_text(react)
 
 
-REACT_HANDLER = DisableAbleCommandHandler("react", react)
+REACT_HANDLER = DisableAbleCommandHandler("react", react, run_async=True)
 
 dispatcher.add_handler(REACT_HANDLER)
 
