@@ -3,8 +3,7 @@ from typing import List
 
 import requests
 from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, run_async
-
+from telegram.ext import CallbackContext
 from MukeshRobot import TIME_API_KEY, dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
@@ -95,12 +94,13 @@ def gettime(update: Update, context: CallbackContext):
 __help__ = """
  ❍ /time <ǫᴜᴇʀʏ>*:* ɢɪᴠᴇs ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴛɪᴍᴇᴢᴏɴᴇ.
 *ᴀᴠᴀɪʟᴀʙʟᴇ ǫᴜᴇʀɪᴇs:* ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ/ᴄᴏᴜɴᴛʀʏ ɴᴀᴍᴇ/ᴛɪᴍᴇᴢᴏɴᴇ ɴᴀᴍᴇ
+
  ❍ ⏰ [ᴛɪᴍᴇᴢᴏɴᴇs ʟɪsᴛ](ʜᴛᴛᴘs://ᴇɴ.ᴡɪᴋɪᴘᴇᴅɪᴀ.ᴏʀɢ/ᴡɪᴋɪ/ʟɪsᴛ_ᴏғ_ᴛᴢ_ᴅᴀᴛᴀʙᴀsᴇ_ᴛɪᴍᴇ_ᴢᴏɴᴇs)
 
 💡 ᴇx:- /time ɪɴ *:* ɪᴛ ᴡɪʟʟ sʜᴏᴡs ɪɴᴅɪᴀɴ ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ..
 """
 
-TIME_HANDLER = DisableAbleCommandHandler("time", gettime)
+TIME_HANDLER = DisableAbleCommandHandler("time", gettime, run_async=True)
 
 dispatcher.add_handler(TIME_HANDLER)
 
