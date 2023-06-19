@@ -123,5 +123,5 @@ def list_errors(update: Update, context: CallbackContext):
     update.effective_message.reply_text(msg, parse_mode="html")
 
 
-dispatcher.add_error_handler(error_callback)
-dispatcher.add_handler(CommandHandler("errors", list_errors))
+dispatcher.add_error_handler(error_callback, run_async=True)
+dispatcher.add_handler(CommandHandler("errors", list_errors, run_async=True))
