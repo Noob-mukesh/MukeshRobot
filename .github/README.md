@@ -20,6 +20,19 @@
 <h4>ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs <a href="https://t.me/groupcontrollertgbot">ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ ʀᴏʙᴏᴛ</a>
 ᴛʜɪs ɪs ᴀ ᴅᴇᴍᴏ ʙᴏᴛ <br> ɪ ᴅᴏɴ'ᴛ ᴋɴᴏᴡ нσω ʟᴏɴɢᴇʀ ɪ'ʟʟ вε ʜᴏsᴛɪɴɢ ɪᴛ​...</h4>
 ━━━━━━━━━━━━━━━━━━━━━━
+<h2 align="center"> 
+   ⇝ ʀᴇǫᴜɪʀᴇᴍᴇɴᴛs ⇜
+</h2>
+
+<p align="center">
+    <a href="https://www.python.org/downloads/release/python-31012/"> ᴘʏᴛʜᴏɴ 3.10.12 </a> |
+    <a href="https://docs.pyrogram.org/intro/setup#api-keys"> ᴛᴇʟᴇɢʀᴀᴍ ᴀᴘɪ ᴋᴇʏ </a> |
+    <a href="https://t.me/botfather"> ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏᴋᴇɴ </a> | 
+    <a href="https://telegra.ph/How-To-get-Mongodb-URI-04-06"> ᴍᴏɴɢᴏᴅʙ ᴜʀɪ </a>
+</p>
+
+
+
 <h1>  ᴅᴇᴘʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ​ 🚀</h1> 
 ᴛʜᴇ ᴇᴀsɪᴇsᴛ ᴡᴀʏ ᴛᴏ ᴅᴇᴘʟᴏʏ  ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/noob-mukesh/MukeshRobot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
@@ -94,3 +107,30 @@ Press `Ctrl+b` and then `d`
 
 ━━━━━━━━━━━━━━━━━━━━
 
+<h2 align="center"> 
+   ⇝ ᴡʀɪᴛᴇ ɴᴇᴡ ᴍᴏᴅᴜʟᴇs ⇜
+</h2>
+
+```py
+#ᴀᴅᴅ ʟɪᴄᴇɴsᴇ ᴛᴇxᴛ ʜᴇʀᴇ ɢᴇᴛ ɪᴛ ғʀᴏᴍ ʙᴇʟᴏᴡ.
+
+from MukeshRobot import pbot as mukesh # This is bot's client
+from pyrogram import filters # pyrogram filters
+...
+
+
+#ғᴏʀ /help ᴍᴇɴᴜ
+__mod_name__ = "Module Name"
+__help__ = "Module help message"
+
+
+@mukesh.on_message(filters.command("start"))
+async def some_function(_, message):
+    await message.reply_text("ɪ'ᴍ.ᴀʟɪᴠᴇ ʙᴀʙʏ❣️!!")
+
+# ᴍᴀɴʏ ᴜsᴇғᴜʟ ғᴜɴᴄᴛɪᴏɴs ᴀʀᴇ ɪɴ, MukeshRobot/utils/,MukeshRobkt, and MukeshRobot/modules/
+```
+
+<h3 align="center"> 
+ ᴀɴᴅ ᴘᴜᴛ ᴛʜɪs ғɪʟᴇ ɪɴ MukeshRobot/modules/, ʀᴇsᴛᴀʀᴛ ᴀɴᴅ ᴛᴇsᴛ ʏᴏᴜʀ ʙᴏᴛ.
+</h3>
