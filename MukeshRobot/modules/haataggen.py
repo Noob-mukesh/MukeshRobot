@@ -5,7 +5,7 @@ from pyrogram import filters
 url = "https://all-hashtag.com/library/contents/ajax_generator.php"
 
 @mukesh.on_message(filters.command("hastag"))
-async def echo(bot, message):
+async def hastag(bot, message):
     global content
     try:
         text = message.text.split(' ',1)[1]
@@ -20,5 +20,9 @@ async def echo(bot, message):
     
     await message.reply_text(f"ʜᴇʀᴇ ɪs ʏᴏᴜʀ  ʜᴀsᴛᴀɢ :\n<pre>{content}</pre>", quote=True)
     
-
+__mod_name__ = "⍟ ʜᴀsᴛᴀɢ ⍟"
+__help__= """
+**Yᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ʜᴀsʜᴛᴀɢ ɢᴇɴᴇʀᴀᴛᴏʀ ᴡʜɪᴄʜ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ ᴛʜᴇ ᴛᴏᴘ 𝟹𝟶 ᴀɴᴅ ᴍᴏʀᴇ ʜᴀsʜᴛᴀɢs ʙᴀsᴇᴅ ᴏғғ ᴏғ ᴏɴᴇ ᴋᴇʏᴡᴏʀᴅ sᴇʟᴇᴄᴛɪᴏɴ.**
+° /hastag enter word to generate hastag.
+°Exᴀᴍᴘʟᴇ: ` /hastag python `
 
