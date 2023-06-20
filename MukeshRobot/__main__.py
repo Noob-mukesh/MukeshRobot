@@ -871,8 +871,8 @@ def main():
                             url="https://t.me/groupcontrollertgbot?startgroup=true"
                             )
                        ]
-                        
-            Command              )
+                ]
+                     )
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
