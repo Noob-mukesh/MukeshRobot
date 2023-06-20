@@ -24,5 +24,5 @@ __mod_name__ = "⍟ ʜᴀsᴛᴀɢ ⍟"
 __help__= """
 **Yᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ʜᴀsʜᴛᴀɢ ɢᴇɴᴇʀᴀᴛᴏʀ ᴡʜɪᴄʜ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ ᴛʜᴇ ᴛᴏᴘ 𝟹𝟶 ᴀɴᴅ ᴍᴏʀᴇ ʜᴀsʜᴛᴀɢs ʙᴀsᴇᴅ ᴏғғ ᴏғ ᴏɴᴇ ᴋᴇʏᴡᴏʀᴅ sᴇʟᴇᴄᴛɪᴏɴ.**
 ° /hastag enter word to generate hastag.
-°Exᴀᴍᴘʟᴇ: ` /hastag python `
+°Exᴀᴍᴘʟᴇ: ` /hastag python `"""
 
