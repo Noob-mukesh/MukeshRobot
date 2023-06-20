@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as  BSP
 from MukeshRobot import pbot as mukesh
-
+from pyrogram import filters
 url = "https://all-hashtag.com/library/contents/ajax_generator.php"
 
 @mukesh.on_message(filters.command("hastag"))
