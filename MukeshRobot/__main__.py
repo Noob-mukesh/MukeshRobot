@@ -872,8 +872,7 @@ def main():
                             )
                        ]
                         
-                    ]
-                  )
+            Command              )
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
@@ -897,8 +896,6 @@ def main():
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
-
-    CommandHandler("test", test)
     start_handler = CommandHandler("start", start, run_async=True)
 
     help_handler = CommandHandler("help", get_help, run_async=True)
