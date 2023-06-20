@@ -172,16 +172,6 @@ def send_help(chat_id, text, keyboard=None):
         reply_markup=keyboard,
     )
 
-
-def test(update: Update, context: CallbackContext):
-    # pprint(eval(str(update)))
-    update.effective_message.reply_text(
-        "Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN
-    )
-    update.effective_message.reply_text("This person edited a message")
-    print(update.effective_message)
-
-
 def start(update: Update, context: CallbackContext):
     args = context.args
     global uptime
@@ -201,7 +191,8 @@ def start(update: Update, context: CallbackContext):
                         [[InlineKeyboardButton(text="◁", callback_data="help_back")]]
                     ),
                 )
-
+            elif args[0].lower() == "markdownhelp":
+                IMPORTED["exᴛʀᴀs"].markdown_help_sender(update)
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
                 chat = dispatcher.bot.getChat(match.group(1))
@@ -568,7 +559,7 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
         query.message.edit_text(text=f"*» ᴇxᴛʀᴀ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
             f"""
 /mstart - ꜱᴛᴀʀᴛ ᴛʜᴇ ᴍᴜꜱɪᴄ ʙᴏᴛ.
-/Mhelp  - ɢᴇᴛ ᴄᴏᴍᴍᴀɴᴅꜱ ʜᴇʟᴘᴇʀ ᴍᴇɴᴜ ᴡɪᴛʜ ᴅᴇᴛᴀɪʟᴇᴅ ᴇxᴘʟᴀɴᴀᴛɪᴏɴꜱ ᴏғ ᴄᴏᴍᴍᴀɴᴅꜱ.
+/mhelp  - ɢᴇᴛ ᴄᴏᴍᴍᴀɴᴅꜱ ʜᴇʟᴘᴇʀ ᴍᴇɴᴜ ᴡɪᴛʜ ᴅᴇᴛᴀɪʟᴇᴅ ᴇxᴘʟᴀɴᴀᴛɪᴏɴꜱ ᴏғ ᴄᴏᴍᴍᴀɴᴅꜱ.
 /ping- ᴘɪɴɢ ᴛʜᴇ ʙᴏᴛ ᴀɴᴅ ᴄʜᴇᴄᴋ ʀᴀᴍ, ᴄᴘᴜ ᴇᴛᴄ ꜱᴛᴀᴛꜱ ᴏғ ʙᴏᴛ.
 
 *ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ:*
