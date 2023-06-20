@@ -18,7 +18,7 @@ async def echo(bot, message):
         return await message.reply_text("Example:\n\n`/hastag python`")
         
     
-    await message.reply_text(f"ʜᴇʀᴇ ɪs ʏᴏᴜʀ  ʜᴀsᴛᴀɢ :\n<pre>{content}</pre>", quote=True,
+    await message.reply_text(f"ʜᴇʀᴇ ɪs ʏᴏᴜʀ  ʜᴀsᴛᴀɢ :\n<pre>{content}</pre>", quote=True)
     
 
 
