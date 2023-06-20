@@ -4,15 +4,17 @@
   <img src="https://github.com/Noob-Mukesh/MukeshRobot/blob/main/MukeshRobot/resources/mukesh.jpg">
 </p>
 <p align="center">
-    <a href="https://github.com/Noob-Mukesh/MukeshRobot/stargazers"><img src="https://img.shields.io/github/stars/Noob-Mukesh/MukeshRobot?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+<a href="https://github.com/Noob-Mukesh /MukeshRobot/stargazers"><img src="https://img.shields.io/github/stars/Noob-Mukesh /MukeshRobot?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
+<a href="https://github.com/Noob-Mukesh /MukeshRobot/network/members"> <img src="https://img.shields.io/github/forks/Noob-Mukesh /MukeshRobot?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
+<a href="https://github.com/Noob-Mukesh /MukeshRobot/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License" /> </a>
+<a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-skyblue?style=for-the-badge&logo=python" alt="Python" /> </a>
+<a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=white&label=telethon&logo=python&logoColor=blue&style=for-the-badge" /></a>
+<a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=white&label=pyrogram&logo=python&logoColor=blue&style=for-the-badge" /></a>
+<a href="https://github.com/Noob-Mukesh /MukeshRobot"> <img src="https://img.shields.io/github/repo-size/Noob-Mukesh /MukeshRobot?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
+<a href="https://github.com/Noob-Mukesh /MukeshRobot/commits/Noob-Mukesh "> <img src="https://img.shields.io/github/last-commit/Noob-Mukesh /MukeshRobot?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 </p>
-<p align="center">
-    <a href="https://github.com/Noob-Mukesh/MukeshRobot"> <img src="https://img.shields.io/github/repo-size/Noob-Mukesh/MukeshRobot?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Noob-Mukesh/MukeshRobot/commits/prince"> <img src="https://img.shields.io/github/last-commit/Noob-Mukesh/MukeshRobot?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Noob-Mukesh/MukeshRobot/issues"> <img src="https://img.shields.io/github/issues//MukeshRobot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/Noob-Mukesh/MukeshRobot/network/members"> <img src="https://img.shields.io/github/forks/Noob-Mukesh/MukeshRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
-    <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
-</p>
+
+━━━━━━━━━━━━━━━━━━━━
 <h1>ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ </h1>
 
 <h4>ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs <a href="https://t.me/groupcontrollertgbot">ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ ʀᴏʙᴏᴛ</a>
