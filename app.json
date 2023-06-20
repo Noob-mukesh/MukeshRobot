@@ -33,11 +33,6 @@
          "description": "Set this to True if you want ! to be a command prefix along with /. Recommended is True",
          "value": "True"
       },
-      "CASH_API_KEY": {
-         "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
-         "required": true,
-         "value": "D0ZCZ67KL8OTL0PY"
-      },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
          "value": "True"
@@ -68,14 +63,9 @@
          "value": "https://te.legra.ph/file/49c43e6fc856534a09853.jpg"
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group chat username where your users will go and bother you with shit.",
+         "description": "Your Telegram support group chat username where your users will go and bother you with shit Example - The_support_chat.",
          "required": true,
          "value": "the_support_chat"
-      },
-      "TIME_API_KEY": {
-         "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
-         "required": true,
-         "value": "5LB4TAKPEKZ0"
       },
       "TOKEN": {
          "description": "Get bot token from @BotFather on TG",
