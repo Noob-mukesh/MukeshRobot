@@ -12,7 +12,6 @@ from telegram import (
 )
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
-from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown, mention_html
 from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
@@ -28,15 +27,15 @@ from MukeshRobot import (
     TIGERS,
     WOLVES,
     dispatcher,
+    telethn,
     BOT_NAME,
     BOT_USERNAME
 )
-from MukeshRobot import telethn as MukeshTelethonClient
+
 from MukeshRobot.__main__ import STATS, TOKEN, USER_INFO
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.chat_status import sudo_plus
 from MukeshRobot.modules.helper_funcs.extraction import extract_user
-from MukeshRobot.modules.sql.afk_sql import check_afk_status, is_afk
 from MukeshRobot.modules.sql.global_bans_sql import is_user_gbanned
 from MukeshRobot.modules.sql.users_sql import get_user_num_chats
 
@@ -85,14 +84,6 @@ def hpmanager(user):
         if not sql.get_user_bio(user.id):
             new_hp -= no_by_per(total_hp, 10)
 
-        if is_afk(user.id):
-            afkst = check_afk_status(user.id)
-            # if user is afk and no reason then decrease 7%
-            # else if reason exist decrease 5%
-            if not afkst.reason:
-                new_hp -= no_by_per(total_hp, 7)
-            else:
-                new_hp -= no_by_per(total_hp, 5)
 
         # fbanned users will have (2*number of fbans) less from max HP
         # Example: if HP is 100 but user has 5 diff fbans
@@ -123,7 +114,6 @@ def make_bar(per):
     return "■" * done + "□" * (10 - done)
 
 
-@run_async
 def get_id(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -166,7 +156,7 @@ def get_id(update: Update, context: CallbackContext):
             )
 
 
-@MukeshTelethonClient.on(
+@telethn.on(
     events.NewMessage(
         pattern="/ginfo",from_users=(TIGERS or []) + (DRAGONS or []) + (DEMONS or [])
     ),
@@ -204,7 +194,6 @@ async def group_info(event) -> None:
     await event.reply(msg)
 
 
-@run_async
 def gifid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.animation:
@@ -216,7 +205,6 @@ def gifid(update: Update, context: CallbackContext):
         update.effective_message.reply_text("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ɢɪғ ᴛᴏ ɢᴇᴛ ɪᴛs ɪᴅ.")
 
 
-@run_async
 def info(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -263,18 +251,14 @@ def info(update: Update, context: CallbackContext):
     if chat.type != "private" and user_id != bot.id:
         _stext = "\n➻ <b>ᴩʀᴇsᴇɴᴄᴇ:</b> <code>{}</code>"
 
-        afk_st = is_afk(user.id)
-        if afk_st:
-            text += _stext.format("AFK")
-        else:
-            status = status = bot.get_chat_member(chat.id, user.id).status
-            if status:
-                if status in {"left", "kicked"}:
-                    text += _stext.format("ɴᴏᴛ ʜᴇʀᴇ")
-                elif status == "member":
-                    text += _stext.format("ᴅᴇᴛᴇᴄᴛᴇᴅ")
-                elif status in {"administrator", "creator"}:
-                    text += _stext.format("ᴀᴅᴍɪɴ")
+        status = status = bot.get_chat_member(chat.id, user.id).status
+        if status:
+            if status in {"left", "kicked"}:
+                text += _stext.format("ɴᴏᴛ ʜᴇʀᴇ")
+            elif status == "member":
+                text += _stext.format("ᴅᴇᴛᴇᴄᴛᴇᴅ")
+            elif status in {"administrator", "creator"}:
+                text += _stext.format("ᴀᴅᴍɪɴ")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
         text += f"\n\n<b>ʜᴇᴀʟᴛʜ:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
@@ -332,8 +316,8 @@ def info(update: Update, context: CallbackContext):
             _file = bot.get_file(profile["file_id"])
             _file.download(f"{user.id}.png")
 
-            message.reply_document(
-                document=open(f"{user.id}.png", "rb"),
+            message.reply_photo(
+                photo=open(f"{user.id}.png", "rb"),
                 caption=(text),
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -391,7 +375,6 @@ def info(update: Update, context: CallbackContext):
     rep.delete()
 
 
-@run_async
 def about_me(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -419,7 +402,6 @@ def about_me(update: Update, context: CallbackContext):
         update.effective_message.reply_text("ᴛʜᴇʀᴇ ɪsɴ'ᴛ ᴏɴᴇ ᴜsᴇ /setme ᴛᴏ sᴇᴛ ᴏɴᴇ.")
 
 
-@run_async
 def set_about_me(update: Update, context: CallbackContext):
     message = update.effective_message
     user_id = message.from_user.id
@@ -451,7 +433,6 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 
-@run_async
 def stats(update: Update, context: CallbackContext):
     stats = f"<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ {BOT_NAME} :</b>\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
@@ -460,7 +441,6 @@ def stats(update: Update, context: CallbackContext):
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
 
 
-@run_async
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -490,7 +470,6 @@ def about_bio(update: Update, context: CallbackContext):
         )
 
 
-@run_async
 def set_about_bio(update: Update, context: CallbackContext):
     message = update.effective_message
     sender_id = update.effective_user.id
@@ -573,16 +552,16 @@ __help__ = """
  ❍ /myinfo *:* sʜᴏᴡs ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴜsᴇʀ ᴡʜᴏ sᴇɴᴛ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.
 """
 
-SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
-GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio)
+SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)
+GET_BIO_HANDLER = DisableAbleCommandHandler("bio", about_bio, run_async=True)
 
-STATS_HANDLER = CommandHandler("stats", stats)
-ID_HANDLER = DisableAbleCommandHandler("id", get_id)
-GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid)
-INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info)
+STATS_HANDLER = CommandHandler("stats", stats, run_async=True)
+ID_HANDLER = DisableAbleCommandHandler("id", get_id, run_async=True)
+GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid, run_async=True)
+INFO_HANDLER = DisableAbleCommandHandler(("info", "book"), info, run_async=True)
 
-SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me)
-GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me)
+SET_ABOUT_HANDLER = DisableAbleCommandHandler("setme", set_about_me, run_async=True)
+GET_ABOUT_HANDLER = DisableAbleCommandHandler("me", about_me, run_async=True)
 
 dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(ID_HANDLER)
