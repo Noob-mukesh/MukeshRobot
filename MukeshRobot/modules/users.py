@@ -4,14 +4,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from telegram import TelegramError, Update
 from telegram.error import BadRequest, Unauthorized
-from telegram.ext import (
-    CallbackContext,
-    CommandHandler,
-    Filters,
-    MessageHandler,
-    run_async,
-)
-
+from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 import MukeshRobot.modules.sql.users_sql as sql 
 from MukeshRobot import pbot as app
 from MukeshRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
@@ -55,7 +48,6 @@ def get_user_id(username):
     return None
 
 
-@run_async
 @dev_plus
 def broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
@@ -102,7 +94,6 @@ def broadcast(update: Update, context: CallbackContext):
         )
 
 
-@run_async
 def log_user(update: Update, context: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
@@ -121,7 +112,6 @@ def log_user(update: Update, context: CallbackContext):
         sql.update_user(msg.forward_from.id, msg.forward_from.username)
 
 
-@run_async
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
     all_chats = sql.get_all_chats() or []
@@ -131,7 +121,7 @@ def chats(update: Update, context: CallbackContext):
         try:
             curr_chat = context.bot.getChat(chat.chat_id)
             curr_chat.get_member(context.bot.id)
-            chat_members = curr_chat.get_members_count(context.bot.id)
+            chat_members = curr_chat.get_member_count(context.bot.id)
             chatfile += "{}. {} | {} | {}\n".format(
                 P, chat.chat_name, chat.chat_id, chat_members
             )
@@ -148,7 +138,6 @@ def chats(update: Update, context: CallbackContext):
         )
 
 
-@run_async
 def chat_checker(update: Update, context: CallbackContext):
     bot = context.bot
     try:
