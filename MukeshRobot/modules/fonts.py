@@ -47,7 +47,7 @@ async def style_buttons(c, m, cb=False):
     ]
     if not cb:
         await m.reply_text(
-            text, reply_markup=InlineKeyboardMarkup(buttons), quote=True
+            f"`{text}`", reply_markup=InlineKeyboardMarkup(buttons), quote=True
         )
     else:
         await m.answer()
@@ -107,7 +107,7 @@ async def nxt(c, m):
 @pbot.on_callback_query(filters.regex("^style"))
 async def style(c, m):
     await m.answer()
-    style = m.data.split(' ',1)[1]
+    style = m.data.split('+')
                         
 
     if style == "typewriter":
