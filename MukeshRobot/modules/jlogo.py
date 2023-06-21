@@ -45,7 +45,7 @@ async def jlogo(b,m):
         fname = "mukesh.png"
         img.save(fname, "png")
         await m.reply_photo(
-            file=fname,
+        fname,
             caption=f" ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}"
 )
         await pesan.delete()
