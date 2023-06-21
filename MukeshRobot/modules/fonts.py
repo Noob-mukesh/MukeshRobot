@@ -6,6 +6,7 @@ from MukeshRobot import pbot
 
 @pbot.on_message(filters.command(["font", "fonts"]))
 async def style_buttons(c, m, cb=False):
+    text = m.text.split(' ',1)[1]
     buttons = [
         [
             InlineKeyboardButton("𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛", callback_data="style+typewriter"),
@@ -46,7 +47,7 @@ async def style_buttons(c, m, cb=False):
     ]
     if not cb:
         await m.reply_text(
-            m.text, reply_markup=InlineKeyboardMarkup(buttons), quote=True
+            text, reply_markup=InlineKeyboardMarkup(buttons), quote=True
         )
     else:
         await m.answer()
