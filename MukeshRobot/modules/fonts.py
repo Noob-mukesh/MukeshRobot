@@ -107,9 +107,7 @@ async def nxt(c, m):
 @pbot.on_callback_query(filters.regex("^style"))
 async def style(c, m):
     await m.answer()
-    style = m.data.split('+')
-                        
-
+    cmd,style = m.data.split('+')
     if style == "typewriter":
         cls = Fonts.typewriter
     if style == "outline":
@@ -188,6 +186,7 @@ async def style(c, m):
         cls = Fonts.strike
     if style == "frozen":
         cls = Fonts.frozen
+        
     new_text = cls(m.message.reply_to_message.text)
     try:
         await m.message.edit_text(new_text, reply_markup=m.message.reply_markup)
