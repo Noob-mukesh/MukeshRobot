@@ -1,13 +1,12 @@
-import glob
 import io
 import os
-import random
+import random,asyncio
 
 import requests
 from PIL import Image, ImageDraw, ImageFont
+from pyrogram import enums
+from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT,pbot
 
-from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
-from MukeshRobot.events import register
 
 LOGO_LINKS = [
     "https://te.legra.ph/file/7345fd37e2ed393b37643.jpg",
@@ -16,17 +15,16 @@ LOGO_LINKS = [
 ]
 
 
-@register(pattern="^/jlogo ?(.*)")
-async def lego(event):
-    quew = event.pattern_match.group(1)
-    if event.sender_id != OWNER_ID and not quew:
-        await event.reply(
-            "`ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴄʀᴇᴀᴛᴇ ʟᴏɢᴏ ʙᴀʙᴇ​ !`\nExample `/jlogo mukesh`"
-        )
-        return
-    pesan = await event.reply("**ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛᴇᴅ  ʟᴀᴛᴇsᴛ ʟᴏɢᴏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴀ sᴇᴄ​...**")
+@pbot.on_message(filters.command("jlogo"))
+async def jlogo(b,m):
+    await b.send_chat_action(m.chat.id, ChatAction.UPLOAD_PHOTO)
+    if len(m.command) < 2:
+         return await m.reply_text(
+            "**Example:**\n\n`/jlogo text`")
+    
+    pesan = await m.reply("**ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛᴇᴅ  ʟᴀᴛᴇsᴛ ʟᴏɢᴏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴀ sᴇᴄ​...**")
     try:
-        text = event.pattern_match.group(1)
+        text = m.text.split(' ',1)[1]
         randc = random.choice(LOGO_LINKS)
         img = Image.open(io.BytesIO(requests.get(randc).content))
         draw = ImageDraw.Draw(img)
@@ -50,23 +48,22 @@ async def lego(event):
         )
         fname = "mukesh.png"
         img.save(fname, "png")
-        await telethn.send_file(
-            event.chat_id,
+        await m.reply_photo(
             file=fname,
             caption=f" ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}"
 )
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
-    except Exception:
-        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
+    except Exception as e:
+        await m.reply(f" #Error {e}, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
 
 
 __mod_name__ = "⍟ ᴊʟᴏɢᴏ ⍟"
 
-__help__ = """
+__help__ = f"""
 @{BOT_USERNAME} ᴄᴀɴ ᴄʀᴇᴀᴛᴇ sᴏᴍᴇ ʙᴇᴀᴜᴛɪғᴜʟ ᴀɴᴅ ᴀᴛᴛʀᴀᴄᴛɪᴠᴇ ᴊᴜɴɢʟᴇ ʟᴏɢᴏ ғᴏʀ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ ᴘɪᴄs.
 
 
-❍ /flogo (Text) *:* ᴄʀᴇᴀᴛᴇ ᴀ ʟᴏɢᴏ ᴏғ ʏᴏᴜʀ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴡɪᴛʜ ʀᴀɴᴅᴏᴍ ᴠɪᴇᴡ.
+❍ /jlogo (Text) *:* ᴄʀᴇᴀᴛᴇ ᴀ ʟᴏɢᴏ ᴏғ ʏᴏᴜʀ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴡɪᴛʜ ʀᴀɴᴅᴏᴍ ᴠɪᴇᴡ.
 """
