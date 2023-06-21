@@ -31,9 +31,9 @@ async def lego(event):
         img = Image.open(io.BytesIO(requests.get(randc).content))
         draw = ImageDraw.Draw(img)
         image_widthz, image_heightz = img.size
-        fnt = "./MukeshRobot/resources/fonts/Damages.ttf"
+        fnt = "./MukeshRobot/resources/fonts/UrbanJungleDEMO.otf"
         randf=fnt
-        font = ImageFont.truetype(randf, 120)
+        font = ImageFont.truetype(randf, 150)
         w, h = draw.textsize(text, font=font)
         h += int(h * 0.21)
         image_width, image_height = img.size
