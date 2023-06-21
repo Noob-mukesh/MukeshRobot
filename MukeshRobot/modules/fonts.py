@@ -187,7 +187,7 @@ async def style(c, m):
     if style == "frozen":
         cls = Fonts.frozen
     #text = m.text.split(' ',1)[1]    
-    new_text = cls(m.message.reply_to_message.text.split(" ",1)[1]
+    new_text = cls(m.message.reply_to_message.text.split(" ",1)[1])
     try:
         await m.message.edit_text(new_text, reply_markup=m.message.reply_markup)
     except:
