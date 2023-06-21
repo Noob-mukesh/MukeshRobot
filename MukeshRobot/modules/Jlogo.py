@@ -24,7 +24,7 @@ async def lego(event):
             "`ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴄʀᴇᴀᴛᴇ ʟᴏɢᴏ ʙᴀʙᴇ​ !`\nExample `/jlogo mukesh`"
         )
         return
-    pesan = await event.reply("**ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛᴇᴅ ʟᴏɢᴏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴀ sᴇᴄ​...**")
+    pesan = await event.reply("**ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛᴇᴅ  ʟᴀᴛᴇsᴛ ʟᴏɢᴏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴀ sᴇᴄ​...**")
     try:
         text = event.pattern_match.group(1)
         randc = random.choice(LOGO_LINKS)
@@ -33,7 +33,7 @@ async def lego(event):
         image_widthz, image_heightz = img.size
         fnt = "./MukeshRobot/resources/fonts/UrbanJungleDEMO.otf"
         randf=fnt
-        font = ImageFont.truetype(randf, 150)
+        font = ImageFont.truetype(randf, 120)
         w, h = draw.textsize(text, font=font)
         h += int(h * 0.21)
         image_width, image_height = img.size
