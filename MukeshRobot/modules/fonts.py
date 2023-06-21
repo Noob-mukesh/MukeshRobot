@@ -107,7 +107,8 @@ async def nxt(c, m):
 @pbot.on_callback_query(filters.regex("^style"))
 async def style(c, m):
     await m.answer()
-    cmd, style = m.data.split("+")
+    style = m.data.split(' ',1)[1]
+                        
 
     if style == "typewriter":
         cls = Fonts.typewriter
