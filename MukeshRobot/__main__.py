@@ -94,7 +94,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="📚 ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
+        InlineKeyboardButton(text="📚 ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"),
     ],
     [
         InlineKeyboardButton(text="🏡 ᴀʙᴏᴜᴛ 🏡 ", callback_data="mukesh_"),
@@ -442,7 +442,26 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             timeout=60,
             disable_web_page_preview=False,
         )
-
+def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "Main_help":
+        query.message.edit_text(text=f"""
+ ʜᴇʀᴇ ɪꜱ ʜᴇʟᴘ ᴍᴇɴᴜ  
+""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="📕 Mᴀɴᴀɢᴇᴍᴇɴᴛ", callback_data="help_back"
+                        ),
+                        InlineKeyboardButton(
+                            text="🎧 Mᴜsɪᴄ", callback_data="Music_")
+                            
+                    ]
+                ]
+            )
 
 def Music_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
