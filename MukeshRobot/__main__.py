@@ -947,7 +947,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
-
+    dispatcher.add_handler(MukeshRobot_Main_Callback)
     dispatcher.add_error_handler(error_callback)
 
     LOGGER.info("Using long polling.")
