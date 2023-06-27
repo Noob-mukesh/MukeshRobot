@@ -444,7 +444,7 @@ def __stats__():
     )
 
 
-__mod_name__ = "⍟ Bʟᴀᴄᴋʟɪsᴛ ⍟"
+__mod_name__ = "Bʟᴀᴄᴋʟɪsᴛ"
 
 __help__ = """
 
