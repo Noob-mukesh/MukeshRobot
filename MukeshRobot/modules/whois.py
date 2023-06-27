@@ -24,7 +24,7 @@ infotext = (
     " ➻ ᴜsᴇʀ ɪᴅ: `{user_id}`\n"
     " ➻ ғɪʀsᴛ ɴᴀᴍᴇ: `{first_name}`\n"
     " ➻ ʟᴀsᴛ ɴᴀᴍᴇ: `{last_name}`\n"
-    " ➻ ᴜsᴇʀɴᴀᴍᴇ: `{username}`\n"
+    " ➻ ᴜsᴇʀɴᴀᴍᴇ: `@{username}`\n"
     " ➻ ʟᴀsᴛ sᴇᴇɴ: `{last_online}`"
 )
 
