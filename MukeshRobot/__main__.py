@@ -449,12 +449,12 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="Mᴜsɪᴄ 🎧", callback_data="Music_")
                     ],
                     [
-                        InlineKeyboardButton(text="💁 Bᴀsɪᴄ ", callback_data="help_basic"),
-                        InlineKeyboardButton(text="Exᴘᴇʀᴛ 👮", callback_data="help_expert")
+                        InlineKeyboardButton(text="💁 Bᴀsɪᴄ ", callback_data="basic_help"),
+                        InlineKeyboardButton(text="Exᴘᴇʀᴛ 👮", callback_data="expert_help")
                     ],
                     [
-                        InlineKeyboardButton(text="🍹 Aᴅᴠᴀɴᴄᴇ", callback_data="help_advance"),
-                        InlineKeyboardButton(text="Dᴏɴᴀᴛɪᴏɴ 🎉", callback_data="help_donation") 
+                        InlineKeyboardButton(text="🍹 Aᴅᴠᴀɴᴄᴇ", callback_data="advance_help"),
+                        InlineKeyboardButton(text="Dᴏɴᴀᴛɪᴏɴ 🎉", callback_data="donation_help") 
                     ],
                     [InlineKeyboardButton(text="• Hᴏᴍᴇ •", callback_data="mukesh_back")]
                 ]
@@ -719,9 +719,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="👤 ᴏᴩᴇɴ ɪɴ ᴩʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ",
-                            url="https://t.me/{}?start=help".format(
-                                context.bot.username
-                            ),
+                            url="https://t.me/{}?start=help".format(context.bot.username),
                         )
                     ],
                     [
@@ -999,7 +997,7 @@ def main():
 
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
-        MukeshRobot_Main_Callback, pattern=r"help_.*", run_async=True
+        help_button, pattern=r"help_.*", run_async=True
     )
 
     settings_handler = CommandHandler("settings", get_settings, run_async=True)
@@ -1014,7 +1012,7 @@ def main():
         Music_about_callback, pattern=r"Music_",run_async=True
     )
     mukeshrobot_main_handler = CallbackQueryHandler(
-        MukeshRobot_Main_Callback, pattern=r"Main_help",run_async=True)
+        MukeshRobot_Main_Callback, pattern=r".*_help",run_async=True)
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
     dispatcher.add_handler(start_handler)
