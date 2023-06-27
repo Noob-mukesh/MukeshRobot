@@ -544,7 +544,7 @@ __help__ = """
  ❍ /stickers *:* ғɪɴᴅ sᴛɪᴄᴋᴇʀs ғᴏʀ ɢɪᴠᴇɴ ᴛᴇʀᴍ ᴏɴ ᴄᴏᴍʙᴏᴛ sᴛɪᴄᴋᴇʀ ᴄᴀᴛᴀʟᴏɢᴜᴇ
 """
 
-__mod_name__ = "⍟ ᴋᴀɴɢ ⍟"
+__mod_name__ = "Kᴀɴɢ"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
 KANG_HANDLER = DisableAbleCommandHandler("kang", kang, admin_ok=True, run_async=True)
