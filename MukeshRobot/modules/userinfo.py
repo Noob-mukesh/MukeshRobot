@@ -323,7 +323,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"tg://settings"
+                                "ʜᴇᴀʟᴛʜ", url=f"https://t.me/mukeshbotzone/90"
                             ),
                             InlineKeyboardButton(
                                 "Dɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
@@ -349,7 +349,7 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "ᴅᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/Itz_legend_coder"
+                                "ʜᴇᴀʟᴛʜ", url="https://t.me/mukeshbotzone/90"
                             ),
                             InlineKeyboardButton(
                                 "ᴅɪsᴀsᴛᴇʀ", url="https://t.me/mukeshbotzone/26"
