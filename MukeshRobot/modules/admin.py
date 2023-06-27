@@ -328,16 +328,16 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
             can_pin_messages=bot_member.can_pin_messages,
         )
     title= message.text.split(" ", 1)[1]
-        if len(title) > 16:
-            message.reply_text(
+    if len(title) > 16:
+        message.reply_text(
                 "ᴛʜᴇ ᴛɪᴛʟᴇ ʟᴇɴɢᴛʜ ɪs ʟᴏɴɢᴇʀ ᴛʜᴀɴ 16 ᴄʜᴀʀᴀᴄᴛᴇʀs.\nᴛʀᴜɴᴄᴀᴛɪɴɢ ɪᴛ ᴛᴏ 16 ᴄʜᴀʀᴀᴄᴛᴇʀs."
             )
 
-        try:
-            bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
+    try:
+        bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
 
-        except BadRequest:
-            message.reply_text(
+    except BadRequest:
+        message.reply_text(
                 "I ᴄᴀɴ'ᴛ sᴇᴛ ᴄᴜsᴛᴏᴍ ᴛɪᴛʟᴇ ғᴏʀ ᴀᴅᴍɪɴs ᴛʜᴀᴛ I ᴅɪᴅɴ'ᴛ ᴘʀᴏᴍᴏᴛᴇ!"
             )
 
@@ -433,16 +433,16 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
             can_manage_voice_chats=bot_member.can_manage_voice_chats,
         )
    title= message.text.split(" ", 1)[1]
-        if len(title) > 16:
-            message.reply_text(
+    if len(title) > 16:
+        message.reply_text(
                 "ᴛʜᴇ ᴛɪᴛʟᴇ ʟᴇɴɢᴛʜ ɪs ʟᴏɴɢᴇʀ ᴛʜᴀɴ 16 ᴄʜᴀʀᴀᴄᴛᴇʀs.\nᴛʀᴜɴᴄᴀᴛɪɴɢ ɪᴛ ᴛᴏ 16 ᴄʜᴀʀᴀᴄᴛᴇʀs."
             )
 
-        try:
-            bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
+    try:
+        bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
 
-        except BadRequest:
-            message.reply_text(
+    except BadRequest:
+        message.reply_text(
                 "I ᴄᴀɴ'ᴛ sᴇᴛ ᴄᴜsᴛᴏᴍ ᴛɪᴛʟᴇ ғᴏʀ ᴀᴅᴍɪɴs ᴛʜᴀᴛ I ᴅɪᴅɴ'ᴛ ᴘʀᴏᴍᴏᴛᴇ!"
             )
 
