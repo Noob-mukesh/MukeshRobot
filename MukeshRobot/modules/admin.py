@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
 
-from MukeshRobot import DRAGONS, dispatcher,OWNER_ID
+from MukeshRobot import DRAGONS, dispatcher,OWNER_ID,pbot
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.admin_rights import user_can_changeinfo
 from MukeshRobot.modules.helper_funcs.alternate import send_message
@@ -880,12 +880,35 @@ def adminlist(update, context):
         msg.edit_text(text, parse_mode=ParseMode.HTML)
     except BadRequest:  # if original message is deleted
         return
+@pbot.on_message(filters.command("bots"))
+async def listbots(client, message):
+    try:
+        botList = []
+        async for bot in pbot.get_chat_members(
+            message.chat.id, filter=enums.ChatMembersFilter.BOTS
+        ):
+            botList.append(bot.user)
+        lenBotList = len(botList)
+        text3 = f"**ʙᴏᴛ ʟɪsᴛ - {message.chat.title}**\n\n🤖 Bots\n"
+        while len(botList) > 1:
+            bot = botList.pop(0)
+            text3 += f"├ @{bot.username}\n"
+        else:
+            bot = botList.pop(0)
+            text3 += f"└ @{bot.username}\n\n"
+            text3 += f"✅ | **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs**: {lenBotList}"
+            await pbot.send_message(message.chat.id, text3)
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+
+
 
 
 __help__ = """
 
 *ᴜsᴇʀ ᴄᴏᴍᴍᴀɴᴅs*:
 » /admins*:* ʟɪsᴛ ᴏғ ᴀᴅᴍɪɴs ɪɴ ᴛʜᴇ ᴄʜᴀᴛ
+» /bots *:* ʟɪsᴛ ᴏғ ʙᴏᴛ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ
 » /pinned*:* ᴛᴏ ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ.
 
 * ᴀᴅᴍɪɴs ᴄᴏᴍᴍᴀɴᴅ:* 
