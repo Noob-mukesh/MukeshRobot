@@ -83,4 +83,4 @@ sᴇɴᴅs ʏᴏᴜ ᴛʜᴇ ɢᴘs ʟᴏᴄᴀᴛɪᴏɴ ᴏғ ᴛʜᴇ ɢɪᴠ
  ❍ /distance  to measure distance 
 """
 
-__mod_name__ = "⍟ Gᴘs ⍟"
+__mod_name__ = "Gᴘs"
