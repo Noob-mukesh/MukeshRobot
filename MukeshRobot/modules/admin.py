@@ -432,7 +432,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
             can_pin_messages=bot_member.can_pin_messages,
             can_manage_voice_chats=bot_member.can_manage_voice_chats,
         )
-   title= message.text.split(" ", 1)[1]
+    title= message.text.split(" ", 1)[1]
     if len(title) > 16:
         message.reply_text(
                 "ᴛʜᴇ ᴛɪᴛʟᴇ ʟᴇɴɢᴛʜ ɪs ʟᴏɴɢᴇʀ ᴛʜᴀɴ 16 ᴄʜᴀʀᴀᴄᴛᴇʀs.\nᴛʀᴜɴᴄᴀᴛɪɴɢ ɪᴛ ᴛᴏ 16 ᴄʜᴀʀᴀᴄᴛᴇʀs."
