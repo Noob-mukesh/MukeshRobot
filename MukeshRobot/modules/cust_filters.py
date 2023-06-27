@@ -627,7 +627,7 @@ __help__ = """
 
 """
 
-__mod_name__ = "⍟ Fɪʟᴛᴇʀs ⍟"
+__mod_name__ = "Fɪʟᴛᴇʀs"
 
 FILTER_HANDLER = CommandHandler("filter", filters, run_async=True)
 STOP_HANDLER = CommandHandler("stop", stop_filter, run_async=True)
