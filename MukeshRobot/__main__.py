@@ -445,36 +445,21 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text="📕 Mᴀɴᴀɢᴇᴍᴇɴᴛ", callback_data="help_back"
-                        ),
-                        InlineKeyboardButton(
-                            text="Mᴜsɪᴄ 🎧", callback_data="Music_")
-                            
+                        InlineKeyboardButton(text="📕 Mᴀɴᴀɢᴇᴍᴇɴᴛ", callback_data="help_back"),
+                        InlineKeyboardButton(text="Mᴜsɪᴄ 🎧", callback_data="Music_")
                     ],
-                [
-                        InlineKeyboardButton(
-                            text="💁 Bᴀsɪᴄ ", callback_data="help_basic"
-                        ),
-                        InlineKeyboardButton(
-                            text="Exᴘᴇʀᴛ 👮", callback_data="help_expert")
-                            
+                    [
+                        InlineKeyboardButton(text="💁 Bᴀsɪᴄ ", callback_data="help_basic"),
+                        InlineKeyboardButton(text="Exᴘᴇʀᴛ 👮", callback_data="help_expert")
                     ],
-            [
-                        InlineKeyboardButton(
-                            text="🍹 Aᴅᴠᴀɴᴄᴇ", callback_data="help_advance"
-                        ),
-                        InlineKeyboardButton(
-                            text="Dᴏɴᴀᴛɪᴏɴ 🎉", callback_data="help_donation")
-                            
+                    [
+                        InlineKeyboardButton(text="🍹 Aᴅᴠᴀɴᴄᴇ", callback_data="help_advance"),
+                        InlineKeyboardButton(text="Dᴏɴᴀᴛɪᴏɴ 🎉", callback_data="help_donation") 
                     ],
-            [InlineKeyboardButton(
-                            text="• Hᴏᴍᴇ •", callback_data="mukesh_back"
-                            )
-            ]
-            ]
+                    [InlineKeyboardButton(text="• Hᴏᴍᴇ •", callback_data="mukesh_back")]
+                ]
             ),
-            )
+        )
     elif query.data=="help_basic":
         query.message.edit_text("""Bᴀsɪᴄ Cᴏᴍᴍᴀɴᴅs.
 👮🏻Aᴠᴀɪʟᴀʙʟᴇ ᴛᴏ Aᴅᴍɪɴs & Mᴏᴅᴇʀᴀᴛᴏʀs.
@@ -1014,7 +999,7 @@ def main():
 
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
-        help_button, pattern=r"help_.*", run_async=True
+        MukeshRobot_Main_Callback, pattern=r"help_.*", run_async=True
     )
 
     settings_handler = CommandHandler("settings", get_settings, run_async=True)
