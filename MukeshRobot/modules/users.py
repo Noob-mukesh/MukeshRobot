@@ -66,7 +66,7 @@ def broadcast(update: Update, context: CallbackContext):
             for chat in chats:
                 try:
                     context.bot.sendMessage(
-                        int(chat.chat_id),
+                        int(chat["chat_id"]),
                         to_send[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
@@ -78,7 +78,7 @@ def broadcast(update: Update, context: CallbackContext):
             for user in users:
                 try:
                     context.bot.sendMessage(
-                        int(user.user_id),
+                        int(user["_id"]),
                         to_send[1],
                         parse_mode="MARKDOWN",
                         disable_web_page_preview=True,
