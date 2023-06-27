@@ -87,7 +87,7 @@ dispatcher.add_handler(LEAVE_HANDLER)
 dispatcher.add_handler(GITPULL_HANDLER)
 dispatcher.add_handler(RESTART_HANDLER)
 
-__mod_name__ = "⍟ ᴅᴇᴠ ⍟"
+__mod_name__ = "Dᴇᴠ"
 
 __help__ = """ 
 /lockdown on/off
