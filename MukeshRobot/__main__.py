@@ -377,18 +377,18 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🚩sᴜᴩᴩᴏʀᴛ🚩", callback_data="mukesh_support"
+                            text="🚩sᴜᴩᴩᴏʀᴛ", callback_data="mukesh_support"
                         ),
                         InlineKeyboardButton(
-                            text="✨ᴄᴏᴍᴍᴀɴᴅs✨", callback_data="help_back"
+                            text="ᴄᴏᴍᴍᴀɴᴅs 💁", callback_data="Main_help"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="👨‍💻ᴅᴇᴠᴇʟᴏᴩᴇʀ👨‍💻", url=f"tg://user?id={OWNER_ID}"
+                            text="👨‍💻ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id={OWNER_ID}"
                         ),
                         InlineKeyboardButton(
-                            text="🥀sᴏᴜʀᴄᴇ🥀",
+                            text="🥀sᴏᴜʀᴄᴇ",
                             url="https://github.com/noob-mukesh/MukeshRobot",
                         ),
                     ],
@@ -406,18 +406,18 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🚩sᴜᴩᴩᴏʀᴛ🚩", url=f"https://t.me/{SUPPORT_CHAT}"
+                            text="🏡 sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
                         ),
                         InlineKeyboardButton(
-                            text="💗ᴜᴩᴅᴀᴛᴇs💓", url=f"https://t.me/mukeshbotzone"
+                            text="ᴜᴩᴅᴀᴛᴇs 🍷", url=f"https://t.me/mukeshbotzone"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="🥀ᴅᴇᴠᴇʟᴏᴩᴇʀ🥀", url=f"tg://user?id={OWNER_ID}"
+                            text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id={OWNER_ID}"
                         ),
                         InlineKeyboardButton(
-                            text="✨ɢɪᴛʜᴜʙ✨", url="https://github.com/noob-mukesh"
+                            text="ɢɪᴛʜᴜʙ 🍹", url="https://github.com/noob-mukesh"
                         ),
                     ],
                     [
@@ -574,7 +574,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
                         ),
                     ],
                     [
-                        InlineKeyboardButton(text="◁", callback_data="mukesh_back")
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help")
                     ],
                 ]
             ),
