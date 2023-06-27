@@ -1026,10 +1026,10 @@ def main():
         Mukesh_about_callback, pattern=r"mukesh_", run_async=True
     )
     music_callback_handler = CallbackQueryHandler(
-        Music_about_callback, pattern=r"Music_"
+        Music_about_callback, pattern=r"Music_",run_async=True
     )
     mukeshrobot_main_handler = CallbackQueryHandler(
-        MukeshRobot_Main_Callback, pattern=r"Main_help")
+        MukeshRobot_Main_Callback, pattern=r"Main_help",run_async=True)
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
     dispatcher.add_handler(start_handler)
