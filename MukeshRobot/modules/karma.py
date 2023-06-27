@@ -26,7 +26,7 @@ karma_negative_group = 4
 
 @pbot.on_message(
     filters.text
-    & filters.chat_type.groups
+    & filters.group
     & filters.incoming
     & filters.reply
     & filters.regex(regex_upvote)
