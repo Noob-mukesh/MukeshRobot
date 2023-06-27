@@ -55,7 +55,7 @@ async def jlogo(b,m):
         await m.reply(f" #Error {e}, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
 
 
-__mod_name__ = "⍟ ᴊʟᴏɢᴏ ⍟"
+__mod_name__ = "Jʟᴏɢᴏ"
 
 __help__ = f"""
 @{BOT_USERNAME} ᴄᴀɴ ᴄʀᴇᴀᴛᴇ sᴏᴍᴇ ʙᴇᴀᴜᴛɪғᴜʟ ᴀɴᴅ ᴀᴛᴛʀᴀᴄᴛɪᴠᴇ ᴊᴜɴɢʟᴇ ʟᴏɢᴏ ғᴏʀ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ ᴘɪᴄs.
