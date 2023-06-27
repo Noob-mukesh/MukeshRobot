@@ -413,7 +413,7 @@ __help__ = """
  `1ᴡ` = 1 ᴡᴇᴇᴋ
  """
 
-__mod_name__ = "⍟ ꜰʟᴏᴏᴅ ⍟"
+__mod_name__ = "Fʟᴏᴏᴅ"
 
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update & Filters.chat_type.groups,
