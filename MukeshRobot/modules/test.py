@@ -80,6 +80,8 @@ async def braodcast_message(client, message, _):
                     if message.reply_to_message
                     else await app.send_message(i, text=query)
                 )
+            except Exception as e:
+                await message.reply_text(e)
                
         try:
             await message.reply_text("ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ ᴍᴇssᴀɢᴇ ᴛᴏ {0} ᴜsᴇʀs".format(susr))
