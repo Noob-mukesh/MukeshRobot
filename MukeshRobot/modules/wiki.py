@@ -58,4 +58,4 @@ dispatcher.add_handler(WIKI_HANDLER)
 __help__ = """
 » /wiki (text) *:* sᴇᴀʀᴄʜs ᴀʙᴏᴜᴛ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴏɴ ᴡɪᴋɪᴘᴇᴅɪᴀ.
 """
-__mod_name__ = " Wɪᴋɪ "
+__mod_name__ = "Wɪᴋɪ"
