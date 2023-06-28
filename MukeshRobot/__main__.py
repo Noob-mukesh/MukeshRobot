@@ -89,7 +89,7 @@ buttons = [
     [
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
         InlineKeyboardButton(text="🛡️", callback_data="expert_help"),
-        InlineKeyboardButton(text="💳", callback_data="ABG_credit"),
+        InlineKeyboardButton(text="💳", callback_data="mukesh_support"),
         InlineKeyboardButton(text="🕹️", url=f"tg://user?id={OWNER_ID}"),
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],
