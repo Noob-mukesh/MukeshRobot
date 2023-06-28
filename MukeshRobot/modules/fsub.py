@@ -7,7 +7,7 @@ from MukeshRobot import BOT_ID
 from MukeshRobot import DRAGONS as DEVS
 from MukeshRobot import OWNER_ID
 from MukeshRobot import telethn as Mukesh
-from MukeshRobot.events import inlinequery as Mukeshinline
+from MukeshRobot.events import Mukeshinline
 from MukeshRobot.events import register as Mukeshbot
 from MukeshRobot.modules.no_sql import fsub_db as db
 
