@@ -75,11 +75,8 @@ async def active_afk(_, message: Message):
                         photo=f"downloads/{user_id}.jpg",
                         caption=f"**{message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴡᴀs ᴀᴡᴀʏ ғᴏʀ {seenago}\n\nʀᴇᴀsᴏɴ: `{reasonafk}`",
                     )
-        except Exception:
-            send = await message.reply_text(
-                f"**{message.from_user.first_name}** ɪs ʙᴀᴄᴋ ᴏɴʟɪɴᴇ",
-                disable_web_page_preview=True,
-            )
+        except Exception as e:
+            print(e)
 
     if len(message.command) == 1 and not message.reply_to_message:
         details = {
