@@ -1,7 +1,7 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from telethon import functions, types
 from telethon.tl.types import ChatBannedRights
-from telethon.tl.types import KeyboardButtonRow, KeyboardButton
+from telethon import TelegramClient, events, Button
 from MukeshRobot import (
     BOT_NAME,
     BOT_USERNAME)
@@ -64,9 +64,9 @@ openhehe = ChatBannedRights(
     pin_messages=False,
     change_info=False,
 )
-
-button_row = KeyboardButtonRow(KeyboardButton(text="Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true"))
+button_row = [
+        [Button.url"Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
+            f"https://t.me/{BOT_USERNAME}?startgroup=true"))
 @register(pattern="^/nightmode")
 async def close_ws(event):
     if event.is_group:
