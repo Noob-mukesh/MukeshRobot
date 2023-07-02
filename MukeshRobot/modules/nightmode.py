@@ -66,7 +66,7 @@ openhehe = ChatBannedRights(
 )
 button_row = [
         [Button.url("Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
-            f"https://t.me/{BOT_USERNAME}?startgroup=true"))
+            f"https://t.me/{BOT_USERNAME}?startgroup=true")
 @register(pattern="^/nightmode")]]
 async def close_ws(event):
     if event.is_group:
@@ -82,7 +82,7 @@ async def close_ws(event):
         return
     add_nightmode(str(event.chat_id))
     await event.reply(
-        f"​🇦​​🇩​​🇩​​🇪​​🇩​ ​🇨​​🇭​​🇦​​🇹​: {event.chat.title} \n​🇮​​🇩​: {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 12ᴀᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 06ᴀᴍ(ɪꜱᴛ)**",
+        f"​ᴀᴅᴅᴇᴅ ᴄʜᴀᴛ​ ​​: {event.chat.title} \n​ɪᴅ​: {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 12ᴀᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 06ᴀᴍ(ɪꜱᴛ)**",
        buttons=button_row )
 
 
@@ -97,11 +97,11 @@ async def disable_ws(event):
         await event.reply("ʏᴏᴜ ᴄᴀɴ ᴏɴʟʏ ᴅɪꜱᴀʙʟᴇ ɴɪɢʜᴛ ᴍᴏᴅᴇ ɪɴ ɢʀᴏᴜᴘꜱ.")
         return
     if not is_nightmode_indb(str(event.chat_id)):
-        await event.reply("ᴛʜɪꜱ ᴄʜᴀᴛ ɪꜱ ​🇳​​🇴​​🇹 ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ ɴɪɢʜᴛ ᴍᴏᴅᴇ")
+        await event.reply("ᴛʜɪꜱ ᴄʜᴀᴛ ɪꜱ ​ɴᴏᴛ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ ɴɪɢʜᴛ ᴍᴏᴅᴇ")
         return
     rmnightmode(str(event.chat_id))
     await event.reply(
-        f"ʀᴇᴍᴏᴠᴇᴅ ᴄʜᴀᴛ : {event.chat.title} \n​🇮​​🇩​:  {event.chat_id} ꜰʀᴏᴍ ᴅᴀᴛᴀʙᴀꜱᴇ."
+        f"ʀᴇᴍᴏᴠᴇᴅ ᴄʜᴀᴛ : {event.chat.title} \n​ɪᴅ​:  {event.chat_id} ꜰʀᴏᴍ ᴅᴀᴛᴀʙᴀꜱᴇ."
     )
 
 
