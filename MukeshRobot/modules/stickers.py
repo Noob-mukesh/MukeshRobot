@@ -507,7 +507,7 @@ def kang(update, context):
                             ]
                         ]
                     )
-                     adding_process.edit_text(
+                    adding_process.edit_text(
                         f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
                         f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
                         reply_markup=keyboard,
