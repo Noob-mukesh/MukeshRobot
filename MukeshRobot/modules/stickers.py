@@ -390,7 +390,7 @@ def kang(update, context):
                     tgs_sticker=open("kangsticker.tgs", "rb"),
                     emojis=sticker_emoji,
                 )
-                 keyboard = InlineKeyboardMarkup(
+                keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
