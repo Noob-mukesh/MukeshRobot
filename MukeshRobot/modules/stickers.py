@@ -498,7 +498,7 @@ def kang(update, context):
                 elif e.message == "Invalid sticker emojis":
                     msg.reply_text("Invalid emoji(s).")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
-                     keyboard = InlineKeyboardMarkup(
+                    keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
@@ -506,8 +506,8 @@ def kang(update, context):
                                 )
                             ]
                         ]
-                    )  
-                    adding_process.edit_text(
+                    )
+                     adding_process.edit_text(
                         f"<b>ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ!</b>"
                         f"\nᴇᴍᴏᴊɪ ɪs ➼ : {sticker_emoji}",
                         reply_markup=keyboard,
