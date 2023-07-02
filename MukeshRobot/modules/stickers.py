@@ -279,7 +279,7 @@ def kang(update, context):
                     png_sticker=open("kangsticker.png", "rb"),
                     emojis=sticker_emoji,
                 )
-                 keyboard = InlineKeyboardMarkup(
+                keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
@@ -421,7 +421,7 @@ def kang(update, context):
                 elif e.message == "Invalid sticker emojis":
                     msg.reply_text("Invalid emoji(s).")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
-                     keyboard = InlineKeyboardMarkup(
+                    keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
@@ -467,7 +467,7 @@ def kang(update, context):
                     webm_sticker=open("kangsticker.webm", "rb"),
                     emojis=sticker_emoji,
                 )
-                 keyboard = InlineKeyboardMarkup(
+                keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
@@ -551,7 +551,7 @@ def kang(update, context):
                 png_sticker=open("kangsticker.png", "rb"),
                 emojis=sticker_emoji,
             )
-             keyboard = InlineKeyboardMarkup(
+            keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
@@ -629,8 +629,7 @@ def kang(update, context):
                     packs = f"t.me/addstickers/{packname}"
         else:
             packs = f"t.me/addstickers/{packname}"
-
-         keyboard = InlineKeyboardMarkup(
+            keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
@@ -669,7 +668,7 @@ def makepack_internal(
 ):
     name = user.first_name
     name = name[:50]
-     keyboard = InlineKeyboardMarkup(
+    keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
