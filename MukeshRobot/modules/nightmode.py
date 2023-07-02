@@ -1,7 +1,7 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from telethon import functions, types
 from telethon.tl.types import ChatBannedRights
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telethon.tl.types import KeyboardButtonRow, KeyboardButton
 from MukeshRobot import (
     BOT_NAME,
     BOT_USERNAME)
@@ -65,7 +65,8 @@ openhehe = ChatBannedRights(
     change_info=False,
 )
 
-
+button_row = KeyboardButtonRow(KeyboardButton(text="Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true"))
 @register(pattern="^/nightmode")
 async def close_ws(event):
     if event.is_group:
@@ -81,13 +82,8 @@ async def close_ws(event):
         return
     add_nightmode(str(event.chat_id))
     await event.reply(
-        f"​🇦​​🇩​​🇩​​🇪​​🇩​ ​🇨​​🇭​​🇦​​🇹​: {event.chat.title} \n​🇮​​🇩​: {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 12ᴀᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 06ᴀᴍ(ɪꜱᴛ)**",reply_markup=InlineKeyboardMarkup([
-        [InlineKeyboardButton(
-            text="Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-        ),
-    ]]
-    ))
+        f"​🇦​​🇩​​🇩​​🇪​​🇩​ ​🇨​​🇭​​🇦​​🇹​: {event.chat.title} \n​🇮​​🇩​: {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 12ᴀᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 06ᴀᴍ(ɪꜱᴛ)**",
+       buttons=button_row )
 
 
 @register(pattern="^/rmnight")
@@ -117,13 +113,7 @@ async def job_close():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"12:00 ᴀᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴄʟᴏꜱɪɴɢ ᴛɪʟʟ 6 ᴀᴍ.\n ɴɪɢʜᴛ ᴍᴏᴅᴇ ꜱᴛᴀʀᴛᴇᴅ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",reply_markup=InlineKeyboardMarkup([
-        [InlineKeyboardButton(
-            text="Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-        ),
-    ]])
-            )
+                f"12:00 ᴀᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴄʟᴏꜱɪɴɢ ᴛɪʟʟ 6 ᴀᴍ.\n ɴɪɢʜᴛ ᴍᴏᴅᴇ ꜱᴛᴀʀᴛᴇᴅ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",buttons=button_row)
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
                     peer=int(warner.chat_id), banned_rights=hehes
