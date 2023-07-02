@@ -344,7 +344,7 @@ def kang(update, context):
                 elif e.message == "Stickers_too_much":
                     msg.reply_text("Max packsize reached. Press F to pay respecc.")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
-                     keyboard = InlineKeyboardMarkup(
+                    keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton(
