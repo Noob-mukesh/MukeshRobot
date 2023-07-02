@@ -678,7 +678,7 @@ def makepack_internal(
                         ]
                     )  
     
-    )
+    
     try:
         extra_version = ""
         if packnum > 0:
