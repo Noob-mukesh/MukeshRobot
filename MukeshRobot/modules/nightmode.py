@@ -67,7 +67,7 @@ openhehe = ChatBannedRights(
 button_row = [
         [Button.url("Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
             f"https://t.me/{BOT_USERNAME}?startgroup=true"))
-@register(pattern="^/nightmode")
+@register(pattern="^/nightmode")]]
 async def close_ws(event):
     if event.is_group:
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
