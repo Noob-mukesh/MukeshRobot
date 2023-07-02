@@ -44,7 +44,7 @@ telegraph==2.2.0
 telethon==1.28.5
 tgcrypto==1.2.5
 wikipedia==1.4.0
-# update modules extra modules then kanged
+# update modules extra
 gtts
 heroku3
 alphabet_detector
@@ -53,7 +53,6 @@ nekos.py
 yt_dlp
 youtube_search
 youtube_search_python
-openai
 pyshorteners
 faker
 pyfiglet
