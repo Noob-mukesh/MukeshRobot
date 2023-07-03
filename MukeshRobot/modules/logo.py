@@ -5,8 +5,9 @@ import random
 
 import requests
 from PIL import Image, ImageDraw, ImageFont
+from telethon import  Button
 
-from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
+from MukeshRobot import BOT_NAME,BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
 from MukeshRobot.events import register
 
 LOGO_LINKS = [
@@ -240,7 +241,9 @@ LOGO_LINKS = [
     "https://telegra.ph/file/d2abc99773a9d4954c2ba.jpg",
     "https://telegra.ph/file/9849b3940f063b065f4e3.jpg",
 ]
-
+button_row = [
+        [Button.url('Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ', f'https://t.me/{BOT_USERNAME}?startgroup=new')]
+    ]
 
 @register(pattern="^/logo ?(.*)")
 async def lego(event):
@@ -279,7 +282,12 @@ async def lego(event):
         await telethn.send_file(
             event.chat_id,
             file=fname,
-            caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}"
+            caption=f"""━━━━━━━{BOT_NAME}━━━━━━━
+
+☘️ ʟᴏɢᴏ ᴄʀᴇᴀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ☘️
+ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}
+◈──────────────◈
+━━━━━━━{BOT_NAME}━━━━━━━""",buttons=button_row
 )
         await pesan.delete()
         if os.path.exists(fname):
