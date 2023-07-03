@@ -7,7 +7,7 @@ bing_image_downloader==1.1.2
 bleach==6.0.0
 bs4==0.0.1
 cachetools==4.2.2
-cloudscraper==1.2.68
+cloudscraper==1.2.71
 countryinfo==0.1.2
 currencyconverter==0.17.9
 dateparser==1.1.8
