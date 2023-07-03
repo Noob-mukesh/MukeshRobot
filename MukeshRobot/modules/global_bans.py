@@ -8,7 +8,7 @@ from telegram.error import BadRequest, TelegramError, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
 
-import MukeshRobot.modules.no_sql.global_bans_db as gban_db
+import MukeshRobot.modules.no_sql.gban_db as gban_db
 from MukeshRobot import (
     DEMONS,
     DEV_USERS,
