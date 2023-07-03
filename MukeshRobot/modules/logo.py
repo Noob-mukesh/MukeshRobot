@@ -6,7 +6,7 @@ import random
 import requests
 from PIL import Image, ImageDraw, ImageFont
 
-from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn,BOT_NAME
+from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
 from MukeshRobot.events import register
 
 LOGO_LINKS = [
@@ -279,20 +279,18 @@ async def lego(event):
         await telethn.send_file(
             event.chat_id,
             file=fname,
-            caption=f"""━━━━━━━{BOT_NAME}
-            ━━━━━━━ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}
-            ━━━━━━━{BOT_NAME}━━━━━━━"""
+            caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}"
 )
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
-    except Exception as e:
-        await event.reply(f"ᴇʀʀᴏʀ {e}, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
+    except Exception:
+        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
 
 
 __mod_name__ = "Lᴏɢᴏ"
 
-__help__ = f"""
+__help__ = """
 @{BOT_USERNAME} ᴄᴀɴ ᴄʀᴇᴀᴛᴇ sᴏᴍᴇ ʙᴇᴀᴜᴛɪғᴜʟ ᴀɴᴅ ᴀᴛᴛʀᴀᴄᴛɪᴠᴇ ʟᴏɢᴏ ғᴏʀ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ ᴘɪᴄs.
 
 
