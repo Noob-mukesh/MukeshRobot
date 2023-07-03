@@ -539,7 +539,7 @@ def check_gbans(bot: Bot, update: Update):
 
 
 def __stats__():
-    return f"× {gban_db.num_gbanned_users()} gbanned users."
+    return f"{gban_db.num_gbanned_users()} ɢʙᴀɴɴᴇᴅ ᴜsᴇʀs"
 
 
 def __user_info__(user_id):
