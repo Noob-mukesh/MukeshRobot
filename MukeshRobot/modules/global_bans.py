@@ -7,7 +7,7 @@ from telegram import ParseMode, Update
 from telegram.error import BadRequest, TelegramError, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 from telegram.utils.helpers import mention_html
-
+from telegram import Bot, ParseMode, Update
 import MukeshRobot.modules.no_sql.gban_db as gban_db
 from MukeshRobot import (
     DEMONS,
