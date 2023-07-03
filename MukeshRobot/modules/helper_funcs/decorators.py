@@ -165,7 +165,7 @@ class MukeshTelegramHandler:
                 )
             )
             LOGGER.debug(
-                f"[ExonINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES "
+                f"[MukeshINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES "
                 f"USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}"
             )
             return func
@@ -176,4 +176,4 @@ class MukeshTelegramHandler:
 Mukeshcmd = MukeshTelegramHandler(n).command
 Mukeshmsg = MukeshTelegramHandler(n).message
 Mukeshcallback = MukeshTelegramHandler(n).callbackquery
-Exoninline = ExonTelegramHandler(n).inlinequery
+Mukeshinline = MukeshTelegramHandler(n).inlinequery
