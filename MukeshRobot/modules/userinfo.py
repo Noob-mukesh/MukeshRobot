@@ -16,7 +16,7 @@ from telegram.utils.helpers import escape_markdown, mention_html
 from telethon import events
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-
+from MukeshRobot.modules.alive import Mukesh
 import MukeshRobot.modules.sql.userinfo_sql as sql
 from MukeshRobot import (
     DEMONS,
@@ -438,7 +438,7 @@ def stats(update: Update, context: CallbackContext):
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_text(result, parse_mode=ParseMode.HTML,reply_markup=InlineKeyboardMarkup(Mukesh))
 
 
 def about_bio(update: Update, context: CallbackContext):
