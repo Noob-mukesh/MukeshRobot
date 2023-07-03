@@ -39,15 +39,7 @@ from MukeshRobot.modules.helper_funcs.extraction import (
 )
 from MukeshRobot.modules.helper_funcs.string_handling import markdown_parser
 
-# Hello bot owner, I spended for feds many hours of my life, Please don't remove this if you still respect MrYacha and peaktogoo and AyraHikari too
-# Federation by MrYacha 2018-2019
-# Federation rework by Mizukito Akito 2019
-# Federation update v2 by Ayra Hikari 2019
-# Time spended on feds = 10h by #MrYacha
-# Time spended on reworking on the whole feds = 22+ hours by @peaktogoo
-# Time spended on updating version to v2 = 26+ hours by @AyraHikari
-# Total spended for making this features is 68+ hours
-# LOGGER.info("Original federation module by MrYacha, reworked by Mizukito Akito (@peaktogoo) on Telegram.")
+
 
 FBAN_ERRORS = {
     "ᴜsᴇʀ ɪs ᴀɴ ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ ᴏғ ᴛʜᴇ ᴄʜᴀᴛ",
@@ -655,12 +647,7 @@ def fed_ban(update: Update, context: CallbackContext):
 
     if fban:
         fed_name = info["fname"]
-        # https://t.me/OnePunchSupport/41606 // https://t.me/OnePunchSupport/41619
-        # starting = "The reason fban is replaced for {} in the Federation <b>{}</b>.".format(user_target, fed_name)
-        # send_message(update.effective_message, starting, parse_mode=ParseMode.HTML)
-
-        # if reason == "":
-        #    reason = "No reason given."
+        
 
         temp = sql.un_fban_user(fed_id, fban_user_id)
         if not temp:
@@ -820,13 +807,7 @@ def fed_ban(update: Update, context: CallbackContext):
 
     fed_name = info["fname"]
 
-    # starting = "Starting a federation ban for {} in the Federation <b>{}</b>.".format(
-    #    user_target, fed_name)
-    # update.effective_message.reply_text(starting, parse_mode=ParseMode.HTML)
-
-    # if reason == "":
-    #    reason = "No reason given."
-
+    
     x = sql.fban_user(
         fed_id,
         fban_user_id,
@@ -2305,7 +2286,7 @@ def welcome_fed(update: Update, context: CallbackContext):
 def __stats__():
     all_fbanned = sql.get_all_fban_users_global()
     all_feds = sql.get_all_feds_users_global()
-    return "× {} banned users across {} Federations".format(
+    return "× {} Bᴀɴɴᴇᴅ Usᴇʀs Aᴄʀᴏss {} Fᴇᴅʀᴀᴛɪᴏɴs".format(
         len(all_fbanned),
         len(all_feds),
     )
