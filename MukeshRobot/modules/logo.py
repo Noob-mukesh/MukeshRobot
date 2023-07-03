@@ -5,9 +5,8 @@ import random
 
 import requests
 from PIL import Image, ImageDraw, ImageFont
-from telethon import  Button
 
-from MukeshRobot import BOT_NAME,BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
+from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
 from MukeshRobot.events import register
 
 LOGO_LINKS = [
@@ -241,9 +240,7 @@ LOGO_LINKS = [
     "https://telegra.ph/file/d2abc99773a9d4954c2ba.jpg",
     "https://telegra.ph/file/9849b3940f063b065f4e3.jpg",
 ]
-button_row = [
-        [Button.url('Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ', f'https://t.me/{BOT_USERNAME}?startgroup=new')]
-    ]
+
 
 @register(pattern="^/logo ?(.*)")
 async def lego(event):
@@ -282,23 +279,18 @@ async def lego(event):
         await telethn.send_file(
             event.chat_id,
             file=fname,
-            caption=f"""━━━━━━━{BOT_NAME}━━━━━━━
-
-☘️ ʟᴏɢᴏ ᴄʀᴇᴀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ☘️
-ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}
-◈──────────────◈
-━━━━━━━{BOT_NAME}━━━━━━━""",buttons=button_row
+            caption=f"━━━━━━━{BOT_NAME}\n━━━━━━━ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}\n━━━━━━━{BOT_NAME}━━━━━━━"
 )
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
-    except Exception:
-        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
+    except Exception as e:
+        await event.reply(f"ᴇʀʀᴏʀ {e}, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
 
 
 __mod_name__ = "Lᴏɢᴏ"
 
-__help__ = """
+__help__ = f"""
 @{BOT_USERNAME} ᴄᴀɴ ᴄʀᴇᴀᴛᴇ sᴏᴍᴇ ʙᴇᴀᴜᴛɪғᴜʟ ᴀɴᴅ ᴀᴛᴛʀᴀᴄᴛɪᴠᴇ ʟᴏɢᴏ ғᴏʀ ʏᴏᴜʀ ᴘʀᴏғɪʟᴇ ᴘɪᴄs.
 
 
