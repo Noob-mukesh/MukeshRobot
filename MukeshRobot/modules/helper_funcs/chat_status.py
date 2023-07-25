@@ -1,4 +1,3 @@
-
 from functools import wraps
 from threading import RLock
 from time import perf_counter
@@ -393,7 +392,7 @@ def connection_status(func):
         else:
             if update.effective_message.chat.type == "private":
                 update.effective_message.reply_text(
-                    "Send /connect in a group that you and I have in common first."
+                    "sᴇɴᴅ /connect ɪɴ ᴀ ɢʀᴏᴜᴘ ᴛʜᴀᴛ ʏᴏᴜ ᴀɴᴅ ɪ ʜᴀᴠᴇ ɪɴ ᴄᴏᴍᴍᴏɴ ғɪʀsᴛ."
                 )
                 return connected_status
 
