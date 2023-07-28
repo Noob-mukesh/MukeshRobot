@@ -113,7 +113,7 @@ async def job_close():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"12:00 ᴀᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴄʟᴏꜱɪɴɢ ᴛɪʟʟ 6 ᴀᴍ.\n ɴɪɢʜᴛ ᴍᴏᴅᴇ ꜱᴛᴀʀᴛᴇᴅ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",buttons=button_row)
+                f"04:00 pᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴄʟᴏꜱɪɴɢ ᴛɪʟʟ 8 Pᴍ.\n ɴɪɢʜᴛ ᴍᴏᴅᴇ ꜱᴛᴀʀᴛᴇᴅ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",buttons=button_row)
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
                     peer=int(warner.chat_id), banned_rights=hehes
@@ -125,7 +125,7 @@ async def job_close():
 
 # Run everyday at 12am
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
-scheduler.add_job(job_close, trigger="cron", hour=23, minute=59)
+scheduler.add_job(job_close, trigger="cron", hour=15, minute=59)
 scheduler.start()
 
 
@@ -137,7 +137,7 @@ async def job_open():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"06:00 ᴀᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴏᴘᴇɴɪɴɢ.\n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",
+                f"08:00 pᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴏᴘᴇɴɪɴɢ.\n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
@@ -150,7 +150,7 @@ async def job_open():
 
 # Run everyday at 06
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
-scheduler.add_job(job_open, trigger="cron", hour=6, minute=1)
+scheduler.add_job(job_open, trigger="cron", hour=19, minute=59)
 scheduler.start()
 
 __help__ = """
