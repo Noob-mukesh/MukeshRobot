@@ -26,7 +26,6 @@ karma_negative_group = 4
 
 @pbot.on_message(
     filters.text
-    & filters.group
     & filters.incoming
     & filters.reply
     & filters.regex(regex_upvote)
@@ -67,7 +66,6 @@ async def upvote(_, message):
 
 @pbot.on_message(
     filters.text
-    & filters.group
     & filters.incoming
     & filters.reply
     & filters.regex(regex_downvote)
