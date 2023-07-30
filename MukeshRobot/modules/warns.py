@@ -552,7 +552,7 @@ LIST_WARN_HANDLER = DisableAbleCommandHandler(
     run_async=True,
 )
 WARN_FILTER_HANDLER = MessageHandler(
-    CustomFilters.has_text & Filters.group,
+    CustomFilters.has_text & Filters.chat_type.groups,
     reply_filter,
     run_async=True,
 )
