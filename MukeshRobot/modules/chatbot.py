@@ -2,8 +2,6 @@ import html
 import json
 import re
 from time import sleep
-from 
-
 import requests
 from telegram import (
     CallbackQuery,
