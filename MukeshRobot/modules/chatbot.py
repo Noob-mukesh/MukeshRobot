@@ -2,6 +2,7 @@ import html
 import json
 import re
 from time import sleep
+from 
 
 import requests
 from telegram import (
@@ -23,27 +24,27 @@ from telegram.ext import (
 from telegram.utils.helpers import mention_html
 
 import MukeshRobot.modules.sql.chatbot_sql as sql
-from MukeshRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
+from MukeshRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher,CHATBOT_API
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from MukeshRobot.modules.log_channel import gloggable
 
 
 @user_admin_no_reply
 @gloggable
-def fallenrm(update: Update, context: CallbackContext) -> str:
+def mukeshrm(update: Update, context: CallbackContext) -> str:
     query: Optional[CallbackQuery] = update.callback_query
     user: Optional[User] = update.effective_user
     match = re.match(r"rm_chat\((.+?)\)", query.data)
     if match:
         user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
-        is_fallen = sql.set_fallen(chat.id)
-        if is_fallen:
-            is_fallen = sql.set_fallen(user_id)
+        is_mukesh = sql.set_mukesh(chat.id)
+        if is_mukesh:
+            is_mukesh = sql.set_mukesh(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_DISABLED\n"
-                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+                f"ᴀɪ ᴅɪꜱᴀʙʟᴇᴅ\n"
+                f"<b>ᴀᴅᴍɪɴ :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             )
         else:
             update.effective_message.edit_text(
@@ -58,20 +59,20 @@ def fallenrm(update: Update, context: CallbackContext) -> str:
 
 @user_admin_no_reply
 @gloggable
-def fallenadd(update: Update, context: CallbackContext) -> str:
+def mukeshadd(update: Update, context: CallbackContext) -> str:
     query: Optional[CallbackQuery] = update.callback_query
     user: Optional[User] = update.effective_user
     match = re.match(r"add_chat\((.+?)\)", query.data)
     if match:
         user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
-        is_fallen = sql.rem_fallen(chat.id)
-        if is_fallen:
-            is_fallen = sql.rem_fallen(user_id)
+        is_mukesh = sql.rem_mukesh(chat.id)
+        if is_mukesh:
+            is_mukesh = sql.rem_mukesh(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_ENABLE\n"
-                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+                f"ᴀɪ ᴇɴᴀʙʟᴇ\n"
+                f"<b>ᴀᴅᴍɪɴ :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             )
         else:
             update.effective_message.edit_text(
@@ -86,7 +87,7 @@ def fallenadd(update: Update, context: CallbackContext) -> str:
 
 @user_admin
 @gloggable
-def fallen(update: Update, context: CallbackContext):
+def mukesh(update: Update, context: CallbackContext):
     message = update.effective_message
     msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
     keyboard = InlineKeyboardMarkup(
@@ -104,9 +105,9 @@ def fallen(update: Update, context: CallbackContext):
     )
 
 
-def fallen_message(context: CallbackContext, message):
+def mukesh_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "fallen":
+    if message.text.lower() == "mukesh":
         return True
     elif BOT_USERNAME in message.text.upper():
         return True
@@ -121,34 +122,29 @@ def chatbot(update: Update, context: CallbackContext):
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
-    is_fallen = sql.is_fallen(chat_id)
-    if is_fallen:
+    is_mukesh = sql.is_mukesh(chat_id)
+    if is_mukesh:
         return
 
     if message.text and not message.document:
-        if not fallen_message(context, message):
+        if not mukesh_message(context, message):
             return
         bot.send_chat_action(chat_id, action="typing")
-        request = requests.get(
-            f"https://api.safone.me/chatbot?query={message.text}&user_id={chat_id}&bot_name=Group_Controller&bot_master=Mukesh"
-        )
-        results = json.loads(request.text)
-        sleep(0.5)
-        message.reply_text(results["response"])
+        url=f"https://fallenxbot.vercel.app/api/apikey={CHATBOT_API}/group-controller/mukesh/message={message.text}"
+        response = requests.get(url)
+        out=response.json()
+        reply=out["reply"]
+        message.reply_text(reply)
 
 
-__help__ = f"""
-*{BOT_NAME} ʜᴀs ᴀɴ ᴄʜᴀᴛʙᴏᴛ ᴡʜɪᴄʜ ᴘʀᴏᴠɪᴅᴇs ʏᴏᴜ ᴀ sᴇᴇᴍɪɴɢʟᴇss ᴄʜᴀᴛᴛɪɴɢ ᴇxᴘᴇʀɪᴇɴᴄᴇ :**
-
- »  /ᴄʜᴀᴛʙᴏᴛ *:* sʜᴏᴡs ᴄʜᴀᴛʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴘᴀɴᴇʟ
-"""
-
-__mod_name__ = "Cʜᴀᴛʙᴏᴛ"
 
 
-CHATBOTK_HANDLER = CommandHandler("chatbot", fallen, run_async=True)
-ADD_CHAT_HANDLER = CallbackQueryHandler(fallenadd, pattern=r"add_chat", run_async=True)
-RM_CHAT_HANDLER = CallbackQueryHandler(fallenrm, pattern=r"rm_chat", run_async=True)
+
+
+
+CHATBOTK_HANDLER = CommandHandler("chatbot", mukesh, run_async=True)
+ADD_CHAT_HANDLER = CallbackQueryHandler(mukeshadd, pattern=r"add_chat", run_async=True)
+RM_CHAT_HANDLER = CallbackQueryHandler(mukeshrm, pattern=r"rm_chat", run_async=True)
 CHATBOT_HANDLER = MessageHandler(
     Filters.text
     & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
