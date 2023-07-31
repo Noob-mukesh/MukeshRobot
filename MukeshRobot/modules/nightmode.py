@@ -82,7 +82,7 @@ async def close_ws(event):
         return
     add_nightmode(str(event.chat_id))
     await event.reply(
-        f"​ᴀᴅᴅᴇᴅ ᴄʜᴀᴛ​ ​​: {event.chat.title} \n​ɪᴅ​: {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 4 Pᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 08 Pᴍ(ɪꜱᴛ)**",
+        f"​ᴀᴅᴅᴇᴅ ᴄʜᴀᴛ​ ​​: {event.chat.title} \n​ɪᴅ​: {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 4 Pᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 07 Pᴍ(ɪꜱᴛ)**",
        buttons=button_row )
 
 
