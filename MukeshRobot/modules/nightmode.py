@@ -78,7 +78,7 @@ async def close_ws(event):
         await event.reply("ʏᴏᴜ ᴄᴀɴ ᴏɴʟʏ ᴇɴᴀʙʟᴇ ɴɪɢʜᴛ ᴍᴏᴅᴇ ɪɴ ɢʀᴏᴜᴘꜱ.")
         return
     if is_nightmode_indb(str(event.chat_id)):
-        await event.reply("ᴛʜɪꜱ ᴄʜᴀᴛ ɪꜱ ʜᴀꜱ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ ɴɪɢʜᴛ ᴍᴏᴅᴇ")
+        await event.reply("ᴛʜɪꜱ ᴄʜᴀᴛ ʜᴀꜱ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ Afternoon ᴍᴏᴅᴇ")
         return
     add_nightmode(str(event.chat_id))
     await event.reply(
@@ -94,7 +94,7 @@ async def disable_ws(event):
             return
 
     if not event.is_group:
-        await event.reply("ʏᴏᴜ ᴄᴀɴ ᴏɴʟʏ ᴅɪꜱᴀʙʟᴇ ɴɪɢʜᴛ ᴍᴏᴅᴇ ɪɴ ɢʀᴏᴜᴘꜱ.")
+        await event.reply("ʏᴏᴜ ᴄᴀɴ ᴏɴʟʏ ᴅɪꜱᴀʙʟᴇ Afternoon ᴍᴏᴅᴇ ɪɴ ɢʀᴏᴜᴘꜱ.")
         return
     if not is_nightmode_indb(str(event.chat_id)):
         await event.reply("ᴛʜɪꜱ ᴄʜᴀᴛ ɪꜱ ​ɴᴏᴛ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ ɴɪɢʜᴛ ᴍᴏᴅᴇ")
@@ -113,7 +113,7 @@ async def job_close():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"04:00 pᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴄʟᴏꜱɪɴɢ ᴛɪʟʟ 8 Pᴍ.\n ɴɪɢʜᴛ ᴍᴏᴅᴇ ꜱᴛᴀʀᴛᴇᴅ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",buttons=button_row)
+                f"04:00 pᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴄʟᴏꜱɪɴɢ ᴛɪʟʟ 7 Pᴍ.\n Class Time ꜱᴛᴀʀᴛᴇᴅ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",buttons=button_row)
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
                     peer=int(warner.chat_id), banned_rights=hehes
@@ -123,7 +123,7 @@ async def job_close():
             logger.info(f"ᴜɴᴀʙʟᴇ ᴛᴏ ᴄʟᴏꜱᴇ ɢʀᴏᴜᴘ {warner} - {e}")
 
 
-# Run everyday at 12am
+# Run everyday at 4 pm
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
 scheduler.add_job(job_close, trigger="cron", hour=15, minute=59)
 scheduler.start()
@@ -148,9 +148,9 @@ async def job_open():
             logger.info(f"ᴜɴᴀʙʟᴇ ᴛᴏ ᴏᴘᴇɴ ɢʀᴏᴜᴘ {warner.chat_id} - {e}")
 
 
-# Run everyday at 06
+# Run everyday at 07 pm
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
-scheduler.add_job(job_open, trigger="cron", hour=19, minute=59)
+scheduler.add_job(job_open, trigger="cron", hour=18, minute=59)
 scheduler.start()
 
 __help__ = """
