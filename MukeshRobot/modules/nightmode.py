@@ -67,7 +67,7 @@ openhehe = ChatBannedRights(
 button_row = [
         [Button.url('Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ', f'https://t.me/{BOT_USERNAME}?startgroup=new')]
     ]
-@register(pattern="^/nightmode")
+@register(pattern="^/afternoonmode")
 async def close_ws(event):
     if event.is_group:
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
@@ -86,7 +86,7 @@ async def close_ws(event):
        buttons=button_row )
 
 
-@register(pattern="^/rmnight")
+@register(pattern="^/rmafternoonmode")
 async def disable_ws(event):
     if event.is_group:
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
