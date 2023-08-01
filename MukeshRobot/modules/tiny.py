@@ -79,7 +79,7 @@ async def _(event):
     os.remove(ik)
 
 
-__mod_name__ = "⍟ Tɪɴʏ ⍟"
+__mod_name__ = "Tɪɴʏ"
 __help__ = """
 ❍  /tiny *:* ʀᴇᴘʟʏ ᴀ sᴛɪᴄᴋᴇʀ ᴀɴᴅ sᴇᴇ ᴍᴀɢɪᴄ
 """

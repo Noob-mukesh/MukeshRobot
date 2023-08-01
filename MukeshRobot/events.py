@@ -74,7 +74,12 @@ def callbackquery(**args):
 
     return decorator
 
+def Mukeshinline(**args):
+    def decorator(func):
+        telethn.add_event_handler(func, events.CallbackQuery(**args))
+        return func
 
+    return decorator
 def bot(**args):
     pattern = args.get("pattern")
     r_pattern = r"^[/]"

@@ -1,5 +1,5 @@
 # We're using Debian Slim Buster image
-FROM python:3.9.6-slim-buster
+FROM python:3.8.5-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -62,15 +62,15 @@ RUN apt update && apt upgrade -y && \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
 
 # Pypi package Repo upgrade
-RUN apt-get install -y ffmpeg python3-pip curl
 RUN pip3 install --upgrade pip setuptools
 
-ENV PATH="/home/bot/bin:$PATH"
+RUN git clone https://github.com/Noob-Mukesh/MukeshRobot /root/MukeshRobot
+WORKDIR /root/MukeshRobot
 
-# make directory
-RUN mkdir /MukeshRobot/
-COPY . /MukeshRobot
-WORKDIR /MukeshRobot
+#Copy config file to /root/MukeshRobot/MukeshRobot
+COPY ./MukeshRobot/config.py ./MukeshRobot/config.py* /root/MukeshRobot/MukeshRobot/
+
+ENV PATH="/home/bot/bin:$PATH"
 
 # Install requirements
 RUN pip3 install -U -r requirements.txt

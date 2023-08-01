@@ -3,7 +3,7 @@ from typing import List
 
 import requests
 from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, run_async
+from telegram.ext import CallbackContext
 
 from MukeshRobot import StartTime, dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
@@ -68,7 +68,6 @@ def ping_func(to_ping: List[str]) -> List[str]:
     return ping_result
 
 
-@run_async
 @sudo_plus
 def ping(update: Update, context: CallbackContext):
     msg = update.effective_message
@@ -87,7 +86,6 @@ def ping(update: Update, context: CallbackContext):
     )
 
 
-@run_async
 @sudo_plus
 def pingall(update: Update, context: CallbackContext):
     to_ping = ["Telegram"]
@@ -95,7 +93,7 @@ def pingall(update: Update, context: CallbackContext):
     pinged_list.insert(2, "")
     uptime = get_readable_time((time.time() - StartTime))
 
-    reply_msg = "⏱Ping results are:\n"
+    reply_msg = "⏱ᴘɪɴɢ ʀᴇsᴜʟᴛs ᴀʀᴇ:\n"
     reply_msg += "\n".join(pinged_list)
     reply_msg += "\n<b>ᴜᴘᴛɪᴍᴇ:</b> <code>{}</code>".format(uptime)
 
@@ -104,11 +102,12 @@ def pingall(update: Update, context: CallbackContext):
     )
 
 
-PING_HANDLER = DisableAbleCommandHandler("ping", ping)
-PINGALL_HANDLER = DisableAbleCommandHandler("pingall", pingall)
+PING_HANDLER = DisableAbleCommandHandler("ping", ping, run_async=True)
+PINGALL_HANDLER = DisableAbleCommandHandler("pingall", pingall, run_async=True)
 
 dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(PINGALL_HANDLER)
 
 __command_list__ = ["ping", "pingall"]
+
 __handlers__ = [PING_HANDLER, PINGALL_HANDLER]

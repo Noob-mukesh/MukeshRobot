@@ -11,7 +11,6 @@ from telegram import (
 )
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, MessageHandler
-from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import mention_html
 
 import MukeshRobot.modules.sql.locks_sql as sql
@@ -136,7 +135,6 @@ def unrestr_members(
             pass
 
 
-@run_async
 def locktypes(update, context):
     update.effective_message.reply_text(
         "\n • ".join(
@@ -146,7 +144,6 @@ def locktypes(update, context):
     )
 
 
-@run_async
 @user_admin
 @loggable
 @typing_action
@@ -254,7 +251,6 @@ def lock(update, context) -> str:
     return ""
 
 
-@run_async
 @user_admin
 @loggable
 @typing_action
@@ -360,7 +356,6 @@ def unlock(update, context) -> str:
     return ""
 
 
-@run_async
 @user_not_admin
 def del_lockables(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -500,7 +495,6 @@ def build_lock_message(chat_id):
     return res
 
 
-@run_async
 @user_admin
 @typing_action
 def list_locks(update, context):
@@ -590,14 +584,18 @@ __help__ = """
  • ᴜɴʟᴏᴄᴋɪɴɢ ᴘᴇʀᴍɪssɪᴏɴ *ᴘɪɴ* ᴡɪʟʟ ᴀʟʟᴏᴡ ᴍᴇᴍʙᴇʀs (ɴᴏɴ-ᴀᴅᴍɪɴs) ᴛᴏ ᴘɪɴ ᴀ ᴍᴇssᴀɢᴇ ɪɴ ᴀ ɢʀᴏᴜᴘ
 """
 
-__mod_name__ = "⍟ Lᴏᴄᴋs ⍟"
+__mod_name__ = "Lᴏᴄᴋs"
 
-LOCKTYPES_HANDLER = DisableAbleCommandHandler("locktypes", locktypes)
-LOCK_HANDLER = CommandHandler("lock", lock, pass_args=True)  # , filters=Filters.group)
+LOCKTYPES_HANDLER = DisableAbleCommandHandler("locktypes", locktypes, run_async=True)
+LOCK_HANDLER = CommandHandler(
+    "lock", lock, pass_args=True, run_async=True
+)  # , filters=Filters.chat_type.groups)
 UNLOCK_HANDLER = CommandHandler(
-    "unlock", unlock, pass_args=True
-)  # , filters=Filters.group)
-LOCKED_HANDLER = CommandHandler("locks", list_locks)  # , filters=Filters.group)
+    "unlock", unlock, pass_args=True, run_async=True
+)  # , filters=Filters.chat_type.groups)
+LOCKED_HANDLER = CommandHandler(
+    "locks", list_locks, run_async=True
+)  # , filters=Filters.chat_type.groups)
 
 dispatcher.add_handler(LOCK_HANDLER)
 dispatcher.add_handler(UNLOCK_HANDLER)
@@ -605,5 +603,8 @@ dispatcher.add_handler(LOCKTYPES_HANDLER)
 dispatcher.add_handler(LOCKED_HANDLER)
 
 dispatcher.add_handler(
-    MessageHandler(Filters.all & Filters.group, del_lockables), PERM_GROUP
+    MessageHandler(
+        Filters.all & Filters.chat_type.groups, del_lockables, run_async=True
+    ),
+    PERM_GROUP,
 )

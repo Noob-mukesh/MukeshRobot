@@ -6,8 +6,6 @@ from PIL import Image, ImageDraw, ImageFont
 from MukeshRobot import telethn as bot
 from MukeshRobot.events import register
 
-Credit = "Mukesh"
-
 
 @register(pattern="^/mmf ?(.*)")
 async def handler(event):
@@ -34,11 +32,6 @@ async def handler(event):
 
     msg = await event.reply("```Memifying this image! ✊🏻 ```")
 
-    if "Mukesh" in Credit:
-        pass
-
-    else:
-        await event.reply("This nigga removed credit line from code")
 
     text = str(event.pattern_match.group(1)).strip()
 
@@ -197,6 +190,6 @@ async def drawText(image_path, text):
     return webp_file
 
 
-__mod_name__ = "⍟ ᴍᴍғ ⍟"
+__mod_name__ = "Mᴍғ"
 __help__ = """ 
 ⫸ /mmf <ᴛᴇxᴛ> ◉ ᴛᴏ ᴍᴇᴍɪғʏ """
