@@ -5,8 +5,8 @@ import random
 
 import requests
 from PIL import Image, ImageDraw, ImageFont
-
-from MukeshRobot import BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, telethn
+from MukeshRobot.modules.nightmode import button_row
+from MukeshRobot import BOT_USERNAME, OWNER_ID,BOT_NAME, SUPPORT_CHAT, telethn
 from MukeshRobot.events import register
 
 LOGO_LINKS = [
@@ -279,7 +279,12 @@ async def lego(event):
         await telethn.send_file(
             event.chat_id,
             file=fname,
-            caption=f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}"
+            caption=f"""━━━━━━━{BOT_NAME}━━━━━━━
+
+☘️ ʟᴏɢᴏ ᴄʀᴇᴀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ☘️
+◈──────────────◈
+🔥 ᴄʀᴇᴀᴛᴇᴅ ʙʏ : @{BOT_USERNAME}
+━━━━━━━{BOT_NAME}━━━━━━━""",buttons=button_row
 )
         await pesan.delete()
         if os.path.exists(fname):

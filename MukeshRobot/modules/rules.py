@@ -136,7 +136,7 @@ def clear_rules(update: Update, context: CallbackContext):
 
 
 def __stats__():
-    return f"• {sql.num_chats()} groups have rules."
+    return f"• {sql.num_chats()} ɢʀᴏᴜᴘs ʜᴀᴠᴇ ʀᴜʟᴇs."
 
 
 def __import_data__(chat_id, data):

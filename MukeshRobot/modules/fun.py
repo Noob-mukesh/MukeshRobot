@@ -7,7 +7,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext
 
 import MukeshRobot.modules.fun_strings as fun_strings
-from MukeshRobot import dispatcher
+from MukeshRobot import dispatcher,OWNER_ID
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.chat_status import is_user_admin
 from MukeshRobot.modules.helper_funcs.extraction import extract_user
@@ -83,8 +83,8 @@ def slap(update: Update, context: CallbackContext):
     hit = random.choice(fun_strings.HIT)
     throw = random.choice(fun_strings.THROW)
 
-    if update.effective_user.id == 1096215023:
-        temp = "@NeoTheKitty scratches {user2}"
+    if update.effective_user.id == OWNER_ID:
+        temp = "@legend_coder scratches {user2}"
 
     reply = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw)
 
