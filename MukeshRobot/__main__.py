@@ -212,7 +212,7 @@ def start(update: Update, context: CallbackContext):
                 "CAACAgUAAxkBAAI33mLYLNLilbRI-sKAAob0P7koTEJNAAIOBAACl42QVKnra4sdzC_uKQQ")
             x.delete()
             usr = update.effective_user
-            lol = \ck\aupdate.effective_message.reply_text(
+            lol = update.effective_message.reply_text(
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
@@ -224,11 +224,7 @@ def start(update: Update, context: CallbackContext):
             time.sleep(0.4)
             lol.delete()
             
-<<<<<<< HEAD
-            update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
-=======
             update.effective_message.reply_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -365,11 +361,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "mukesh_":
         uptime = get_readable_time((time.time() - StartTime))
-<<<<<<< HEAD
-        query.message.edit_text(text=f"*ʜᴇʏ,*🥀\n  *ᴛʜɪs ɪs {dispatcher.bot.first_name}*"
-=======
         query.message.edit_text(f"*ʜᴇʏ,*🥀\n  *ᴛʜɪs ɪs {dispatcher.bot.first_name}*"
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             "\n*ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ➕ ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ ᴀɴᴅ ᴛᴏ ᴘʀᴏᴛᴇᴄᴛ ʏᴏᴜʀ ɢʀᴏᴜᴘ ꜰʀᴏᴍ ꜱᴄᴀᴍᴍᴇʀꜱ ᴀɴᴅ ꜱᴘᴀᴍᴍᴇʀꜱ.*"
             "\n*ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ sǫʟᴀʟᴄʜᴇᴍʏ ᴀɴᴅ ᴍᴏɴɢᴏᴅʙ ᴀs ᴅᴀᴛᴀʙᴀsᴇ.*"
             "\n\n────────────────────"
@@ -418,11 +410,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "mukesh_support":
-<<<<<<< HEAD
-        query.message.edit_text(text="||*๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍᴇ.||*"
-=======
         query.message.edit_text("**๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀ**"
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             f"\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ {dispatcher.bot.first_name} ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ {dispatcher.bot.first_name}, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
@@ -458,11 +446,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "mukesh_back":
         first_name = update.effective_user.first_name 
-<<<<<<< HEAD
-        query.message.edit_text(text= PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
-=======
         query.message.edit_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME,sql.num_users(),sql.num_chats()),
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
@@ -666,11 +650,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
 def Music_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Music_":
-<<<<<<< HEAD
-        query.message.edit_text(text=f"""
-=======
         query.message.edit_text(f"""
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
  ʜᴇʀᴇ ɪꜱ ʜᴇʟᴘ ᴍᴇɴᴜ ꜰᴏʀ ᴍᴜꜱɪᴄ 
 """,
             parse_mode=ParseMode.MARKDOWN,
@@ -706,11 +686,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "Music_admin":
-<<<<<<< HEAD
-        query.message.edit_text(text=f"*» ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
-=======
         query.message.edit_text(f"*» ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             f"""
 ᴊᴜsᴛ ᴀᴅᴅ *ᴄ* ɪɴ ᴛʜᴇ sᴛᴀʀᴛɪɴɢ ᴏғ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴛᴏ ᴜsᴇ ᴛʜᴇᴍ ғᴏʀ ᴄʜᴀɴɴᴇʟ.
 
@@ -737,11 +713,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "Music_play":
-<<<<<<< HEAD
-        query.message.edit_text(text=f"*» ᴘʟᴀʏ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
-=======
         query.message.edit_text(f"*» ᴘʟᴀʏ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             f"""
 /play or /vplay or /cplay  - ʙᴏᴛ ᴡɪʟʟ ꜱᴛᴀʀᴛ ᴘʟᴀʏɪɴɢ ʏᴏᴜʀ ɢɪᴠᴇɴ ϙᴜᴇʀʏ on ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴏʀ ꜱᴛʀᴇᴀᴍ ʟɪᴠᴇ ʟɪɴᴋꜱ ᴏɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛꜱ.
 
@@ -767,11 +739,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "Music_bot":
-<<<<<<< HEAD
-        query.message.edit_text(text=f"*» ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
-=======
         query.message.edit_text(f"*» ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             f"""
 /stats - ɢᴇᴛ ᴛᴏᴘ 10 ᴛʀᴀᴄᴋꜱ ɢʟᴏʙᴀʟ ꜱᴛᴀᴛꜱ, ᴛᴏᴘ 10 ᴜꜱᴇʀꜱ ᴏғ ʙᴏᴛ, ᴛᴏᴘ 10 ᴄʜᴀᴛꜱ ᴏɴ ʙᴏᴛ, ᴛᴏᴘ 10 ᴘʟᴀʏᴇᴅ ɪɴ ᴀ ᴄʜᴀᴛ ᴇᴛᴄ ᴇᴛᴄ.
 
@@ -798,11 +766,7 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
             ),
         )
     elif query.data == "Music_extra":
-<<<<<<< HEAD
-        query.message.edit_text(text=f"*» ᴇxᴛʀᴀ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
-=======
         query.message.edit_text(f"*» ᴇxᴛʀᴀ ᴄᴏᴍᴍᴀɴᴅꜱ «*"
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             f"""
 /mstart - ꜱᴛᴀʀᴛ ᴛʜᴇ ᴍᴜꜱɪᴄ ʙᴏᴛ.
 /mhelp  - ɢᴇᴛ ᴄᴏᴍᴍᴀɴᴅꜱ ʜᴇʟᴘᴇʀ ᴍᴇɴᴜ ᴡɪᴛʜ ᴅᴇᴛᴀɪʟᴇᴅ ᴇxᴘʟᴀɴᴀᴛɪᴏɴꜱ ᴏғ ᴄᴏᴍᴍᴀɴᴅꜱ.
@@ -823,11 +787,7 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
         )
     elif query.data == "Music_back":
         first_name = update.effective_user.first_name
-<<<<<<< HEAD
-        query.message.edit_text(text=PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
-=======
         query.message.edit_text(PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
->>>>>>> 81bc4f1df6c34651adc501eb1a9d1a7c1c9e468f
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
