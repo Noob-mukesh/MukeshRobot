@@ -43,10 +43,10 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴠᴘs/ʟᴏᴄᴀʟ 」─
 </h3>
 
-<details>
-<summary><h3>
+
+<h3>
 - <b> ᴠᴘs/ʟᴏᴄᴀʟ ᴅᴇᴘʟᴏʏᴍᴇɴᴛ ᴍᴇᴛʜᴏᴅ </b>
-</h3></summary>
+</h3>
 
 - Get your [Necessary Variables](https://github.com/Noob-Mukesh/MukeshRobot/blob/main/MukeshRobot/config.py)
 - Upgrade and Update by :
@@ -79,7 +79,7 @@ Press `Ctrl+b` and then `d`
   <img src="https://te.legra.ph/file/5ab0e91166940c796f7dc.jpg">
 </p>
 
-</details>
+
 ━━━━━━━━━━━━━━━━━━━━
 
 
@@ -125,7 +125,7 @@ async def some_function(_, message):
 
 ━━━━━━━━━━━━━━━━━━━━
 ### ㅤㅤㅤㅤᴄʀᴇᴅɪᴛs 
- [ ᴍᴜᴋᴇsʜ ](https://t.me/itz_legend_coder)
+ [ ᴍᴜᴋᴇsʜ ](https://t.me/legend_coder)
 
  [ᴀɴᴏɴʏᴍᴏᴜs](https://telegram.me/anonymous_was_bot)  
 <b>ᴀɴᴅ ᴀʟʟ [ᴛʜᴇ ᴄᴏɴᴛʀɪʙᴜᴛᴏʀs](https://github.com/Noob-Mukesh/MukeshRobot/graphs/contributors) ᴡʜᴏ ʜᴇʟᴩᴇᴅ ɪɴ ᴍᴀᴋɪɴɢ  ɢʀᴏᴜᴘ ᴄᴏɴᴛʀᴏʟʟᴇʀ ᴜsᴇғᴜʟ & ᴩᴏᴡᴇʀғᴜʟ ❤️ </b>
