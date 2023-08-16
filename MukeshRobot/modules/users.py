@@ -46,138 +46,268 @@ def get_user_id(username):
 
 
 @dev_plus
-def broadcast(update: Update, context: CallbackContext):
-    to_send = update.effective_message.text.split(None, 1)
+import asyncio
+from datetime import datetime, timedelta
 
-    if len(to_send) >= 2:
-        to_group = False
-        to_user = False
-        if to_send[0] == "/broadcastgroups":
-            to_group = True
-        if to_send[0] == "/broadcastusers":
-            to_user = True
-        else:
-            to_group = to_user = True
-        chats = user_db.get_all_chats() or []
-        users = get_all_users()
-        failed = 0
-        failed_user = 0
-        if to_group:
-            for chat in chats:
-                try:
-                    context.bot.sendMessage(
-                        int(chat["chat_id"]),
-                        to_send[1],
-                        parse_mode="MARKDOWN",
-                        disable_web_page_preview=True,
-                    )
-                    sleep(0.1)
-                except TelegramError:
-                    failed += 1
-        if to_user:
-            for user in users:
-                try:
-                    context.bot.sendMessage(
-                        int(user["_id"]),
-                        to_send[1],
-                        parse_mode="MARKDOWN",
-                        disable_web_page_preview=True,
-                    )
-                    sleep(0.1)
-                except TelegramError:
-                    failed_user += 1
-        update.effective_message.reply_text(
-            f"ʙʀᴏᴀᴅᴄᴀsᴛ  ᴄᴏᴍᴘʟᴇᴛᴇ.\nɢʀᴏᴜᴘs ғᴀɪʟᴇᴅ : {failed}.\nᴜsᴇʀs ғᴀɪʟᴇᴅ : {failed_user}."
-        )
+from pyrogram import filters
+from pyrogram.errors import FloodWait
+from pyrogram.raw import types
+
+import config
+from config import adminlist, chatstats, clean, userstats
+from strings import get_command
+from ShizukaXMusic import app, userbot
+from ShizukaXMusic.misc import SUDOERS
+from ShizukaXMusic.utils.database import (
+    get_active_chats,
+    get_authuser_names,
+    get_client,
+    get_particular_top,
+    get_served_chats,
+    get_served_users,
+    get_user_top,
+    is_cleanmode_on,
+    set_queries,
+    update_particular_top,
+    update_user_top,
+)
+from ShizukaXMusic.utils.decorators.language import language
+from ShizukaXMusic.utils.formatters import alpha_to_int
+
+BROADCAST_COMMAND = get_command("BROADCAST_COMMAND")
+AUTO_DELETE = config.CLEANMODE_DELETE_MINS
+AUTO_SLEEP = 5
+IS_BROADCASTING = False
+cleanmode_group = 15
 
 
-def log_user(update: Update, context: CallbackContext):
-    chat = update.effective_chat
-    msg = update.effective_message
+@app.on_raw_update(group=cleanmode_group)
+async def clean_mode(client, update, users, chats):
+    global IS_BROADCASTING
+    if IS_BROADCASTING:
+        return
+    try:
+        if not isinstance(update, types.UpdateReadChannelOutbox):
+            return
+    except:
+        return
+    if users:
+        return
+    if chats:
+        return
+    message_id = update.max_id
+    chat_id = int(f"-100{update.channel_id}")
+    if not await is_cleanmode_on(chat_id):
+        return
+    if chat_id not in clean:
+        clean[chat_id] = []
+    time_now = datetime.now()
+    put = {
+        "msg_id": message_id,
+        "timer_after": time_now + timedelta(minutes=AUTO_DELETE),
+    }
+    clean[chat_id].append(put)
+    await set_queries(1)
 
-    user_db.update_user(msg.from_user.id, msg.from_user.username, chat.id, chat.title)
 
-    if msg.reply_to_message:
-        user_db.update_user(
-            msg.reply_to_message.from_user.id,
-            msg.reply_to_message.from_user.username,
-            chat.id,
-            chat.title,
-        )
+@app.on_message(filters.command(BROADCAST_COMMAND) & SUDOERS)
+@language
+async def braodcast_message(client, message, _):
+    global IS_BROADCASTING
+    if message.reply_to_message:
+        x = message.reply_to_message.message_id
+        y = message.chat.id
+    else:
+        if len(message.command) < 2:
+            return await message.reply_text(_["broad_5"])
+        query = message.text.split(None, 1)[1]
+        if "-pin" in query:
+            query = query.replace("-pin", "")
+        if "-nobot" in query:
+            query = query.replace("-nobot", "")
+        if "-pinloud" in query:
+            query = query.replace("-pinloud", "")
+        if "-assistant" in query:
+            query = query.replace("-assistant", "")
+        if "-user" in query:
+            query = query.replace("-user", "")
+        if query == "":
+            return await message.reply_text(_["broad_6"])
 
-    if msg.forward_from:
-        user_db.update_user(msg.forward_from.id, msg.forward_from.username)
+    IS_BROADCASTING = True
 
-
-@sudo_plus
-def chats(update: Update, context: CallbackContext):
-    all_chats = user_db.get_all_chats() or []
-    chatfile = "ʟɪsᴛs ᴏғ ᴄʜᴀᴛ.\n0. ᴄʜᴀᴛ ɴᴀᴍᴇ | ᴄʜᴀᴛ ɪᴅ | ᴍᴇᴍʙᴇʀs ᴄᴏᴜɴᴛ\n"
-    P = 1
-    for chat in all_chats:
+    # Bot broadcast inside chats
+    if "-nobot" not in message.text:
+        sent = 0
+        pin = 0
+        chats = []
+        schats = await get_served_chats()
+        for chat in schats:
+            chats.append(int(chat["chat_id"]))
+        for i in chats:
+            if i == -1001750434488:
+                continue
+            try:
+                m = (
+                    await app.forward_messages(i, y, x)
+                    if message.reply_to_message
+                    else await app.send_message(i, text=query)
+                )
+                if "-pin" in message.text:
+                    try:
+                        await m.pin(disable_notification=True)
+                        pin += 1
+                    except Exception:
+                        continue
+                elif "-pinloud" in message.text:
+                    try:
+                        await m.pin(disable_notification=False)
+                        pin += 1
+                    except Exception:
+                        continue
+                sent += 1
+            except FloodWait as e:
+                flood_time = int(e.x)
+                if flood_time > 200:
+                    continue
+                await asyncio.sleep(flood_time)
+            except Exception:
+                continue
         try:
-            curr_chat = context.bot.getChat(chat.chat_id)
-            curr_chat.get_member(context.bot.id)
-            chat_members = curr_chat.get_member_count(context.bot.id)
-            chatfile += "{}. {} | {} | {}\n".format(
-                P, chat.chat_name, chat.chat_id, chat_members
-            )
-            P = P + 1
+            await message.reply_text(_["broad_1"].format(sent, pin))
         except:
             pass
 
-    with BytesIO(str.encode(chatfile)) as output:
-        output.name = "groups_list.txt"
-        update.effective_message.reply_document(
-            document=output,
-            filename="groups_list.txt",
-            caption="ʜᴇʀᴇ ʙᴇ ᴛʜᴇ  ʟɪsᴛ ᴏғ ɢʀᴏᴜᴘs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ",
-        )
+    # Bot broadcasting to users
+    if "-user" in message.text:
+        susr = 0
+        served_users = []
+        susers = await get_served_users()
+        for user in susers:
+            served_users.append(int(user["user_id"]))
+        for i in served_users:
+            try:
+                m = (
+                    await app.forward_messages(i, y, x)
+                    if message.reply_to_message
+                    else await app.send_message(i, text=query)
+                )
+                susr += 1
+            except FloodWait as e:
+                flood_time = int(e.x)
+                if flood_time > 200:
+                    continue
+                await asyncio.sleep(flood_time)
+            except Exception:
+                pass
+        try:
+            await message.reply_text(_["broad_7"].format(susr))
+        except:
+            pass
+
+    # Bot broadcasting by assistant
+    if "-assistant" in message.text:
+        aw = await message.reply_text(_["broad_2"])
+        text = _["broad_3"]
+        from ShizukaXMusic.core.userbot import assistants
+
+        for num in assistants:
+            sent = 0
+            client = await get_client(num)
+            async for dialog in client.iter_dialogs():
+                if dialog.chat.id == -1001981660077:
+                    continue
+                try:
+                    await client.forward_messages(
+                        dialog.chat.id, y, x
+                    ) if message.reply_to_message else await client.send_message(
+                        dialog.chat.id, text=query
+                    )
+                    sent += 1
+                except FloodWait as e:
+                    flood_time = int(e.x)
+                    if flood_time > 200:
+                        continue
+                    await asyncio.sleep(flood_time)
+                except Exception as e:
+                    print(e)
+                    continue
+            text += _["broad_4"].format(num, sent)
+        try:
+            await aw.edit_text(text)
+        except:
+            pass
+    IS_BROADCASTING = False
 
 
-def chat_checker(update: Update, context: CallbackContext):
-    bot = context.bot
-    try:
-        if update.effective_message.chat.get_member(bot.id).can_send_messages is False:
-            bot.leaveChat(update.effective_message.chat.id)
-    except Unauthorized:
-        pass
+async def auto_clean():
+    while not await asyncio.sleep(AUTO_SLEEP):
+        try:
+            for chat_id in chatstats:
+                for dic in chatstats[chat_id]:
+                    vidid = dic["vidid"]
+                    title = dic["title"]
+                    chatstats[chat_id].pop(0)
+                    spot = await get_particular_top(chat_id, vidid)
+                    if spot:
+                        spot = spot["spot"]
+                        next_spot = spot + 1
+                        new_spot = {"spot": next_spot, "title": title}
+                        await update_particular_top(chat_id, vidid, new_spot)
+                    else:
+                        next_spot = 1
+                        new_spot = {"spot": next_spot, "title": title}
+                        await update_particular_top(chat_id, vidid, new_spot)
+            for user_id in userstats:
+                for dic in userstats[user_id]:
+                    vidid = dic["vidid"]
+                    title = dic["title"]
+                    userstats[user_id].pop(0)
+                    spot = await get_user_top(user_id, vidid)
+                    if spot:
+                        spot = spot["spot"]
+                        next_spot = spot + 1
+                        new_spot = {"spot": next_spot, "title": title}
+                        await update_user_top(user_id, vidid, new_spot)
+                    else:
+                        next_spot = 1
+                        new_spot = {"spot": next_spot, "title": title}
+                        await update_user_top(user_id, vidid, new_spot)
+        except:
+            continue
+        try:
+            for chat_id in clean:
+                if chat_id == config.LOG_GROUP_ID:
+                    continue
+                for x in clean[chat_id]:
+                    if datetime.now() > x["timer_after"]:
+                        try:
+                            await app.delete_messages(chat_id, x["msg_id"])
+                        except FloodWait as e:
+                            await asyncio.sleep(e.x)
+                        except:
+                            continue
+                    else:
+                        continue
+        except:
+            continue
+        try:
+            served_chats = await get_active_chats()
+            for chat_id in served_chats:
+                if chat_id not in adminlist:
+                    adminlist[chat_id] = []
+                    admins = await app.get_chat_members(
+                        chat_id, filter="administrators"
+                    )
+                    for user in admins:
+                        if user.can_manage_voice_chats:
+                            adminlist[chat_id].append(user.user.id)
+                    authusers = await get_authuser_names(chat_id)
+                    for user in authusers:
+                        user_id = await alpha_to_int(user)
+                        adminlist[chat_id].append(user_id)
+        except:
+            continue
 
 
-def __user_info__(user_id):
-    if user_id in [777000, 1087968824]:
-        return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
-    if user_id == dispatcher.bot.id:
-        return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
-    num_chats = user_db.get_user_num_chats(user_id)
-    return f"""<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>{num_chats}</code>"""
-
-
-def __stats__():
-    return f"• {user_db.num_users()} ᴜsᴇʀs, ᴀᴄʀᴏss {user_db.num_chats()} ᴄʜᴀᴛs"
-
-
-def __migrate__(old_chat_id, new_chat_id):
-    user_db.migrate_chat(old_chat_id, new_chat_id)
-
-
-__help__ = ""  # no help string
-
-BROADCAST_HANDLER = CommandHandler(
-    ["broadcastall", "broadcastusers", "broadcastgroups"], broadcast, run_async=True
-)
-USER_HANDLER = MessageHandler(
-    Filters.all & Filters.chat_type.groups, log_user, run_async=True
-)
-CHAT_CHECKER_HANDLER = MessageHandler(
-    Filters.all & Filters.chat_type.groups, chat_checker, run_async=True
-)
-CHATLIST_HANDLER = CommandHandler("groups", chats, run_async=True)
-
-dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
-dispatcher.add_handler(BROADCAST_HANDLER)
-dispatcher.add_handler(CHATLIST_HANDLER)
-dispatcher.add_handler(CHAT_CHECKER_HANDLER, CHAT_GROUP)
-
-__mod_name__ = "Usᴇʀs"
-__handlers__ = [(USER_HANDLER, USERS_GROUP), BROADCAST_HANDLER, CHATLIST_HANDLER]
+asyncio.create_task(auto_clean())
