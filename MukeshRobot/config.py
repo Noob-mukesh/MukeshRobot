@@ -4,25 +4,25 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = "" # integer value, dont use ""
-    API_HASH = ""
-    TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 2145093972 # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    API_ID = 28767539 # integer value, dont use ""
+    API_HASH = "9c28898e68dbc39d6e493d5823f1f52d"
+    TOKEN = "6425760001:AAFFNYCeP8FLQAzi6sXc_5n0vpNlmBmXN1A"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = 6126083299  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
-    SUPPORT_CHAT = "the_support_chat"  # Your own group for support, do not add the @
+    SUPPORT_CHAT = "zonanyamannn"  # Your own group for support, do not add the @
     START_IMG = ""
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
-    MONGO_DB_URI= ""
+    MONGO_DB_URI= "mongodb+srv://manonebillion:iwan12345@znmanagement.zmxccsq.mongodb.net/?retryWrites=true&w=majority"
     # RECOMMENDED
-    DATABASE_URL = ""  # A sql database url from elephantsql.com
+    DATABASE_URL = "postgres://ktjyxkts:3Vqqx1ESvhGPJWiagXVuRhZO3K2sqCNF@mahmud.db.elephantsql.com/ktjyxkts"  # A sql database url from elephantsql.com
     CASH_API_KEY = (
-        ""  # Get your API key from https://www.alphavantage.co/support/#api-key
+        "ANP310DY837JATU7"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
-    TIME_API_KEY = ""
+    TIME_API_KEY = "5Q6WJX05N43Y"
     # Get your API key from https://timezonedb.com/api
 
     # Optional fields
-    CHATBOT_API="" # get it from @FallenChat_Bot using /token
+    CHATBOT_API="6126083299-fallen-nhfm33mfhn" # get it from @FallenChat_Bot using /token
     BL_CHATS = []  # List of groups that you want blacklisted.
     DRAGONS = []  # User id of sudo users
     DEV_USERS = []  # User id of dev users
