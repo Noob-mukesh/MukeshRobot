@@ -10,7 +10,7 @@ class Config(object):
     OWNER_ID = 6126083299  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
     SUPPORT_CHAT = "zonanyamannn"  # Your own group for support, do not add the @
-    START_IMG = ""
+    START_IMG = "https://c4.wallpaperflare.com/wallpaper/125/323/619/art-artwork-fantasy-mage-wallpaper-preview.jpg"
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= "mongodb+srv://manonebillion:iwan12345@znmanagement.zmxccsq.mongodb.net/?retryWrites=true&w=majority"
     # RECOMMENDED
