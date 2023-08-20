@@ -260,8 +260,20 @@ async def lego(event):
         fnt = glob.glob("./MukeshRobot/resources/fonts/*")
         randf = random.choice(fnt)
         font = ImageFont.truetype(randf, 120)
-        w, h = draw.textsize(text, font=font)
+        bbox= draw.textbbox((0,0),text, font=font)
+        w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
         h += int(h * 0.21)
+        draw.text(
+            ((image_widthz - w) / 2, (image_heightz - h) / 2),
+            text,
+            font=font,
+            fill=(255, 255, 255),
+        )
+        x = (image_widthz - w) / 2
+        y = (image_heightz - h) / 2 + 6
+        draw.text(
+            (x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black"
+        )
         image_width, image_height = img.size
         draw.text(
             ((image_widthz - w) / 2, (image_heightz - h) / 2),
@@ -290,7 +302,7 @@ async def lego(event):
         if os.path.exists(fname):
             os.remove(fname)
     except Exception:
-        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
+        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT} {e}")
 
 
 __mod_name__ = "Lᴏɢᴏ"
