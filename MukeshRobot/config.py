@@ -14,7 +14,7 @@ class Config(object):
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= "mongodb+srv://manonebillion:iwan12345@znmanagement.zmxccsq.mongodb.net/?retryWrites=true&w=majority"
     # RECOMMENDED
-    DATABASE_URL = "postgres://ktjyxkts:3Vqqx1ESvhGPJWiagXVuRhZO3K2sqCNF@mahmud.db.elephantsql.com/ktjyxkts"  # A sql database url from elephantsql.com
+    DATABASE_URL = "postgres://uvvbabug:7ARJ36Mh1g08ig89s2jFY24AbWMIbflh@rain.db.elephantsql.com/uvvbabug"  # A sql database url from elephantsql.com
     CASH_API_KEY = (
         "ANP310DY837JATU7"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
