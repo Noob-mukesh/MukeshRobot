@@ -87,7 +87,7 @@ def broadcast(update: Update, context: CallbackContext):
                 except TelegramError:
                     failed_user += 1
         update.effective_message.reply_text(
-            f"Ê™Ê€á´á´€á´…á´„á´€sá´›  á´„á´á´á´˜ÊŸá´‡á´›á´‡.\nÉ¢Ê€á´á´œá´˜s Ò“á´€ÉªÊŸá´‡á´… : {failed}.\ná´œsá´‡Ê€s Ò“á´€ÉªÊŸá´‡á´… : {failed_user}."
+            f"ʙʀᴏᴀᴅᴄᴀsᴛ  ᴄᴏᴍᴘʟᴇᴛᴇ.\nɢʀᴏᴜᴘs ғᴀɪʟᴇᴅ : {failed}.\nᴜsᴇʀs ғᴀɪʟᴇᴅ : {failed_user}."
         )
 
 
@@ -112,7 +112,7 @@ def log_user(update: Update, context: CallbackContext):
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
     all_chats = user_db.get_all_chats() or []
-    chatfile = "ÊŸÉªsá´›s á´Ò“ á´„Êœá´€á´›.\n0. á´„Êœá´€á´› É´á´€á´á´‡ | á´„Êœá´€á´› Éªá´… | á´á´‡á´Ê™á´‡Ê€s á´„á´á´œÉ´á´›\n"
+    chatfile = "ʟɪsᴛs ᴏғ ᴄʜᴀᴛ.\n0. ᴄʜᴀᴛ ɴᴀᴍᴇ | ᴄʜᴀᴛ ɪᴅ | ᴍᴇᴍʙᴇʀs ᴄᴏᴜɴᴛ\n"
     P = 1
     for chat in all_chats:
         try:
@@ -131,7 +131,7 @@ def chats(update: Update, context: CallbackContext):
         update.effective_message.reply_document(
             document=output,
             filename="groups_list.txt",
-            caption="Êœá´‡Ê€á´‡ Ê™á´‡ á´›Êœá´‡  ÊŸÉªsá´› á´Ò“ É¢Ê€á´á´œá´˜s ÉªÉ´ á´Ê á´…á´€á´›á´€Ê™á´€sá´‡",
+            caption="ʜᴇʀᴇ ʙᴇ ᴛʜᴇ  ʟɪsᴛ ᴏғ ɢʀᴏᴜᴘs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ",
         )
 
 
@@ -146,15 +146,15 @@ def chat_checker(update: Update, context: CallbackContext):
 
 def __user_info__(user_id):
     if user_id in [777000, 1087968824]:
-        return """<b>âž» á´„á´á´á´á´É´ á´„Êœá´€á´›s:</b> <code>???</code>"""
+        return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
     if user_id == dispatcher.bot.id:
-        return """<b>âž» á´„á´á´á´á´É´ á´„Êœá´€á´›s:</b> <code>???</code>"""
+        return """<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>???</code>"""
     num_chats = user_db.get_user_num_chats(user_id)
-    return f"""<b>âž» á´„á´á´á´á´É´ á´„Êœá´€á´›s:</b> <code>{num_chats}</code>"""
+    return f"""<b>➻ ᴄᴏᴍᴍᴏɴ ᴄʜᴀᴛs:</b> <code>{num_chats}</code>"""
 
 
 def __stats__():
-    return f"â€¢ {user_db.num_users()} á´œsá´‡Ê€s, á´€á´„Ê€á´ss {user_db.num_chats()} á´„Êœá´€á´›s"
+    return f"• {user_db.num_users()} ᴜsᴇʀs, ᴀᴄʀᴏss {user_db.num_chats()} ᴄʜᴀᴛs"
 
 
 def __migrate__(old_chat_id, new_chat_id):
@@ -179,5 +179,5 @@ dispatcher.add_handler(BROADCAST_HANDLER)
 dispatcher.add_handler(CHATLIST_HANDLER)
 dispatcher.add_handler(CHAT_CHECKER_HANDLER, CHAT_GROUP)
 
-__mod_name__ = "Usá´‡Ê€s"
+__mod_name__ = "Usᴇʀs"
 __handlers__ = [(USER_HANDLER, USERS_GROUP), BROADCAST_HANDLER, CHATLIST_HANDLER]
