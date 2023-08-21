@@ -26,10 +26,22 @@ async def jlogo(b,m):
         draw = ImageDraw.Draw(img)
         image_widthz, image_heightz = img.size
         fnt = "./MukeshRobot/resources/fonts/UrbanJungleDEMO.otf"
-        randf=fnt
-        font = ImageFont.truetype(randf, 120)
-        w, h = draw.textsize(text, font=font)
+
+        font = ImageFont.truetype(fnt, 120)
+        bbox= draw.textbbox((0,0),text, font=font)
+        w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
         h += int(h * 0.21)
+        draw.text(
+            ((image_widthz - w) / 2, (image_heightz - h) / 2),
+            text,
+            font=font,
+            fill=(255, 255, 255),
+        )
+        x = (image_widthz - w) / 2
+        y = (image_heightz - h) / 2 + 6
+        draw.text(
+            (x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black"
+        )
         image_width, image_height = img.size
         draw.text(
             ((image_widthz - w) / 2, (image_heightz - h) / 2),
@@ -44,16 +56,21 @@ async def jlogo(b,m):
         )
         fname = "mukesh.png"
         img.save(fname, "png")
-        await m.reply_photo(
-        fname,
-            caption=f" ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @{BOT_USERNAME}"
+        await telethn.send_file(
+            event.chat_id,
+            file=fname,
+            caption=f"""━━━━━━━{BOT_NAME}━━━━━━━
+
+☘️ Jʟᴏɢᴏ ᴄʀᴇᴀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ☘️
+◈──────────────◈
+🔥 ᴄʀᴇᴀᴛᴇᴅ ʙʏ : @{BOT_USERNAME}
+━━━━━━━{BOT_NAME}━━━━━━━""",buttons=button_row
 )
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
     except Exception as e:
-        await m.reply(f" #Error {e}, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT}")
-
+        await event.reply(f"ᴇʀʀᴏʀ {e}, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT} ")
 
 __mod_name__ = "Jʟᴏɢᴏ"
 

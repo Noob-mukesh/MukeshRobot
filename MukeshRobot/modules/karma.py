@@ -16,8 +16,8 @@ from MukeshRobot.utils.mongo import (
     update_karma,
 )
 
-regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|🖤|❣️|💝|💖|💕|❤|💘|cool|good|👍|baby|mukesh|thank you|gud|thankyou|love|pro)$"
-regex_downvote = r"^(\-|\-\-|\-1|👎|💔|noob|weak|fuck off|nub|gey|mf)$"
+regex_upvote =r"^(\+|\+\+|\+1|thx|thanx|thanks|🖤|❣️|💝|💖|💕|❤️|💘|cool|good|\👍|baby|mukesh|thank you|gud|thankyou|love|pro)$"
+regex_downvote = r"^(\-|\-\-|\-1|\👎|💔|noob|weak|fuck off|nub|gey|mf)$"
 
 
 karma_positive_group = 3

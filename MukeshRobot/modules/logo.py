@@ -301,8 +301,8 @@ async def lego(event):
         await pesan.delete()
         if os.path.exists(fname):
             os.remove(fname)
-    except Exception:
-        await event.reply(f"ғʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT} {e}")
+    except Exception as e:
+        await event.reply(f"ᴇʀʀᴏʀ {e}, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ @{SUPPORT_CHAT} ")
 
 
 __mod_name__ = "Lᴏɢᴏ"
