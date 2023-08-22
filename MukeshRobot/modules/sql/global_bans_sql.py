@@ -1,13 +1,13 @@
 import threading
 
-from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
+from sqlalchemy import Boolean, Column, BigInteger, String, UnicodeText
 
 from MukeshRobot.modules.sql import BASE, SESSION
 
 
 class GloballyBannedUsers(BASE):
     __tablename__ = "gbans"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     name = Column(UnicodeText, nullable=False)
     reason = Column(UnicodeText)
 

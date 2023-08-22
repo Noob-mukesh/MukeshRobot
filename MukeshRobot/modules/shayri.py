@@ -43,11 +43,11 @@ loveShayri = [
 ]
 love = random.choice(loveShayri)
 
-@pbot.on_message(filters.command("loveshyari"))
+@pbot.on_message(filters.command("loveshayri"))
 
 async def love_shayri(b,m):
     "dont remove this line \n credit  |n github : noob-mukesh"
     await m.reply_text(love)
 __mod_name__="​​ꜱʜᴀʏʀɪ"
 __help__="""ꜱᴇɴᴅ ʀᴀɴᴅᴏᴍ ꜱʜᴀʏʀɪ
-❍ /love : ʟᴏᴠᴇ ꜱʜᴀʏʀɪ"""
+❍ /loveshayri : ʟᴏᴠᴇ ꜱʜᴀʏʀɪ"""
