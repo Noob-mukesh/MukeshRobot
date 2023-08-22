@@ -5,7 +5,7 @@ import yt_dlp
 from pyrogram import filters
 from youtube_search import YoutubeSearch
 
-from MukeshRobot import SUPPORT_CHAT, pbot
+from MukeshRobot import SUPPORT_CHAT, pbot,BOT_NAME
 
 
 def time_to_seconds(time):
@@ -61,6 +61,7 @@ def song(client, message):
         message.reply_audio(
             audio_file,
             caption=rep,
+            performer=BOT_NAME,
             thumb=thumb_name,
             title=title,
             duration=dur,
