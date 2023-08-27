@@ -24,7 +24,7 @@
 </h2>
 
 <p align="center">
-    <a href="https://www.python.org/downloads/release/python-31012/"> ᴘʏᴛʜᴏɴ 3.10.12 </a> |
+    <a href="https://www.python.org/downloads/release/python-3114/"> ᴘʏᴛʜᴏɴ 3.11.4 </a> |
     <a href="https://docs.pyrogram.org/intro/setup#api-keys"> ᴛᴇʟᴇɢʀᴀᴍ ᴀᴘɪ ᴋᴇʏ </a> |
     <a href="https://t.me/botfather"> ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏᴋᴇɴ </a> | 
     <a href="https://telegra.ph/How-To-get-Mongodb-URI-04-06"> ᴍᴏɴɢᴏᴅʙ ᴜʀɪ </a>
