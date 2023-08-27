@@ -106,6 +106,6 @@ async def ytmusic(client, message: Message):
 
 
 __mod_name__ = "Vɪᴅᴇᴏ"
-__help_ = """ 
+__help__ = """ 
 /video to download video song
 /vsong to download video song """
