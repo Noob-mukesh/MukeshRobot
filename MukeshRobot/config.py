@@ -4,17 +4,17 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 28767539 # integer value, dont use ""
-    API_HASH = "9c28898e68dbc39d6e493d5823f1f52d"
-    TOKEN = "6652194114:AAF2kIOluFJlTv_lw-TJ61swKJkg-rKDMBE"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 6126083299  # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    API_ID = 24459692 # integer value, dont use ""
+    API_HASH = "e5ad49a89732b011de710fd0789da86f"
+    TOKEN = "6408160869:AAFmu5FsPXsCKhHJUBFeu4RzDVg8zoHIJDQ"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = 5973260847  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
-    SUPPORT_CHAT = "zonanyamannn"  # Your own group for support, do not add the @
+    SUPPORT_CHAT = "zonenomercy"  # Your own group for support, do not add the @
     START_IMG = "https://c4.wallpaperflare.com/wallpaper/125/323/619/art-artwork-fantasy-mage-wallpaper-preview.jpg"
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= "mongodb+srv://manonebillion:iwan12345@znmanagement.zmxccsq.mongodb.net/?retryWrites=true&w=majority"
     # RECOMMENDED
-    DATABASE_URL = "postgres://uvvbabug:7ARJ36Mh1g08ig89s2jFY24AbWMIbflh@rain.db.elephantsql.com/uvvbabug"  # A sql database url from elephantsql.com
+    DATABASE_URL = "postgres://wlfcvgiz:J4ZbS4EN4m3Ihwnv1jzUFX-zk_HnroUM@john.db.elephantsql.com/wlfcvgiz"  # A sql database url from elephantsql.com
     CASH_API_KEY = (
         "ANP310DY837JATU7"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
@@ -24,8 +24,8 @@ class Config(object):
     # Optional fields
     CHATBOT_API="6126083299-fallen-nhfm33mfhn" # get it from @FallenChat_Bot using /token
     BL_CHATS = []  # List of groups that you want blacklisted.
-    DRAGONS = [6126083299]  # User id of sudo users
-    DEV_USERS = [6126083299]  # User id of dev users
+    DRAGONS = [5973260847]  # User id of sudo users
+    DEV_USERS = [5973260847]  # User id of dev users
     DEMONS = []  # User id of support users
     TIGERS = []  # User id of tiger users
     WOLVES = []  # User id of whitelist users

@@ -84,7 +84,7 @@ def slap(update: Update, context: CallbackContext):
     throw = random.choice(fun_strings.THROW)
 
     if update.effective_user.id == OWNER_ID:
-        temp = "@legend_coder scratches {user2}"
+        temp = "{user2}"
 
     reply = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw)
 

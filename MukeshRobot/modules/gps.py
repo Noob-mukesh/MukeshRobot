@@ -61,11 +61,6 @@ async def distance(bot, message):
 
 
     try:
-
-        """
-        ---------github :-NOOB-MUKESH -----
-        ---------telegram : @itz_legend_coder-----
-        """
         distance=(great_circle(x,y).miles)
 
         await message.reply_text(f"Total distance between {x[0]},{x[1]} and {y[0]},{y[1]} is {distance}")
