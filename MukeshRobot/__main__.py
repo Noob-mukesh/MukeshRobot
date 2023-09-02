@@ -112,7 +112,7 @@ HELP_STRINGS = f"""
 DONATE_STRING = f"""ʜᴇʏ ʙᴀʙʏ,
   ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ.
 
-No need to Donate Baby ❤️ Just Enjoy the Bot 😉🍨
+No need to Donate Baby ❤️ Just Enjoy the Bot 😉🍨."""
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
