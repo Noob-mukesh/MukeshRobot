@@ -10,7 +10,7 @@ from pyrogram.types import InlineKeyboardButton as IKB
 from pyrogram.types import InlineKeyboardMarkup as IKM
 from pyrogram.types import Message
 
-from MukeshRobot import MONGO_DB_URI, LOGGER, TIME_ZONE
+from MukeshRobot import MONGO_DB_URI, LOGGER, TIME_API_KEY
 from MukeshRobot.bot_class import Gojo
 from MukeshRobot.database.chats_db import Chats
 
