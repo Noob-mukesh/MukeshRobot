@@ -10,11 +10,11 @@ from pyrogram.types import InlineKeyboardButton as IKB
 from pyrogram.types import InlineKeyboardMarkup as IKM
 from pyrogram.types import Message
 
-from MukeshRobot import BDB_URI, LOGGER, TIME_ZONE
+from MukeshRobot import MONGO_DB_URI, LOGGER, TIME_ZONE
 from MukeshRobot.bot_class import Gojo
 from MukeshRobot.database.chats_db import Chats
 
-if BDB_URI:
+if MONGO_DB_URI:
     from Powers.plugins import bday_cinfo, bday_info
 
 from MukeshRobot.utils.custom_filters import command
@@ -28,7 +28,7 @@ def give_date(date,form = "%d/%m/%Y"):
 @Gojo.on_message(command("remember"))
 async def remember_me(c: Gojo, m: Message):
     if not BDB_URI:
-        await m.reply_text("BDB_URI is not configured")
+        await m.reply_text("MONGO_DB_URI is not configured")
         return
     splited = m.text.split()
     if len(splited) == 1:
