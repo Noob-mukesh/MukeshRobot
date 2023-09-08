@@ -110,6 +110,7 @@ else:
     TOKEN = Config.TOKEN
     TIME_API_KEY = Config.TIME_API_KEY
     WORKERS = Config.WORKERS
+    DB_URI = Config.DB_URI
 
     try:
         OWNER_ID = int(Config.OWNER_ID)
