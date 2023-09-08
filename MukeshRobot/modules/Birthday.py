@@ -17,8 +17,8 @@ from MukeshRobot.database.chats_db import Chats
 if BDB_URI:
     from Powers.plugins import bday_cinfo, bday_info
 
-from Powers.utils.custom_filters import command
-from Powers.utils.extras import birthday_wish
+from MukeshRobot.utils.custom_filters import command
+from MukeshRobot.utils.extras import birthday_wish
 
 
 def give_date(date,form = "%d/%m/%Y"):
