@@ -75,13 +75,17 @@ PM_START_TEX = """
 
 
 PM_START_TEXT = """ 
-*ʜᴇʏ* {} , 🥀
-*๏ ɪ'ᴍ {} ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘs!
-ʜɪᴛ ʜᴇʟᴘ ᴛᴏ ғɪɴᴅ ᴏᴜᴛ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ɪɴ ᴍʏ ғᴜʟʟ ᴘᴏᴛᴇɴᴛɪᴀʟ!*
-➻ *ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ  ➕ ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.*
+────「 [{}](https://telegra.ph/file/104bc33aa49969952c611.jpg) 」────
+*Hola! {},*
+*I am an Anime Themed Advance Group Management Bot With Lot Of Sexy Features.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+❍ *Uptime:* `{}`
+❍ `{}` *Users, Across* `{}` *Chats.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+➛ Try The Help Button Below To Know My Abilities ××
 ─────────────────
-   *➻ ᴜsᴇʀs »* {}
-   *➻ ᴄʜᴀᴛs »* {}
+   *➻ Usᴇʀs »* {}
+   *➻ Cʜᴀᴛs »* {}
 ─────────────────
 """
 
@@ -95,15 +99,22 @@ buttons = [
      ],
     [
         InlineKeyboardButton(
-            text="Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ",
+            text=f"Add Me To Your Group",
             url=f"https://t.me/{dispatcher.bot.username}?startgroup=true",
-        ),
+        )
     ],
     [
-        InlineKeyboardButton(text="📚 ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"),
+        InlineKeyboardButton(text="[► Help ◄]", callback_data="Main_help"),
+        InlineKeyboardButton(text="[► Owner ◄]", url="https://telegram.dog/Devil_Boy_XD"),
     ],
-    
-
+    [
+        InlineKeyboardButton(
+            text="🚑 Support", url=f"https://telegram.dog/{SUPPORT_CHAT}"
+        ),
+        InlineKeyboardButton(
+            text="🔔 Updates", url="https://telegram.dog/Theblazenetwork"
+        ),
+    ],
 ]
 
 HELP_STRINGS = f"""
