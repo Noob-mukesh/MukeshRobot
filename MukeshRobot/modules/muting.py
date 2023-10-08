@@ -92,7 +92,8 @@ def mute(update: Update, context: CallbackContext) -> str:
         message.reply_text("This user is already muted!")
 
     return ""
-admin
+@connection_status
+@bot_admin
 @user_admin
 @loggable
 def dmute(update: Update, context: CallbackContext) -> str:
