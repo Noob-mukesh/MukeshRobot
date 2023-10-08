@@ -92,7 +92,46 @@ def mute(update: Update, context: CallbackContext) -> str:
         message.reply_text("This user is already muted!")
 
     return ""
+admin
+@user_admin
+@loggable
+def dmute(update: Update, context: CallbackContext) -> str:
+    bot = context.bot
+    args = context.args
 
+    chat = update.effective_chat
+    user = update.effective_user
+    message = update.effective_message
+
+    user_id, reason = extract_user_and_text(message, args)
+    reply = check_user(user_id, bot, chat)
+
+    if reply:
+        message.reply_text(reply)
+        return ""
+
+    member = chat.get_member(user_id)
+
+    log = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"#MUTE\n"
+        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+        f"<b>User:</b> {mention_html(member.user.id, member.user.first_name)}"
+    )
+
+    if reason:
+        log += f"\n<b>Reason:</b> {reason}"
+
+    if member.can_send_messages is None or member.can_send_messages:
+        chat_permissions = ChatPermissions(can_send_messages=False)
+        bot.restrict_chat_member(chat.id, user_id, chat_permissions)
+
+        return log
+
+    else:
+        pass
+    return ""
+    
 
 @connection_status
 @bot_admin
@@ -242,15 +281,16 @@ __help__ = """
  ❍ /mute  <ᴜsᴇʀʜᴀɴᴅʟᴇ>*:* sɪʟᴇɴᴄᴇs ᴀ ᴜsᴇʀ. ᴄᴀɴ ᴀʟsᴏ ʙᴇ ᴜsᴇᴅ ᴀs ᴀ ʀᴇᴘʟʏ, ᴍᴜᴛɪɴɢ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴜsᴇʀ.
  ❍ /tmute  <ᴜsᴇʀʜᴀɴᴅʟᴇ> x(ᴍ/ʜ/ᴅ)*:* ᴍᴜᴛᴇs ᴀ ᴜsᴇʀ ғᴏʀ x ᴛɪᴍᴇ. (ᴠɪᴀ ʜᴀɴᴅʟᴇ, ᴏʀ ʀᴇᴘʟʏ). `ᴍ` = `ᴍɪɴᴜᴛᴇs`, `ʜ` = `ʜᴏᴜʀs`, `ᴅ` = `ᴅᴀʏs`.
  ❍ /unmute <ᴜsᴇʀʜᴀɴᴅʟᴇ>*:* ᴜɴᴍᴜᴛᴇs ᴀ ᴜsᴇʀ. ᴄᴀɴ ᴀʟsᴏ ʙᴇ ᴜsᴇᴅ ᴀs ᴀ ʀᴇᴘʟʏ, ᴍᴜᴛɪɴɢ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴜsᴇʀ.
+ ❍ /dmute <ᴜsᴇʀʜᴀɴᴅʟᴇ>*:* sɪʟᴇɴᴄᴇs ᴀ ᴜsᴇʀ. ᴄᴀɴ ᴀʟsᴏ ʙᴇ ᴜsᴇᴅ ᴀs ᴀ ʀᴇᴘʟʏ, ᴍᴜᴛɪɴɢ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴜsᴇʀ.
 """
-
+DMUTE_HANDLER = CommandHandler("dmute", dmute, run_async=True)
 MUTE_HANDLER = CommandHandler("mute", mute, run_async=True)
 UNMUTE_HANDLER = CommandHandler("unmute", unmute, run_async=True)
 TEMPMUTE_HANDLER = CommandHandler(["tmute", "tempmute"], temp_mute, run_async=True)
-
+dispatcher.add_handler(DMUTE_HANDLER)
 dispatcher.add_handler(MUTE_HANDLER)
 dispatcher.add_handler(UNMUTE_HANDLER)
 dispatcher.add_handler(TEMPMUTE_HANDLER)
 
 __mod_name__ = "Mᴜᴛᴇ​"
-__handlers__ = [MUTE_HANDLER, UNMUTE_HANDLER, TEMPMUTE_HANDLER]
+__handlers__ = [DMUTE_HANDLER,MUTE_HANDLER, UNMUTE_HANDLER, TEMPMUTE_HANDLER]
