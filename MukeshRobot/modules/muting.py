@@ -103,8 +103,9 @@ def dmute(update: Update, context: CallbackContext) -> str:
     chat = update.effective_chat
     user = update.effective_user
     message = update.effective_message
-    bot.delete_message(chat, update.effective_message_id)
+    
     user_id, reason = extract_user_and_text(message, args)
+    bot.delete_message(chat, message_id)
     reply = check_user(user_id, bot, chat)
 
     if reply:
