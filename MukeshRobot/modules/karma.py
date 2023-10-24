@@ -104,7 +104,7 @@ async def downvote(_, message):
     )
 
 
-@pbot.on_message(filters.command("karmastat") & filters.group)
+@pbot.on_message(filters.command("karmastat") & filters.chat_type.groups)
 @capture_err
 async def karma(_, message):
     chat_id = message.chat.id
