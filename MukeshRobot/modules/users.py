@@ -68,7 +68,7 @@ def broadcast(update: Update, context: CallbackContext):
                     context.bot.sendMessage(
                         int(chat["chat_id"]),
                         to_send[1],
-                        parse_mode="MARKDOWN",
+                       
                         disable_web_page_preview=True,
                     )
                     sleep(0.1)
@@ -80,7 +80,7 @@ def broadcast(update: Update, context: CallbackContext):
                     context.bot.sendMessage(
                         int(user["_id"]),
                         to_send[1],
-                        parse_mode="MARKDOWN",
+                       
                         disable_web_page_preview=True,
                     )
                     sleep(0.1)
