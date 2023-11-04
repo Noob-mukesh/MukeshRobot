@@ -455,7 +455,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Main_help":
         query.message.edit_caption(f"""
- ʜᴇʀᴇ ɪꜱ ʜᴇʟᴘ ᴍᴇɴᴜ ꜰᴏʀ {BOT_NAME}
+ pilih tombol di bawah untuk melihat bantuan mengelola dan perintah musik {BOT_NAME}
 """,
             parse_mode=ParseMode.MARKDOWN,
             
