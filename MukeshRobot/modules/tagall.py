@@ -14,7 +14,7 @@ async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
         return await event.respond(
-            "__This command can be use in groups and channels!__"
+            "__𝗺𝗼𝗱𝘂𝗹𝗲 𝗶𝗻𝗶 𝗰𝘂𝗺𝗮𝗻 𝗯𝗶𝘀𝗮 𝗱𝗶𝗽𝗮𝗸𝗲 𝗱𝗶 𝗴𝗰 𝗮𝘁𝗮𝘂 𝗰𝗵 𝗺𝗲𝗸!__"
         )
 
     is_admin = False
@@ -44,7 +44,7 @@ async def mentionall(event):
             )
     else:
         return await event.respond(
-            "__Reply to a message or give me some text to mention others!__"
+            "__𝗿𝗲𝗽𝗹𝘆 𝗽𝗲𝘀𝗮𝗻 𝗺𝗮𝗻𝗮 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶 𝘁𝗮𝗴 𝗮𝗹𝗹 𝗺𝗲𝗸 𝗯𝘂𝗿𝘂𝗮𝗻!__"
         )
 
     spam_chats.append(chat_id)
