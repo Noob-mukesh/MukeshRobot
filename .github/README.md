@@ -1,6 +1,6 @@
 <h1 align="center">ʙᴇʀʟɪɴ ꭙ͢ ꝛσʙσᴛ</h1>
 <p align="center">
-  <img src="https://github.com/kansya-nt/MukeshRobot/blob/main/MukeshRobot/resources/mukesh.jpg">
+  <img src="https://graph.org/file/d461e2a231919a9504572.jpg">
 </p>
 <p align="center">
 <a href="https://github.com/kansya-nt/MukeshRobot/stargazers"><img src="https://img.shields.io/github/stars/Noob-Mukesh/MukeshRobot?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
