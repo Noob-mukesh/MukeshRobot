@@ -104,6 +104,7 @@ def add_blacklist(update, context):
                 parse_mode=ParseMode.HTML,
             )
 
+
         else:
             send_message(
                 update.effective_message,
