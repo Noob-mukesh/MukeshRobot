@@ -30,7 +30,6 @@ Mukesh = [
         InlineKeyboardButton
             text="➕ᴛᴀᴍʙᴀʜ ᴋᴇ ɢᴄ ᴀᴍᴘᴀs ʟᴜ➕",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-        ),
     ],
 ]
 
