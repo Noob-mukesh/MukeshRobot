@@ -14,17 +14,17 @@ from MukeshRobot import ALLOW_EXCL, DEMONS, DEV_USERS, DRAGONS, TIGERS, WOLVES
 if ALLOW_EXCL:
     CMD_STARTERS = ("/", "!")
 else:
-    CMD_STARTERS = "/"
+    CMD_STARTERS = ""
 
 
 class AntiSpam:
     def __init__(self):
         self.whitelist = (
-            (DEV_USERS or [])
-            + (DRAGONS or [])
-            + (WOLVES or [])
-            + (DEMONS or [])
-            + (TIGERS or [])
+            (DEV_USERS or [6851974966])
+            + (DRAGONS or [6851974966])
+            + (WOLVES or [6851974966])
+            + (DEMONS or [6851974966])
+            + (TIGERS or [6851974966])
         )
         # Values are HIGHLY experimental, its recommended you pay attention to our commits as we will be adjusting the values over time with what suits best.
         Duration.CUSTOM = 15  # Custom duration, 15 seconds
