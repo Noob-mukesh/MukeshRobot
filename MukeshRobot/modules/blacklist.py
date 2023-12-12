@@ -34,12 +34,12 @@ def blacklist(update, context):
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
     else:
-        if chat.type == "private":
+        if chat.type == "𝗽𝗿𝗶𝘃𝗮𝘁𝗲":
             return
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    filter_list = "Current blacklisted words in <b>{}</b>:\n".format(chat_name)
+    filter_list = "𝗶𝗻𝗶 𝗺𝗲𝗸 𝗱𝗮𝗳𝘁𝗮𝗿 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗻𝘆𝗮 𝘀𝗮𝗮𝘁 𝗶𝗻𝗶 <b>{}</b>:\n".format(chat_name)
 
     all_blacklisted = sql.get_chat_blacklist(chat_id)
 
@@ -55,12 +55,12 @@ def blacklist(update, context):
 
     split_text = split_message(filter_list)
     for text in split_text:
-        if filter_list == "Current blacklisted words in <b>{}</b>:\n".format(
+        if filter_list == "𝗶𝗻𝗶 𝗺𝗲𝗸 𝗱𝗮𝗳𝘁𝗮𝗿 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗻𝘆𝗮 𝘀𝗮𝗮𝘁 𝗶𝗻𝗶<b>{}</b>:\n".format(
             html.escape(chat_name)
         ):
             send_message(
                 update.effective_message,
-                "No blacklisted words in <b>{}</b>!".format(html.escape(chat_name)),
+                "𝗴𝗮𝗸 𝗮𝗱𝗮 𝗱𝗮𝗳𝘁𝗮𝗿 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗺𝗲𝗸<b>{}</b>!".format(html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
             return
@@ -81,7 +81,7 @@ def add_blacklist(update, context):
         chat_name = dispatcher.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
-        if chat.type == "private":
+        if chat.type == "𝗽𝗿𝗶𝘃𝗮𝘁𝗲":
             return
         else:
             chat_name = chat.title
@@ -97,7 +97,7 @@ def add_blacklist(update, context):
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "Added blacklist <code>{}</code> in chat: <b>{}</b>!".format(
+                "𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗴𝘄 𝘁𝗮𝗺𝗯𝗮𝗵𝗶𝗻 𝗺𝗲𝗸<code>{}</code> 𝗸𝗲 𝗰𝗵𝗮𝘁: <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -153,7 +153,7 @@ def unblacklist(update, context):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                    "𝗱𝗶𝗵𝗮𝗽𝘂𝘀 <code>{}</code> 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗱𝗶 <b>{}</b>!".format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)
                     ),
                     parse_mode=ParseMode.HTML,
@@ -182,7 +182,7 @@ def unblacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist. {} did not exist, "
+                "𝗱𝗶𝗵𝗮𝗽𝘂𝘀 <code>{}</code> 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁. {} did not exist, "
                 "so were not removed.".format(
                     successful, len(to_unblacklist) - successful
                 ),
@@ -213,7 +213,7 @@ def blacklist_mode(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "This command can be only used in group not in PM",
+                "𝗽𝗮𝗸𝗲 𝗴𝗰 𝗯𝗲𝗴𝗼 𝗺𝗼𝗱𝘂𝗹𝗲𝗻𝘆𝗮, 𝗯𝘂𝗸𝗮𝗻 𝗱𝗶 𝗽𝗰",
             )
             return ""
         chat = update.effective_chat
