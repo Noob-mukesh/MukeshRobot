@@ -115,7 +115,7 @@ def add_blacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to add in blacklist.",
+            "𝗸𝗮𝘀𝗶𝗵 𝗸𝗮𝘁𝗮" 𝗻𝘆𝗮 𝗱𝗼𝗻𝗴 𝗸𝗲𝗻𝘁𝗼𝗱 𝗺𝗮𝗻𝗮 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶𝘁𝗮𝗺𝗯𝗮𝗵 𝗸𝗲 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁.",
         )
 
 
@@ -191,7 +191,7 @@ def unblacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to remove from blacklist!",
+            "𝗸𝗮𝘀𝗶𝗵 𝗸𝗮𝘁𝗮" 𝗻𝘆𝗮 𝗱𝗼𝗻𝗴 𝗸𝗲𝗻𝘁𝗼𝗱 𝗺𝗮𝗻𝗮 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶𝗵𝗮𝗽𝘂𝘀 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁!",
         )
 
 
