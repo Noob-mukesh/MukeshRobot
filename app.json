@@ -1,14 +1,14 @@
 {
-    "name": "Mukesh Robot",
+    "name": "ʙᴇʀʟɪɴ ꭙ͢ ꝛσʙσᴛ",
     "description": "Telegram Group Management Bot.",
-    "logo": "https://te.legra.ph/file/49c43e6fc856534a09853.jpg",
+    "logo": "https://graph.org/file/d461e2a231919a9504572.jpg",
     "keywords": [
        "telegram",
        "modular",
        "group",
        "manager"
     ],   
- "repository": "https://github.com/Noob-Mukesh/MukeshRobot",
+ "repository": "https://github.com/kansya-nt/MukeshRobot",
  "stack": "heroku-22",
  "addons": [
     {
@@ -22,12 +22,12 @@
     "API_ID": {
        "description": "Get this value from my.telegram.org/apps.",
        "required": true,
-       "value": ""
+       "value": "20609170"
     },
     "API_HASH": {
        "description": "Get this value from my.telegram.org/apps.",
        "required": true,
-       "value": ""
+       "value": "cd0fa6d4f7c452ec5617bb0b1e4dc479"
     },
     "ALLOW_EXCL": {
        "description": "Set this to True if you want ! to be a command prefix along with /. Recommended is True",
@@ -66,17 +66,17 @@
     "OWNER_ID": {
        "description": "Your user ID as an integer.",
        "required": true,
-       "value": ""
+       "value": "6851974966"
     },
     "START_IMG": {
        "description": "Telegraph link of the image which will be shown at start command.",
        "required": true,
-       "value": ""
+       "value": "https://graph.org/file/d461e2a231919a9504572.jpg"
     },
     "SUPPORT_CHAT": {
        "description": "Your Telegram support group chat username where your users will go and bother you with shit Example - The_support_chat.",
        "required": true,
-       "value": ""
+       "value": "-1002049500040"
     },
     "TOKEN": {
        "description": "Get bot token from @BotFather on TG",
