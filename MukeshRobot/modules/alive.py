@@ -56,7 +56,7 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.2)
     await m.reply_photo(
         START_IMG,
-        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
+        caption=f"""**𝗵𝗮𝘆, 𝗴𝘄 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
   ๏ ** ᴅᴇᴠ :** [ᴅᴇᴠ](tg://user?id=6851974966)
   
