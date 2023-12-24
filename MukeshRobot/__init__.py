@@ -37,7 +37,7 @@ if ENV:
 
     API_ID = int(os.environ.get("API_ID", None))
     API_HASH = os.environ.get("API_HASH", None)
-    CHATBOT_API = os.environ.get("CHATBOT_API", None)
+    
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
@@ -102,7 +102,6 @@ else:
     EVENT_LOGS = Config.EVENT_LOGS
     INFOPIC = Config.INFOPIC
     LOAD = Config.LOAD
-    CHATBOT_API=Config.CHATBOT_API
     MONGO_DB_URI = Config.MONGO_DB_URI
     NO_LOAD = Config.NO_LOAD
     START_IMG = Config.START_IMG
