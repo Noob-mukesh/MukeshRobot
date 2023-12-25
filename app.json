@@ -53,7 +53,7 @@
        "value": ""
     },
     "CASH_API_KEY": {
-        " description": " Get your API key from https://www.alphavantage.co/support/#api-key",
+        "description": " Get your API key from https://www.alphavantage.co/support/#api-key",
         "required": false,
         "value": ""
     },
