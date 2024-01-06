@@ -26,7 +26,7 @@ from pyrogram import filters
 from pyrogram.types import  Message
 from pyrogram.enums import ChatAction
 
-from .. import pbot as  Mukesh
+from .. import pbot as  Mukesh,BOT_USERNAME
 import requests
 
 
@@ -41,7 +41,7 @@ async def qrcode_(_, message: Message):
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ Qʀᴄᴏᴅᴇ 💘
-✨ **Gᴇɴᴇʀᴀᴛᴇᴅ ʙʏ :** {Mukesh.mention}
+✨ **Gᴇɴᴇʀᴀᴛᴇᴅ ʙʏ :** @{BOT_USERNAME}
 🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
 """
     await m.delete()
