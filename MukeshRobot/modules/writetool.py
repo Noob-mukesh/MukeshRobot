@@ -34,7 +34,7 @@ async def handwrite(_, message: Message):
     else:
         text =message.text.split(None, 1)[1]
     m =await message.reply_text( "`Please wait...,\n\nWriting your text...`")
-    write = requests.get(f"https://apis.xditya.me/write?text={text}").url
+    write = requests.get(f"https://mukesh-api.vercel.app/write/{text}").json()["results"]
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
