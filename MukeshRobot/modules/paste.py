@@ -55,7 +55,7 @@ async def paste_func(_, message):
 
     
     try:
-        await message.reply("ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘᴀsᴛᴇ ʟɪɴᴋ :", quote=False, reply_markup=button)
+        await m.edit("ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘᴀsᴛᴇ ʟɪɴᴋ :", quote=False, reply_markup=button)
             #return await m.delete()
     except Exception:
         pass
