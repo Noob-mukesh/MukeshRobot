@@ -23,32 +23,38 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from MukeshRobot import BOT_NAME, BOT_USERNAME
-from MukeshRobot import pbot as mukesh
+from pyrogram.types import  Message
+from pyrogram.enums import ChatAction
+from pyrogram.types import InputMediaPhoto
+from .. import pbot as  Mukesh,BOT_USERNAME
 import requests
-@mukesh.on_message(filters.command("write"))
-async def handwrite(_, message: Message):
+
+
+@Mukesh.on_message(filters.command("imagine"))
+async def imagine_(b, message: Message):
     if message.reply_to_message:
         text = message.reply_to_message.text
     else:
         text =message.text.split(None, 1)[1]
-    m =await message.reply_text( "`Please wait...,\n\nWriting your text...`")
-    write = requests.get(f"https://mukesh-api.vercel.app/write/{text}").json()["results"]
+    m =await message.reply_text( "`Please wait...,\n\nCreating your Qrcode ...`")
+    results= requests.get(f"https://mukesh-api.vercel.app/imagine/{text}").json()["results"]
 
     caption = f"""
-sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
-✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
+sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ Qʀᴄᴏᴅᴇ 💘
+✨ **Gᴇɴᴇʀᴀᴛᴇᴅ ʙʏ :** @{BOT_USERNAME}
 🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
 """
     await m.delete()
-    await message.reply_photo(photo=write,caption=caption)
-
-__mod_name__ = "WʀɪᴛᴇTᴏᴏʟ"
-
+    photos=[]
+    for i in range(5):
+        photos.append(InputMediaPhoto(results[i]))
+    photos.append(InputMediaPhoto(results[5], caption=caption))
+    await b.send_media_group(message.chat.id, media=photos)
+    
+# -----------CREDITS -----------
+# telegram : @legend_coder
+# github : noob-mukesh
+__mod_name__ = "Aɪ ɪᴍᴀɢᴇ"
 __help__ = """
-
- ᴡʀɪᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴏɴ ᴡʜɪᴛᴇ ᴘᴀɢᴇ ᴡɪᴛʜ ᴀ ᴘᴇɴ 🖊
-
-❍ /write <ᴛᴇxᴛ> *:* ᴡʀɪᴛᴇs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ.
+ ➻imagine : ɢᴇɴᴇʀᴀᴛᴇ Aɪ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴛᴇxᴛ
  """
