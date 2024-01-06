@@ -32,10 +32,16 @@ async def decrypt(bot, message):
         await message.reply_text(f"{e}")
 
 
-__mod_name__ = "Tᴏᴏʟs"
+__mod_name__ = "ᴘᴀssᴡᴏʀᴅ"
 
 __help__ = """
 *ᴄᴏɴᴠᴇʀᴛs*
  ❍ /encrypt*:* ᴇɴᴄʀʏᴘᴛs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
  ❍ /decrypt*:* ᴅᴇᴄʀʏᴘᴛs ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
+ ❍ /encode*:* ᴇɴᴄᴏᴅᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
+ ❍ /decode*:* ᴅᴇᴄᴏᴅᴇ ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
+ ❍ /morseencode*:* Mᴏʀsᴇ Eɴᴄᴏᴅᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ
+ ❍ /morsedecode*:* ᴅᴇᴄʀʏᴘᴛs ᴘʀᴇᴠɪᴏᴜsʟʏ ᴇᴄʀʏᴘᴛᴇᴅ ᴛᴇxᴛ
+ ❍ /password *:*  ɢɪᴠᴇ ʟᴇɴɢᴛʜ ᴏғ ᴘᴀssᴡᴏʀᴅ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ
+ ❍ /uselessfact *:* Gᴇɴᴇʀᴀᴛᴇ  Rᴀᴍᴅᴏᴍ Usᴇʟᴇss Fᴀᴄᴛ
 """
