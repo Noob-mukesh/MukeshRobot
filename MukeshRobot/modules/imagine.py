@@ -36,11 +36,11 @@ async def imagine_(b, message: Message):
         text = message.reply_to_message.text
     else:
         text =message.text.split(None, 1)[1]
-    m =await message.reply_text( "`Please wait...,\n\nCreating your Qrcode ...`")
+    m =await message.reply_text( "`Please wait...,\n\nGenerating prompt .. ...`")
     results= requests.get(f"https://mukesh-api.vercel.app/imagine/{text}").json()["results"]
 
     caption = f"""
-sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ Qʀᴄᴏᴅᴇ 💘
+sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ 💘
 ✨ **Gᴇɴᴇʀᴀᴛᴇᴅ ʙʏ :** @{BOT_USERNAME}
 🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
 """
