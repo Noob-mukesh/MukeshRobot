@@ -55,11 +55,11 @@ async def paste_func(_, message):
 
     
     try:
-        await message.reply("ᴘᴀsᴛᴇ ʟɪɴᴋ", quote=False, reply_markup=button)
+        await message.reply("ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘᴀsᴛᴇ ʟɪɴᴋ :", quote=False, reply_markup=button)
             #return await m.delete()
     except Exception:
         pass
-    return await m.edit(link)
+    
 
 
 __mod_name__ = "Pᴀs​ᴛᴇ"
