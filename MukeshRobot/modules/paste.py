@@ -53,10 +53,10 @@ async def paste_func(_, message):
     button = InlineKeyboard(row_width=1)
     button.add(InlineKeyboardButton(text="• ᴘᴀsᴛᴇ ʟɪɴᴋ •", url=link))
 
-    
+    await m.delete()
     try:
-        await m.edit("ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘᴀsᴛᴇ ʟɪɴᴋ :", quote=False, reply_markup=button)
-            #return await m.delete()
+        await message.reply("ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴘᴀsᴛᴇ ʟɪɴᴋ :", quote=False, reply_markup=button)
+        
     except Exception:
         pass
     
