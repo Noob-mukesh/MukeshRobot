@@ -29,7 +29,6 @@ from pyrogram.types import InputMediaPhoto
 from .. import pbot as  Mukesh,BOT_USERNAME
 import requests
 
-
 @Mukesh.on_message(filters.command("imagine"))
 async def imagine_(b, message: Message):
     if message.reply_to_message:
@@ -56,5 +55,6 @@ sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ 💘
 # github : noob-mukesh
 __mod_name__ = "Aɪ ɪᴍᴀɢᴇ"
 __help__ = """
- ➻imagine : ɢᴇɴᴇʀᴀᴛᴇ Aɪ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴛᴇxᴛ
+ ➻ /imagine : ɢᴇɴᴇʀᴀᴛᴇ Aɪ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴛᴇxᴛ
+ ➻ /mahadev : ɢᴇɴᴇʀᴀᴛᴇ Mᴀʜᴀᴅᴇᴠ ɪᴍᴀɢᴇ
  """
