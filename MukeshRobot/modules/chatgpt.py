@@ -14,7 +14,7 @@ async def chat(bot, message):
             "Example:**\n\n`/chatgpt Where is TajMahal?`")
         else:
             a = message.text.split(' ', 1)[1]
-            response = requests.get(f'https://mukesh-api.vercel.app/chatgpt/{a}') 
+            response = requests.get(f'https://mukesh-api.vercel.app/chatgpt?query={a}') 
             x=response.json()["results"]
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
