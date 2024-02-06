@@ -7,7 +7,7 @@ async def hastag(bot, message):
     
     try:
         text = message.text.split(' ',1)[1]
-        res = requests.get(f"https://mukesh-api.vercel.app/hastag/{text}").json()["results"]
+        res = requests.get(f"https://mukesh-api.vercel.app/hastag?query={text}").json()["results"]
 
     except IndexError:
         return await message.reply_text("Example:\n\n`/hastag python`")
