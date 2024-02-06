@@ -128,7 +128,7 @@ def chatbot(update: Update, context: CallbackContext):
         if not mukesh_message(context, message):
             return
         bot.send_chat_action(chat_id, action="typing")
-        url=f"https://mukesh-api.vercel.app/chatbot/{message.text}"
+        url=f"https://mukesh-api.vercel.app/chatbot?query={message.text}"
         response = requests.get(url).json()["results"]
         
         message.reply_text(response)
