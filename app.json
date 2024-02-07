@@ -61,7 +61,12 @@
         "description": " Get your API key from https://timezonedb.com/api",
         "required": false,
         "value": ""
-    },   
+    }, 
+    "API_KEY": {
+      "description": "generate api from telegram using /token command bot username :>> @adventure_robot",
+      "required": false,
+      "value": ""
+  },    
         
     "OWNER_ID": {
        "description": "Your user ID as an integer.",

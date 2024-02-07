@@ -23,7 +23,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import Message
 from MukeshRobot import BOT_NAME, BOT_USERNAME
 from MukeshRobot import pbot as mukesh
 import requests
@@ -34,7 +34,7 @@ async def handwrite(_, message: Message):
     else:
         text =message.text.split(None, 1)[1]
     m =await message.reply_text( "`Please wait...,\n\nWriting your text...`")
-    write = requests.get(f"https://mukesh-api.vercel.app/write/{text}").json()["results"]
+    write = requests.get(f"https://mukesh-api.vercel.app/write?query={text}").json()["results"]
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘

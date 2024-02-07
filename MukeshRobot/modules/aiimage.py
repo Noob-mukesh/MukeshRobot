@@ -26,7 +26,7 @@ from pyrogram import filters
 from pyrogram.types import  Message
 from pyrogram.enums import ChatAction
 from pyrogram.types import InputMediaPhoto
-from .. import pbot as  Mukesh,BOT_USERNAME
+from .. import pbot as  Mukesh,BOT_USERNAME,API_KEY
 import requests
 
 @Mukesh.on_message(filters.command("imagine"))
@@ -34,9 +34,17 @@ async def imagine_(b, message: Message):
     if message.reply_to_message:
         text = message.reply_to_message.text
     else:
+
         text =message.text.split(None, 1)[1]
     m =await message.reply_text( "`Please wait...,\n\nGenerating prompt .. ...`")
-    results= requests.get(f"https://mukesh-api.vercel.app/imagine?query={text}").json()["results"]
+    url = 'https://mukesh-api.vercel.app/imagine'
+    headers = {
+    'accept': 'application/json',
+    'Api-Key': f"""{API_KEY}"""
+    }
+    params = {
+    'query': text}
+    results = requests.post(url, headers=headers, params=params)
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ 💘
