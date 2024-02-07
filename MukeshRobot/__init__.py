@@ -2,12 +2,9 @@ import logging
 import os
 import sys
 import time
-import ast
-import base64
-
 import telegram.ext as tg
 from aiohttp import ClientSession
-from pyrogram import Client, errors
+from pyrogram import Client
 from telethon import TelegramClient
 
 StartTime = time.time()

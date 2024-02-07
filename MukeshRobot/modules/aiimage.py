@@ -24,7 +24,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""
 from pyrogram import filters
 from pyrogram.types import  Message
-from pyrogram.enums import ChatAction
 from pyrogram.types import InputMediaPhoto
 from .. import pbot as  Mukesh,BOT_USERNAME,API_KEY
 import requests
