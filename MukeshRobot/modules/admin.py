@@ -1,12 +1,12 @@
 import html
 import os
 
-from telegram import ParseMode, Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
-from pyrogram import filters,enums
-from MukeshRobot import DRAGONS, dispatcher,OWNER_ID,pbot
+
+from MukeshRobot import DRAGONS, dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 from MukeshRobot.modules.helper_funcs.admin_rights import user_can_changeinfo
 from MukeshRobot.modules.helper_funcs.alternate import send_message
@@ -880,48 +880,30 @@ def adminlist(update, context):
         msg.edit_text(text, parse_mode=ParseMode.HTML)
     except BadRequest:  # if original message is deleted
         return
-@pbot.on_message(filters.command("bots"))
-async def listbots(client, message):
-    try:
-        botList = []
-        async for bot in pbot.get_chat_members(
-            message.chat.id, filter=enums.ChatMembersFilter.BOTS
-        ):
-            botList.append(bot.user)
-        lenBotList = len(botList)
-        text3 = f"**ʙᴏᴛ ʟɪsᴛ - {message.chat.title}**\n\n🤖 Bots\n"
-        while len(botList) > 1:
-            bot = botList.pop(0)
-            text3 += f"├ @{bot.username}\n"
-        else:
-            bot = botList.pop(0)
-            text3 += f"└ @{bot.username}\n\n"
-            text3 += f"✅ | **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs**: {lenBotList}"
-            await pbot.send_message(message.chat.id, text3)
-    except FloodWait as e:
-        await asyncio.sleep(e.value)
-
-
 
 
 __help__ = """
-* ᴀᴅᴍɪɴs ᴄᴏᴍᴍᴀɴᴅ:* 
-» /pin*:* sɪʟᴇɴᴛʟʏ ᴘɪɴs ᴛʜᴇ ᴍᴇssᴀɢᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ - ᴀᴅᴅ `'ʟᴏᴜᴅ'` ᴏʀ `'ɴᴏᴛɪғʏ'` ᴛᴏ ɢɪᴠᴇ ɴᴏᴛɪғs ᴛᴏ ᴜsᴇʀs
-» /unpin*:* ᴜɴᴘɪɴs ᴛʜᴇ ᴄᴜʀʀᴇɴᴛʟʏ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ
-» /invitelink*:* ɢᴇᴛs ɪɴᴠɪᴛᴇʟɪɴᴋ
-» /promote*:* ᴘʀᴏᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ
-» /lowpromote*:* ᴘʀᴏᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴡɪᴛʜ ʜᴀʟғ ʀɪɢʜᴛs
-» /fullpromote*:* ᴘʀᴏᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴡɪᴛʜ ғᴜʟʟ ʀɪɢʜᴛs
-» /demote*:* ᴅᴇᴍᴏᴛᴇs ᴛʜᴇ ᴜsᴇʀ ʀᴇᴘʟɪᴇᴅ ᴛᴏ
-» /title <ᴍʀ sᴜᴋᴋᴜɴ>*:* sᴇᴛs ᴀ ᴄᴜsᴛᴏᴍ ᴛɪᴛʟᴇ ғᴏʀ ᴀɴ ᴀᴅᴍɪɴ ᴛʜᴀᴛ ᴛʜᴇ ʙᴏᴛ ᴘʀᴏᴍᴏᴛᴇᴅ
-» /admincache*:* ғᴏʀᴄᴇ ʀᴇғʀᴇsʜ ᴛʜᴇ ᴀᴅᴍɪɴs ʟɪsᴛ
-» /del*:* ᴅᴇʟᴇᴛᴇs ᴛʜᴇ ᴍᴇssᴀɢᴇ ʏᴏᴜ ʀᴇᴘʟɪᴇᴅ ᴛᴏ
-» /purge*:* ᴅᴇʟᴇᴛᴇs ᴀʟʟ ᴍᴇssᴀɢᴇs ʙᴇᴛᴡᴇᴇɴ ᴛʜɪs ᴀɴᴅ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴍᴇssᴀɢᴇ.
-» /purge <integer X>*:* ᴅᴇʟᴇᴛᴇs ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ, ᴀɴᴅ x ᴍᴇssᴀɢᴇs ғᴏʟʟᴏᴡɪɴɢ ɪᴛ ɪғ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ.
-» /setgtitle <ᴛᴇxᴛ>*:* sᴇᴛ ɢʀᴏᴜᴘ ᴛɪᴛʟᴇ
-» /setgpic*:* ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ᴛᴏ sᴇᴛ ᴀs ɢʀᴏᴜᴘ ᴘʜᴏᴛᴏ
-» /setdesc*:* sᴇᴛ ɢʀᴏᴜᴘ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ
-» /setsticker*:* sᴇᴛ ɢʀᴏᴜᴘ sᴛɪᴄᴋᴇʀ
+*User Commands*:
+» /admins*:* list of admins in the chat
+» /pinned*:* to get the current pinned message.
+
+*The Following Commands are Admins only:* 
+» /pin*:* silently pins the message replied to - add `'loud'` or `'notify'` to give notifs to users
+» /unpin*:* unpins the currently pinned message
+» /invitelink*:* gets invitelink
+» /promote*:* promotes the user replied to
+» /lowpromote*:* promotes the user replied to with half rights
+» /fullpromote*:* promotes the user replied to with full rights
+» /demote*:* demotes the user replied to
+» /title <title here>*:* sets a custom title for an admin that the bot promoted
+» /admincache*:* force refresh the admins list
+» /del*:* deletes the message you replied to
+» /purge*:* deletes all messages between this and the replied to message.
+» /purge <integer X>*:* deletes the replied message, and X messages following it if replied to a message.
+» /setgtitle <text>*:* set group title
+» /setgpic*:* reply to an image to set as group photo
+» /setdesc*:* Set group description
+» /setsticker*:* Set group sticker
 """
 
 SET_DESC_HANDLER = CommandHandler("setdesc", set_desc, run_async=True)

@@ -56,7 +56,7 @@ def get_user_id(username):
 
 
 @dev_plus
-@Mukesh.on_message(filters.command("bchat") & filters.user(OWNER_ID) & filters.reply)
+@Mukesh.on_message(filters.command(["bchat","broadcastgroups"]) & filters.user(OWNER_ID) & filters.reply)
 async def broadcast_handler(bot: Client, m: Message):
     all_chats = user_db.get_all_chats() or []
     await bot.send_message(
@@ -113,7 +113,7 @@ async def send_chat(chat_id, message):
 
 @dev_plus
 # broadcast
-@Mukesh.on_message(filters.command("buser") & filters.user(OWNER_ID) & filters.reply)
+@Mukesh.on_message(filters.command(["buser","broadcastusers"]) & filters.user(OWNER_ID) & filters.reply)
 async def broadcast_handler(bot: Client, m: Message):
     all_users = get_all_users()
     await bot.send_message(
@@ -190,16 +190,15 @@ def log_user(update: Update, context: CallbackContext):
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
     all_chats = user_db.get_all_chats() or []
-    chatfile = "ʟɪsᴛs ᴏғ ᴄʜᴀᴛ.\n0. ᴄʜᴀᴛ ɴᴀᴍᴇ | ᴄʜᴀᴛ ɪᴅ | ᴍᴇᴍʙᴇʀs ᴄᴏᴜɴᴛ\n"
+    chatfile = "List of chats.\n0. Chat Name  Chat ID | Chat Member"
     P = 1
     for chat in all_chats:
         try:
+            chat_id=chat["chat_id"]
             curr_chat = context.bot.getChat(chat.chat_id)
             curr_chat.get_member(context.bot.id)
             chat_members = curr_chat.get_member_count(context.bot.id)
-            chatfile += "{}. {} | {} | {}\n".format(
-                P, chat.chat_name, chat.chat_id, chat_members
-            )
+            chatfile += f"{P} {chat.chat_name} | {chat_id} | {chat_members}"
             P = P + 1
         except:
             pass
@@ -209,7 +208,7 @@ def chats(update: Update, context: CallbackContext):
         update.effective_message.reply_document(
             document=output,
             filename="groups_list.txt",
-            caption="ʜᴇʀᴇ ʙᴇ ᴛʜᴇ  ʟɪsᴛ ᴏғ ɢʀᴏᴜᴘs ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ",
+            caption="Here be the list of groups in my database.",
         )
 
 

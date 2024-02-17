@@ -197,7 +197,7 @@ def user_admin(func):
         elif DEL_CMDS and " " not in update.effective_message.text:
             try:
                 update.effective_message.delete()
-            except:  # noqa: E722
+            except:
                 pass
         else:
             update.effective_message.reply_text(
@@ -223,7 +223,7 @@ def user_admin_no_reply(func):
         elif DEL_CMDS and " " not in update.effective_message.text:
             try:
                 update.effective_message.delete()
-            except :  # noqa: E722
+            except:
                 pass
 
     return is_not_admin_no_reply
@@ -392,7 +392,7 @@ def connection_status(func):
         else:
             if update.effective_message.chat.type == "private":
                 update.effective_message.reply_text(
-                    "sᴇɴᴅ /connect ɪɴ ᴀ ɢʀᴏᴜᴘ ᴛʜᴀᴛ ʏᴏᴜ ᴀɴᴅ ɪ ʜᴀᴠᴇ ɪɴ ᴄᴏᴍᴍᴏɴ ғɪʀsᴛ."
+                    "Send /connect in a group that you and I have in common first."
                 )
                 return connected_status
 

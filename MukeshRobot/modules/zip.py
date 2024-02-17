@@ -9,6 +9,11 @@ from MukeshRobot import TEMP_DOWNLOAD_DIRECTORY
 from MukeshRobot import telethn as client
 from MukeshRobot.events import register
 
+from datetime import datetime
+
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
+from telethon.tl.types import DocumentAttributeVideo
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
@@ -80,11 +85,7 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-from datetime import datetime
 
-from hachoir.metadata import extractMetadata
-from hachoir.parser import createParser
-from telethon.tl.types import DocumentAttributeVideo
 
 extracted = TEMP_DOWNLOAD_DIRECTORY + "extracted/"
 thumb_image_path = TEMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"

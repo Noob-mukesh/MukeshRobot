@@ -243,12 +243,12 @@ def anime(update: Update, context: CallbackContext):
         if trailer:
             buttons = [
                 [
-                    InlineKeyboardButton("⍟ ᴍᴏʀᴇ ɪɴғᴏ ⍟", url=info),
-                    InlineKeyboardButton("⍟ ᴛʀᴀɪʟᴇʀ ⍟", url=trailer),
+                    InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏ", url=info),
+                    InlineKeyboardButton("ᴛʀᴀɪʟᴇʀ", url=trailer),
                 ]
             ]
         else:
-            buttons = [[InlineKeyboardButton("More Info", url=info)]]
+            buttons = [[InlineKeyboardButton("ᴍᴏʀᴇ ɪɴғᴏ", url=info)]]
         if image:
             try:
                 update.effective_message.reply_photo(
@@ -488,14 +488,14 @@ def site_search(update: Update, context: CallbackContext, site: str):
         search_result = soup.find_all("h2", {"class": "post-title"})
 
         if search_result:
-            result = f"<b>Search results for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KaizokuAnime: \n"
+            result = f"<b>Search results for</b> <code>{html.escape(search_query)}</code>  \n"
             for entry in search_result:
                 post_link = "https://animekaizoku.com/" + entry.a["href"]
                 post_name = html.escape(entry.text)
                 result += f"• <a href='{post_link}'>{post_name}</a>\n"
         else:
             more_results = False
-            result = f"<b>No result found for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KaizokuAnime"
+            result = f"<b>No result found for</b> <code>{html.escape(search_query)}</code>"
 
     elif site == "kayo":
         search_url = f"https://animekayo.com/?s={search_query}"
@@ -503,11 +503,11 @@ def site_search(update: Update, context: CallbackContext, site: str):
         soup = bs4.BeautifulSoup(html_text, "html.parser")
         search_result = soup.find_all("h2", {"class": "title"})
 
-        result = f"<b>Search results for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KayoAnime: \n"
+        result = f"<b>Search results for</b> <code>{html.escape(search_query)}</code>  \n"
         for entry in search_result:
 
             if entry.text.strip() == "Nothing Found":
-                result = f"<b>No result found for</b> <code>{html.escape(search_query)}</code> <b>on</b> @KayoAnime"
+                result = f"<b>No result found for</b> <code>{html.escape(search_query)}</code> "
                 more_results = False
                 break
 
