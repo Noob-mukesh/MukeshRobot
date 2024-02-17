@@ -43,7 +43,7 @@ async def imagine_(b, message: Message):
     }
     params = {
     'query': text}
-    results = requests.post(url, headers=headers, params=params)
+    results = requests.post(url, headers=headers, params=params).json()["results"]
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ Gᴇɴᴇʀᴀᴛᴇᴅ 💘
