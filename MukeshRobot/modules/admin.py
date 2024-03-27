@@ -14,10 +14,10 @@ from MukeshRobot.modules.helper_funcs.chat_status import (
     ADMIN_CACHE,
     bot_admin,
     can_pin,
-    can_promote,
     connection_status,
     user_admin,
 )
+from MukeshRobot.utils.admins import can_promote
 from MukeshRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,

@@ -25,7 +25,7 @@ import MukeshRobot.modules.sql.chatbot_sql as sql
 from MukeshRobot import BOT_ID, BOT_NAME, BOT_USERNAME, dispatcher
 from MukeshRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from MukeshRobot.modules.log_channel import gloggable
-
+from MukeshAPI import api
 
 @user_admin_no_reply
 @gloggable
@@ -128,10 +128,8 @@ def chatbot(update: Update, context: CallbackContext):
         if not mukesh_message(context, message):
             return
         bot.send_chat_action(chat_id, action="typing")
-        url=f"https://mukesh-api.vercel.app/chatbot?query={message.text}"
-        response = requests.get(url).json()["results"]
-        
-        message.reply_text(response)
+        url=api.chatgpt(message.text,mode="gf")["results"]
+        message.reply_text(url)
 
 
 

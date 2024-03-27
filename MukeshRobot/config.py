@@ -21,8 +21,7 @@ class Config(object):
     TIME_API_KEY = ""
     
     # Get your API key from https://timezonedb.com/api
-    API_KEY=""
-    #generate api from telegram using /token command bot username :>> @adventure_robot
+
 
     # Optional fields
     BL_CHATS = []  # List of groups that you want blacklisted.

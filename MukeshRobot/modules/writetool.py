@@ -25,7 +25,7 @@ SOFTWARE."""
 from pyrogram import filters
 from pyrogram.types import Message
 from MukeshRobot import BOT_NAME, BOT_USERNAME
-from MukeshRobot import pbot as mukesh,API_KEY
+from MukeshRobot import pbot as mukesh
 import requests
 @mukesh.on_message(filters.command("write"))
 async def handwrite(_, message: Message):
@@ -34,10 +34,8 @@ async def handwrite(_, message: Message):
     else:
         text =message.text.split(None, 1)[1]
     m =await message.reply_text( "`Please wait...,\n\nWriting your text...`")
-    headers = {
-    'accept': 'application/json',
-    'Api-Key': API_KEY}
-    write = requests.get(f"https://mukesh-api.vercel.app/write?query={text}",headers=headers).json()["results"]
+    
+    write = requests.get(f"https://apis.xditya.me/write?text={text}").url
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘

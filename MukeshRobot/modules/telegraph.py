@@ -6,11 +6,9 @@ from telegraph import Telegraph, exceptions, upload_file
 
 from MukeshRobot import telethn as tbot
 from MukeshRobot.events import register
-
-Mukesh = "Controller"
 TMP_DOWNLOAD_DIRECTORY = "./"
 telegraph = Telegraph(domain="graph.org")
-r = telegraph.create_account(short_name=Mukesh)
+r = telegraph.create_account(short_name="Controller")
 auth_url = r["auth_url"]
 
 

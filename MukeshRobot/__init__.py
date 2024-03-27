@@ -34,7 +34,6 @@ if ENV:
 
     API_ID = int(os.environ.get("API_ID", None))
     API_HASH = os.environ.get("API_HASH", None)
-    API_KEY = os.environ.get("API_KEY", None)
     
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
@@ -109,7 +108,6 @@ else:
     TOKEN = Config.TOKEN
     TIME_API_KEY = Config.TIME_API_KEY
     WORKERS = Config.WORKERS
-    API_KEY = Config.API_KEY
 
     try:
         OWNER_ID = int(Config.OWNER_ID)
