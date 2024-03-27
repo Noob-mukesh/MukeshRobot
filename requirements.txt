@@ -11,7 +11,7 @@ cloudscraper==1.2.71
 countryinfo==0.1.2
 currencyconverter==0.17.19
 dateparser==1.2.0
-emoji==2.10.1
+emoji==2.11.0
 emoji-country-flag==1.3.2
 feedparser==6.0.11
 ffmpeg-python==0.2.0
