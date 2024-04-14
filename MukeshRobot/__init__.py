@@ -48,8 +48,8 @@ if ENV:
     START_IMG = os.environ.get(
         "START_IMG", ""
     )
-    STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", True))
-    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "worldwide_friend_zone")
+    STRICT_GBAN = bool(os.environ.get("speeds_net", True))
+    SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "speeds_net")
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     TOKEN = os.environ.get("TOKEN", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
@@ -67,7 +67,7 @@ if ENV:
 
     try:
         DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
-        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "2145093972").split())
+        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "6385717717").split())
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
