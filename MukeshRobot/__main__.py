@@ -608,7 +608,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
  ᴛʜɪs ɪs {BOT_NAME},
 ᴀɴ ᴏᴩᴇɴ sᴏᴜʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.*
 
-ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ : [ᴛᴇʟᴇᴛʜᴏɴ](https://github.com/LonamiWebs/Telethon)
+ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ : [ᴛᴇʟᴇᴛʜᴏɴ](https://t.me/speeds_net)
 [ᴩʏʀᴏɢʀᴀᴍ](https://github.com/pyrogram/pyrogram)
 [ᴩʏᴛʜᴏɴ-ᴛᴇʟᴇɢʀᴀᴍ-ʙᴏᴛ](https://github.com/python-telegram-bot/python-telegram-bot)
 ᴀɴᴅ ᴜsɪɴɢ [sǫʟᴀʟᴄʜᴇᴍʏ](https://www.sqlalchemy.org) ᴀɴᴅ [ᴍᴏɴɢᴏ](https://cloud.mongodb.com) ᴀs ᴅᴀᴛᴀʙᴀsᴇ.
@@ -1020,7 +1020,7 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 5935608297:
             update.effective_message.reply_text(
-                f"» ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [ɢɪᴛʜᴜʙ](https://github.com/noob-mukesh/MukeshRobot)"
+                f"» ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [ɢɪᴛʜᴜʙ](https://t.me/speeds_net)"
                 f"\n\nʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴅᴏɴᴀᴛᴇ ᴛᴏ ᴛʜᴇ ᴩᴇʀsᴏɴ ᴄᴜʀʀᴇɴᴛʟʏ ʀᴜɴɴɪɴɢ ᴍᴇ : [ʜᴇʀᴇ]({DONATE_STRING})",
                 parse_mode=ParseMode.MARKDOWN,
                 
@@ -1083,7 +1083,7 @@ def main():
                 caption=f"""
 ✨ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
-**ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ ʙʏ 𝐌ᴜᴋᴇsʜ**
+**ᴍᴀᴅᴇ ᴡɪᴛʜ ❤️ ʙʏ𝐊 ‌⃪𝗦𝗣𝗘𝗘𝗗 ༗ **
 **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{y()}`
 **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ:** `{telever}`
 **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{tlhver}`
