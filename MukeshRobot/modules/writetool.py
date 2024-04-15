@@ -2,8 +2,8 @@
 
 Copyright (c) 2023-24 Noob-Mukesh
 
-          GITHUB: NOOB-MUKESH
-          TELEGRAM: @MR_SUKKUN
+          GITHUB: Xkrishmishra 
+          TELEGRAM: @krishbhi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@ async def handwrite(_, message: Message):
 
     caption = f"""
 sᴜᴄᴇssғᴜʟʟʏ ᴡʀɪᴛᴛᴇɴ ᴛᴇxᴛ 💘
-✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
+✨ **ᴡʀɪᴛᴛᴇɴ ʙʏ :** [{𝐊 ‌⃪𝗦𝗣𝗘𝗘𝗗 ༗}](https://t.me/{krishbhi})
 🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {message.from_user.mention}
 """
     await m.delete()
