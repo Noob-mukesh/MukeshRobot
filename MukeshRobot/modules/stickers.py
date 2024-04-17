@@ -853,7 +853,7 @@ async def drawText(image_path, text):
 
     i_width, i_height = img.size
 
-    fnt = "ariel.ttf" if os.name == "nt" else "./Exon/modules/resources/asu.ttf"
+    fnt = "ariel.ttf" if os.name == "nt" else "./MukeshRobot/modules/resources/default.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 
     if ";" in text:
