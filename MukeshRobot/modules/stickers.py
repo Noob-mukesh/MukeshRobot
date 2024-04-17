@@ -26,6 +26,7 @@ from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler
 from telegram.utils.helpers import mention_html
 
 from MukeshRobot import dispatcher
+from MukeshRobot.events import register as mukesh
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
@@ -806,10 +807,9 @@ def video(update: Update, context: CallbackContext):
         )
 
 
-Credit = "Abishnoi69"
 
 
-@asux(pattern="^/mmf ?(.*)")
+@mukesh(pattern="^/mmf ?(.*)")
 async def handler(event):
     if event.fwd_from:
         return
@@ -830,8 +830,7 @@ async def handler(event):
 
     msg = await event.reply("```ᴍᴇᴍɪғʏɪɴɢ ᴛʜɪs ɪᴍᴀɢᴇ! 😉 ```")
 
-    if "Abishnoi69" not in Credit:
-        await event.reply("ᴛʜɪs ɴɪɢɢᴀ ʀᴇᴍᴏᴠᴇᴅ ᴄʀᴇᴅɪᴛ ʟɪɴᴇ ғʀᴏᴍ ᴄᴏᴅᴇ 😶")
+    
 
     text = str(event.pattern_match.group(1)).strip()
 
