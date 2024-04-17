@@ -30,12 +30,6 @@ from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
-
-
-
-
-combot_stickers_url = "https://combot.org/telegram/stickers?q="
-
 def sticker_count(bot: Bot, pname: str) -> int:
     resp = bot._request.post(
         f"{bot.base_url}/getStickerSet",
