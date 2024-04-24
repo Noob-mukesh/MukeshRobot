@@ -14,7 +14,7 @@ async def chat_gpt(bot, message):
             "Example:**\n\n`/chatgpt Where is TajMahal?`")
         else:
             a = message.text.split(' ', 1)[1]
-            r=api.chatgpt(a,mode="elonmusk")["results"]
+            r=api.gemini(a)["results"]
             await message.reply_text(f" {r} \n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
