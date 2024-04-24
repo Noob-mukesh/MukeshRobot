@@ -22,7 +22,7 @@
     "API_ID": {
        "description": "Get this value from my.telegram.org/apps.",
        "required": true,
-       "value": ""
+       "value": "20036317"
     },
     "API_HASH": {
        "description": "Get this value from my.telegram.org/apps.",
