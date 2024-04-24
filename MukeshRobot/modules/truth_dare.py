@@ -1,18 +1,18 @@
 import requests
 from telegram import Update
 from telegram.ext import CallbackContext
-
+from MukeshAPI import api 
 from MukeshRobot import dispatcher
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
 
 def truth(update: Update, context: CallbackContext):
-    truth = requests.get("https://mukesh-api.vercel.app/truth").json()["results"]
+    truth =api.truth()
     update.effective_message.reply_text(truth)
 
 
 def dare(update: Update, context: CallbackContext):
-    dare = requests.get("https://mukesh-api.vercel.app/dare").json()["results"]
+    dare =api.dare()
     update.effective_message.reply_text(dare)
 
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth, run_async=True)
