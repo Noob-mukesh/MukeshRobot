@@ -38,10 +38,6 @@ async def restart(client, m: Message):
     accha = await m.reply("⚡")
     await asyncio.sleep(0.2)
     await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
-    await asyncio.sleep(0.1)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ......")
-    await asyncio.sleep(0.1)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
 
     await accha.delete()
     await asyncio.sleep(0.3)
@@ -64,5 +60,5 @@ async def restart(client, m: Message):
   
   » **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{pyver()}`
    ━━━━━━━━━━━━━━━━━━━""",
-        reply_markup=InlineKeyboardMarkup(Mukesh),
+        reply_markup=InlineKeyboardMarkup(Mukesh)
     )

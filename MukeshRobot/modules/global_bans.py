@@ -139,16 +139,11 @@ def gban(update: Update, context: CallbackContext):
             )
             return
 
-        old_reason = sql.update_gban_reason(
+        if old_reason := sql.update_gban_reason(
             user_id, user_chat.username or user_chat.first_name, reason
-        )
-        if old_reason:
+        ):
             message.reply_text(
-                "This user is already gbanned, for the following reason:\n"
-                "<code>{}</code>\n"
-                "I've gone and updated it with your new reason!".format(
-                    html.escape(old_reason)
-                ),
+                f"This user is already gbanned, for the following reason:\n<code>{html.escape(old_reason)}</code>\nI've gone and updated it with your new reason!",
                 parse_mode=ParseMode.HTML,
             )
 
@@ -215,9 +210,7 @@ def gban(update: Update, context: CallbackContext):
             gbanned_chats += 1
 
         except BadRequest as excp:
-            if excp.message in GBAN_ERRORS:
-                pass
-            else:
+            if excp.message not in GBAN_ERRORS:
                 message.reply_text(f"Could not gban due to: {excp.message}")
                 if EVENT_LOGS:
                     bot.send_message(
@@ -252,10 +245,7 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
-    else:
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
-
+    message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
     try:
         bot.send_message(
             user_id,
@@ -265,7 +255,7 @@ def gban(update: Update, context: CallbackContext):
             f"</b>Appeal Chat:</b> @{SUPPORT_CHAT}",
             parse_mode=ParseMode.HTML,
         )
-    except:
+    except Exception:
         pass  # bot probably blocked by user
 
 
@@ -344,9 +334,7 @@ def ungban(update: Update, context: CallbackContext):
                 ungbanned_chats += 1
 
         except BadRequest as excp:
-            if excp.message in UNGBAN_ERRORS:
-                pass
-            else:
+            if excp.message not in UNGBAN_ERRORS:
                 message.reply_text(f"Could not un-gban due to: {excp.message}")
                 if EVENT_LOGS:
                     bot.send_message(
@@ -366,7 +354,7 @@ def ungban(update: Update, context: CallbackContext):
 
     if EVENT_LOGS:
         log.edit_text(
-            log_message + f"\n<b>Chats affected:</b> {ungbanned_chats}",
+            f"{log_message}\n<b>Chats affected:</b> {ungbanned_chats}",
             parse_mode=ParseMode.HTML,
         )
     else:
@@ -472,11 +460,7 @@ def gbanstat(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "Give me some arguments to choose a setting! on/off, yes/no!\n\n"
-            "Your current setting is: {}\n"
-            "When True, any gbans that happen will also happen in your group. "
-            "When False, they won't, leaving you at the possible mercy of "
-            "spammers.".format(sql.does_chat_gban(update.effective_chat.id))
+            f"Give me some arguments to choose a setting! on/off, yes/no!\n\nYour current setting is: {sql.does_chat_gban(update.effective_chat.id)}\nWhen True, any gbans that happen will also happen in your group. When False, they won't, leaving you at the possible mercy of spammers."
         )
 
 
@@ -527,7 +511,7 @@ dispatcher.add_handler(UNGBAN_HANDLER)
 dispatcher.add_handler(GBAN_LIST)
 dispatcher.add_handler(GBAN_STATUS)
 
-__mod_name__ = "Gʙᴀɴ​"
+# __mod_name__ = "Gʙᴀɴ​"
 __handlers__ = [GBAN_HANDLER, UNGBAN_HANDLER, GBAN_LIST, GBAN_STATUS]
 
 if STRICT_GBAN:  # enforce GBANS if this is set
