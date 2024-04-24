@@ -45,10 +45,10 @@ async def imagine_(b, message: Message):
         caption = f"""
     💘sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ : {text}
     ✨ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ : [{Mukesh.mention})
-    🥀ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {m.from_user.mention}
+    🥀ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}
     """
         await mukesh.delete()
-        await m.reply_photo("mukesh.jpg",caption=caption,quote=True)
+        await message.reply_photo("mukesh.jpg",caption=caption,quote=True)
     except Exception as e:
         await mukesh.edit_text(f"error {e}")
     
