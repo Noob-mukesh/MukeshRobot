@@ -44,7 +44,7 @@ async def imagine_(b, message: Message):
             f.write(x)
         caption = f"""
     💘sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ : {text}
-    ✨ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ : [{Mukesh.mention})
+    ✨ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ : @{BOT_USERNAME}
     🥀ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}
     """
         await mukesh.delete()
