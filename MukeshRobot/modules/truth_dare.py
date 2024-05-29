@@ -1,25 +1,21 @@
-import requests
-from telegram import Update
-from telegram.ext import CallbackContext
+
+from pyrogram import Client, filters
+from pyrogram.types import Message
+from pyrogram.enums import ParseMode
 from MukeshAPI import api 
-from MukeshRobot import dispatcher
-from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
+@Mukesh.on_message(filters.command("truth"))
+async def truth_(client: Client, message: Message):
 
-def truth(update: Update, context: CallbackContext):
     truth =api.truth()
-    update.effective_message.reply_text(truth)
+    await message.reply_text(truth)
 
+@Mukesh.on_message(filters.command("dare"))
+async def dare_(client: Client, message: Message):
 
-def dare(update: Update, context: CallbackContext):
     dare =api.dare()
-    update.effective_message.reply_text(dare)
+    await message.reply_text(dare)
 
-TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth, run_async=True)
-DARE_HANDLER = DisableAbleCommandHandler("dare", dare, run_async=True)
-
-dispatcher.add_handler(TRUTH_HANDLER)
-dispatcher.add_handler(DARE_HANDLER)
 
 __help__ = """
 *ᴛʀᴜᴛʜ & ᴅᴀʀᴇ*

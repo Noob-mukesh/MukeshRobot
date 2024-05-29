@@ -33,7 +33,7 @@ async def rm_deletedacc(client, message):
         participants=[]
         async for member in app.get_chat_members(message.chat.id):
             participants.append(member)
-        print(participants)
+        
       
         for user in participants:
             if user.user.is_deleted:
@@ -58,7 +58,7 @@ async def rm_deletedacc(client, message):
     participants=[]
     async for member in app.get_chat_members(message.chat.id):
         participants.append(member)
-    print(participants)
+   
     for user in participants:
         if user.user.is_deleted:
             print(user.user.is_deleted)

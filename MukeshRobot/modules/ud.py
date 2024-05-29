@@ -1,32 +1,36 @@
-import requests
-from telegram import ParseMode, Update
-from telegram.ext import CallbackContext
 
-from MukeshRobot import dispatcher
+
+from pyrogram import Client, filters
+from pyrogram.types import Message
+from pyrogram.enums import ParseMode
+import aiohttp
+
+from MukeshRobot import pbot as Mukesh
 from MukeshRobot.modules.disable import DisableAbleCommandHandler
 
 
-def ud(update: Update, context: CallbackContext):
-    message = update.effective_message
-    text = message.text[len("/ud ") :]
-    results = requests.get(
-        f"https://api.urbandictionary.com/v0/define?term={text}"
-    ).json()
-    try:
-        reply_text = f'*{text}*\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
-    except:
-        reply_text = "No results found."
-    message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
+async def ud(client: Client, message: Message):
+    text = message.text[len("/ud "):]
+    
+    async with aiohttp.ClientSession() as session:
+        async with session.get(f"https://api.urbandictionary.com/v0/define?term={text}") as resp:
+            results = await resp.json()
+            try:
+                reply_text = f'*{text}*\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
+            except (KeyError, IndexError):
+                reply_text = "No results found."
+            
+            await message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
 
 
-UD_HANDLER = DisableAbleCommandHandler(["ud"], ud, run_async=True)
+@Mukesh.on_message(filters.command("ud"))
+async def ud_command(client: Client, message: Message):
+    await ud(client, message)
 
-dispatcher.add_handler(UD_HANDLER)
 
 __help__ = """
 » /ud (text) *:* sᴇᴀʀᴄʜs ᴛʜᴇ ɢɪᴠᴇɴ ᴛᴇxᴛ ᴏɴ ᴜʀʙᴀɴ ᴅɪᴄᴛɪᴏɴᴀʀʏ ᴀɴᴅ sᴇɴᴅs ʏᴏᴜ ᴛʜᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
 """
 __mod_name__ = "Uʀʙᴀɴ"
 
-__command_list__ = ["ud"]
-__handlers__ = [UD_HANDLER]
+
