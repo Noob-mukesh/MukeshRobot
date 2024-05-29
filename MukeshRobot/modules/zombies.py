@@ -1,12 +1,9 @@
 
-from pyrogram import Client, filters
+from pyrogram import  filters
 from pyrogram.errors import ChatAdminRequired, UserAdminInvalid
 from pyrogram.types import ChatPermissions
 from pyrogram.enums import ChatMembersFilter
-from pyrogram import filters, Client, idle
 import requests,asyncio
-from pyrogram.enums import ChatType
-from config import API_HASH,API_ID
 from MukeshRobot import pbot as app,DEV_USERS,OWNER_ID,DEMONS,DRAGONS
 
 
