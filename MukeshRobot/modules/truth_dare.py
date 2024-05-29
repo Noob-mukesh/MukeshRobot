@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.enums import ParseMode
 from MukeshAPI import api 
-
+from MukeshRobot import pbot as Mukesh
 @Mukesh.on_message(filters.command("truth"))
 async def truth_(client: Client, message: Message):
 
