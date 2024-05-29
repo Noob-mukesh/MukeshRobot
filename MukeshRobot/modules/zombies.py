@@ -7,9 +7,10 @@ from pyrogram import filters, Client, idle
 import requests,asyncio
 from pyrogram.enums import ChatType
 from config import API_HASH,API_ID
-from MukeshRobot import pbot as app,DEV_USERS,OWNER_ID
+from MukeshRobot import pbot as app,DEV_USERS,OWNER_ID,DEMONS,DRAGONS
 
-OFFICERS = [OWNER_ID] + DEV_USERS
+
+OFFICERS = [OWNER_ID] + DEV_USERS + DRAGONS + DEMONS 
 
 # Check if user has admin rights
 async def is_administrator(user_id: int, message):
