@@ -10,6 +10,7 @@ from telegram import (
     ParseMode,
     Update,
 )
+from telegram.messageentity import MessageEntity
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import escape_markdown, mention_html
