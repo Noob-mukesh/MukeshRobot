@@ -36,7 +36,7 @@ pyrate-limiter==2.10.0
 pyrogram==2.0.106
 python-telegram-bot==13.15
 regex==2024.5.15
-requests==2.32.2
+requests==2.32.3
 secureme==0.0.4
 search_engine_parser==0.6.8
 speedtest-cli==2.1.3
