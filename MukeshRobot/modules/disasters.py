@@ -57,29 +57,25 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-
+    
     if user_id in DRAGONS:
         message.reply_text("This member is already a Dragon Disaster")
         return ""
 
     if user_id in DEMONS:
         rt += "Requested HA to promote a Demon Disaster to Dragon."
-        data["supports"].remove(user_id)
+        
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
         rt += "Requested HA to promote a Wolf Disaster to Dragon."
-        data["whitelists"].remove(user_id)
+        
         WOLVES.remove(user_id)
 
-    data["sudos"].append(user_id)
+    
     DRAGONS.append(user_id)
 
-    with open(ELEVATED_USERS_FILE, "w") as outfile:
-        json.dump(data, outfile, indent=4)
-
+    
     update.effective_message.reply_text(
         rt
         + "\nSuccessfully set Disaster level of {} to Dragon!".format(
@@ -118,12 +114,10 @@ def addsupport(
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-
+    
     if user_id in DRAGONS:
         rt += "Requested HA to demote this Dragon to Demon"
-        data["sudos"].remove(user_id)
+        
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
@@ -132,15 +126,13 @@ def addsupport(
 
     if user_id in WOLVES:
         rt += "Requested HA to promote this Wolf Disaster to Demon"
-        data["whitelists"].remove(user_id)
+        
         WOLVES.remove(user_id)
 
-    data["supports"].append(user_id)
+    
     DEMONS.append(user_id)
 
-    with open(ELEVATED_USERS_FILE, "w") as outfile:
-        json.dump(data, outfile, indent=4)
-
+    
     update.effective_message.reply_text(
         rt + f"\n{user_member.first_name} was added as a Demon Disaster!"
     )
@@ -173,29 +165,26 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
+    
 
     if user_id in DRAGONS:
         rt += "This member is a Dragon Disaster, Demoting to Wolf."
-        data["sudos"].remove(user_id)
+        
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
         rt += "This user is already a Demon Disaster, Demoting to Wolf."
-        data["supports"].remove(user_id)
+        
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
         message.reply_text("This user is already a Wolf Disaster.")
         return ""
 
-    data["whitelists"].append(user_id)
+    
     WOLVES.append(user_id)
 
-    with open(ELEVATED_USERS_FILE, "w") as outfile:
-        json.dump(data, outfile, indent=4)
-
+    
     update.effective_message.reply_text(
         rt + f"\nSuccessfully promoted {user_member.first_name} to a Wolf Disaster!"
     )
@@ -228,34 +217,30 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-
+    
     if user_id in DRAGONS:
         rt += "This member is a Dragon Disaster, Demoting to Tiger."
-        data["sudos"].remove(user_id)
+        
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
         rt += "This user is already a Demon Disaster, Demoting to Tiger."
-        data["supports"].remove(user_id)
+        
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
         rt += "This user is already a Wolf Disaster, Demoting to Tiger."
-        data["whitelists"].remove(user_id)
+        
         WOLVES.remove(user_id)
 
     if user_id in TIGERS:
         message.reply_text("This user is already a Tiger.")
         return ""
 
-    data["tigers"].append(user_id)
+    
     TIGERS.append(user_id)
 
-    with open(ELEVATED_USERS_FILE, "w") as outfile:
-        json.dump(data, outfile, indent=4)
-
+    
     update.effective_message.reply_text(
         rt + f"\nSuccessfully promoted {user_member.first_name} to a Tiger Disaster!"
     )
@@ -287,13 +272,11 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-
+    
     if user_id in DRAGONS:
         message.reply_text("Requested HA to demote this user to Civilian")
         DRAGONS.remove(user_id)
-        data["sudos"].remove(user_id)
+        
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
             json.dump(data, outfile, indent=4)
@@ -329,17 +312,13 @@ def removesupport(update: Update, context: CallbackContext) -> str:
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-
+    
     if user_id in DEMONS:
         message.reply_text("Requested HA to demote this user to Civilian")
         DEMONS.remove(user_id)
-        data["supports"].remove(user_id)
+        
 
-        with open(ELEVATED_USERS_FILE, "w") as outfile:
-            json.dump(data, outfile, indent=4)
-
+        
         log_message = (
             f"#UNSUPPORT\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
@@ -371,17 +350,13 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-
+    
     if user_id in WOLVES:
         message.reply_text("Demoting to normal user")
         WOLVES.remove(user_id)
-        data["whitelists"].remove(user_id)
+        
 
-        with open(ELEVATED_USERS_FILE, "w") as outfile:
-            json.dump(data, outfile, indent=4)
-
+        
         log_message = (
             f"#UNWHITELIST\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
@@ -412,17 +387,13 @@ def removetiger(update: Update, context: CallbackContext) -> str:
         message.reply_text(reply)
         return ""
 
-    with open(ELEVATED_USERS_FILE, "r") as infile:
-        data = json.load(infile)
-
+    
     if user_id in TIGERS:
         message.reply_text("Demoting to normal user")
         TIGERS.remove(user_id)
-        data["tigers"].remove(user_id)
+        
 
-        with open(ELEVATED_USERS_FILE, "w") as outfile:
-            json.dump(data, outfile, indent=4)
-
+        
         log_message = (
             f"#UNTIGER\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
