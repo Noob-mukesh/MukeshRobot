@@ -25,8 +25,6 @@ from MukeshRobot.modules.helper_funcs.chat_status import (
 from MukeshRobot.modules.helper_funcs.extraction import extract_user
 from MukeshRobot.modules.log_channel import gloggable
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "MukeshRobot/elevated_users.json")
-
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
     bot = context.bot
@@ -278,9 +276,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         DRAGONS.remove(user_id)
         
 
-        with open(ELEVATED_USERS_FILE, "w") as outfile:
-            json.dump(data, outfile, indent=4)
-
+        
         log_message = (
             f"#UNSUDO\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
