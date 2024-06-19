@@ -40,7 +40,7 @@ requests==2.32.3
 secureme==0.0.4
 search_engine_parser==0.6.8
 speedtest-cli==2.1.3
-sqlalchemy==1.4.46
+sqlalchemy==2.0.31
 telegraph==2.2.0
 telethon==1.36.0
 tgcrypto==1.2.5
