@@ -1,6 +1,8 @@
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 from pymongo import MongoClient, collection
-
+from MukeshRobot.modules.no_sql.users_db import *
+from MukeshRobot.modules.no_sql.chats_db import *
+from MukeshRobot.modules.no_sql.gban_db import *
 from MukeshRobot import  MONGO_DB_URI
 
 mongo = MongoCli(MONGO_DB_URI)

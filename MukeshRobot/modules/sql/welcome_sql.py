@@ -37,7 +37,6 @@ DEFAULT_WELCOME_MESSAGES = [
     "{first} just showed up. Hold my beer.",
     "Challenger approaching! {first} has appeared!",
     "It's a bird! It's a plane! Nevermind, it's just {first}.",
-    "It's {first}! Praise the sun! \o/",
     "Never gonna give {first} up. Never gonna let {first} down.",
     "Ha! {first} has joined! You activated my trap card!",
     "Hey! Listen! {first} has joined!",
