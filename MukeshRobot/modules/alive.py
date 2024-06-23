@@ -9,6 +9,31 @@ from telethon import __version__ as tver
 
 from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME,START_IMG
 
+async def member_permissions(chat_id: int, user_id: int):
+    perms = []
+    member = (await pbot.get_chat_member(chat_id, user_id)).privileges
+    if not member:
+        return []
+    if member.can_post_messages:
+        perms.append("can_post_messages")
+    if member.can_edit_messages:
+        perms.append("can_edit_messages")
+    if member.can_delete_messages:
+        perms.append("can_delete_messages")
+    if member.can_restrict_members:
+        perms.append("can_restrict_members")
+    if member.can_promote_members:
+        perms.append("can_promote_members")
+    if member.can_change_info:
+        perms.append("can_change_info")
+    if member.can_invite_users:
+        perms.append("can_invite_users")
+    if member.can_pin_messages:
+        perms.append("can_pin_messages")
+    if member.can_manage_video_chats:
+        perms.append("can_manage_video_chats")
+    return perms
+
 PHOTO = [
     "https://telegra.ph/file/d2a23fbe48129a7957887.jpg",
     "https://telegra.ph/file/ddf30888de58d77911ee1.jpg",
@@ -45,12 +70,12 @@ async def restart(client, m: Message):
         "CAACAgUAAxkDAAJHbmLuy2NEfrfh6lZSohacEGrVjd5wAAIOBAACl42QVKnra4sdzC_uKQQ"
     )
     await umm.delete()
-    await asyncio.sleep(0.2)
+    # OWNER_name=
     await m.reply_photo(
         START_IMG,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
-  » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴏᴡɴᴇʀ](tg://user?id={OWNER_ID})
+  » **ᴍʏ ᴏᴡɴᴇʀ :** {await client.get_users(OWNER_ID).mention}
   
   » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
   
