@@ -100,4 +100,5 @@ async def save_statss(_, m):
             add_served_chat(m.chat.id)        
 
     except Exception as e:
-        await _.send_message(OWNER_ID,f"db error {e}")
+        pass
+       # await _.send_message(OWNER_ID,f"db error {e}")
