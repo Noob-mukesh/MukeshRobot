@@ -38,6 +38,7 @@ pynewtonmath==1.0.1
 pyrate-limiter==2.10.0
 pyshorteners
 pyrogram==2.0.106
+psycopg2
 python-telegram-bot==13.15
 regex==2024.5.15
 requests==2.32.3
