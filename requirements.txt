@@ -1,4 +1,4 @@
-aiofiles==23.2.1
+aiofiles==24.1.0
 aiohttp==3.9.5
 alphabet_detector
 apscheduler==3.6.3
