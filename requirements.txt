@@ -13,7 +13,7 @@ countryinfo==0.1.2
 currencyconverter==0.17.24
 dateparser==1.2.0
 emoji==2.12.1
-emoji-country-flag==1.3.2
+emoji-country-flag==2.0.0
 faker
 feedparser==6.0.11
 ffmpeg-python==0.2.0
