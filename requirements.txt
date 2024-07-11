@@ -30,6 +30,8 @@ markdown2==2.4.13
 MukeshAPI
 motor==3.5.0
 nekos.py
+opencv-python
+pretty-errors
 pydictionary==2.0.1
 pyfiglet
 pykeyboard==0.1.5
