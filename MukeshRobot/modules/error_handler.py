@@ -76,28 +76,7 @@ def error_callback(update: Update, context: CallbackContext):
         update.effective_message.text if update.effective_message else "No message",
         tb,
     )
-    key = requests.post(
-        "https://nekobin.com/api/documents", json={"content": pretty_message}
-    ).json()
-    e = html.escape(f"{context.error}")
-    if not key.get("result", {}).get("key"):
-        with open("error.txt", "w+") as f:
-            f.write(pretty_message)
-        context.bot.send_document(
-            OWNER_ID,
-            open("error.txt", "rb"),
-            caption=f"#{context.error.identifier}\n<b>An unknown error occured:</b>\n<code>{e}</code>",
-            parse_mode="html",
-        )
-        return
-    key = key.get("result").get("key")
-    url = f"https://nekobin.com/{key}.py"
-    context.bot.send_message(
-        OWNER_ID,
-        text=f"#{context.error.identifier}\n<b>An unknown error occured:</b>\n<code>{e}</code>",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Nekobin", url=url)]]),
-        parse_mode="html",
-    )
+   # print(pretty_message)
 
 
 def list_errors(update: Update, context: CallbackContext):
@@ -110,18 +89,8 @@ def list_errors(update: Update, context: CallbackContext):
     for x in e:
         msg += f"• <code>{x}:</code> <b>{e[x]}</b> #{x.identifier}\n"
     msg += f"{len(errors)} have occurred since startup."
-    if len(msg) > 4096:
-        with open("errors_msg.txt", "w+") as f:
-            f.write(msg)
-        context.bot.send_document(
-            update.effective_chat.id,
-            open("errors_msg.txt", "rb"),
-            caption=f"Too many errors have occured..",
-            parse_mode="html",
-        )
-        return
-    update.effective_message.reply_text(msg, parse_mode="html")
-
+    #print(msg)
+    
 
 dispatcher.add_error_handler(error_callback, run_async=True)
 dispatcher.add_handler(CommandHandler("errors", list_errors, run_async=True))
