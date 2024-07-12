@@ -26,7 +26,7 @@ heroku3
 html2text==2024.2.26
 jikanpy==4.3.2
 lxml==4.9.4
-markdown2==2.4.13
+markdown2==2.5.0
 MukeshAPI
 motor==3.5.0
 nekos.py
