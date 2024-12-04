@@ -28,14 +28,14 @@ jikanpy==4.3.2
 lxml==4.9.4
 markdown2==2.5.0
 MukeshAPI
-motor==3.5.1
+motor==3.6.0
 nekos.py
 opencv-python
 pretty-errors
 pydictionary==2.0.1
 pyfiglet
 pykeyboard==0.1.5
-pymongo
+pymongo==4.9.2
 pynewtonmath==1.0.1
 pyrate-limiter==2.10.0
 pyshorteners
